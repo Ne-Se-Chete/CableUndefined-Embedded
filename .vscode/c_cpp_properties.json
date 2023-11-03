@@ -3,7 +3,8 @@
         {
             "name": "Linux",
             "includePath": [
-                "${PICO_SDK_PATH}/**"
+                "${workspaceFolder}/**",
+                "/home/yasen/pico-sdk/src/common/pico_stdlib/include/pico/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

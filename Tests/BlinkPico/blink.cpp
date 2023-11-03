@@ -1,4 +1,4 @@
-#include "pico/stdlib.h"
+#include "stdlib.h"
 
 int main() {
 #ifndef PICO_DEFAULT_LED_PIN
