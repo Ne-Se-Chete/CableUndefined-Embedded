@@ -51,7 +51,7 @@
 #define MAX_AY 7
 
 int setConnection(uint8_t addr, uint8_t AX, uint8_t AY, bool mode){
-  if (addr > MAX_ADDRESS || AX > MAX_AX || AX > MAX_AY){
+  if (addr > MAX_ADDRESS || AX > MAX_AX || AY > MAX_AY){
     return -1;
   }
 
