@@ -46,21 +46,21 @@ int setConnection(uint8_t addr, uint8_t AX, uint8_t AY, bool mode) {
   }
 
   // Set ADDR_PORT bits using digitalWrite
-  digitalWrite(ADDR0_PIN, (addr & 0x01) != 0);
-  digitalWrite(ADDR1_PIN, (addr & 0x02) != 0);
-  digitalWrite(ADDR2_PIN, (addr & 0x04) != 0);
-  digitalWrite(ADDR3_PIN, (addr & 0x08) != 0);
+  digitalWrite(ADDR0_PIN, 1);
+  digitalWrite(ADDR1_PIN, 1);
+  digitalWrite(ADDR2_PIN, 1);
+  digitalWrite(ADDR3_PIN, 0);
 
   // Set AX_PORT bits using digitalWrite
-  digitalWrite(AX0_PIN, (AX & 0x01) != 0);
-  digitalWrite(AX1_PIN, (AX & 0x02) != 0);
-  digitalWrite(AX2_PIN, (AX & 0x04) != 0);
-  digitalWrite(AX3_PIN, (AX & 0x08) != 0);
+  digitalWrite(AX0_PIN, 0);
+  digitalWrite(AX1_PIN, 0);
+  digitalWrite(AX2_PIN, 0);
+  digitalWrite(AX3_PIN, 0);
 
   // Set AY_PORT bits using digitalWrite
-  digitalWrite(AY0_PIN, (AY & 0x01) != 0);
-  digitalWrite(AY1_PIN, (AY & 0x02) != 0);
-  digitalWrite(AY2_PIN, (AY & 0x04) != 0);
+  digitalWrite(AY0_PIN, 0);
+  digitalWrite(AY1_PIN, 0);
+  digitalWrite(AY2_PIN, 0);
 
   digitalWrite(DAT_PIN, mode);
 
