@@ -15,37 +15,39 @@
 #define AX2 2
 #define AX3 3
 
-#define STB 7
-#define DAT 8
+#define STB 8
+#define DAT 7
 
 #define MAX_ADDRESS 15
 #define MAX_AX 15
 #define MAX_AY 7
 
-void setConnection(uint8_t addr, uint8_t AX, uint8_t AY, bool mode) {
+int setConnection(uint8_t addr, uint8_t AX, uint8_t AY, bool mode) {
     if (addr > MAX_ADDRESS || AX > MAX_AX || AX > MAX_AY) {
-        return;
+        return 1;
     }
 
-    gpio_put(ADDR0, (addr & 0b0001) ? 1 : 0);
-    gpio_put(ADDR1, (addr & 0b0010) ? 1 : 0);
-    gpio_put(ADDR2, (addr & 0b0100) ? 1 : 0);
-    gpio_put(ADDR3, (addr & 0b1000) ? 1 : 0);
+    gpio_put(ADDR0, (addr & 0b0001) );
+    gpio_put(ADDR1, (addr & 0b0010) );
+    gpio_put(ADDR2, (addr & 0b0100) );
+    gpio_put(ADDR3, (addr & 0b1000) );
 
-    gpio_put(AX0, (AX & 0b0001) ? 1 : 0);
-    gpio_put(AX1, (AX & 0b0010) ? 1 : 0);
-    gpio_put(AX2, (AX & 0b0100) ? 1 : 0);
-    gpio_put(AX3, (AX & 0b1000) ? 1 : 0);
+    gpio_put(AX0, (AX & 0b0001) );
+    gpio_put(AX1, (AX & 0b0010) );
+    gpio_put(AX2, (AX & 0b0100) );
+    gpio_put(AX3, (AX & 0b1000) );
 
-    gpio_put(AY0, (AY & 0b0001) ? 1 : 0);
-    gpio_put(AY1, (AY & 0b0010) ? 1 : 0);
-    gpio_put(AY2, (AY & 0b0100) ? 1 : 0);
+    gpio_put(AY0, (AY & 0b0001) );
+    gpio_put(AY1, (AY & 0b0010) );
+    gpio_put(AY2, (AY & 0b0100) );
 
     gpio_put(DAT, mode);
 
     gpio_put(STB, 1);
     sleep_us(2);
     gpio_put(STB, 0);
+
+    return 0;
 }
 
 int main() {
@@ -67,6 +69,24 @@ int main() {
 
     gpio_init(DAT);
     gpio_init(STB);
+
+    gpio_put(ADDR0, 0);
+    gpio_put(ADDR1, 0);
+    gpio_put(ADDR2, 0);
+    gpio_put(ADDR3, 0);
+
+    gpio_put(AX0, 0);
+    gpio_put(AX1, 0);
+    gpio_put(AX2, 0);
+    gpio_put(AX3, 0);
+
+    gpio_put(AY0, 0);
+    gpio_put(AY1, 0);
+    gpio_put(AY2, 0);
+
+    gpio_put(DAT, 0);
+    gpio_put(STB, 0);
+
 
     gpio_set_dir(ADDR0, GPIO_OUT);
     gpio_set_dir(ADDR1, GPIO_OUT);
