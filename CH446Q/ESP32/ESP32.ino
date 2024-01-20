@@ -1,7 +1,7 @@
 #include "Arduino.h"
 
-#define STB_PIN 34
-#define DAT_PIN 35
+#define STB_PIN 12
+#define DAT_PIN 13
 
 #define AY0_PIN 4
 #define AY1_PIN 2
@@ -49,12 +49,12 @@ int setConnection(uint8_t addr, uint8_t AX, uint8_t AY, bool mode) {
   digitalWrite(ADDR0_PIN, 1);
   digitalWrite(ADDR1_PIN, 1);
   digitalWrite(ADDR2_PIN, 1);
-  digitalWrite(ADDR3_PIN, 0);
+  digitalWrite(ADDR3_PIN, 1);
 
   // Set AX_PORT bits using digitalWrite
-  digitalWrite(AX0_PIN, 0);
-  digitalWrite(AX1_PIN, 0);
-  digitalWrite(AX2_PIN, 0);
+  digitalWrite(AX0_PIN, 1);
+  digitalWrite(AX1_PIN, 1);
+  digitalWrite(AX2_PIN, 0); 
   digitalWrite(AX3_PIN, 0);
 
   // Set AY_PORT bits using digitalWrite
@@ -74,10 +74,21 @@ int setConnection(uint8_t addr, uint8_t AX, uint8_t AY, bool mode) {
 }
 
 void setup() {
+  Serial.begin(9600);
   setupPins();
   setConnection(0b1111, 1, 1, true);
 }
 
 void loop() {
-  // Your loop code here
+  digitalWrite(DAT_PIN, 0);
+  Serial.println("Here1");
+
+  delay(2000);
+
+  digitalWrite(DAT_PIN, 1);
+  Serial.println("Here2");
+
+
+  delay(2000);
+
 }
