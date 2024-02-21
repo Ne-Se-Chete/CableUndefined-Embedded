@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <list>
 
 using namespace std;
 
+// BREADBOARD OR MUX
 class Device {
 public:
     int num;
@@ -90,7 +92,7 @@ void Breadboard::printConnections() const {
     }
 }
 
-
+// check if there is a bidirectional connection between two devices
 bool checkBidirectionalConnection(Device& device1, char type1, int index1, Device& device2, char type2, int index2) {
     if (auto mux1 = dynamic_cast<Multiplexer*>(&device1)) {
         if (auto mux2 = dynamic_cast<Multiplexer*>(&device2)) {
@@ -122,17 +124,72 @@ bool checkBidirectionalConnection(Device& device1, char type1, int index1, Devic
     return false;
 }
 
+class Graph
+{
+    int numVertices;
+    list<int> *adjLists;
+    bool *visited;
+
+public:
+    Graph(int vertices) : numVertices(vertices), adjLists(new list<int>[vertices]), visited(new bool[vertices]()) {}
+
+    ~Graph()
+    {
+        delete[] adjLists;
+        delete[] visited;
+    }
+
+    void addEdge(int src, int dest)
+    {
+        adjLists[src].push_back(dest); // Assuming bidirectional for simplicity
+        adjLists[dest].push_back(src);
+    }
+
+    void DFS(int vertex)
+    {
+        visited[vertex] = true;
+        cout << vertex << " ";
+
+        for (int adjVertex : adjLists[vertex])
+        {
+            if (!visited[adjVertex])
+            {
+                DFS(adjVertex);
+            }
+        }
+    }
+
+    // Reset visited after a complete traversal if needed
+    void resetVisited()
+    {
+        fill_n(visited, numVertices, false);
+    }
+};
+
+int getGraphVertexID(const Device *device, char type, int pinIndex)
+{
+    int deviceId = device->num;
+    if (auto *mux = dynamic_cast<const Multiplexer *>(device))
+    {
+        return deviceId * 24 + (type == 'x' ? pinIndex : 16 + pinIndex);
+    }
+    else if (auto *bb = dynamic_cast<const Breadboard *>(device))
+    {
+        // Assuming Breadboards come after all Multiplexers in numbering
+        return 18 * 24 + (deviceId - 19) * 64 + pinIndex;
+    }
+    return -1; // Error case
+}
+
 int main() {
-    Multiplexer mux1(1), mux2(2), mux3(3);
-    Breadboard breadboard1(4), breadboard2(5);
+    Multiplexer mux1(0), mux2(1), mux3(2), mux4(3), mux5(4), mux6(5), mux7(6), mux8(7), mux9(8), mux10(9), mux11(10), mux12(11), mux13(12), mux14(13), mux15(14), mux16(15), mux17(16), mux18(17);
+    Breadboard breadboard1(18);
 
     mux1.y[0] = new ConnectionNode(&breadboard1, 10, 'y');
     mux2.x[5] = new ConnectionNode(&breadboard1, 20, 'x');
-    mux3.y[7] = new ConnectionNode(&breadboard2, 15, 'y'); 
 
     breadboard1.pin[10] = new ConnectionNode(&mux1, 0, 'y');
     breadboard1.pin[20] = new ConnectionNode(&mux2, 5, 'x');
-    breadboard2.pin[15] = new ConnectionNode(&mux3, 7, 'y');
 
 
     cout << "MUX1 connections:\n";
@@ -143,21 +200,54 @@ int main() {
     mux2.printConnections();
     cout << "\n";
 
-    cout << "MUX3 connections:\n";
-    mux3.printConnections();
-    cout << "\n";
 
     cout << "Breadboard1 connections:\n";
     breadboard1.printConnections();
     cout << "\n";
 
-    cout << "Breadboard2 connections:\n";
-    breadboard2.printConnections();
-    cout << "\n";
 
     cout << "Checking bidirectional connection between mux1.y[0] and breadboard1.pin[10]: ";
     cout << (checkBidirectionalConnection(mux1, 'y', 0, breadboard1, 'p', 10) ? "true" : "false") << endl;
 
+    // MCU breadbaord pin 1->main breadboard pin 1
+    // 1. MUX1: setconnection ( Y0 - X0 )
+    // 2. MUX11 : setconnection(Y0 - X0)
+
+    // MCU breadbaord pin 1->main breadboard pin 2
+    // 1. MUX1: setconnection ( Y0 - X0 )
+    
+    // MCU breadbaord pin 1->main breadboard pin 9
+    // 1. MUX1: setconnection ( Y0 - X1 )
+    // 2. MUX12 : setconnection(Y0 - X0)
+
+    // Example: Connecting MUX1's y[0] to Breadboard1's pin[10]
+    int numVertices = 18 * 24 + 1 * 64;
+    Graph g(numVertices);                        
+    int srcVertex1 = getGraphVertexID(&mux1, 'x', 0);
+    int destVertex1 = getGraphVertexID(&mux1, 'y', 0); // 'p' is arbitrary since Breadboard doesn't use 'x' or 'y'
+    
+    int srcVertex2 = getGraphVertexID(&mux1, 'x', 0);
+    int destVertex2 = getGraphVertexID(&mux1, 'y', 1);
+
+    int srcVertex3 = getGraphVertexID(&mux1, 'x', 0);
+    int destVertex3 = getGraphVertexID(&mux1, 'y', 2);
+
+    int srcVertex4 = getGraphVertexID(&mux1, 'x', 0);
+    int destVertex4 = getGraphVertexID(&mux1, 'y', 3);
+
+    g.addEdge(srcVertex1, destVertex1);
+    g.addEdge(srcVertex2, destVertex2);
+    g.addEdge(srcVertex3, destVertex3);
+    g.addEdge(srcVertex4, destVertex4);
+
+    g.DFS(srcVertex1);
+    
+    // for (int i = 0; i < numVertices; i++)
+    // {
+        
+    // }
+    
+    
 
     return 0;
 }
