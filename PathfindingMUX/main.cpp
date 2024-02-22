@@ -158,12 +158,6 @@ public:
             }
         }
     }
-
-    // Reset visited after a complete traversal if needed
-    void resetVisited()
-    {
-        fill_n(visited, numVertices, false);
-    }
 };
 
 int getGraphVertexID(const Device *device, char type, int pinIndex)
@@ -186,12 +180,11 @@ int main() {
     Breadboard breadboard1(18);
 
     mux1.y[0] = new ConnectionNode(&breadboard1, 10, 'y');
-    mux2.x[5] = new ConnectionNode(&breadboard1, 20, 'x');
-
     breadboard1.pin[10] = new ConnectionNode(&mux1, 0, 'y');
+
+    mux2.x[5] = new ConnectionNode(&breadboard1, 20, 'x');
     breadboard1.pin[20] = new ConnectionNode(&mux2, 5, 'x');
-
-
+    
     cout << "MUX1 connections:\n";
     mux1.printConnections();
     cout << "\n";
@@ -200,11 +193,9 @@ int main() {
     mux2.printConnections();
     cout << "\n";
 
-
     cout << "Breadboard1 connections:\n";
     breadboard1.printConnections();
     cout << "\n";
-
 
     cout << "Checking bidirectional connection between mux1.y[0] and breadboard1.pin[10]: ";
     cout << (checkBidirectionalConnection(mux1, 'y', 0, breadboard1, 'p', 10) ? "true" : "false") << endl;
@@ -235,19 +226,16 @@ int main() {
     int srcVertex4 = getGraphVertexID(&mux1, 'x', 0);
     int destVertex4 = getGraphVertexID(&mux1, 'y', 3);
 
+    int srcVertex5 = getGraphVertexID(&mux1, 'x', 0);
+    int destVertex5 = getGraphVertexID(&breadboard1, 'y', 4);
+
     g.addEdge(srcVertex1, destVertex1);
     g.addEdge(srcVertex2, destVertex2);
     g.addEdge(srcVertex3, destVertex3);
     g.addEdge(srcVertex4, destVertex4);
+    g.addEdge(srcVertex5, destVertex5);
 
     g.DFS(srcVertex1);
     
-    // for (int i = 0; i < numVertices; i++)
-    // {
-        
-    // }
-    
-    
-
     return 0;
 }
