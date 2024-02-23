@@ -176,10 +176,10 @@ int getGraphVertexID(const Device *device, char type, int pinIndex)
 
 int main() {
     Multiplexer mux1(0), mux2(1), mux3(2), mux4(3), mux5(4), mux6(5), mux7(6), mux8(7), mux9(8), mux10(9), mux11(10), mux12(11), mux13(12), mux14(13), mux15(14), mux16(15), mux17(16), mux18(17);
-    Breadboard breadboard1(18);
+    Breadboard mcu_breadboard(40), main_breadboard(64);
 
-    mux1.y[0] = new ConnectionNode(&breadboard1, 10, 'y');
-    breadboard1.pin[10] = new ConnectionNode(&mux1, 0, 'y');
+    mux1.y[0] = new ConnectionNode(&mcu_breadboard, 1, 'y');
+    mcu_breadboard.pin[1] = new ConnectionNode(&mux1, 0, 'y');
 
     mux2.x[5] = new ConnectionNode(&breadboard1, 20, 'x');
     breadboard1.pin[20] = new ConnectionNode(&mux2, 5, 'x');
