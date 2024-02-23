@@ -34,7 +34,6 @@ public:
     void printConnections() const override;
 };
 
-// Derived class for a breadboard device
 class Breadboard : public Device {
 public:
     ConnectionNode* pin[64];
@@ -161,3 +160,5 @@ int main() {
 
     return 0;
 }
+
+
