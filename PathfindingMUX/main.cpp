@@ -589,30 +589,6 @@ int main() {
     mux6.x[12] = new ConnectionNode(&mux12, 11, 'x');
     mux12.x[11] = new ConnectionNode(&mux6, 12, 'x');
 
-    // mux6.y[0] = new ConnectionNode(&mux1, 8, 'x');
-    // mux1.x[8] = new ConnectionNode(&mux6, 0, 'y');
-
-    // mux6.y[1] = new ConnectionNode(&mux2, 8, 'x');
-    // mux2.x[8] = new ConnectionNode(&mux6, 1, 'y');
-
-    // mux6.y[2] = new ConnectionNode(&mux3, 8, 'x');
-    // mux3.x[8] = new ConnectionNode(&mux6, 2, 'y');
-
-    // mux6.y[3] = new ConnectionNode(&mux4, 8, 'x');
-    // mux4.x[8] = new ConnectionNode(&mux6, 3, 'y');
-
-    // mux6.y[4] = new ConnectionNode(&mux5, 8, 'x');
-    // mux5.x[8] = new ConnectionNode(&mux6, 4, 'y');
-
-    // mux6.y[5] = new ConnectionNode(&mux1, 13, 'x');
-    // mux1.x[13] = new ConnectionNode(&mux6, 5, 'y');
-
-    // mux6.y[6] = new ConnectionNode(&mux1, 14, 'x');
-    // mux1.x[14] = new ConnectionNode(&mux6, 6, 'y');
-
-    // mux6.y[7] = new ConnectionNode(&mux1, 15, 'x');
-    // mux1.x[15] = new ConnectionNode(&mux6, 7, 'y');
-
 
     // All bidirectional connections for MUX7
     mux7.x[0] = new ConnectionNode(&mux11, 6, 'x');
@@ -981,6 +957,33 @@ int main() {
 
     mux18.y[7] = new ConnectionNode(&main_breadboard, 64, 'p');
     main_breadboard.pin[64] = new ConnectionNode(&mux18, 7, 'y');
+
+
+    // All bidirectional connections between helper MUXes
+    mux6.x[13] = new ConnectionNode(&mux10, 15, 'x');
+    mux10.x[15] = new ConnectionNode(&mux6, 13, 'x');
+
+    mux6.x[14] = new ConnectionNode(&mux7, 14, 'x');
+    mux7.x[14] = new ConnectionNode(&mux6, 14, 'x');
+
+    mux6.x[15] = new ConnectionNode(&mux8, 14, 'x');
+    mux8.x[14] = new ConnectionNode(&mux6, 15, 'x');
+
+    mux7.x[13] = new ConnectionNode(&mux10, 14, 'x');
+    mux10.x[14] = new ConnectionNode(&mux7, 13, 'x');
+
+    mux7.x[15] = new ConnectionNode(&mux9, 14, 'x');
+    mux9.x[14] = new ConnectionNode(&mux7, 15, 'x');
+
+    mux8.x[13] = new ConnectionNode(&mux10, 13, 'x');
+    mux10.x[13] = new ConnectionNode(&mux8, 13, 'x');
+
+    mux8.x[15] = new ConnectionNode(&mux9, 15, 'x');
+    mux9.x[15] = new ConnectionNode(&mux8, 15, 'x');
+
+    mux9.x[13] = new ConnectionNode(&mux10, 12, 'x');
+    mux10.x[12] = new ConnectionNode(&mux9, 13, 'x');
+
     
 
     cout << "MUX1 connections:\n";
