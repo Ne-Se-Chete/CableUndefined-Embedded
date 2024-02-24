@@ -178,12 +178,155 @@ int main() {
     Multiplexer mux1(0), mux2(1), mux3(2), mux4(3), mux5(4), mux6(5), mux7(6), mux8(7), mux9(8), mux10(9), mux11(10), mux12(11), mux13(12), mux14(13), mux15(14), mux16(15), mux17(16), mux18(17);
     Breadboard mcu_breadboard(40), main_breadboard(64);
 
-    mux1.y[0] = new ConnectionNode(&mcu_breadboard, 1, 'y');
+    
+    // All bidirectional connections for MUX1
+    mux1.x[0] = new ConnectionNode(&mux11, 0, 'x');
+    mux11.x[0] = new ConnectionNode(&mux1, 0, 'x');
+
+    mux1.x[1] = new ConnectionNode(&mux12, 0, 'x');
+    mux12.x[0] = new ConnectionNode(&mux1, 1, 'x');
+
+    mux1.x[2] = new ConnectionNode(&mux13, 0, 'x');
+    mux13.x[0] = new ConnectionNode(&mux1, 2, 'x');
+
+    mux1.x[3] = new ConnectionNode(&mux14, 0, 'x');
+    mux14.x[0] = new ConnectionNode(&mux1, 3, 'x');
+
+    mux1.x[4] = new ConnectionNode(&mux15, 0, 'x');
+    mux15.x[0] = new ConnectionNode(&mux1, 4, 'x');
+
+    mux1.x[5] = new ConnectionNode(&mux16, 0, 'x');
+    mux16.x[0] = new ConnectionNode(&mux1, 5, 'x');
+
+    mux1.x[6] = new ConnectionNode(&mux17, 0, 'x');
+    mux17.x[0] = new ConnectionNode(&mux1, 6, 'x');
+
+    mux1.x[7] = new ConnectionNode(&mux18, 0, 'x');
+    mux18.x[0] = new ConnectionNode(&mux1, 7, 'x');
+
+    mux1.x[8] = new ConnectionNode(&mux6, 0, 'y');
+    mux6.y[0] = new ConnectionNode(&mux1, 8, 'x');
+
+    mux1.x[9] = new ConnectionNode(&mux7, 0, 'y');
+    mux7.y[0] = new ConnectionNode(&mux1, 9, 'x');
+
+    mux1.x[10] = new ConnectionNode(&mux8, 0, 'y');
+    mux8.y[0] = new ConnectionNode(&mux1, 10, 'x');
+
+    mux1.x[11] = new ConnectionNode(&mux9, 0, 'y');
+    mux9.y[0] = new ConnectionNode(&mux1, 11, 'x');
+
+    mux1.x[12] = new ConnectionNode(&mux10, 0, 'y');
+    mux10.y[0] = new ConnectionNode(&mux1, 12, 'x');
+
+    mux1.x[13] = new ConnectionNode(&mux6, 5, 'y');
+    mux6.y[5] = new ConnectionNode(&mux1, 13, 'x');
+
+    mux1.x[14] = new ConnectionNode(&mux6, 6, 'y');
+    mux6.y[6] = new ConnectionNode(&mux1, 14, 'x');
+
+    mux1.x[15] = new ConnectionNode(&mux6, 7, 'y');
+    mux6.y[7] = new ConnectionNode(&mux1, 15, 'x');
+
+    mux1.y[0] = new ConnectionNode(&mcu_breadboard, 1, 'p');
     mcu_breadboard.pin[1] = new ConnectionNode(&mux1, 0, 'y');
 
-    mux2.x[5] = new ConnectionNode(&breadboard1, 20, 'x');
-    breadboard1.pin[20] = new ConnectionNode(&mux2, 5, 'x');
-    
+    mux1.y[1] = new ConnectionNode(&mcu_breadboard, 2, 'p');
+    mcu_breadboard.pin[2] = new ConnectionNode(&mux1, 1, 'y');
+
+    mux1.y[2] = new ConnectionNode(&mcu_breadboard, 3, 'p');
+    mcu_breadboard.pin[3] = new ConnectionNode(&mux1, 2, 'y');
+
+    mux1.y[3] = new ConnectionNode(&mcu_breadboard, 4, 'p');
+    mcu_breadboard.pin[4] = new ConnectionNode(&mux1, 3, 'y');
+
+    mux1.y[4] = new ConnectionNode(&mcu_breadboard, 5, 'p');
+    mcu_breadboard.pin[5] = new ConnectionNode(&mux1, 4, 'y');
+
+    mux1.y[5] = new ConnectionNode(&mcu_breadboard, 6, 'p');
+    mcu_breadboard.pin[6] = new ConnectionNode(&mux1, 5, 'y');
+
+    mux1.y[6] = new ConnectionNode(&mcu_breadboard, 7, 'p');
+    mcu_breadboard.pin[7] = new ConnectionNode(&mux1, 6, 'y');
+
+    mux1.y[7] = new ConnectionNode(&mcu_breadboard, 8, 'p');
+    mcu_breadboard.pin[8] = new ConnectionNode(&mux1, 7, 'y');
+
+
+    // All bidirectional connections for MUX2
+    mux2.x[0] = new ConnectionNode(&mux11, 1, 'x');
+    mux11.x[1] = new ConnectionNode(&mux2, 0, 'x');
+
+    mux2.x[1] = new ConnectionNode(&mux12, 1, 'x');
+    mux12.x[1] = new ConnectionNode(&mux2, 1, 'x');
+
+    mux2.x[2] = new ConnectionNode(&mux13, 1, 'x');
+    mux13.x[1] = new ConnectionNode(&mux2, 2, 'x');
+
+    mux2.x[3] = new ConnectionNode(&mux14, 1, 'x');
+    mux14.x[1] = new ConnectionNode(&mux2, 3, 'x');
+
+    mux2.x[4] = new ConnectionNode(&mux15, 1, 'x');
+    mux15.x[1] = new ConnectionNode(&mux2, 4, 'x');
+
+    mux2.x[5] = new ConnectionNode(&mux16, 1, 'x');
+    mux16.x[1] = new ConnectionNode(&mux2, 5, 'x');
+
+    mux2.x[6] = new ConnectionNode(&mux17, 1, 'x');
+    mux17.x[1] = new ConnectionNode(&mux2, 6, 'x');
+
+    mux2.x[7] = new ConnectionNode(&mux18, 1, 'x');
+    mux18.x[1] = new ConnectionNode(&mux2, 7, 'x');
+
+    mux2.x[8] = new ConnectionNode(&mux6, 1, 'y');
+    mux6.y[1] = new ConnectionNode(&mux2, 8, 'x');
+
+    mux2.x[9] = new ConnectionNode(&mux7, 1, 'y');
+    mux7.y[1] = new ConnectionNode(&mux2, 9, 'x');
+
+    mux2.x[10] = new ConnectionNode(&mux8, 1, 'y');
+    mux8.y[1] = new ConnectionNode(&mux2, 10, 'x');
+
+    mux2.x[11] = new ConnectionNode(&mux9, 1, 'y');
+    mux9.y[1] = new ConnectionNode(&mux2, 11, 'x');
+
+    mux2.x[12] = new ConnectionNode(&mux10, 1, 'y');
+    mux10.y[1] = new ConnectionNode(&mux2, 12, 'x');
+
+    mux2.x[13] = new ConnectionNode(&mux7, 5, 'y');
+    mux7.y[5] = new ConnectionNode(&mux2, 13, 'x');
+
+    mux2.x[14] = new ConnectionNode(&mux7, 6, 'y');
+    mux7.y[6] = new ConnectionNode(&mux2, 14, 'x');
+
+    mux2.x[15] = new ConnectionNode(&mux7, 7, 'y');
+    mux7.y[7] = new ConnectionNode(&mux2, 15, 'x');
+
+    mux2.y[0] = new ConnectionNode(&mcu_breadboard, 9, 'p');
+    mcu_breadboard.pin[9] = new ConnectionNode(&mux2, 0, 'y');
+
+    mux2.y[1] = new ConnectionNode(&mcu_breadboard, 10, 'p');
+    mcu_breadboard.pin[10] = new ConnectionNode(&mux2, 1, 'y');
+
+    mux2.y[2] = new ConnectionNode(&mcu_breadboard, 11, 'p');
+    mcu_breadboard.pin[11] = new ConnectionNode(&mux2, 2, 'y');
+
+    mux2.y[3] = new ConnectionNode(&mcu_breadboard, 12, 'p');
+    mcu_breadboard.pin[12] = new ConnectionNode(&mux2, 3, 'y');
+
+    mux2.y[4] = new ConnectionNode(&mcu_breadboard, 13, 'p');
+    mcu_breadboard.pin[13] = new ConnectionNode(&mux2, 4, 'y');
+
+    mux2.y[5] = new ConnectionNode(&mcu_breadboard, 14, 'p');
+    mcu_breadboard.pin[14] = new ConnectionNode(&mux2, 5, 'y');
+
+    mux2.y[6] = new ConnectionNode(&mcu_breadboard, 15, 'p');
+    mcu_breadboard.pin[15] = new ConnectionNode(&mux2, 6, 'y');
+
+    mux2.y[7] = new ConnectionNode(&mcu_breadboard, 16, 'p');
+    mcu_breadboard.pin[16] = new ConnectionNode(&mux2, 7, 'y');
+
+
     cout << "MUX1 connections:\n";
     mux1.printConnections();
     cout << "\n";
@@ -193,11 +336,11 @@ int main() {
     cout << "\n";
 
     cout << "Breadboard1 connections:\n";
-    breadboard1.printConnections();
+    main_breadboard.printConnections();
     cout << "\n";
 
     cout << "Checking bidirectional connection between mux1.y[0] and breadboard1.pin[10]: ";
-    cout << (checkBidirectionalConnection(mux1, 'y', 0, breadboard1, 'p', 10) ? "true" : "false") << endl;
+    cout << (checkBidirectionalConnection(mux1, 'y', 0, main_breadboard, 'p', 10) ? "true" : "false") << endl;
 
     // MCU breadbaord pin 1->main breadboard pin 1
     // 1. MUX1: setconnection ( Y0 - X0 )
@@ -226,7 +369,7 @@ int main() {
     int destVertex4 = getGraphVertexID(&mux1, 'y', 3);
 
     int srcVertex5 = getGraphVertexID(&mux1, 'x', 0);
-    int destVertex5 = getGraphVertexID(&breadboard1, 'y', 4);
+    int destVertex5 = getGraphVertexID(&main_breadboard, 'y', 4);
 
     g.addEdge(srcVertex1, destVertex1);
     g.addEdge(srcVertex2, destVertex2);
