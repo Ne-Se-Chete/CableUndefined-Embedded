@@ -186,6 +186,7 @@ int main() {
     Multiplexer mux1(0), mux2(1), mux3(2), mux4(3), mux5(4), mux6(5), mux7(6), mux8(7), mux9(8), mux10(9), mux11(10), mux12(11), mux13(12), mux14(13), mux15(14), mux16(15), mux17(16), mux18(17);
     Breadboard main_breadboard(19), mcu_breadboard(20);
 
+    Multiplexer all_muxes[18] = {mux1, mux2, mux3, mux4, mux5, mux6, mux7, mux8, mux9, mux10, mux11, mux12, mux13, mux14, mux15, mux16, mux17, mux18};
     
     // All bidirectional connections for MUX1
     mux1.x[0] = new ConnectionNode(&mux11, 0, 'x');
@@ -1006,50 +1007,43 @@ int main() {
     // main_breadboard.printConnections();
     // cout << "\n";
 
-    // cout << "Checking bidirectional connection between mux1.y[0] and breadboard1.pin[10]: ";
-    // cout << (checkBidirectionalConnection(mux1, 'y', 0, main_breadboard, 'p', 10) ? "true" : "false") << endl;
-
-    // MCU breadbaord pin 1->main breadboard pin 1
-    // 1. MUX1: setconnection ( Y0 - X0 )
-    // 2. MUX11 : setconnection(Y0 - X0)
-
-    // MCU breadbaord pin 1->main breadboard pin 2
-    // 1. MUX1: setconnection ( Y0 - X0 )
-    
-    // MCU breadbaord pin 1->main breadboard pin 9
-    // 1. MUX1: setconnection ( Y0 - X1 )
-    // 2. MUX12 : setconnection(Y0 - X0)
+    cout << "Checking bidirectional connection between mcu_breadboard[0] and mux1.y[0] ";
+    cout << (checkBidirectionalConnection(mcu_breadboard, 'p', 0, mux1, 'y', 0) ? "true" : "false") << endl;
 
     // Example: Connecting MUX1's y[0] to Breadboard1's pin[10]
     int numVertices = 18 * 24 + 1 * 64 + 1 * 40;
     Graph g(numVertices);                        
-    int srcVertex1 = getGraphVertexID(&mux1, 'x', 0);
-    int destVertex1 = getGraphVertexID(&mux1, 'y', 0); 
+    // int srcVertex1 = getGraphVertexID(&mux1, 'x', 0);
+    // int destVertex1 = getGraphVertexID(&mux1, 'y', 0); 
     
-    int srcVertex2 = getGraphVertexID(&mux1, 'x', 0);
-    int destVertex2 = getGraphVertexID(&mux1, 'y', 1);
+    // int srcVertex2 = getGraphVertexID(&mux1, 'x', 0);
+    // int destVertex2 = getGraphVertexID(&mux1, 'y', 1);
 
-    int srcVertex3 = getGraphVertexID(&mux1, 'x', 0);
-    int destVertex3 = getGraphVertexID(&mux1, 'y', 2);
+    // int srcVertex3 = getGraphVertexID(&mux1, 'x', 0);
+    // int destVertex3 = getGraphVertexID(&mux1, 'y', 2);
 
-    int srcVertex4 = getGraphVertexID(&mux1, 'x', 0);
-    int destVertex4 = getGraphVertexID(&mux1, 'y', 3);
+    // int srcVertex4 = getGraphVertexID(&mux1, 'x', 0);
+    // int destVertex4 = getGraphVertexID(&mux1, 'y', 3);
 
-    int srcVertex5 = getGraphVertexID(&mux1, 'x', 0);
-    int destVertex5 = getGraphVertexID(&main_breadboard, 'p', 4); // 'p' is arbitrary since Breadboard doesn't use 'x' or 'y'
+    // int srcVertex5 = getGraphVertexID(&mux1, 'x', 0);
+    // int destVertex5 = getGraphVertexID(&main_breadboard, 'p', 4); // 'p' is arbitrary since Breadboard doesn't use 'x' or 'y'
 
-    int srcVertex6 = getGraphVertexID(&mcu_breadboard, 'p', 0);
-    int destVertex6 = getGraphVertexID(&main_breadboard, 'p', 63);
-    cout << "srcVertex6: " << srcVertex6 << " destVertex6: " << destVertex6 << endl;
+    // int srcVertex6 = getGraphVertexID(&mcu_breadboard, 'p', 0);
+    // int destVertex6 = getGraphVertexID(&main_breadboard, 'p', 63);
+    // cout << "srcVertex6: " << srcVertex6 << " destVertex6: " << destVertex6 << endl;
 
-    g.addEdge(srcVertex1, destVertex1);
-    g.addEdge(srcVertex2, destVertex2);
-    g.addEdge(srcVertex3, destVertex3);
-    g.addEdge(srcVertex4, destVertex4);
-    g.addEdge(srcVertex5, destVertex5);
-    g.addEdge(srcVertex6, destVertex6);
 
-    g.DFS(srcVertex1);
+    for (int i = 0; i < 18; i++) {
+        for (int j = 0; j < 16; j++){
+            for(int k = 0; k < 8; k++){
+                int srcVertex = getGraphVertexID(&all_muxes[i], 'x', j);
+                int destVertex = getGraphVertexID(&all_muxes[i], 'y', k);
+                g.addEdge(srcVertex, destVertex);
+            }
+        }
+    }
+
+    g.DFS(getGraphVertexID(&mux2, 'x', 0));
     
     return 0;
 }
