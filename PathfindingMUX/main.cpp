@@ -1225,6 +1225,35 @@ int main() {
     g.addEdge(getGraphVertexID(&mux8, 'x', 11), getGraphVertexID(&mux15, 'x', 11));
     g.addEdge(getGraphVertexID(&mux8, 'x', 12), getGraphVertexID(&mux15, 'x', 12));
 
+    // MUX9 pins edge connections
+    g.addEdge(getGraphVertexID(&mux9, 'x', 0), getGraphVertexID(&mux11, 'x', 8));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 1), getGraphVertexID(&mux12, 'x', 8));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 2), getGraphVertexID(&mux13, 'x', 8));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 3), getGraphVertexID(&mux14, 'x', 8));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 4), getGraphVertexID(&mux15, 'x', 8));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 5), getGraphVertexID(&mux16, 'x', 8));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 6), getGraphVertexID(&mux17, 'x', 8));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 7), getGraphVertexID(&mux18, 'x', 8));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 8), getGraphVertexID(&mux16, 'x', 10));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 9), getGraphVertexID(&mux16, 'x', 11));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 10), getGraphVertexID(&mux16, 'x', 12));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 11), getGraphVertexID(&mux17, 'x', 10));
+    g.addEdge(getGraphVertexID(&mux9, 'x', 12), getGraphVertexID(&mux17, 'x', 11));
+
+    // MUX10 pins edge connections
+    g.addEdge(getGraphVertexID(&mux10, 'x', 0), getGraphVertexID(&mux11, 'x', 9));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 1), getGraphVertexID(&mux12, 'x', 9));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 2), getGraphVertexID(&mux13, 'x', 9));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 3), getGraphVertexID(&mux14, 'x', 9));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 4), getGraphVertexID(&mux15, 'x', 9));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 5), getGraphVertexID(&mux16, 'x', 9));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 6), getGraphVertexID(&mux17, 'x', 9));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 7), getGraphVertexID(&mux18, 'x', 9));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 8), getGraphVertexID(&mux17, 'x', 12));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 9), getGraphVertexID(&mux18, 'x', 10));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 10), getGraphVertexID(&mux18, 'x', 11));
+    g.addEdge(getGraphVertexID(&mux10, 'x', 11), getGraphVertexID(&mux18, 'x', 12));
+
     g.DFS(getGraphVertexID(&mux18, 'x', 15));
 
     return 0;
