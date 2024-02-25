@@ -149,6 +149,13 @@ public:
         visited[vertex] = true;
         cout << vertex << " ";
 
+        // cout << "Adj list of "<<vertex << ": ";
+
+        // for (int adjVertex : adjLists[vertex])
+        // {
+        //     cout << adjVertex << " ";
+        // }
+        
         for (int adjVertex : adjLists[vertex])
         {
             if (!visited[adjVertex])
@@ -1032,7 +1039,7 @@ int main() {
     // int destVertex6 = getGraphVertexID(&main_breadboard, 'p', 63);
     // cout << "srcVertex6: " << srcVertex6 << " destVertex6: " << destVertex6 << endl;
 
-
+    // Add edges to the graph every X to Y connection in the muxes
     for (int i = 0; i < 18; i++) {
         for (int j = 0; j < 16; j++){
             for(int k = 0; k < 8; k++){
@@ -1043,7 +1050,85 @@ int main() {
         }
     }
 
-    g.DFS(getGraphVertexID(&mux2, 'x', 0));
+    // MUX1 pins edge connections
+    g.addEdge(getGraphVertexID(&mux1, 'x', 1), getGraphVertexID(&mux12, 'x', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 2), getGraphVertexID(&mux13, 'x', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 0), getGraphVertexID(&mux11, 'x', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 3), getGraphVertexID(&mux14, 'x', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 4), getGraphVertexID(&mux15, 'x', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 5), getGraphVertexID(&mux16, 'x', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 6), getGraphVertexID(&mux17, 'x', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 7), getGraphVertexID(&mux18, 'x', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 8), getGraphVertexID(&mux6, 'y', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 9), getGraphVertexID(&mux7, 'y', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 10), getGraphVertexID(&mux8, 'y', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 11), getGraphVertexID(&mux9, 'y', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 12), getGraphVertexID(&mux10, 'y', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 13), getGraphVertexID(&mux6, 'y', 5));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 14), getGraphVertexID(&mux6, 'y', 6));
+    g.addEdge(getGraphVertexID(&mux1, 'x', 15), getGraphVertexID(&mux6, 'y', 7));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 0), getGraphVertexID(&mcu_breadboard, 'p', 0));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 1), getGraphVertexID(&mcu_breadboard, 'p', 1));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 2), getGraphVertexID(&mcu_breadboard, 'p', 2));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 3), getGraphVertexID(&mcu_breadboard, 'p', 3));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 4), getGraphVertexID(&mcu_breadboard, 'p', 4));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 5), getGraphVertexID(&mcu_breadboard, 'p', 5));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 6), getGraphVertexID(&mcu_breadboard, 'p', 6));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 7), getGraphVertexID(&mcu_breadboard, 'p', 7));
+
+    // MUX2 pins edge connections
+    g.addEdge(getGraphVertexID(&mux2, 'x', 0), getGraphVertexID(&mux11, 'x', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 1), getGraphVertexID(&mux12, 'x', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 2), getGraphVertexID(&mux13, 'x', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 3), getGraphVertexID(&mux14, 'x', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 4), getGraphVertexID(&mux15, 'x', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 5), getGraphVertexID(&mux16, 'x', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 6), getGraphVertexID(&mux17, 'x', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 7), getGraphVertexID(&mux18, 'x', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 8), getGraphVertexID(&mux6, 'y', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 9), getGraphVertexID(&mux7, 'y', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 10), getGraphVertexID(&mux8, 'y', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 11), getGraphVertexID(&mux9, 'y', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 12), getGraphVertexID(&mux10, 'y', 1));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 13), getGraphVertexID(&mux7, 'y', 5));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 14), getGraphVertexID(&mux7, 'y', 6));
+    g.addEdge(getGraphVertexID(&mux2, 'x', 15), getGraphVertexID(&mux7, 'y', 7));
+    g.addEdge(getGraphVertexID(&mux2, 'y', 0), getGraphVertexID(&mcu_breadboard, 'p', 8));
+    g.addEdge(getGraphVertexID(&mux2, 'y', 1), getGraphVertexID(&mcu_breadboard, 'p', 9));
+    g.addEdge(getGraphVertexID(&mux2, 'y', 2), getGraphVertexID(&mcu_breadboard, 'p', 10));
+    g.addEdge(getGraphVertexID(&mux2, 'y', 3), getGraphVertexID(&mcu_breadboard, 'p', 11));
+    g.addEdge(getGraphVertexID(&mux2, 'y', 4), getGraphVertexID(&mcu_breadboard, 'p', 12));
+    g.addEdge(getGraphVertexID(&mux2, 'y', 5), getGraphVertexID(&mcu_breadboard, 'p', 13));
+    g.addEdge(getGraphVertexID(&mux2, 'y', 6), getGraphVertexID(&mcu_breadboard, 'p', 14));
+    g.addEdge(getGraphVertexID(&mux2, 'y', 7), getGraphVertexID(&mcu_breadboard, 'p', 15));
+
+    // MUX3 pins edge connections
+    g.addEdge(getGraphVertexID(&mux3, 'x', 0), getGraphVertexID(&mux11, 'x', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 1), getGraphVertexID(&mux12, 'x', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 2), getGraphVertexID(&mux13, 'x', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 3), getGraphVertexID(&mux14, 'x', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 4), getGraphVertexID(&mux15, 'x', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 5), getGraphVertexID(&mux16, 'x', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 6), getGraphVertexID(&mux17, 'x', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 7), getGraphVertexID(&mux18, 'x', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 8), getGraphVertexID(&mux6, 'y', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 9), getGraphVertexID(&mux7, 'y', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 10), getGraphVertexID(&mux8, 'y', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 11), getGraphVertexID(&mux9, 'y', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 12), getGraphVertexID(&mux10, 'y', 2));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 13), getGraphVertexID(&mux8, 'y', 5));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 14), getGraphVertexID(&mux8, 'y', 6));
+    g.addEdge(getGraphVertexID(&mux3, 'x', 15), getGraphVertexID(&mux8, 'y', 7));
+    g.addEdge(getGraphVertexID(&mux3, 'y', 0), getGraphVertexID(&mcu_breadboard, 'p', 16));
+    g.addEdge(getGraphVertexID(&mux3, 'y', 1), getGraphVertexID(&mcu_breadboard, 'p', 17));
+    g.addEdge(getGraphVertexID(&mux3, 'y', 2), getGraphVertexID(&mcu_breadboard, 'p', 18));
+    g.addEdge(getGraphVertexID(&mux3, 'y', 3), getGraphVertexID(&mcu_breadboard, 'p', 19));
+    g.addEdge(getGraphVertexID(&mux3, 'y', 4), getGraphVertexID(&mcu_breadboard, 'p', 20));
+    g.addEdge(getGraphVertexID(&mux3, 'y', 5), getGraphVertexID(&mcu_breadboard, 'p', 21));
+    g.addEdge(getGraphVertexID(&mux3, 'y', 6), getGraphVertexID(&mcu_breadboard, 'p', 22));
+    g.addEdge(getGraphVertexID(&mux3, 'y', 7), getGraphVertexID(&mcu_breadboard, 'p', 23));
+
+    g.DFS(getGraphVertexID(&mux18, 'x', 15));
     
     return 0;
 }
