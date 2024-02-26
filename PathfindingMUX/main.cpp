@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <list>
 #include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -145,36 +146,43 @@ public:
         adjLists[dest].push_back(src);
     }
 
-    // Modified DFS that tracks the path
-    bool DFSUtil(int startVertex, int endVertex, unordered_map<int, int> &parent)
-    {
-        visited[startVertex] = true;
-
-        if (startVertex == endVertex)
-            return true; // Path found
-
-        for (int adjVertex : adjLists[startVertex])
-        {
-            if (!visited[adjVertex])
-            {
-                parent[adjVertex] = startVertex; // Track the path
-                if (DFSUtil(adjVertex, endVertex, parent))
-                    return true; // Path found
-            }
-        }
-        return false; // Path not found
-    }
-
-    vector<int> findPath(int startVertex, int endVertex)
+    vector<int> findPathBFS(int startVertex, int endVertex)
     {
         fill(visited, visited + numVertices, false); // Reset visited status
-        unordered_map<int, int> parent;              // To reconstruct the path
+        queue<int> q;
+        unordered_map<int, int> parent; // To store the path
         vector<int> path;
 
-        if (!DFSUtil(startVertex, endVertex, parent))
+        visited[startVertex] = true;
+        q.push(startVertex);
+        bool found = false;
+
+        while (!q.empty() && !found)
+        {
+            int current = q.front();
+            q.pop();
+
+            for (int adjVertex : adjLists[current])
+            {
+                if (!visited[adjVertex])
+                {
+                    parent[adjVertex] = current; // Track the path
+                    visited[adjVertex] = true;
+                    q.push(adjVertex);
+
+                    if (adjVertex == endVertex)
+                    {
+                        found = true;
+                        break; // Stop BFS when endVertex is found
+                    }
+                }
+            }
+        }
+
+        if (!found)
         {
             cout << "No path found between " << startVertex << " and " << endVertex << endl;
-            return path; // Empty path
+            return path; // Empty if no path found
         }
 
         // Reconstruct the path from endVertex to startVertex
@@ -182,7 +190,7 @@ public:
         {
             path.push_back(at);
         }
-        path.push_back(startVertex); // Add the start vertex at the end
+        path.push_back(startVertex); // Add start vertex at the end
 
         reverse(path.begin(), path.end()); // Reverse to get the correct order from start to end
         return path;
@@ -210,6 +218,35 @@ int getGraphVertexID(const Device *device, char type, int pinIndex)
         }
     }
     return -1; // Error case
+}
+
+void printDeviceSpecifications(int vertexID)
+{
+    int numMultiplexers = 18;    // Assuming there are 18 multiplexers before the breadboards
+    int multiplexerPins = 24;    // Assuming each multiplexer has 24 pins
+    int mainBreadboardPins = 64; // Assuming the main breadboard has 64 pins
+
+    if (vertexID < numMultiplexers * multiplexerPins)
+    {
+        // It's a multiplexer
+        int deviceId = vertexID / multiplexerPins;
+        int pinIndex = vertexID % multiplexerPins;
+        char type = pinIndex < 16 ? 'x' : 'y';
+        pinIndex = pinIndex < 16 ? pinIndex : pinIndex - 16; // Adjust pinIndex for 'y' type
+        cout << " -> MUX" << deviceId + 1 << " " << type << pinIndex;
+    }
+    else if (vertexID < numMultiplexers * multiplexerPins + mainBreadboardPins)
+    {
+        // It's the main breadboard
+        int pinIndex = vertexID - (numMultiplexers * multiplexerPins);
+        cout << " -> MainBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
+    }
+    else
+    {
+        // It's the MCU breadboard
+        int pinIndex = vertexID - (numMultiplexers * multiplexerPins + mainBreadboardPins);
+        cout << " -> MCUBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
+    }
 }
 
 int main() {
@@ -1376,17 +1413,23 @@ int main() {
     g.addEdge(getGraphVertexID(&mux9, 'x', 15), getGraphVertexID(&mux8, 'x', 15));
     g.addEdge(getGraphVertexID(&mux10, 'x', 12), getGraphVertexID(&mux9, 'x', 13));
 
-    int startVertex = getGraphVertexID(&mux1, 'x', 0);
-    int endVertex = getGraphVertexID(&mux11, 'x', 0);
+    // int startVertex = getGraphVertexID(&mcu_breadboard, 'p', 0);
+    int startVertex = getGraphVertexID(&main_breadboard, 'p', 0);
+    int endVertex = getGraphVertexID(&main_breadboard, 'p', 1);
 
-    vector<int> path = g.findPath(startVertex, endVertex);
+    vector<int> path = g.findPathBFS(startVertex, endVertex);
 
     if (!path.empty())
     {
-        cout << "Path from " << startVertex << " to " << endVertex << ": ";
+        cout << "Path from";
+        printDeviceSpecifications(startVertex);
+        cout << " to";
+        printDeviceSpecifications(endVertex);
+        cout << " is: " << endl;
         for (int vertex : path)
         {
-            cout << vertex << " ";
+            printDeviceSpecifications(vertex);
+            // cout << vertex << " ";
         }
         cout << endl;
     }
