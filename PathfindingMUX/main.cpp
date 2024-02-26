@@ -2,6 +2,7 @@
 #include <vector>
 #include <unordered_map>
 #include <list>
+#include <stack>
 
 using namespace std;
 
@@ -140,29 +141,51 @@ public:
 
     void addEdge(int src, int dest)
     {
-        adjLists[src].push_back(dest); // Assuming bidirectional for simplicity
+        adjLists[src].push_back(dest);
         adjLists[dest].push_back(src);
     }
 
-    void DFS(int vertex)
+    // Modified DFS that tracks the path
+    bool DFSUtil(int startVertex, int endVertex, unordered_map<int, int> &parent)
     {
-        visited[vertex] = true;
-        cout << vertex << " ";
+        visited[startVertex] = true;
 
-        // cout << "Adj list of "<<vertex << ": ";
+        if (startVertex == endVertex)
+            return true; // Path found
 
-        // for (int adjVertex : adjLists[vertex])
-        // {
-        //     cout << adjVertex << " ";
-        // }
-        
-        for (int adjVertex : adjLists[vertex])
+        for (int adjVertex : adjLists[startVertex])
         {
             if (!visited[adjVertex])
             {
-                DFS(adjVertex);
+                parent[adjVertex] = startVertex; // Track the path
+                if (DFSUtil(adjVertex, endVertex, parent))
+                    return true; // Path found
             }
         }
+        return false; // Path not found
+    }
+
+    vector<int> findPath(int startVertex, int endVertex)
+    {
+        fill(visited, visited + numVertices, false); // Reset visited status
+        unordered_map<int, int> parent;              // To reconstruct the path
+        vector<int> path;
+
+        if (!DFSUtil(startVertex, endVertex, parent))
+        {
+            cout << "No path found between " << startVertex << " and " << endVertex << endl;
+            return path; // Empty path
+        }
+
+        // Reconstruct the path from endVertex to startVertex
+        for (int at = endVertex; at != startVertex; at = parent[at])
+        {
+            path.push_back(at);
+        }
+        path.push_back(startVertex); // Add the start vertex at the end
+
+        reverse(path.begin(), path.end()); // Reverse to get the correct order from start to end
+        return path;
     }
 };
 
@@ -1051,9 +1074,9 @@ int main() {
     }
 
     // MUX1 pins edge connections
+    g.addEdge(getGraphVertexID(&mux1, 'x', 0), getGraphVertexID(&mux11, 'x', 0));
     g.addEdge(getGraphVertexID(&mux1, 'x', 1), getGraphVertexID(&mux12, 'x', 0));
     g.addEdge(getGraphVertexID(&mux1, 'x', 2), getGraphVertexID(&mux13, 'x', 0));
-    g.addEdge(getGraphVertexID(&mux1, 'x', 0), getGraphVertexID(&mux11, 'x', 0));
     g.addEdge(getGraphVertexID(&mux1, 'x', 3), getGraphVertexID(&mux14, 'x', 0));
     g.addEdge(getGraphVertexID(&mux1, 'x', 4), getGraphVertexID(&mux15, 'x', 0));
     g.addEdge(getGraphVertexID(&mux1, 'x', 5), getGraphVertexID(&mux16, 'x', 0));
@@ -1353,7 +1376,20 @@ int main() {
     g.addEdge(getGraphVertexID(&mux9, 'x', 15), getGraphVertexID(&mux8, 'x', 15));
     g.addEdge(getGraphVertexID(&mux10, 'x', 12), getGraphVertexID(&mux9, 'x', 13));
 
-    g.DFS(getGraphVertexID(&mux18, 'x', 15));
+    int startVertex = getGraphVertexID(&mux1, 'x', 0);
+    int endVertex = getGraphVertexID(&mux11, 'x', 0);
+
+    vector<int> path = g.findPath(startVertex, endVertex);
+
+    if (!path.empty())
+    {
+        cout << "Path from " << startVertex << " to " << endVertex << ": ";
+        for (int vertex : path)
+        {
+            cout << vertex << " ";
+        }
+        cout << endl;
+    }
 
     return 0;
 }
