@@ -269,6 +269,49 @@ void printDeviceSpecifications(int vertexID)
     }
 }
 
+struct PathRequest
+{
+    Device *startDevice;
+    char startType;
+    int startPin;
+    Device *endDevice;
+    char endType;
+    int endPin;
+
+    PathRequest(Device *startDevice, char startType, int startPin, Device *endDevice, char endType, int endPin)
+        : startDevice(startDevice), startType(startType), startPin(startPin), endDevice(endDevice), endType(endType), endPin(endPin) {}
+};
+
+void findAndPrintPath(Graph &graph, const PathRequest &request)
+{
+    int startVertex = getGraphVertexID(request.startDevice, request.startType, request.startPin);
+    int endVertex = getGraphVertexID(request.endDevice, request.endType, request.endPin);
+
+    vector<int> path = graph.findPathBFS(startVertex, endVertex);
+
+    if (!path.empty())
+    {
+        cout << "Path from ";
+        printDeviceSpecifications(startVertex);
+        cout << " to ";
+        printDeviceSpecifications(endVertex);
+        cout << " is: \n";
+        for (int vertex : path)
+        {
+            printDeviceSpecifications(vertex);
+        }
+        cout << "\n\n";
+    }
+    else
+    {
+        cout << "No path found from ";
+        printDeviceSpecifications(startVertex);
+        cout << " to ";
+        printDeviceSpecifications(endVertex);
+        cout << ".\n\n";
+    }
+}
+
 int main() {
     Multiplexer mux1(0), mux2(1), mux3(2), mux4(3), mux5(4), mux6(5), mux7(6), mux8(7), mux9(8), mux10(9), mux11(10), mux12(11), mux13(12), mux14(13), mux15(14), mux16(15), mux17(16), mux18(17);
     Breadboard main_breadboard(19), mcu_breadboard(20);
@@ -1433,44 +1476,14 @@ int main() {
     g.addEdge(getGraphVertexID(&mux9, 'x', 15), getGraphVertexID(&mux8, 'x', 15));
     g.addEdge(getGraphVertexID(&mux10, 'x', 12), getGraphVertexID(&mux9, 'x', 13));
 
-    // int startVertex = getGraphVertexID(&mcu_breadboard, 'p', 0);
-    int startVertex = getGraphVertexID(&main_breadboard, 'p', 0);
-    int endVertex = getGraphVertexID(&mcu_breadboard, 'p', 15);
+    vector<PathRequest> requests;
+    requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mcu_breadboard, 'p', 15));
+    requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 9));
 
-    int startVertex2 = getGraphVertexID(&main_breadboard, 'p', 0);
-    int endVertex2 = getGraphVertexID(&mcu_breadboard, 'p', 9);
-
-    vector<int> path = g.findPathBFS(startVertex, endVertex);
-    vector<int> path2 = g.findPathBFS(startVertex2, endVertex2);
-
-    
-    if (!path.empty())
+    // Process each path request
+    for (const auto &request : requests)
     {
-        cout << "Path from";
-        printDeviceSpecifications(startVertex);
-        cout << " to";
-        printDeviceSpecifications(endVertex);
-        cout << " is: " << endl;
-        for (int vertex : path)
-        {
-            printDeviceSpecifications(vertex);
-            // cout << vertex << " ";
-        }
-        cout << endl;
-    }
-    if (!path2.empty())
-    {
-        cout << "Path from";
-        printDeviceSpecifications(startVertex);
-        cout << " to";
-        printDeviceSpecifications(endVertex);
-        cout << " is: " << endl;
-        for (int vertex : path2)
-        {
-            printDeviceSpecifications(vertex);
-            // cout << vertex << " ";
-        }
-        cout << endl;
+        findAndPrintPath(g, request);
     }
 
     // Put these in a list so can iterate through them
