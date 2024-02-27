@@ -2,8 +2,9 @@
 #include <vector>
 #include <unordered_map>
 #include <list>
-#include <stack>
 #include <queue>
+#include <unordered_set>
+#include <algorithm>
 
 using namespace std;
 
@@ -130,6 +131,7 @@ class Graph
     int numVertices;
     list<int> *adjLists;
     bool *visited;
+    unordered_set<int> globalUsedPins; // Global tracking of used pins
 
 public:
     Graph(int vertices) : numVertices(vertices), adjLists(new list<int>[vertices]), visited(new bool[vertices]()) {}
@@ -144,6 +146,16 @@ public:
     {
         adjLists[src].push_back(dest);
         adjLists[dest].push_back(src);
+    }
+
+    bool isSpecialPin(int pin)
+    {
+        // Assuming MainBreadboard and MCUBreadboard have specific ID ranges based on your setup
+        int mainBreadboardStart = 18 * 24, mainBreadboardEnd = 18 * 24 + 63;     // Adjust these based on actual ranges
+        int mcuBreadboardStart = 18 * 24 + 64, mcuBreadboardEnd = 18 * 24 + 127; // Adjust these based on actual ranges
+
+        return (pin >= mainBreadboardStart && pin <= mainBreadboardEnd) ||
+               (pin >= mcuBreadboardStart && pin <= mcuBreadboardEnd);
     }
 
     vector<int> findPathBFS(int startVertex, int endVertex)
@@ -164,7 +176,7 @@ public:
 
             for (int adjVertex : adjLists[current])
             {
-                if (!visited[adjVertex])
+                if (!visited[adjVertex] && (globalUsedPins.find(adjVertex) == globalUsedPins.end() || isSpecialPin(adjVertex)))
                 {
                     parent[adjVertex] = current; // Track the path
                     visited[adjVertex] = true;
@@ -185,12 +197,20 @@ public:
             return path; // Empty if no path found
         }
 
-        // Reconstruct the path from endVertex to startVertex
+        // Reconstruct and reserve the path
         for (int at = endVertex; at != startVertex; at = parent[at])
         {
             path.push_back(at);
+            if (!isSpecialPin(at))
+            {
+                globalUsedPins.insert(at); // Mark as used globally, excluding special pins
+            }
         }
         path.push_back(startVertex); // Add start vertex at the end
+        if (!isSpecialPin(startVertex))
+        {
+            globalUsedPins.insert(startVertex); // Mark as used globally, excluding special pins
+        }
 
         reverse(path.begin(), path.end()); // Reverse to get the correct order from start to end
         return path;
@@ -1415,10 +1435,15 @@ int main() {
 
     // int startVertex = getGraphVertexID(&mcu_breadboard, 'p', 0);
     int startVertex = getGraphVertexID(&main_breadboard, 'p', 0);
-    int endVertex = getGraphVertexID(&main_breadboard, 'p', 1);
+    int endVertex = getGraphVertexID(&mcu_breadboard, 'p', 15);
+
+    int startVertex2 = getGraphVertexID(&main_breadboard, 'p', 0);
+    int endVertex2 = getGraphVertexID(&mcu_breadboard, 'p', 9);
 
     vector<int> path = g.findPathBFS(startVertex, endVertex);
+    vector<int> path2 = g.findPathBFS(startVertex2, endVertex2);
 
+    
     if (!path.empty())
     {
         cout << "Path from";
@@ -1433,6 +1458,23 @@ int main() {
         }
         cout << endl;
     }
+    if (!path2.empty())
+    {
+        cout << "Path from";
+        printDeviceSpecifications(startVertex);
+        cout << " to";
+        printDeviceSpecifications(endVertex);
+        cout << " is: " << endl;
+        for (int vertex : path2)
+        {
+            printDeviceSpecifications(vertex);
+            // cout << vertex << " ";
+        }
+        cout << endl;
+    }
+
+    // Put these in a list so can iterate through them
+    // Look for the already used pins in paths because it is possible that the same pin is used in both paths
 
     return 0;
 }
