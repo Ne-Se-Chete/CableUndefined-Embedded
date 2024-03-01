@@ -282,7 +282,7 @@ struct PathRequest
         : startDevice(startDevice), startType(startType), startPin(startPin), endDevice(endDevice), endType(endType), endPin(endPin) {}
 };
 
-void findAndPrintPath(Graph &graph, const PathRequest &request)
+int findAndPrintPath(Graph &graph, const PathRequest &request)
 {
     int startVertex = getGraphVertexID(request.startDevice, request.startType, request.startPin);
     int endVertex = getGraphVertexID(request.endDevice, request.endType, request.endPin);
@@ -301,6 +301,7 @@ void findAndPrintPath(Graph &graph, const PathRequest &request)
             printDeviceSpecifications(vertex);
         }
         cout << "\n\n";
+        return 1;
     }
     else
     {
@@ -309,6 +310,7 @@ void findAndPrintPath(Graph &graph, const PathRequest &request)
         cout << " to ";
         printDeviceSpecifications(endVertex);
         cout << ".\n\n";
+        return 0;
     }
 }
 
@@ -1477,17 +1479,50 @@ int main() {
     g.addEdge(getGraphVertexID(&mux10, 'x', 12), getGraphVertexID(&mux9, 'x', 13));
 
     vector<PathRequest> requests;
-    requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mcu_breadboard, 'p', 15));
-    requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 9));
+    // Iterate through all the pins on the main breadboard and create a path request for each pin
+    for (size_t i = 0; i < 64; i++)
+    {
+        for (size_t j = 0; j < 40; j++)
+        {
+            requests.push_back(PathRequest(&main_breadboard, 'p', i, &mcu_breadboard, 'p', j));
+        }  
+    }
 
+    
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mcu_breadboard, 'p', 15));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 9));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 10));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 11));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 12));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 13));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 14));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 15));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 0));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 1));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 2));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 3));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 4));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 5));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux7, 'y', 6));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux7, 'y', 7));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 0));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 1));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 2));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 3));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 4));
+    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 5));
+
+
+    int find_paths_counter = 0;
     // Process each path request
     for (const auto &request : requests)
     {
-        findAndPrintPath(g, request);
+        find_paths_counter += findAndPrintPath(g, request);
     }
 
     // Put these in a list so can iterate through them
     // Look for the already used pins in paths because it is possible that the same pin is used in both paths
+    cout << "Number of paths found: " << find_paths_counter << "  Out of: " << 64*40 << endl;
 
     return 0;
 }
