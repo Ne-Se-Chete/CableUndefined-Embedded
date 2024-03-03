@@ -5,6 +5,9 @@
 #include <queue>
 #include <unordered_set>
 #include <algorithm>
+#include <fstream>
+#include <string>
+
 
 using namespace std;
 
@@ -217,6 +220,89 @@ public:
     }
 };
 
+// class Graph
+// {
+//     int numVertices;
+//     list<int> *adjLists;
+//     bool *visited;
+//     unordered_set<int> globalUsedPins; // Global tracking of used pins
+
+// public:
+//     Graph(int vertices) : numVertices(vertices), adjLists(new list<int>[vertices]), visited(new bool[vertices]()) {}
+
+//     ~Graph()
+//     {
+//         delete[] adjLists;
+//         delete[] visited;
+//     }
+
+//     void addEdge(int src, int dest)
+//     {
+//         adjLists[src].push_back(dest);
+//         adjLists[dest].push_back(src);
+//     }
+
+//     bool isSpecialPin(int pin)
+//     {
+//         // Assuming MainBreadboard and MCUBreadboard have specific ID ranges
+//         int mainBreadboardStart = 18 * 24, mainBreadboardEnd = 18 * 24 + 63;     // Adjust based on actual ranges
+//         int mcuBreadboardStart = 18 * 24 + 64, mcuBreadboardEnd = 18 * 24 + 127; // Adjust based on actual ranges
+
+//         return (pin >= mainBreadboardStart && pin <= mainBreadboardEnd) ||
+//                (pin >= mcuBreadboardStart && pin <= mcuBreadboardEnd);
+//     }
+
+//     // DFS function to find path
+//     bool dfs(int current, int endVertex, unordered_map<int, int> &parent)
+//     {
+//         visited[current] = true;
+//         if (current == endVertex)
+//             return true; // Path found
+
+//         for (int adjVertex : adjLists[current])
+//         {
+//             if (!visited[adjVertex] && (globalUsedPins.find(adjVertex) == globalUsedPins.end() || isSpecialPin(adjVertex)))
+//             {
+//                 parent[adjVertex] = current; // Track the path
+//                 if (dfs(adjVertex, endVertex, parent))
+//                     return true; // Path found
+//             }
+//         }
+//         return false; // Path not found
+//     }
+
+//     vector<int> findPathDFS(int startVertex, int endVertex)
+//     {
+//         fill(visited, visited + numVertices, false); // Reset visited status
+//         unordered_map<int, int> parent;              // To store the path
+//         vector<int> path;
+
+//         if (!dfs(startVertex, endVertex, parent))
+//         {
+//             cout << "No path found between " << startVertex << " and " << endVertex << endl;
+//             return path; // Empty if no path found
+//         }
+
+//         // Reconstruct the path
+//         for (int at = endVertex; at != startVertex; at = parent[at])
+//         {
+//             path.push_back(at);
+//             if (!isSpecialPin(at))
+//             {
+//                 globalUsedPins.insert(at); // Mark as used globally, excluding special pins
+//             }
+//         }
+//         path.push_back(startVertex); // Add start vertex at the end
+//         if (!isSpecialPin(startVertex))
+//         {
+//             globalUsedPins.insert(startVertex); // Mark as used globally, excluding special pins
+//         }
+
+//         reverse(path.begin(), path.end()); // Reverse to get the correct order from start to end
+//         return path;
+//     }
+// };
+
 int getGraphVertexID(const Device *device, char type, int pinIndex)
 {
     int deviceId = device->num;
@@ -240,7 +326,7 @@ int getGraphVertexID(const Device *device, char type, int pinIndex)
     return -1; // Error case
 }
 
-void printDeviceSpecifications(int vertexID)
+string printDeviceSpecifications(int vertexID)
 {
     int numMultiplexers = 18;    // Assuming there are 18 multiplexers before the breadboards
     int multiplexerPins = 24;    // Assuming each multiplexer has 24 pins
@@ -254,18 +340,21 @@ void printDeviceSpecifications(int vertexID)
         char type = pinIndex < 16 ? 'x' : 'y';
         pinIndex = pinIndex < 16 ? pinIndex : pinIndex - 16; // Adjust pinIndex for 'y' type
         cout << " -> MUX" << deviceId + 1 << " " << type << pinIndex;
+        return " -> MUX" + to_string(deviceId + 1) + " " + type + to_string(pinIndex);
     }
     else if (vertexID < numMultiplexers * multiplexerPins + mainBreadboardPins)
     {
         // It's the main breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins);
         cout << " -> MainBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
+        return " -> MainBreadboard " + to_string(pinIndex + 1);
     }
     else
     {
         // It's the MCU breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins + mainBreadboardPins);
         cout << " -> MCUBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
+        return " -> MCUBreadboard " + to_string(pinIndex + 1);
     }
 }
 
@@ -291,24 +380,64 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
 
     if (!path.empty())
     {
+        // Print the path in a txt file and in the console
+        ofstream found_paths_file("found_paths.txt", ios::app);
+        if (!found_paths_file)
+        {
+            cerr << "Error: unable to open output file" << endl;
+            return -1;
+        }
+        found_paths_file << "Path from ";
+        string from = printDeviceSpecifications(startVertex);
+        found_paths_file << from;
+
+        found_paths_file << " to ";
+        string to = printDeviceSpecifications(endVertex);
+        found_paths_file << to;
+
+        found_paths_file << " is: \n";
+        for (int vertex : path)
+        {
+            string device = printDeviceSpecifications(vertex);
+            found_paths_file << device;
+        }
+        found_paths_file << "\n\n";
+        found_paths_file.close();
+
         cout << "Path from ";
-        printDeviceSpecifications(startVertex);
+        from  = printDeviceSpecifications(startVertex);
         cout << " to ";
-        printDeviceSpecifications(endVertex);
+        to = printDeviceSpecifications(endVertex);
         cout << " is: \n";
         for (int vertex : path)
         {
-            printDeviceSpecifications(vertex);
+            string device = printDeviceSpecifications(vertex);
         }
         cout << "\n\n";
         return 1;
     }
     else
     {
+        // Print the not found path in a txt file and in the console
+        ofstream not_found_paths_file("not_found_paths.txt", ios::app);
+        if (!not_found_paths_file)
+        {
+            cerr << "Error: unable to open output file" << endl;
+            return -1;
+        }
+        not_found_paths_file << "No path found from ";
+        string from = printDeviceSpecifications(startVertex);
+        not_found_paths_file << from;
+        not_found_paths_file << " to ";
+        string to = printDeviceSpecifications(endVertex);
+        not_found_paths_file << to;
+        not_found_paths_file << ".\n\n";
+        
+        
         cout << "No path found from ";
-        printDeviceSpecifications(startVertex);
+        from = printDeviceSpecifications(startVertex);
         cout << " to ";
-        printDeviceSpecifications(endVertex);
+        to = printDeviceSpecifications(endVertex);
         cout << ".\n\n";
         return 0;
     }
@@ -1487,31 +1616,6 @@ int main() {
             requests.push_back(PathRequest(&main_breadboard, 'p', i, &mcu_breadboard, 'p', j));
         }  
     }
-
-    
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mcu_breadboard, 'p', 15));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 9));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 10));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 11));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 12));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 13));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 14));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'x', 15));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 0));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 1));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 2));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 3));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 4));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 0, &mux7, 'y', 5));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux7, 'y', 6));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux7, 'y', 7));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 0));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 1));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 2));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 3));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 4));
-    // requests.push_back(PathRequest(&main_breadboard, 'p', 1, &mux8, 'x', 5));
-
 
     int find_paths_counter = 0;
     // Process each path request
