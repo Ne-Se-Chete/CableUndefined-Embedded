@@ -8,11 +8,11 @@
 #include <fstream>
 #include <string>
 
+
 using namespace std;
 
 // BREADBOARD OR MUX
-class Device
-{
+class Device {
 public:
     int num;
 
@@ -21,82 +21,65 @@ public:
     virtual void printConnections() const = 0;
 };
 
-class ConnectionNode
-{
+class ConnectionNode{
 public:
-    Device *device;
+    Device* device;
     int index;
     char connectionType;
 
-    ConnectionNode(Device *d, int i, char type);
+    ConnectionNode(Device* d, int i, char type);
 
     void print() const;
 };
 
-class Multiplexer : public Device
-{
+class Multiplexer : public Device {
 public:
-    ConnectionNode *x[16];
-    ConnectionNode *y[8];
+    ConnectionNode* x[16];
+    ConnectionNode* y[8];
 
     Multiplexer(int n);
 
     void printConnections() const override;
 };
 
-class Breadboard : public Device
-{
+class Breadboard : public Device {
 public:
-    ConnectionNode *pin[24];
+    ConnectionNode* pin[64];
 
     Breadboard(int n);
 
     void printConnections() const override;
 };
 
-ConnectionNode::ConnectionNode(Device *d, int i, char type) : device(d), index(i), connectionType(type) {}
+ConnectionNode::ConnectionNode(Device* d, int i, char type) : device(d), index(i), connectionType(type) {}
 
-void ConnectionNode::print() const
-{
-    if (dynamic_cast<Multiplexer *>(device))
-    {
+void ConnectionNode::print() const {
+    if (dynamic_cast<Multiplexer*>(device)) {
         cout << "MUX_" << device->num << "." << connectionType << "[" << index << "]";
-    }
-    else if (dynamic_cast<Breadboard *>(device))
-    {
+    } else if (dynamic_cast<Breadboard*>(device)) {
         cout << "Breadboard_" << device->num << ".pin[" << index << "]";
     }
 }
 
-Multiplexer::Multiplexer(int n) : Device(n)
-{
-    for (auto &xi : x)
-        xi = nullptr;
-    for (auto &yi : y)
-        yi = nullptr;
+Multiplexer::Multiplexer(int n) : Device(n) {
+    for (auto& xi : x) xi = nullptr;
+    for (auto& yi : y) yi = nullptr;
 }
 
-Breadboard::Breadboard(int n) : Device(n)
-{
-    for (auto &pin : pin)
-        pin = nullptr;
+Breadboard::Breadboard(int n) : Device(n) {
+    for (auto& pin : pin) pin = nullptr;
 }
 
-void Multiplexer::printConnections() const
-{
-    for (int i = 0; i < 16; ++i)
-    {
-        if (x[i])
-        {
+void Multiplexer::printConnections() const {
+    for (int i = 0; i < 16; ++i) {
+        if (x[i]) {
             cout << "MUX_" << num << ".x[" << i << "] -> ";
             x[i]->print();
             cout << endl;
         }
     }
-    for (int i = 0; i < 8; ++i)
-    {
-        if (y[i])
-        {
+    for (int i = 0; i < 8; ++i) {
+        if (y[i]) {
             cout << "MUX_" << num << ".y[" << i << "] -> ";
             y[i]->print();
             cout << endl;
@@ -104,54 +87,40 @@ void Multiplexer::printConnections() const
     }
 }
 
-void Breadboard::printConnections() const
-{
-    for (int i = 0; i < 64; ++i)
-    {
-        if (pin[i])
-        {
+void Breadboard::printConnections() const {
+    for (int i = 0; i < 64; ++i) {
+        if (pin[i]) {
             cout << "Breadboard_" << num << ".pin[" << i << "] -> ";
-            pin[i]->print(); // This will print either MUX or Breadboard connection information
+            pin[i]->print();  // This will print either MUX or Breadboard connection information
             cout << endl;
         }
     }
 }
 
 // check if there is a bidirectional connection between two devices
-bool checkBidirectionalConnection(Device &device1, char type1, int index1, Device &device2, char type2, int index2)
-{
-    if (auto mux1 = dynamic_cast<Multiplexer *>(&device1))
-    {
-        if (auto mux2 = dynamic_cast<Multiplexer *>(&device2))
-        {
-            ConnectionNode *node1 = (type1 == 'x') ? mux1->x[index1] : mux1->y[index1];
-            ConnectionNode *node2 = (type2 == 'x') ? mux2->x[index2] : mux2->y[index2];
+bool checkBidirectionalConnection(Device& device1, char type1, int index1, Device& device2, char type2, int index2) {
+    if (auto mux1 = dynamic_cast<Multiplexer*>(&device1)) {
+        if (auto mux2 = dynamic_cast<Multiplexer*>(&device2)) {
+            ConnectionNode* node1 = (type1 == 'x') ? mux1->x[index1] : mux1->y[index1];
+            ConnectionNode* node2 = (type2 == 'x') ? mux2->x[index2] : mux2->y[index2];
 
-            if (node1 && node2 && node1->device == &device2 && node2->device == &device1 && node1->index == index2 && node2->index == index1)
-            {
+            if (node1 && node2 && node1->device == &device2 && node2->device == &device1 && node1->index == index2 && node2->index == index1) {
+                return true;
+            }
+        } else if (auto breadboard2 = dynamic_cast<Breadboard*>(&device2)) {
+            ConnectionNode* node1 = (type1 == 'x') ? mux1->x[index1] : mux1->y[index1];
+            ConnectionNode* node2 = breadboard2->pin[index2];
+
+            if (node1 && node2 && node1->device == &device2 && node2->device == &device1 && node1->index == index2 && node2->index == index1) {
                 return true;
             }
         }
-        else if (auto breadboard2 = dynamic_cast<Breadboard *>(&device2))
-        {
-            ConnectionNode *node1 = (type1 == 'x') ? mux1->x[index1] : mux1->y[index1];
-            ConnectionNode *node2 = breadboard2->pin[index2];
+    } else if (auto breadboard1 = dynamic_cast<Breadboard*>(&device1)) {
+        if (auto mux2 = dynamic_cast<Multiplexer*>(&device2)) {
+            ConnectionNode* node1 = breadboard1->pin[index1];
+            ConnectionNode* node2 = (type2 == 'x') ? mux2->x[index2] : mux2->y[index2];
 
-            if (node1 && node2 && node1->device == &device2 && node2->device == &device1 && node1->index == index2 && node2->index == index1)
-            {
-                return true;
-            }
-        }
-    }
-    else if (auto breadboard1 = dynamic_cast<Breadboard *>(&device1))
-    {
-        if (auto mux2 = dynamic_cast<Multiplexer *>(&device2))
-        {
-            ConnectionNode *node1 = breadboard1->pin[index1];
-            ConnectionNode *node2 = (type2 == 'x') ? mux2->x[index2] : mux2->y[index2];
-
-            if (node1 && node2 && node1->device == &device2 && node2->device == &device1 && node1->index == index2 && node2->index == index1)
-            {
+            if (node1 && node2 && node1->device == &device2 && node2->device == &device1 && node1->index == index2 && node2->index == index1) {
                 return true;
             }
         }
@@ -185,8 +154,8 @@ public:
     bool isSpecialPin(int pin)
     {
         // Assuming MainBreadboard and MCUBreadboard have specific ID ranges based on your setup
-        int mainBreadboardStart = 2 * 24, mainBreadboardEnd = 2 * 24 + 23;     // Adjust these based on actual ranges
-        int mcuBreadboardStart = 2 * 24 + 24, mcuBreadboardEnd = 2 * 24 + 31; // Adjust these based on actual ranges
+        int mainBreadboardStart = 18 * 24, mainBreadboardEnd = 18 * 24 + 63;     // Adjust these based on actual ranges
+        int mcuBreadboardStart = 18 * 24 + 64, mcuBreadboardEnd = 18 * 24 + 127; // Adjust these based on actual ranges
 
         return (pin >= mainBreadboardStart && pin <= mainBreadboardEnd) ||
                (pin >= mcuBreadboardStart && pin <= mcuBreadboardEnd);
@@ -262,14 +231,14 @@ int getGraphVertexID(const Device *device, char type, int pinIndex)
     else if (auto *bb = dynamic_cast<const Breadboard *>(device))
     {
         // Assuming Breadboards come after all Multiplexers in numbering
-        if (deviceId == 3) // Main breadboard
+        if (deviceId == 19) // Main breadboard
         {
-            return 2 * 24 + pinIndex;
+            return 18 * 24 + pinIndex;
         }
 
-        if (deviceId == 4) // MCU breadboard
+        if (deviceId == 20) // MCU breadboard
         {
-            return 2 * 24 + 24 + pinIndex;
+            return 18 * 24 + 64 + pinIndex;
         }
     }
     return -1; // Error case
@@ -277,9 +246,9 @@ int getGraphVertexID(const Device *device, char type, int pinIndex)
 
 string printDeviceSpecifications(int vertexID)
 {
-    int numMultiplexers = 2;    // Assuming there are 18 multiplexers before the breadboards
+    int numMultiplexers = 18;    // Assuming there are 18 multiplexers before the breadboards
     int multiplexerPins = 24;    // Assuming each multiplexer has 24 pins
-    int mainBreadboardPins = 24; // Assuming the main breadboard has 64 pins
+    int mainBreadboardPins = 64; // Assuming the main breadboard has 64 pins
 
     if (vertexID < numMultiplexers * multiplexerPins)
     {
@@ -353,8 +322,8 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
         found_paths_file << "\n\n";
         found_paths_file.close();
 
-        cout << "Path from ";
-        from = printDeviceSpecifications(startVertex);
+        cout << "\nPath from ";
+        from  = printDeviceSpecifications(startVertex);
         cout << " to ";
         to = printDeviceSpecifications(endVertex);
         cout << " is: \n";
@@ -381,8 +350,9 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
         string to = printDeviceSpecifications(endVertex);
         not_found_paths_file << to;
         not_found_paths_file << ".\n\n";
-
-        cout << "No path found from ";
+        
+        
+        cout << "\nNo path found from ";
         from = printDeviceSpecifications(startVertex);
         cout << " to ";
         to = printDeviceSpecifications(endVertex);
@@ -391,23 +361,24 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
     }
 }
 
-int main()
-{
-    Multiplexer mux1(0), mux2(1);
-    Breadboard main_breadboard(3), mcu_breadboard(4);
+int main() {
+    Multiplexer mux1(0), mux2(1), mux3(2), mux4(3), mux5(4), mux6(5), mux7(6), mux8(7), mux9(8), mux10(9), mux11(10), mux12(11), mux13(12), mux14(13), mux15(14), mux16(15), mux17(16), mux18(17);
+    Breadboard main_breadboard(19), mcu_breadboard(20);
 
-    Multiplexer all_muxes[2] = {mux1, mux2};
+    Multiplexer all_muxes[18] = {mux1, mux2, mux3, mux4, mux5, mux6, mux7, mux8, mux9, mux10, mux11, mux12, mux13, mux14, mux15, mux16, mux17, mux18};
+    
 
-    int numVertices = 2 * 24 + 1 * 24 + 1 * 8;
-    Graph g(numVertices);
+    cout << "Checking bidirectional connection between mcu_breadboard[0] and mux1.y[0] ";
+    cout << (checkBidirectionalConnection(mcu_breadboard, 'p', 0, mux1, 'y', 0) ? "true" : "false") << endl;
+
+    // Example: Connecting MUX1's y[0] to Breadboard1's pin[10]
+    int numVertices = 18 * 24 + 1 * 64 + 1 * 40;
+    Graph g(numVertices);                        
 
     // Add edges to the graph every X to Y connection in the muxes
-    for (int i = 0; i < 18; i++)
-    {
-        for (int j = 0; j < 16; j++)
-        {
-            for (int k = 0; k < 8; k++)
-            {
+    for (int i = 0; i < 18; i++) {
+        for (int j = 0; j < 16; j++){
+            for(int k = 0; k < 8; k++){
                 int srcVertex = getGraphVertexID(&all_muxes[i], 'x', j);
                 int destVertex = getGraphVertexID(&all_muxes[i], 'y', k);
                 g.addEdge(srcVertex, destVertex);
@@ -720,12 +691,12 @@ int main()
 
     vector<PathRequest> requests;
     // Iterate through all the pins on the main breadboard and create a path request for each pin
-    for (size_t i = 0; i < 24; i++)
+    for (size_t i = 0; i < 64; i++)
     {
-        for (size_t j = 0; j < 8; j++)
+        for (size_t j = 0; j < 40; j++)
         {
             requests.push_back(PathRequest(&main_breadboard, 'p', i, &mcu_breadboard, 'p', j));
-        }
+        }  
     }
 
     int find_paths_counter = 0;
@@ -735,9 +706,9 @@ int main()
         find_paths_counter += findAndPrintPath(g, request);
     }
 
-    // Put these in a list so can iterate through them
-    // Look for the already used pins in paths because it is possible that the same pin is used in both paths
-    cout << "Number of paths found: " << find_paths_counter << "  Out of: " << 64 * 40 << endl;
+    cout << "Number of paths found: " << find_paths_counter << "  Out of: " << 64*40 << endl;
 
     return 0;
 }
+
+
