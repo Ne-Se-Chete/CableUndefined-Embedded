@@ -98,7 +98,7 @@ void setup(){
     CONTROL_PORT |= DAT;
     CONTROL_PORT &= ~STB;
 
-    setConnection(0b1111, 1, 1, true);
+    setConnection(0b0000, 0, 8, true);
 
 }
 
