@@ -1,5 +1,5 @@
 #include "Arduino.h"
-// #include "CH446Q.h"
+#include "pathfinding.cpp"
 
 #define STB (1 << PORTB3)
 #define STB_DDR (1 << DDB3)
@@ -100,15 +100,17 @@ void setup(){
     CONTROL_PORT |= DAT;
     CONTROL_PORT &= ~STB;
 
+    // setConnection(0b1000, 8, 3, true); // 13 breadboard -> 4 mcu
+    // setConnection(0b1000, 9, 7, true); // 14 breadbpard -> 8 mcu
+    // Serial.println("HERE1");
+
+    // delay(10000);
+
+    // setConnection(0b1000, 8, 3, false); // 13 breadboard -> 4 mcu
+    // setConnection(0b1000, 9, 7, false); // 14 breadbpard -> 8 mcu
+
 }
 
 void loop(){
-    setConnection(0b1000, 8, 3, true); // 13 breadboard -> 4 mcu
-    setConnection(0b1000, 9, 7, true); // 14 breadbpard -> 8 mcu
-    Serial.println("HERE1");
-
-    delay(10000);
-
-    setConnection(0b1000, 8, 3, false); // 13 breadboard -> 4 mcu
-    setConnection(0b1000, 9, 7, false); // 14 breadbpard -> 8 mcu
+    
 }
