@@ -60,11 +60,11 @@ void ConnectionNode::print() const
 {
     if (dynamic_cast<Multiplexer *>(device))
     {
-        cout << "MUX_" << device->num << "." << connectionType << "[" << index << "]";
+        // cout << "MUX_" << device->num << "." << connectionType << "[" << index << "]";
     }
     else if (dynamic_cast<Breadboard *>(device))
     {
-        cout << "Breadboard_" << device->num << ".pin[" << index << "]";
+        // cout << "Breadboard_" << device->num << ".pin[" << index << "]";
     }
 }
 
@@ -88,18 +88,18 @@ void Multiplexer::printConnections() const
     {
         if (x[i])
         {
-            cout << "MUX_" << num << ".x[" << i << "] -> ";
+            // cout << "MUX_" << num << ".x[" << i << "] -> ";
             x[i]->print();
-            cout << endl;
+            // cout << endl;
         }
     }
     for (int i = 0; i < 8; ++i)
     {
         if (y[i])
         {
-            cout << "MUX_" << num << ".y[" << i << "] -> ";
+            // cout << "MUX_" << num << ".y[" << i << "] -> ";
             y[i]->print();
-            cout << endl;
+            // cout << endl;
         }
     }
 }
@@ -110,9 +110,9 @@ void Breadboard::printConnections() const
     {
         if (pin[i])
         {
-            cout << "Breadboard_" << num << ".pin[" << i << "] -> ";
+            // cout << "Breadboard_" << num << ".pin[" << i << "] -> ";
             pin[i]->print(); // This will print either MUX or Breadboard connection information
-            cout << endl;
+            // cout << endl;
         }
     }
 }
@@ -288,22 +288,22 @@ string printDeviceSpecifications(int vertexID)
         int pinIndex = vertexID % multiplexerPins;
         char type = pinIndex < 16 ? 'x' : 'y';
         pinIndex = pinIndex < 16 ? pinIndex : pinIndex - 16; // Adjust pinIndex for 'y' type
-        cout << " -> MUX" << deviceId + 1 << " " << type << pinIndex;
+        //cout << " -> MUX" << deviceId + 1 << " " << type << pinIndex;
         return " -> MUX" + to_string(deviceId + 1) + " " + type + to_string(pinIndex);
     }
     else if (vertexID < numMultiplexers * multiplexerPins + mainBreadboardPins)
     {
         // It's the main breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins);
-        cout << " -> MainBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
-        return " -> MainBreadboard " + to_string(pinIndex + 1);
+        // cout << " -> MainBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
+        return " -> MainBreadboard " + to_string(pinIndex);
     }
     else
     {
         // It's the MCU breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins + mainBreadboardPins);
-        cout << " -> MCUBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
-        return " -> MCUBreadboard " + to_string(pinIndex + 1);
+        // cout << " -> MCUBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
+        return " -> MCUBreadboard " + to_string(pinIndex);
     }
 }
 
@@ -336,15 +336,11 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
             cerr << "Error: unable to open output file" << endl;
             return -1;
         }
-        found_paths_file << "Path from ";
+
         string from = printDeviceSpecifications(startVertex);
-        found_paths_file << from;
-
-        found_paths_file << " to ";
         string to = printDeviceSpecifications(endVertex);
-        found_paths_file << to;
 
-        found_paths_file << " is: \n";
+        found_paths_file << "Path from " << from << " to " << to << " is: \n"; 
         for (int vertex : path)
         {
             string device = printDeviceSpecifications(vertex);
@@ -353,14 +349,11 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
         found_paths_file << "\n\n";
         found_paths_file.close();
 
-        cout << "\nPath from ";
-        from = printDeviceSpecifications(startVertex);
-        cout << " to ";
-        to = printDeviceSpecifications(endVertex);
-        cout << " is: \n";
+        cout << "\nPath from " << from << " to " << to << " is: \n"; // this is ok, double print is before this line ^^^
         for (int vertex : path)
         {
             string device = printDeviceSpecifications(vertex);
+            cout << device;
         }
         cout << "\n\n";
         return 1;
@@ -374,24 +367,18 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
             cerr << "Error: unable to open output file" << endl;
             return -1;
         }
-        not_found_paths_file << "No path found from ";
-        string from = printDeviceSpecifications(startVertex);
-        not_found_paths_file << from;
-        not_found_paths_file << " to ";
-        string to = printDeviceSpecifications(endVertex);
-        not_found_paths_file << to;
-        not_found_paths_file << ".\n\n";
 
-        cout << "\nNo path found from ";
-        from = printDeviceSpecifications(startVertex);
-        cout << " to ";
-        to = printDeviceSpecifications(endVertex);
-        cout << ".\n\n";
+        string from = printDeviceSpecifications(startVertex);
+        string to = printDeviceSpecifications(endVertex);
+
+        not_found_paths_file << "No path found from " << from << " to " << to << ".\n\n";
+        cout << "\nNo path found from " << from << " to " << to << ".\n\n";
         return 0;
     }
 }
 
-int main()
+
+int main() // initPathfinding
 {
     Multiplexer mux1(0), mux2(1);
     Breadboard main_breadboard(3), mcu_breadboard(4);
@@ -462,23 +449,17 @@ int main()
 
 
     vector<PathRequest> requests;
-    // Iterate through all the pins on the main breadboard and create a path request for each pin
-    for (size_t i = 0; i < 24; i++)
-    {
-        for (size_t j = 0; j < 8; j++)
-        {
-            requests.push_back(PathRequest(&main_breadboard, 'p', i, &mcu_breadboard, 'p', j));
-        }
-    }
+    
+    int mcu_pin, main_pin;
+    std::cout << "Enter MCU pin: ";
+    std::cin >> mcu_pin;
+    std::cout << "Enter MAIN breadboard pin: ";
+    std::cin >> main_pin;
 
-    int find_paths_counter = 0;
-    // Process each path request
-    for (const auto &request : requests)
-    {
-        find_paths_counter += findAndPrintPath(g, request);
-    }
+    PathRequest request(&main_breadboard, 'p', main_pin, &mcu_breadboard, 'p', mcu_pin);
+    int path_found = findAndPrintPath(g, request);
 
-    cout << "Number of paths found: " << find_paths_counter << "  Out of: " << 24 * 8 << endl;
+    std::cout << "Number of paths found: " << path_found << std::endl;
 
     return 0;
 }
