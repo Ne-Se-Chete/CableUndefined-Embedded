@@ -420,14 +420,14 @@ int main() // initPathfinding
     g.addEdge(getGraphVertexID(&mux1, 'x', 14), getGraphVertexID(&main_breadboard, 'p', 19));
     g.addEdge(getGraphVertexID(&mux1, 'x', 15), getGraphVertexID(&main_breadboard, 'p', 20));
 
-    g.addEdge(getGraphVertexID(&mux1, 'y', 0), getGraphVertexID(&mcu_breadboard, 'p', 0));
-    g.addEdge(getGraphVertexID(&mux1, 'y', 1), getGraphVertexID(&mcu_breadboard, 'p', 1));
-    g.addEdge(getGraphVertexID(&mux1, 'y', 2), getGraphVertexID(&mcu_breadboard, 'p', 2));
-    g.addEdge(getGraphVertexID(&mux1, 'y', 3), getGraphVertexID(&mcu_breadboard, 'p', 3));
-    g.addEdge(getGraphVertexID(&mux1, 'y', 4), getGraphVertexID(&mcu_breadboard, 'p', 4));
-    g.addEdge(getGraphVertexID(&mux1, 'y', 5), getGraphVertexID(&mcu_breadboard, 'p', 5));
-    g.addEdge(getGraphVertexID(&mux1, 'y', 6), getGraphVertexID(&mcu_breadboard, 'p', 6));
-    g.addEdge(getGraphVertexID(&mux1, 'y', 7), getGraphVertexID(&mcu_breadboard, 'p', 7));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 0), getGraphVertexID(&mcu_breadboard, 'p', 1));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 1), getGraphVertexID(&mcu_breadboard, 'p', 2));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 2), getGraphVertexID(&mcu_breadboard, 'p', 3));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 3), getGraphVertexID(&mcu_breadboard, 'p', 4));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 4), getGraphVertexID(&mcu_breadboard, 'p', 5));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 5), getGraphVertexID(&mcu_breadboard, 'p', 6));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 6), getGraphVertexID(&mcu_breadboard, 'p', 7));
+    g.addEdge(getGraphVertexID(&mux1, 'y', 7), getGraphVertexID(&mcu_breadboard, 'p', 8));
 
     // MUX2 pins edge connections FIXED
     g.addEdge(getGraphVertexID(&mux2, 'x', 0), getGraphVertexID(&main_breadboard, 'p', 21));
