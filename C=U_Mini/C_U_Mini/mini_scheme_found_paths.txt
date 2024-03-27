@@ -18,3 +18,24 @@ Path from  -> MainBreadboard 13 to  -> MCUBreadboard 4 is:
 Path from  -> MainBreadboard 13 to  -> MCUBreadboard 4 is: 
  -> MainBreadboard 13 -> MUX1 x8 -> MUX1 y4 -> MCUBreadboard 4
 
+Path from  -> MainBreadboard 0 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 0 -> MUX2 x4 -> MUX2 y0 -> MUX1 x0 -> MUX1 y4 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 13 to  -> MCUBreadboard 7 is: 
+ -> MainBreadboard 13 -> MUX1 x9 -> MUX1 y7 -> MCUBreadboard 7
+
+Path from  -> MainBreadboard 23 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 23 -> MUX2 x3 -> MUX2 y0 -> MUX1 x0 -> MUX1 y4 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 19 to  -> MCUBreadboard 7 is: 
+ -> MainBreadboard 19 -> MUX1 x15 -> MUX1 y7 -> MCUBreadboard 7
+
+Path from  -> MainBreadboard 2 to  -> MCUBreadboard 2 is: 
+ -> MainBreadboard 2 -> MUX2 x6 -> MUX2 y0 -> MUX1 x0 -> MUX1 y2 -> MCUBreadboard 2
+
+Path from  -> MainBreadboard 23 to  -> MainBreadboard 13 is: 
+ -> MainBreadboard 23 -> MUX2 x3 -> MUX2 y0 -> MUX1 x0 -> MUX1 y0 -> MUX1 x9 -> MainBreadboard 13
+
+Path from  -> MainBreadboard 12 to  -> MCUBreadboard 5 is: 
+ -> MainBreadboard 12 -> MUX1 x8 -> MUX1 y5 -> MCUBreadboard 5
+
