@@ -289,21 +289,58 @@ string printDeviceSpecifications(int vertexID)
         char type = pinIndex < 16 ? 'x' : 'y';
         pinIndex = pinIndex < 16 ? pinIndex : pinIndex - 16; // Adjust pinIndex for 'y' type
         //cout << " -> MUX" << deviceId + 1 << " " << type << pinIndex;
-        return " -> MUX" + to_string(deviceId + 1) + " " + type + to_string(pinIndex);
+        return " -> MUX" + to_string(deviceId + 1) + " " + type + to_string(pinIndex) + " ";
     }
     else if (vertexID < numMultiplexers * multiplexerPins + mainBreadboardPins)
     {
         // It's the main breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins);
         // cout << " -> MainBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
-        return " -> MainBreadboard " + to_string(pinIndex);
+        return " -> MainBreadboard " + to_string(pinIndex) + " ";
     }
     else
     {
         // It's the MCU breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins + mainBreadboardPins);
         // cout << " -> MCUBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
-        return " -> MCUBreadboard " + to_string(pinIndex);
+        return " -> MCUBreadboard " + to_string(pinIndex) + " ";
+    }
+}
+
+void printMUXConections(const vector<int> &path)
+{
+    // MUX1 -> 1000    MUX2 -> 1001
+    
+    vector<string> devices;
+    cout << "\nAll MUX conections: \n";
+    for (int vertex : path)
+    {
+        string device = printDeviceSpecifications(vertex);
+        devices.push_back(device);
+    }
+    
+    for (int i = 0; i < devices.size() - 1; i++)
+    {
+        string device1 = devices[i];
+        string device2 = devices[i + 1];
+        string device1_substr = devices[i].substr(4, 4); // SLICE MUX1 or MUX2  Start from 4 cuz " -> "
+        string device2_substr = devices[i + 1].substr(4, 4);
+
+        if (device1_substr == "MUX1"){
+            if (device1_substr == device2_substr){
+                string pin1 = device1.substr(9, 3); // SLICE pin number
+                string pin2 = device2.substr(9, 3);
+                cout << "SetConection(1000, " << pin1 << ", " << pin2 << ")\n";
+            }
+        }
+
+        if (device1_substr == "MUX2"){
+            if (device1_substr == device2_substr){
+                string pin1 = device1.substr(9, 3);
+                string pin2 = device2.substr(9, 3);
+                cout << "SetConection(1001, " << pin1 << ", " << pin2 << ")\n";
+            }
+        }
     }
 }
 
@@ -326,7 +363,6 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
     int endVertex = getGraphVertexID(request.endDevice, request.endType, request.endPin);
 
     vector<int> path = graph.findPathBFS(startVertex, endVertex);
-
     if (!path.empty())
     {
         // Print the path in a txt file and in the console
@@ -349,12 +385,14 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
         found_paths_file << "\n\n";
         found_paths_file.close();
 
-        cout << "\nPath from " << from << " to " << to << " is: \n"; // this is ok, double print is before this line ^^^
+        cout << "\nPath from " << from << " to " << to << " is: \n";
         for (int vertex : path)
         {
             string device = printDeviceSpecifications(vertex);
             cout << device;
         }
+
+        printMUXConections(path); // Print all MUX conections
         cout << "\n\n";
         return 1;
     }
