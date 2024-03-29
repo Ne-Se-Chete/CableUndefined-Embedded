@@ -1,9 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <unordered_map>
 #include <list>
 #include <queue>
-#include <unordered_set>
 #include <algorithm>
 #include <fstream>
 #include <string>
@@ -165,15 +163,20 @@ class Graph
     int numVertices;
     list<int> *adjLists;
     bool *visited;
-    unordered_set<int> globalUsedPins; // Global tracking of used pins
+    bool *globalUsedPins; // Replaced unordered_set with a bool array for global pin tracking
 
 public:
-    Graph(int vertices) : numVertices(vertices), adjLists(new list<int>[vertices]), visited(new bool[vertices]()) {}
+    Graph(int vertices) : numVertices(vertices), adjLists(new list<int>[vertices]), visited(new bool[vertices]()), globalUsedPins(new bool[vertices]())
+    {
+        fill(visited, visited + vertices, false);
+        fill(globalUsedPins, globalUsedPins + vertices, false);
+    }
 
     ~Graph()
     {
         delete[] adjLists;
         delete[] visited;
+        delete[] globalUsedPins;
     }
 
     void addEdge(int src, int dest)
@@ -194,9 +197,10 @@ public:
 
     vector<int> findPathBFS(int startVertex, int endVertex)
     {
+        int parent[numVertices];
+        fill(parent, parent + numVertices, -1);
         fill(visited, visited + numVertices, false); // Reset visited status
         queue<int> q;
-        unordered_map<int, int> parent; // To store the path
         vector<int> path;
 
         visited[startVertex] = true;
@@ -210,7 +214,7 @@ public:
 
             for (int adjVertex : adjLists[current])
             {
-                if (!visited[adjVertex] && (globalUsedPins.find(adjVertex) == globalUsedPins.end() || isSpecialPin(adjVertex)))
+                if (!visited[adjVertex] && (!globalUsedPins[adjVertex] || isSpecialPin(adjVertex)))
                 {
                     parent[adjVertex] = current; // Track the path
                     visited[adjVertex] = true;
@@ -232,20 +236,14 @@ public:
         }
 
         // Reconstruct and reserve the path
-        for (int at = endVertex; at != startVertex; at = parent[at])
+        for (int at = endVertex; at != -1; at = parent[at])
         {
             path.push_back(at);
             if (!isSpecialPin(at))
             {
-                globalUsedPins.insert(at); // Mark as used globally, excluding special pins
+                globalUsedPins[at] = true; // Mark as used globally, excluding special pins
             }
         }
-        path.push_back(startVertex); // Add start vertex at the end
-        if (!isSpecialPin(startVertex))
-        {
-            globalUsedPins.insert(startVertex); // Mark as used globally, excluding special pins
-        }
-
         reverse(path.begin(), path.end()); // Reverse to get the correct order from start to end
         return path;
     }
@@ -498,6 +496,5 @@ int main() // initPathfinding
     int path_found = findAndPrintPath(g, request);
 
     std::cout << "Number of paths found: " << path_found << std::endl;
-
     return 0;
 }
