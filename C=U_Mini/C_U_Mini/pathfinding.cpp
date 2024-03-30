@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <fstream>
 #include <string>
+#include <cstdio>
 
 using namespace std;
 
@@ -182,22 +183,34 @@ string printDeviceSpecifications(int vertexID)
         int pinIndex = vertexID % multiplexerPins;
         char type = pinIndex < 16 ? 'x' : 'y';
         pinIndex = pinIndex < 16 ? pinIndex : pinIndex - 16; // Adjust pinIndex for 'y' type
+
+        char buffer_1[3];
+        sprintf(buffer_1, "%d", deviceId + 1);
+
+        char buffer_2[4];
+        sprintf(buffer_2, "%d", pinIndex);
         //cout << " -> MUX" << deviceId + 1 << " " << type << pinIndex;
-        return " -> MUX" + to_string(deviceId + 1) + " " + type + to_string(pinIndex) + " ";
+        return " -> MUX" + string(buffer_1) + " " + type + string(buffer_2) + " ";
     }
     else if (vertexID < numMultiplexers * multiplexerPins + mainBreadboardPins)
     {
         // It's the main breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins);
+
+        char buffer1[3];
+        sprintf(buffer1, "%d", pinIndex);
         // cout << " -> MainBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
-        return " -> MainBreadboard " + to_string(pinIndex) + " ";
+        return " -> MainBreadboard " + string(buffer1) + " ";
     }
     else
     {
         // It's the MCU breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins + mainBreadboardPins);
         // cout << " -> MCUBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
-        return " -> MCUBreadboard " + to_string(pinIndex) + " ";
+
+        char buffer1[3];
+        sprintf(buffer1, "%d", pinIndex);
+        return " -> MCUBreadboard " + string(buffer1) + " ";
     }
 }
 
@@ -259,25 +272,9 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
     vector<int> path = graph.findPathBFS(startVertex, endVertex);
     if (!path.empty())
     {
-        // Print the path in a txt file and in the console
-        ofstream found_paths_file("mini_scheme_found_paths.txt", ios::app);
-        if (!found_paths_file)
-        {
-            cerr << "Error: unable to open output file" << endl;
-            return -1;
-        }
 
         string from = printDeviceSpecifications(startVertex);
         string to = printDeviceSpecifications(endVertex);
-
-        found_paths_file << "Path from " << from << " to " << to << " is: \n"; 
-        for (int vertex : path)
-        {
-            string device = printDeviceSpecifications(vertex);
-            found_paths_file << device;
-        }
-        found_paths_file << "\n\n";
-        found_paths_file.close();
 
         cout << "\nPath from " << from << " to " << to << " is: \n";
         for (int vertex : path)
@@ -292,18 +289,9 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
     }
     else
     {
-        // Print the not found path in a txt file and in the console
-        ofstream not_found_paths_file("mini_scheme_not_found_paths.txt", ios::app);
-        if (!not_found_paths_file)
-        {
-            cerr << "Error: unable to open output file" << endl;
-            return -1;
-        }
-
         string from = printDeviceSpecifications(startVertex);
         string to = printDeviceSpecifications(endVertex);
 
-        not_found_paths_file << "No path found from " << from << " to " << to << ".\n\n";
         cout << "\nNo path found from " << from << " to " << to << ".\n\n";
         return 0;
     }
