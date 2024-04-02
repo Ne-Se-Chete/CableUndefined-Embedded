@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <fstream>
 #include <string>
-#include <cstdio>
 
 using namespace std;
 
@@ -183,41 +182,29 @@ string printDeviceSpecifications(int vertexID)
         int pinIndex = vertexID % multiplexerPins;
         char type = pinIndex < 16 ? 'x' : 'y';
         pinIndex = pinIndex < 16 ? pinIndex : pinIndex - 16; // Adjust pinIndex for 'y' type
-
-        char buffer_1[3];
-        sprintf(buffer_1, "%d", deviceId + 1);
-
-        char buffer_2[4];
-        sprintf(buffer_2, "%d", pinIndex);
-        //cout << " -> MUX" << deviceId + 1 << " " << type << pinIndex;
-        return " -> MUX" + string(buffer_1) + " " + type + string(buffer_2) + " ";
+        // cout << " -> MUX" << deviceId + 1 << " " << type << pinIndex;
+        return " -> MUX" + to_string(deviceId + 1) + " " + type + to_string(pinIndex) + " ";
     }
     else if (vertexID < numMultiplexers * multiplexerPins + mainBreadboardPins)
     {
         // It's the main breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins);
-
-        char buffer1[3];
-        sprintf(buffer1, "%d", pinIndex);
         // cout << " -> MainBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
-        return " -> MainBreadboard " + string(buffer1) + " ";
+        return " -> MainBreadboard " + to_string(pinIndex) + " ";
     }
     else
     {
         // It's the MCU breadboard
         int pinIndex = vertexID - (numMultiplexers * multiplexerPins + mainBreadboardPins);
         // cout << " -> MCUBreadboard " << pinIndex + 1; // Adjust pinIndex to start from 1 for better readability
-
-        char buffer1[3];
-        sprintf(buffer1, "%d", pinIndex);
-        return " -> MCUBreadboard " + string(buffer1) + " ";
+        return " -> MCUBreadboard " + to_string(pinIndex) + " ";
     }
 }
 
 void printMUXConections(const vector<int> &path)
 {
     // MUX1 -> 1000    MUX2 -> 1001
-    
+
     vector<string> devices;
     cout << "\nAll MUX conections: \n";
     for (int vertex : path)
@@ -225,7 +212,7 @@ void printMUXConections(const vector<int> &path)
         string device = printDeviceSpecifications(vertex);
         devices.push_back(device);
     }
-    
+
     for (int i = 0; i < devices.size() - 1; i++)
     {
         string device1 = devices[i];
@@ -233,16 +220,20 @@ void printMUXConections(const vector<int> &path)
         string device1_substr = devices[i].substr(4, 4); // SLICE MUX1 or MUX2  Start from 4 cuz " -> "
         string device2_substr = devices[i + 1].substr(4, 4);
 
-        if (device1_substr == "MUX1"){
-            if (device1_substr == device2_substr){
+        if (device1_substr == "MUX1")
+        {
+            if (device1_substr == device2_substr)
+            {
                 string pin1 = device1.substr(9, 3); // SLICE pin number
                 string pin2 = device2.substr(9, 3);
                 cout << "SetConection(1000, " << pin1 << ", " << pin2 << ")\n";
             }
         }
 
-        if (device1_substr == "MUX2"){
-            if (device1_substr == device2_substr){
+        if (device1_substr == "MUX2")
+        {
+            if (device1_substr == device2_substr)
+            {
                 string pin1 = device1.substr(9, 3);
                 string pin2 = device2.substr(9, 3);
                 cout << "SetConection(1001, " << pin1 << ", " << pin2 << ")\n";
@@ -296,7 +287,6 @@ int findAndPrintPath(Graph &graph, const PathRequest &request)
         return 0;
     }
 }
-
 
 int main() // initPathfinding
 {
@@ -367,9 +357,8 @@ int main() // initPathfinding
     g.addEdge(getGraphVertexID(&mux2, 'x', 14), getGraphVertexID(&main_breadboard, 'p', 10));
     g.addEdge(getGraphVertexID(&mux2, 'x', 15), getGraphVertexID(&main_breadboard, 'p', 11));
 
-
     vector<PathRequest> requests;
-    
+
     int mcu_pin, main_pin;
     std::cout << "Enter MCU pin: ";
     std::cin >> mcu_pin;
