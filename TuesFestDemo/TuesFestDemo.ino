@@ -66,6 +66,14 @@ int setConnection(uint8_t addr, uint8_t AX, uint8_t AY, bool mode){
     return -1;
   }
 
+  if (addr == 1000){
+    addr = 0b1000;
+  }else if (addr == 1001){
+    addr = 0b1001;
+  }else{
+    return;
+  }
+
   ADDR_PORT = (ADDR_PORT & 0x0F) | (addr << 4); /// pazq starta stojnost na 4-te bita koito ne iskam da pipam i zadavam nova stojnost na 4 bita, kojto promenqm
 
   AX_PORT = (AX_PORT & 0xF0) | AX;
@@ -131,13 +139,32 @@ void setup(){
     }
 
     FastLED.show();
+
+    Serial.println("Ready");
 }
 
 void loop(){
-    String input = "1000;x15;y7;false;MCUBreadboard 15;MainBreadboard 1";
+  if(Serial.available() > 0){
+    // String input = "1000;x15;y7;false;MCUBreadboard 15;MainBreadboard 1";
+    String input = Serial.readStringUntil('\n');
+
+    if(input.equals("Clear")) {
+      for (int x = 0; x < 16; x++) {
+        for (int y = 0; y < 8; y++) {
+            setConnection(0b1000, x, y, false);
+            setConnection(0b1001, x, y, false);
+        }
+      }
+    }
+
+    Serial.println(input);
+
+
     char* token;
     token = strtok((char*)input.c_str(), ";"); 
     int instruction = atoi(token);
+
+    Serial.println(instruction);
 
     // get x
     token = strtok(NULL, ";");
@@ -169,59 +196,72 @@ void loop(){
     int green = random(5, 26);
     int blue = random(5, 26);
 
-    CRBGVal = CRGB(red, green, blue);
-
     // get LED 1
     token = strtok(NULL, ";"); 
     String led1Instruction = token;
     int spaceIndex = led1Instruction.indexOf(' ');
     String boardName = led1Instruction.substring(0, spaceIndex);
+    if (mode){
+      if (boardName.equals("MCUBreadboard")) {
+        int led1Idx = atoi(led1Instruction.substring(spaceIndex + 1).c_str());
+        // Serial.println(led1Idx);
+        leds_1[led1Idx] = CRGB(red, green, blue);
+      }
+      else  if (boardName.equals("MainBreadboard")) {
+        int led2Idx = atoi(led1Instruction.substring(spaceIndex + 1).c_str());
+        // Serial.println(led1Idx);
+        leds_2[led2Idx] = CRGB(red, green, blue);
+      }
+      
+      // get LED 2
+      token = strtok(NULL, ";"); 
+      String led2Instruction = token;
+      spaceIndex = led2Instruction.indexOf(' ');
+      boardName = led2Instruction.substring(0, spaceIndex);
 
-    if (boardName.equals("MCUBreadboard")) {
-      int led1Idx = atoi(led1Instruction.substring(spaceIndex + 1).c_str());
-      // Serial.println(led1Idx);
-      leds_1[led1Idx] = CRBGVal;
+      if (boardName.equals("MCUBreadboard")) {
+        int led2Idx = atoi(led2Instruction.substring(spaceIndex + 1).c_str());
+        // Serial.println(led2Idx);
+        leds_1[led2Idx] = CRGB(red, green, blue);
+      }
+      else  if (boardName.equals("MainBreadboard")) {
+        int led2Idx = atoi(led2Instruction.substring(spaceIndex + 1).c_str());
+        // Serial.println(led2Idx);
+        leds_2[led2Idx] = CRGB(red, green, blue);
+      }
+    }else{
+       if (boardName.equals("MCUBreadboard")) {
+        int led1Idx = atoi(led1Instruction.substring(spaceIndex + 1).c_str());
+        // Serial.println(led1Idx);
+        leds_1[led1Idx] = CRGB(0, 0, 0);
+      }
+      else  if (boardName.equals("MainBreadboard")) {
+        int led2Idx = atoi(led1Instruction.substring(spaceIndex + 1).c_str());
+        // Serial.println(led1Idx);
+        leds_2[led2Idx] = CRGB(0, 0, 0);
+      }
+      
+      // get LED 2
+      token = strtok(NULL, ";"); 
+      String led2Instruction = token;
+      spaceIndex = led2Instruction.indexOf(' ');
+      boardName = led2Instruction.substring(0, spaceIndex);
+
+      if (boardName.equals("MCUBreadboard")) {
+        int led2Idx = atoi(led2Instruction.substring(spaceIndex + 1).c_str());
+        // Serial.println(led2Idx);
+        leds_1[led2Idx] = CRGB(0, 0, 0);
+      }
+      else  if (boardName.equals("MainBreadboard")) {
+        int led2Idx = atoi(led2Instruction.substring(spaceIndex + 1).c_str());
+        // Serial.println(led2Idx);
+        leds_2[led2Idx] = CRGB(0, 0, 0);
+      }
     }
-    else  if (boardName.equals("MainBreadboard")) {
-      int led2Idx = atoi(led1Instruction.substring(spaceIndex + 1).c_str());
-      // Serial.println(led1Idx);
-      leds_2[led2Idx] = CRBGVal;
-    }
-    
-    // get LED 2
-    token = strtok(NULL, ";"); 
-    String led2Instruction = token;
-    spaceIndex = led2Instruction.indexOf(' ');
-    boardName = led2Instruction.substring(0, spaceIndex);
 
-    if (boardName.equals("MCUBreadboard")) {
-      int led2Idx = atoi(led2Instruction.substring(spaceIndex + 1).c_str());
-      // Serial.println(led2Idx);
-      leds_1[led2Idx] = CRBGVal;
-    }
-    else  if (boardName.equals("MainBreadboard")) {
-      int led2Idx = atoi(led2Instruction.substring(spaceIndex + 1).c_str());
-      // Serial.println(led2Idx);
-      leds_2[led2Idx] = CRBGVal;
-    }
+    FastLED.show();
 
-    Serial.print("instruction: ");
-    Serial.println(instruction);
+    setConnection(instruction, x, y, mode);
 
-    Serial.print("x: ");
-    Serial.println(x);
-
-    Serial.print("y: ");
-    Serial.println(y);
-
-    Serial.print("mode: ");
-    Serial.println(mode);
-
-    Serial.print("board1: ");
-    Serial.println(led1Instruction);
-
-    Serial.print("board2: ");
-    Serial.println(led2Instruction);
-
-    delay(100000);
+  }
 }
