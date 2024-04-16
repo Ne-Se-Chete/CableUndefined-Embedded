@@ -1,5 +1,16 @@
 #include "Arduino.h"
-// #include "pathfindingtest.h"
+#include <FastLED.h>
+
+#define LED_PIN_1   3
+#define NUM_LEDS_1  8
+
+#define LED_PIN_2   2   
+#define NUM_LEDS_2  32   
+
+CRGB leds_1[NUM_LEDS_1];
+CRGB leds_2[NUM_LEDS_2];
+
+void(* resetFunc) (void) = 0;
 
 #define STB (1 << PORTB3)
 #define STB_DDR (1 << DDB3)
@@ -78,6 +89,7 @@ int setConnection(uint8_t addr, uint8_t AX, uint8_t AY, bool mode){
 
 
 void setup(){
+
     Serial.begin(9600);
 
     ADDR_PORT_DDR |= ADDR0_DDR | ADDR1_DDR | ADDR2_DDR | ADDR3_DDR; // Init D Port Arduino
@@ -100,15 +112,31 @@ void setup(){
     CONTROL_PORT |= DAT;
     CONTROL_PORT &= ~STB;
 
+    FastLED.addLeds<WS2812, LED_PIN_1, GRB>(leds_1, NUM_LEDS_1);
+    FastLED.addLeds<WS2812, LED_PIN_2, GRB>(leds_2, NUM_LEDS_2);
+
+    for (int x = 0; x < 16; x++) {
+        for (int y = 0; y < 8; y++) {
+            setConnection(0b1000, x, y, false);
+        }
+    }
+
+    for (int x = 0; x < 16; x++) {
+        for (int y = 0; y < 8; y++) {
+            setConnection(0b1001, x, y, false);
+        }
+    }
+
+    delay(500);
     // LED
 
     // 2 breadboard -> 4 mcu: (GND)
     setConnection(0b1001, 4, 0, true); 
-    setConnection(0b1000, 0, 3, true); 
+    setConnection(0b1000, 0, 4, true); 
 
     // 11 breadboard -> 5 mcu: (P0)
     setConnection(0b1001, 14, 1, true); 
-    setConnection(0b1000, 1, 4, true); 
+    setConnection(0b1000, 1, 3, true); 
 
     // Potentiometer
 
@@ -121,8 +149,29 @@ void setup(){
     // 18 breadboard -> 2 mcu: (VCC)
     setConnection(0b1000, 13, 7, true); 
 
-    
+    // Buzzer
 
+    // 23 breadboard -> 3 mcu
+    setConnection(0b1001, 2, 2, true); 
+    setConnection(0b1000, 2, 2, true); 
+
+    leds_1[4] =  CRGB(25, 25, 25); // GND
+    leds_2[10] =  CRGB(25, 25, 25); // GND
+    leds_2[17] =  CRGB(25, 25, 25); // GND
+
+    leds_1[3] =  CRGB(25, 0, 0); // VCC
+    leds_2[13] =  CRGB(25, 0, 0); // VCC
+
+    leds_1[6] =  CRGB(0, 0, 25); // P3
+    leds_2[15] =  CRGB(0, 0, 25); // P3
+
+    leds_1[0] =  CRGB(0, 25, 0); // P3
+    leds_2[0] =  CRGB(0, 25, 0); // P3
+
+    leds_1[5] =  CRGB(35, 15, 0); // P4
+    leds_2[22] =  CRGB(35, 15, 0); // P4
+
+    FastLED.show();
 
 
 }
