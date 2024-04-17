@@ -1,6 +1,18 @@
 #include "Arduino.h"
 #include <FastLED.h>
 
+#define NUM_COLORS 8
+CRGB colors[NUM_COLORS] = {
+    CRGB(35, 0, 0),      // Dark Red
+    CRGB(0, 35, 0),      // Dark Green
+    CRGB(0, 0, 35),      // Dark Blue
+    CRGB(35, 35, 0),     // Dark Yellow
+    CRGB(0, 35, 35),     // Dark Cyan
+    CRGB(35, 0, 35),     // Dark Magenta
+    CRGB(17, 17, 17),    // Dark Gray
+    CRGB(35, 17, 0),     // Orange
+};
+
 #define LED_PIN_1   3
 #define NUM_LEDS_1  8
 
@@ -61,20 +73,25 @@ void(* resetFunc) (void) = 0;
 #define MAX_AX 15 // 2^n -1
 #define MAX_AY 7
 
-int setConnection(uint8_t addr, uint8_t AX, uint8_t AY, bool mode){
-  if (addr > MAX_ADDRESS || AX > MAX_AX || AY > MAX_AY){
+int setConnection(int addr, uint8_t AX, uint8_t AY, bool mode){
+  uint8_t actuallAddr;
+  if (addr == 1000){
+    actuallAddr = 0b1000;
+    // Serial.println("I have just set addr to 0b1000");
+  }else if (addr == 1001){
+    actuallAddr = 0b1001;
+    // Serial.println("I have just set addr to 0b1001");
+  }
+
+  if (actuallAddr > MAX_ADDRESS || AX > MAX_AX || AY > MAX_AY){
     return -1;
   }
 
-  if (addr == 1000){
-    addr = 0b1000;
-  }else if (addr == 1001){
-    addr = 0b1001;
-  }else{
-    return;
-  }
+  // AX = uint8_t(AX);
+  // AY = uint8_t(AY);
 
-  ADDR_PORT = (ADDR_PORT & 0x0F) | (addr << 4); /// pazq starta stojnost na 4-te bita koito ne iskam da pipam i zadavam nova stojnost na 4 bita, kojto promenqm
+
+  ADDR_PORT = (ADDR_PORT & 0x0F) | (actuallAddr << 4); /// pazq starta stojnost na 4-te bita koito ne iskam da pipam i zadavam nova stojnost na 4 bita, kojto promenqm
 
   AX_PORT = (AX_PORT & 0xF0) | AX;
 
@@ -143,6 +160,8 @@ void setup(){
     Serial.println("Ready");
 }
 
+int currentColorIndex = 0;
+
 void loop(){
   if(Serial.available() > 0){
     // String input = "1000;x15;y7;false;MCUBreadboard 15;MainBreadboard 1";
@@ -155,16 +174,24 @@ void loop(){
             setConnection(0b1001, x, y, false);
         }
       }
+
+      for (int i = 0; i < NUM_LEDS_1; i++) {
+        leds_1[i] = CRGB(0, 0, 0);;
+      }
+
+      for (int i = 0; i < NUM_LEDS_2; i++) {
+        leds_2[i] = CRGB(0, 0, 0);;
+      }
     }
 
-    Serial.println(input);
+    // Serial.println(input);
 
 
     char* token;
     token = strtok((char*)input.c_str(), ";"); 
     int instruction = atoi(token);
 
-    Serial.println(instruction);
+    // Serial.println(instruction);
 
     // get x
     token = strtok(NULL, ";");
@@ -192,25 +219,33 @@ void loop(){
     
     /// NOT ALWAYS vvv
 
-    int red = random(5, 26);
-    int green = random(5, 26);
-    int blue = random(5, 26);
+    // int red = random(5, 26);
+    // int green = random(5, 26);
+    // int blue = random(5, 26);
+
+    CRGB selectedColor = colors[currentColorIndex];
+
+    // Increment the color index, reset if it exceeds the array
+    currentColorIndex = (currentColorIndex + 1) % NUM_COLORS;
 
     // get LED 1
     token = strtok(NULL, ";"); 
     String led1Instruction = token;
     int spaceIndex = led1Instruction.indexOf(' ');
     String boardName = led1Instruction.substring(0, spaceIndex);
+
+    // Serial.println(mode);
+
     if (mode){
       if (boardName.equals("MCUBreadboard")) {
         int led1Idx = atoi(led1Instruction.substring(spaceIndex + 1).c_str());
         // Serial.println(led1Idx);
-        leds_1[led1Idx] = CRGB(red, green, blue);
+        leds_1[led1Idx] = selectedColor;
       }
       else  if (boardName.equals("MainBreadboard")) {
         int led2Idx = atoi(led1Instruction.substring(spaceIndex + 1).c_str());
         // Serial.println(led1Idx);
-        leds_2[led2Idx] = CRGB(red, green, blue);
+        leds_2[led2Idx] = selectedColor;
       }
       
       // get LED 2
@@ -222,15 +257,15 @@ void loop(){
       if (boardName.equals("MCUBreadboard")) {
         int led2Idx = atoi(led2Instruction.substring(spaceIndex + 1).c_str());
         // Serial.println(led2Idx);
-        leds_1[led2Idx] = CRGB(red, green, blue);
+        leds_1[led2Idx] = selectedColor;
       }
       else  if (boardName.equals("MainBreadboard")) {
         int led2Idx = atoi(led2Instruction.substring(spaceIndex + 1).c_str());
         // Serial.println(led2Idx);
-        leds_2[led2Idx] = CRGB(red, green, blue);
+        leds_2[led2Idx] = selectedColor;
       }
     }else{
-       if (boardName.equals("MCUBreadboard")) {
+      if (boardName.equals("MCUBreadboard")) {
         int led1Idx = atoi(led1Instruction.substring(spaceIndex + 1).c_str());
         // Serial.println(led1Idx);
         leds_1[led1Idx] = CRGB(0, 0, 0);
