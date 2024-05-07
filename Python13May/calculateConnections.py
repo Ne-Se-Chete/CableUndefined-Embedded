@@ -31,17 +31,13 @@ def load_multiplexer_config(filepath):
         data = json.load(file)
     return data
 
-def export_connections(config):
+def export_connections(config, MCUpin, MAINpin, mode):
 
     mux1 = config['Multiplexers'][0]
     mux2 = config['Multiplexers'][1]
 
-    i = input(colors.GREEN + "Enter the number of MCUBreadboard pin: " + colors.RESET)
-    j = input(colors.GREEN + "Enter the number of MainBreadboard pin: " + colors.RESET)
-    mode = input(colors.GREEN + "Enter the mode (true/false): " + colors.RESET)
-
-    currentMCUBreadboardPin = "MCUBreadboard" + str(i)
-    currentMainBreadboardPin = "MainBreadboard" + str(j)
+    currentMCUBreadboardPin = "MCUBreadboard" + str(MCUpin)
+    currentMainBreadboardPin = "MainBreadboard" + str(MAINpin)
     
     YOfMCUBreadboard = find_key_by_value(mux1, currentMCUBreadboardPin, "Inputs")
     YOfMCUBreadboard = "MUX1_" + YOfMCUBreadboard
@@ -94,4 +90,4 @@ def export_connections(config):
             
 if __name__ == "__main__":
     while True:
-        export_connections(load_multiplexer_config('rules.json'))
+        export_connections(load_multiplexer_config('rules.json'), 1, 1)

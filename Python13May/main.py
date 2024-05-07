@@ -1,4 +1,5 @@
 import tkinter as tk
+from calculateConnections import *
 
 # Define colors
 colors = [
@@ -11,7 +12,6 @@ colors = [
     "#858585",  # Light Gray
     "#FF8000"   # Orange
 ]
-
 
 class Breadboard(tk.Tk):
     def __init__(self, main_rows, main_columns, small_rows, small_columns):
@@ -65,7 +65,7 @@ class Breadboard(tk.Tk):
             button.config(relief="raised", bg="white")  # Reset color to default
             pin_state = False
         else:
-            button.config(relief="sunken", bg=colors[7])  # Set color to orange for active connection
+            button.config(relief="sunken", bg=colors[len(self.connections) % len(colors)])  # Set color to a unique color for this connection
             pin_state = True
         
         # Update the internal state
@@ -91,6 +91,13 @@ class Breadboard(tk.Tk):
         self.connections.append(connection)
         print(f"Connection recorded: {connection}")
 
+        # Extract pin numbers from pin tuples
+        nonTuplePin1 = self.get_pin_number(pin1)
+        nonTuplePin2 = self.get_pin_number(pin2)
+
+        # Example of using calculateConnections module
+        export_connections(load_multiplexer_config('rules.json'), nonTuplePin1, nonTuplePin2, True)
+
     def remove_connection(self, current_pin):
         for connection in self.connections[:]:
             if current_pin in connection:
@@ -104,6 +111,21 @@ class Breadboard(tk.Tk):
                         self.main_pins[pin_row][pin_col] = False
                     else:
                         self.small_pins[pin_row][pin_col] = False
+
+                # Extract pin numbers from pin tuples
+                nonTuplePin1 = self.get_pin_number(connection[0])
+                nonTuplePin2 = self.get_pin_number(connection[1])
+
+                # Example of using calculateConnections module
+                export_connections(load_multiplexer_config('rules.json'), nonTuplePin1, nonTuplePin2, False)
+
+
+    def get_pin_number(self, pin):
+        board_type, row, column = pin
+        if board_type == 'main':
+            return row * self.main_columns + column + 1
+        else:
+            return (self.small_rows - row - 1) * self.small_columns + column + 1
 
 if __name__ == "__main__":
     root = Breadboard(main_rows=2, main_columns=12, small_rows=2, small_columns=4)
