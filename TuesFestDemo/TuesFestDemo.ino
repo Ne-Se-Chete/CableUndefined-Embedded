@@ -184,14 +184,12 @@ void loop(){
       }
     }
 
-    // Serial.println(input);
+//    Serial.println(input);
 
 
     char* token;
     token = strtok((char*)input.c_str(), ";"); 
     int instruction = atoi(token);
-
-    // Serial.println(instruction);
 
     // get x
     token = strtok(NULL, ";");
@@ -294,9 +292,14 @@ void loop(){
       }
     }
 
+    // Serial.println("Im on 295 line");
+
     FastLED.show();
 
     setConnection(instruction, x, y, mode);
+
+    // Serial.println("Im on 302 line");
+
 
   }
 }

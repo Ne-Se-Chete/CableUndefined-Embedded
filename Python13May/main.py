@@ -1,5 +1,8 @@
 import tkinter as tk
 from calculateConnections import *
+import serial
+import time
+
 
 # Define colors
 colors = [
@@ -14,18 +17,49 @@ colors = [
 ]
 
 class Breadboard(tk.Tk):
-    def __init__(self, main_rows, main_columns, small_rows, small_columns):
+    def __init__(self, main_rows, main_columns, small_rows, small_columns, serial_port, baud_rate=9600):
         super().__init__()
         self.main_rows = main_rows
         self.main_columns = main_columns
         self.small_rows = small_rows
         self.small_columns = small_columns
-        self.title("Dual Breadboard")
+        self.title("Cable Undefined Mini")
         self.main_pins = [[False for _ in range(main_columns)] for _ in range(main_rows)]
         self.small_pins = [[False for _ in range(small_columns)] for _ in range(small_rows)]
         self.last_clicked = None  # Store the last pin clicked
         self.connections = []  # Store the connections
         self.create_widgets()
+        self.serial_port = serial_port
+        self.baud_rate = baud_rate
+        self.serial_conn = None
+        self.initialize_serial()
+    
+    def initialize_serial(self):
+        try:
+            self.serial_conn = serial.Serial(self.serial_port, self.baud_rate, timeout=1)
+            time.sleep(2)  # give the connection a second to settle
+            print("Serial Connection Established.")
+            if self.wait_for_arduino():
+                print("Arduino is ready.")
+        except Exception as e:
+            print(f"Failed to connect to Arduino via serial: {e}")
+
+    def wait_for_arduino(self):
+        # Wait for the Arduino to send 'Ready'
+        while True:
+            if self.serial_conn.in_waiting > 0:
+                line = self.serial_conn.readline().decode().strip()
+                if line == "Ready":
+                    return True
+            time.sleep(0.1)
+
+    def write_to_serial(self, message):
+        if self.serial_conn:
+            try:
+                self.serial_conn.write(message.encode('utf-8'))
+                print(f"Sent to Arduino: {message}")
+            except Exception as e:
+                print(f"Failed to send message: {e}")
 
     def create_widgets(self):
         self.main_frame = tk.Frame(self, bd=2, relief=tk.RAISED)
@@ -91,12 +125,33 @@ class Breadboard(tk.Tk):
         self.connections.append(connection)
         print(f"Connection recorded: {connection}")
 
-        # Extract pin numbers from pin tuples
-        nonTuplePin1 = self.get_pin_number(pin1)
-        nonTuplePin2 = self.get_pin_number(pin2)
+        if pin1[0] == 'small' and pin2[0] == 'main':
+            MCUNonTuplePin1 = self.get_pin_number(pin1)
+            mainNonTuplePin2 = self.get_pin_number(pin2)
+        elif pin1[0] == 'main' and pin2[0] == 'small':
+            MCUNonTuplePin1 = self.get_pin_number(pin2)
+            mainNonTuplePin2 = self.get_pin_number(pin1)
 
-        # Example of using calculateConnections module
-        export_connections(load_multiplexer_config('rules.json'), nonTuplePin1, nonTuplePin2, True)
+        if MCUNonTuplePin1 == 5:
+            MCUNonTuplePin1 = 8
+        elif MCUNonTuplePin1 == 6:
+            MCUNonTuplePin1 = 7
+        elif MCUNonTuplePin1 == 7:
+            MCUNonTuplePin1 = 6
+        elif MCUNonTuplePin1 == 8:
+            MCUNonTuplePin1 = 5
+    
+        print(f"MCU Pin: {MCUNonTuplePin1}, Main Pin: {mainNonTuplePin2}")
+                                                                                # MCU pin, Main pin, mode
+        toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, True)
+        ledsString = "; " + "MainBreadboard " + str(mainNonTuplePin2) + "; " + "MCUBreadboard " + str(MCUNonTuplePin1)
+        toWriteToCU += ledsString
+        toWriteToCU += "\n"
+
+        print(f"To write in serial: \n{toWriteToCU}")
+
+        self.write_to_serial(toWriteToCU)
+
 
     def remove_connection(self, current_pin):
         for connection in self.connections[:]:
@@ -113,11 +168,38 @@ class Breadboard(tk.Tk):
                         self.small_pins[pin_row][pin_col] = False
 
                 # Extract pin numbers from pin tuples
-                nonTuplePin1 = self.get_pin_number(connection[0])
-                nonTuplePin2 = self.get_pin_number(connection[1])
+                if connection[0] == 'small' and connection[1] == 'main':
+                    MCUNonTuplePin1 = self.get_pin_number(connection[0])
+                    mainNonTuplePin2 = self.get_pin_number(connection[1])
+                elif connection[0] == 'main' and connection[1] == 'small':
+                    MCUNonTuplePin1 = self.get_pin_number(connection[1])
+                    mainNonTuplePin2 = self.get_pin_number(connection[0])
+                
+                if MCUNonTuplePin1 == 5:
+                    MCUNonTuplePin1 = 8
+                elif MCUNonTuplePin1 == 6:
+                    MCUNonTuplePin1 = 7
+                elif MCUNonTuplePin1 == 7:
+                    MCUNonTuplePin1 = 6
+                elif MCUNonTuplePin1 == 8:
+                    MCUNonTuplePin1 = 5
+                
+                toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, False)
+                ledsString = "; " + "MainBreadboard " + str(mainNonTuplePin2) + "; " + "MCUBreadboard " + str(MCUNonTuplePin1)
+                toWriteToCU += ledsString
 
-                # Example of using calculateConnections module
-                export_connections(load_multiplexer_config('rules.json'), nonTuplePin1, nonTuplePin2, False)
+                print(f"To write in serial: \n{toWriteToCU}")
+                toWriteToCU += "\n"
+                self.write_to_serial(toWriteToCU)
+
+                # to fix formatting !!!
+                # ser.write(b'1000;y5;x10;true;MainBreadboard 15;MCUBreadboard 8\n') THIS IS VALID
+                # NUMBERING OF LEDS STARTS FROM 0
+                # y and x lower, remove space after ;, T on true lower
+                # leds on mcu breadboard are cooked
+
+
+
 
 
     def get_pin_number(self, pin):
@@ -128,5 +210,5 @@ class Breadboard(tk.Tk):
             return (self.small_rows - row - 1) * self.small_columns + column + 1
 
 if __name__ == "__main__":
-    root = Breadboard(main_rows=2, main_columns=12, small_rows=2, small_columns=4)
+    root = Breadboard(main_rows=2, main_columns=12, small_rows=2, small_columns=4, serial_port='COM3')
     root.mainloop()
