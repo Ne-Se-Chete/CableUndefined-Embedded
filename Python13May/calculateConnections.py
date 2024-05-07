@@ -55,7 +55,9 @@ def export_connections(config, MCUpin, MAINpin, mode):
     splitXOfMainBreadboard = XOfMainBreadboard.split("_")
 
     if splitYOfMCUBreadboard[0] == splitXOfMainBreadboard[0]:
-        print(f"SetConnection(1000, {splitYOfMCUBreadboard[1]}, {splitXOfMainBreadboard[1]}, {mode});")
+        # print(f"SetConnection(1000, {splitYOfMCUBreadboard[1]}, {splitXOfMainBreadboard[1]}, {mode});")
+        return "1000; " + str(splitYOfMCUBreadboard[1]) + "; " + str(splitXOfMainBreadboard[1]) + "; " + str(mode)
+
     else:
         currentkey = None
         if mode == "false":
@@ -81,8 +83,12 @@ def export_connections(config, MCUpin, MAINpin, mode):
                 if key == splitValueOfCurrentKey[1]:
                     if mode == "true":
                         usedMUX2Pins.append(key)
-                    print(f"SetConnection(1000, {splitYOfMCUBreadboard[1]}, {currentkey}, {mode});")
-                    print(f"SetConnection(1001, {key}, {splitXOfMainBreadboard[1]}, {mode});")
+                    # print(f"SetConnection(1000, {splitYOfMCUBreadboard[1]}, {currentkey}, {mode});")
+                    # print(f"SetConnection(1001, {key}, {splitXOfMainBreadboard[1]}, {mode});")
+                    
+                    return "1000; " + str(splitYOfMCUBreadboard[1]) + "; " + str(currentkey) + "; " + str(mode) + "\n" + \
+                    "1001; " + str(key) + "; " + str(splitXOfMainBreadboard[1]) + "; " + str(mode)
+                        
                     break
         else:
             print("No available pins in MUX2")    
