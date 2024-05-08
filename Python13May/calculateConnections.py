@@ -63,35 +63,34 @@ def export_connections(config, MCUpin, MAINpin, mode, usedMUX1Pins, usedMUX2Pins
         # the break bellw doenst work, WHY?
         currentkey = None
         for key in mux1['Outputs'].items():
-            if key not in usedMUX1Pins:
-                if key not in ["X8", "X9", "X10", "X11", "X12", "X13", "X14", "X15"]:
+            if key[0] not in usedMUX1Pins:
+                if key[0] not in ["X8", "X9", "X10", "X11", "X12", "X13", "X14", "X15"]:
                     if mode == "true":
-                        usedMUX1Pins.append(key)
+                        usedMUX1Pins.append(key[0])
+                        print(f"usedMUX1Pins: {usedMUX1Pins}")
                         currentkey = key[0]
                         print(f"currentkey: {currentkey}")
                         print(f"BREAK NOW")
                         break
-                    break
-            break
 
             
         valueOfCurrentKey = mux1['Outputs'][currentkey]
         splitValueOfCurrentKey = valueOfCurrentKey.split("_")
-        print (splitValueOfCurrentKey)
+        print (splitValueOfCurrentKey[1])
 
         for key in mux2['Inputs'].items():
+            print(f"key: {key}")
             if key not in usedMUX2Pins:
-                if key == splitValueOfCurrentKey[1]:
+                if key[0] == splitValueOfCurrentKey[1]:
                     if mode == "true":
-                        usedMUX2Pins.append(key)
+                        usedMUX2Pins.append(key[0])
+                        print(f"usedMUX2Pins: {usedMUX2Pins}")
                     # print(f"SetConnection(1000, {splitYOfMCUBreadboard[1]}, {currentkey}, {mode});")
                     # print(f"SetConnection(1001, {key}, {splitXOfMainBreadboard[1]}, {mode});")
                     
-                    return "1000;" + str(splitYOfMCUBreadboard[1]).lower()  + ";" + str(currentkey.lower() ) + ";" + str(mode).lower() + "\n" + \
-                    "1001;" + str(key[0]).lower()  + ";" + str(splitXOfMainBreadboard[1]).lower()  + ";" + str(mode).lower()
-                        
-                    break
-                
+                        return "1000;" + str(splitYOfMCUBreadboard[1]).lower()  + ";" + str(currentkey.lower() ) + ";" + str(mode).lower() + "\n" + \
+                        "1001;" + str(key[0]).lower()  + ";" + str(splitXOfMainBreadboard[1]).lower()  + ";" + str(mode).lower()
+                                        
             
 if __name__ == "__main__":
     usedMUX1Pins = []
