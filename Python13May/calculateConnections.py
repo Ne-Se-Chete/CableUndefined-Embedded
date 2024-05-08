@@ -11,8 +11,6 @@ class colors:
     RESET = '\033[0m'
 
 
-usedMUX1Pins = []
-usedMUX2Pins = []
 
 def find_key_by_value(data, target_value, mode):
     # Search in the 'Inputs' dictionary for the target value
@@ -31,7 +29,8 @@ def load_multiplexer_config(filepath):
         data = json.load(file)
     return data
 
-def export_connections(config, MCUpin, MAINpin, mode):
+def export_connections(config, MCUpin, MAINpin, mode, usedMUX1Pins, usedMUX2Pins): 
+    
 
     mux1 = config['Multiplexers'][0]
     mux2 = config['Multiplexers'][1]
@@ -56,7 +55,7 @@ def export_connections(config, MCUpin, MAINpin, mode):
 
     if splitYOfMCUBreadboard[0] == splitXOfMainBreadboard[0]:
         # print(f"SetConnection(1000, {splitYOfMCUBreadboard[1]}, {splitXOfMainBreadboard[1]}, {mode});")
-        return "1000; " + str(splitYOfMCUBreadboard[1]) + "; " + str(splitXOfMainBreadboard[1]) + "; " + str(mode)
+        return "1000;" + str(splitYOfMCUBreadboard[1]).lower() + ";" + str(splitXOfMainBreadboard[1]).lower() + ";" + str(mode).lower()
 
     else:
         currentkey = None
@@ -69,11 +68,9 @@ def export_connections(config, MCUpin, MAINpin, mode):
                 if key not in ["X8", "X9", "X10", "X11", "X12", "X13", "X14", "X15"]:
                     if mode == "true":
                         usedMUX1Pins.append(key)
-                    currentkey = key
-                    break
-        else:
-            print("No available pins in MUX1")
-            return
+                        currentkey = key
+                        print("I HAVE TO BREAK")
+                        break
         
         valueOfCurrentKey = mux1['Outputs'][currentkey]
         splitValueOfCurrentKey = valueOfCurrentKey.split("_")
@@ -86,8 +83,8 @@ def export_connections(config, MCUpin, MAINpin, mode):
                     # print(f"SetConnection(1000, {splitYOfMCUBreadboard[1]}, {currentkey}, {mode});")
                     # print(f"SetConnection(1001, {key}, {splitXOfMainBreadboard[1]}, {mode});")
                     
-                    return "1000; " + str(splitYOfMCUBreadboard[1]) + "; " + str(currentkey) + "; " + str(mode) + "\n" + \
-                    "1001; " + str(key) + "; " + str(splitXOfMainBreadboard[1]) + "; " + str(mode)
+                    return "1000;" + str(splitYOfMCUBreadboard[1]).lower()  + ";" + str(currentkey.lower() ) + ";" + str(mode).lower() + "\n" + \
+                    "1001;" + str(key).lower()  + ";" + str(splitXOfMainBreadboard[1]).lower()  + ";" + str(mode).lower()
                         
                     break
         else:
@@ -95,5 +92,7 @@ def export_connections(config, MCUpin, MAINpin, mode):
                 
             
 if __name__ == "__main__":
+    usedMUX1Pins = []
+    usedMUX2Pins = []
     while True:
-        export_connections(load_multiplexer_config('rules.json'), 1, 1)
+        export_connections(load_multiplexer_config('rules.json'), 1, 1, "true", usedMUX1Pins, usedMUX2Pins)

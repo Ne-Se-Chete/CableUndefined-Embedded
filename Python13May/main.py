@@ -16,6 +16,9 @@ colors = [
     "#FF8000"   # Orange
 ]
 
+usedMUX1Pins = []
+usedMUX2Pins = []
+
 class Breadboard(tk.Tk):
     def __init__(self, main_rows, main_columns, small_rows, small_columns, serial_port, baud_rate=9600):
         super().__init__()
@@ -33,6 +36,8 @@ class Breadboard(tk.Tk):
         self.baud_rate = baud_rate
         self.serial_conn = None
         self.initialize_serial()
+        self.usedMUX1Pins = []
+        self.usedMUX2Pins = []
     
     def initialize_serial(self):
         try:
@@ -56,7 +61,7 @@ class Breadboard(tk.Tk):
     def write_to_serial(self, message):
         if self.serial_conn:
             try:
-                self.serial_conn.write(message.encode('utf-8'))
+                self.serial_conn.write(bytes(message, 'utf-8'))
                 print(f"Sent to Arduino: {message}")
             except Exception as e:
                 print(f"Failed to send message: {e}")
@@ -140,11 +145,17 @@ class Breadboard(tk.Tk):
             MCUNonTuplePin1 = 6
         elif MCUNonTuplePin1 == 8:
             MCUNonTuplePin1 = 5
+
+        
     
         print(f"MCU Pin: {MCUNonTuplePin1}, Main Pin: {mainNonTuplePin2}")
                                                                                 # MCU pin, Main pin, mode
-        toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, True)
-        ledsString = "; " + "MainBreadboard " + str(mainNonTuplePin2) + "; " + "MCUBreadboard " + str(MCUNonTuplePin1)
+        toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, True, self.usedMUX1Pins, self.usedMUX2Pins)
+
+        MCUNonTuplePin1 = MCUNonTuplePin1 - 1
+        mainNonTuplePin2 = mainNonTuplePin2 - 1
+
+        ledsString = ";" + "MainBreadboard " + str(mainNonTuplePin2) + ";" + "MCUBreadboard " + str(MCUNonTuplePin1)
         toWriteToCU += ledsString
         toWriteToCU += "\n"
 
@@ -183,16 +194,23 @@ class Breadboard(tk.Tk):
                     MCUNonTuplePin1 = 6
                 elif MCUNonTuplePin1 == 8:
                     MCUNonTuplePin1 = 5
-                
-                toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, False)
-                ledsString = "; " + "MainBreadboard " + str(mainNonTuplePin2) + "; " + "MCUBreadboard " + str(MCUNonTuplePin1)
-                toWriteToCU += ledsString
 
+                
+
+                toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, False, self.usedMUX1Pins, self.usedMUX2Pins)
+
+                MCUNonTuplePin1 = MCUNonTuplePin1 - 1
+                mainNonTuplePin2 = mainNonTuplePin2 - 1
+
+                ledsString = ";" + "MainBreadboard " + str(mainNonTuplePin2) + ";" + "MCUBreadboard " + str(MCUNonTuplePin1)
+                toWriteToCU += ledsString
+                # split the stringt by "\n" and insert leds string after the first line
+                
                 print(f"To write in serial: \n{toWriteToCU}")
                 toWriteToCU += "\n"
                 self.write_to_serial(toWriteToCU)
-
-                # to fix formatting !!!
+                
+                # to fix formatting !!!c
                 # ser.write(b'1000;y5;x10;true;MainBreadboard 15;MCUBreadboard 8\n') THIS IS VALID
                 # NUMBERING OF LEDS STARTS FROM 0
                 # y and x lower, remove space after ;, T on true lower
