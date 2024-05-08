@@ -60,22 +60,26 @@ def export_connections(config, MCUpin, MAINpin, mode, usedMUX1Pins, usedMUX2Pins
         if mode == "false":
             usedMUX1Pins.pop()
             usedMUX2Pins.pop()
-
-        for key, value in mux1['Outputs'].items():
+        # the break bellw doenst work, WHY?
+        currentkey = None
+        for key in mux1['Outputs'].items():
             if key not in usedMUX1Pins:
                 if key not in ["X8", "X9", "X10", "X11", "X12", "X13", "X14", "X15"]:
                     if mode == "true":
-                        print (f"key: {key}")
                         usedMUX1Pins.append(key)
-                        print (f"I have to break here")
-                        currentkey = key
+                        currentkey = key[0]
+                        print(f"currentkey: {currentkey}")
+                        print(f"BREAK NOW")
                         break
+                    break
+            break
 
             
         valueOfCurrentKey = mux1['Outputs'][currentkey]
         splitValueOfCurrentKey = valueOfCurrentKey.split("_")
+        print (splitValueOfCurrentKey)
 
-        for key, value in mux2['Inputs'].items():
+        for key in mux2['Inputs'].items():
             if key not in usedMUX2Pins:
                 if key == splitValueOfCurrentKey[1]:
                     if mode == "true":
@@ -84,15 +88,13 @@ def export_connections(config, MCUpin, MAINpin, mode, usedMUX1Pins, usedMUX2Pins
                     # print(f"SetConnection(1001, {key}, {splitXOfMainBreadboard[1]}, {mode});")
                     
                     return "1000;" + str(splitYOfMCUBreadboard[1]).lower()  + ";" + str(currentkey.lower() ) + ";" + str(mode).lower() + "\n" + \
-                    "1001;" + str(key).lower()  + ";" + str(splitXOfMainBreadboard[1]).lower()  + ";" + str(mode).lower()
+                    "1001;" + str(key[0]).lower()  + ";" + str(splitXOfMainBreadboard[1]).lower()  + ";" + str(mode).lower()
                         
                     break
-        else:
-            print("No available pins in MUX2")    
                 
             
 if __name__ == "__main__":
     usedMUX1Pins = []
     usedMUX2Pins = []
     while True:
-        export_connections(load_multiplexer_config('rules.json'), 1, 1, "true", usedMUX1Pins, usedMUX2Pins)
+        print(export_connections(load_multiplexer_config('rules.json'), input("MCU: "), input("MAIN: "), "true", usedMUX1Pins, usedMUX2Pins))
