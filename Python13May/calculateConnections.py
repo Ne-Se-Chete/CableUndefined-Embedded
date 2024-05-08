@@ -54,9 +54,7 @@ def export_connections(config, MCUpin, MAINpin, mode, usedMUX1Pins, usedMUX2Pins
     splitXOfMainBreadboard = XOfMainBreadboard.split("_")
 
     if splitYOfMCUBreadboard[0] == splitXOfMainBreadboard[0]:
-        # print(f"SetConnection(1000, {splitYOfMCUBreadboard[1]}, {splitXOfMainBreadboard[1]}, {mode});")
-        return "1000;" + str(splitYOfMCUBreadboard[1]).lower() + ";" + str(splitXOfMainBreadboard[1]).lower() + ";" + str(mode).lower()
-
+        print(f"SetConnection(1000, {splitYOfMCUBreadboard[1]}, {splitXOfMainBreadboard[1]}, {mode});")
     else:
         currentkey = None
         if mode == "false":
@@ -67,11 +65,13 @@ def export_connections(config, MCUpin, MAINpin, mode, usedMUX1Pins, usedMUX2Pins
             if key not in usedMUX1Pins:
                 if key not in ["X8", "X9", "X10", "X11", "X12", "X13", "X14", "X15"]:
                     if mode == "true":
+                        print (f"key: {key}")
                         usedMUX1Pins.append(key)
+                        print (f"I have to break here")
                         currentkey = key
-                        print("I HAVE TO BREAK")
                         break
-        
+
+            
         valueOfCurrentKey = mux1['Outputs'][currentkey]
         splitValueOfCurrentKey = valueOfCurrentKey.split("_")
 
