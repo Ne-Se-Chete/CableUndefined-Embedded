@@ -36,6 +36,7 @@ class Breadboard(tk.Tk):
         self.baud_rate = baud_rate
         self.serial_conn = None
         self.initialize_serial()
+        self.write_to_serial("Clear")
         self.usedMUX1Pins = []
         self.usedMUX2Pins = []
     
@@ -148,18 +149,35 @@ class Breadboard(tk.Tk):
 
         
     
-        print(f"MCU Pin: {MCUNonTuplePin1}, Main Pin: {mainNonTuplePin2}")
+        # print(f"MCU Pin: {MCUNonTuplePin1}, Main Pin: {mainNonTuplePin2}")
                                                                                 # MCU pin, Main pin, mode
-        toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, True, self.usedMUX1Pins, self.usedMUX2Pins)
+        toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, "true", self.usedMUX1Pins, self.usedMUX2Pins)
 
-        MCUNonTuplePin1 = MCUNonTuplePin1 - 1
-        mainNonTuplePin2 = mainNonTuplePin2 - 1
+        mainLedsPin = mainNonTuplePin2 - 1
+        mcuLedsPin = MCUNonTuplePin1 - 1
 
-        ledsString = ";" + "MainBreadboard " + str(mainNonTuplePin2) + ";" + "MCUBreadboard " + str(MCUNonTuplePin1)
+        if mcuLedsPin == 0:
+            mcuLedsPin = 7
+        elif mcuLedsPin == 1:
+            mcuLedsPin = 6
+        elif mcuLedsPin == 2:
+            mcuLedsPin = 5
+        elif mcuLedsPin == 3:
+            mcuLedsPin = 4
+        elif mcuLedsPin == 4:
+            mcuLedsPin = 0
+        elif mcuLedsPin == 5:
+            mcuLedsPin = 1
+        elif mcuLedsPin == 6:
+            mcuLedsPin = 2
+        elif mcuLedsPin == 7:
+            mcuLedsPin = 3
+
+        ledsString = ";" + "MainBreadboard " + str(mainLedsPin) + ";" + "MCUBreadboard " + str(mcuLedsPin)
         toWriteToCU += ledsString
         toWriteToCU += "\n"
 
-        print(f"To write in serial: \n{toWriteToCU}")
+        # print(f"To write in serial: \n{toWriteToCU}")
 
         self.write_to_serial(toWriteToCU)
 
@@ -178,13 +196,15 @@ class Breadboard(tk.Tk):
                     else:
                         self.small_pins[pin_row][pin_col] = False
 
-                # Extract pin numbers from pin tuples
-                if connection[0] == 'small' and connection[1] == 'main':
+
+
+                if connection[0][0] == 'small' and connection[1][0] == 'main':
                     MCUNonTuplePin1 = self.get_pin_number(connection[0])
                     mainNonTuplePin2 = self.get_pin_number(connection[1])
-                elif connection[0] == 'main' and connection[1] == 'small':
+                elif connection[0][0] == 'main' and connection[1][0] == 'small':
                     MCUNonTuplePin1 = self.get_pin_number(connection[1])
                     mainNonTuplePin2 = self.get_pin_number(connection[0])
+
                 
                 if MCUNonTuplePin1 == 5:
                     MCUNonTuplePin1 = 8
@@ -195,18 +215,38 @@ class Breadboard(tk.Tk):
                 elif MCUNonTuplePin1 == 8:
                     MCUNonTuplePin1 = 5
 
-                
 
-                toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, False, self.usedMUX1Pins, self.usedMUX2Pins)
+                toWriteToCU = export_connections(load_multiplexer_config('rules.json'), MCUNonTuplePin1, mainNonTuplePin2, "false", self.usedMUX1Pins, self.usedMUX2Pins)
 
-                MCUNonTuplePin1 = MCUNonTuplePin1 - 1
-                mainNonTuplePin2 = mainNonTuplePin2 - 1
+                mainLedsPin = mainNonTuplePin2 - 1
+                mcuLedsPin = MCUNonTuplePin1 - 1
 
-                ledsString = ";" + "MainBreadboard " + str(mainNonTuplePin2) + ";" + "MCUBreadboard " + str(MCUNonTuplePin1)
+                # print(f"MainLedsPin: {mainLedsPin}, MCULedsPin: {mcuLedsPin} | BEFORE")                
+
+                if mcuLedsPin == 0:
+                    mcuLedsPin = 7
+                elif mcuLedsPin == 1:
+                    mcuLedsPin = 6
+                elif mcuLedsPin == 2:
+                    mcuLedsPin = 5
+                elif mcuLedsPin == 3:
+                    mcuLedsPin = 4
+                elif mcuLedsPin == 4:
+                    mcuLedsPin = 0
+                elif mcuLedsPin == 5:
+                    mcuLedsPin = 1
+                elif mcuLedsPin == 6:
+                    mcuLedsPin = 2
+                elif mcuLedsPin == 7:
+                    mcuLedsPin = 3
+
+                # print(f"MainLedsPin: {mainLedsPin}, MCULedsPin: {mcuLedsPin}")                
+
+                ledsString = ";" + "MainBreadboard " + str(mainLedsPin) + ";" + "MCUBreadboard " + str(mcuLedsPin)
                 toWriteToCU += ledsString
                 # split the stringt by "\n" and insert leds string after the first line
                 
-                print(f"To write in serial: \n{toWriteToCU}")
+                # print(f"To write in serial: \n{toWriteToCU}")
                 toWriteToCU += "\n"
                 self.write_to_serial(toWriteToCU)
                 
@@ -215,9 +255,6 @@ class Breadboard(tk.Tk):
                 # NUMBERING OF LEDS STARTS FROM 0
                 # y and x lower, remove space after ;, T on true lower
                 # leds on mcu breadboard are cooked
-
-
-
 
 
     def get_pin_number(self, pin):
