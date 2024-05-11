@@ -100,7 +100,7 @@ class Breadboard(tk.Tk):
         sidebar_frame.pack_propagate(0)
 
         # Create a label for the chatbot
-        comp_label = tk.Label(sidebar_frame, text='ChatBot', font=('Arial', 20), bg=colors[6])
+        comp_label = tk.Label(sidebar_frame, text='Component AI', font=('Arial', 20), bg=colors[6])
         comp_label.pack(side=tk.TOP, fill=tk.X)
 
         # Create a scrollable frame for the buttons
