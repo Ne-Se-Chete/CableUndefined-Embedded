@@ -2,6 +2,7 @@ import tkinter as tk
 from calculateConnections import *
 import serial
 import time
+import openai
 
 
 # Define colors
@@ -22,6 +23,9 @@ usedMUX2Pins = []
 class Breadboard(tk.Tk):
     def __init__(self, main_rows, main_columns, small_rows, small_columns, serial_port, baud_rate=9600):
         super().__init__()
+        #* Add sidebar that is on the right side of the window with width of 200px and height of the window. starts from the top and goes to the bottom
+        self.create_sidebar()
+
         self.main_rows = main_rows
         self.main_columns = main_columns
         self.small_rows = small_rows
@@ -35,6 +39,7 @@ class Breadboard(tk.Tk):
         self.serial_port = serial_port
         self.baud_rate = baud_rate
         self.serial_conn = None
+
         self.initialize_serial()
         self.write_to_serial("Clear")
         self.usedMUX1Pins = []
@@ -67,22 +72,129 @@ class Breadboard(tk.Tk):
             except Exception as e:
                 print(f"Failed to send message: {e}")
 
+    def create_sidebar(self):
+        N_BUTTONS = [
+            {"name": "Component 1", "type": "LED"},
+            {"name": "Component 2", "type": "LED"},
+            {"name": "Component 3", "type": "Resistor"},
+            {"name": "Component 4", "type": "Capacitor"},
+            {"name": "Component 5", "type": "Switch"},
+            {"name": "Component 6", "type": "Transistor"},
+            {"name": "Component 7", "type": "Diode"},
+            {"name": "Component 8", "type": "Sensor"},
+            {"name": "Component 9", "type": "Motor"},
+            {"name": "Component 10", "type": "Speaker"}
+        ]
+
+        active_buttons_from_search = N_BUTTONS.copy()
+
+        # Create a frame for the sidebar
+        sidebar_frame = tk.Frame(self, width=200, height=self.winfo_height(), bg='white')
+        sidebar_frame.pack(side=tk.RIGHT, fill=tk.Y)
+        sidebar_frame.pack_propagate(0)
+
+        # Create a label for the chatbot
+        comp_label = tk.Label(sidebar_frame, text='ChatBot', font=('Arial', 20), bg=colors[6])
+        comp_label.pack(side=tk.TOP, fill=tk.X)
+
+        # Create a scrollable frame for the buttons
+        scrollable_frame = tk.Frame(sidebar_frame, bg='white')
+        scrollable_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
+        # Create a scrollbar
+        scrollbar = tk.Scrollbar(scrollable_frame)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        # Create a canvas to hold the buttons
+        canvas = tk.Canvas(scrollable_frame, bg='white', yscrollcommand=scrollbar.set)
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        # Configure the scrollbar to work with the canvas
+        scrollbar.config(command=canvas.yview)
+
+        # Create a frame inside the canvas to hold the buttons
+        buttons_frame = tk.Frame(canvas, bg='white')
+
+        # Add the buttons to the buttons frame
+        for i in range(len(N_BUTTONS)):
+            button = tk.Button(buttons_frame, text=N_BUTTONS[i]["name"], font=('Arial', 12), bg='white')
+            button.pack(side=tk.TOP, fill=tk.X, pady=5)
+        
+        # Center the buttons frame for the X axis
+        buttons_frame.update_idletasks()
+        canvas_width = canvas.winfo_width()
+        buttons_frame_width = buttons_frame.winfo_width()
+        x_offset = (canvas_width - buttons_frame_width) // 2
+        canvas.create_window((x_offset, 0), window=buttons_frame, anchor='nw')
+
+        # Configure the canvas to update scroll region when the buttons frame changes size
+        buttons_frame.bind('<Configure>', lambda event: canvas.configure(scrollregion=canvas.bbox('all')))
+
+
+        # Create a search component text box
+        search_comp = tk.Text(sidebar_frame, bg='black', font=('Arial', 12), height=2, fg='white')
+        search_comp.insert(tk.END, "Search component...")
+        search_comp.pack(side=tk.BOTTOM)
+
+        # Add placeholder functionality
+        def on_entry_click(event):
+            if search_comp.get("1.0", "end-1c") == "Search component...":
+                search_comp.delete("1.0", tk.END)
+                search_comp.config(fg='white')
+
+        def on_focus_out(event):
+            if search_comp.get("1.0", "end-1c") == "":
+                search_comp.insert(tk.END, "Search component...")
+                search_comp.config(fg='white')
+
+        search_comp.bind("<FocusIn>", on_entry_click)
+        search_comp.bind("<FocusOut>", on_focus_out)
+
+        # Add white border to the text box
+        search_comp.config(borderwidth=2, relief=tk.SOLID, highlightbackground=colors[6])
+
+        # Add search functionality
+        def search_components(event):
+            search_text = search_comp.get("1.0", "end-1c")
+            if search_text != "Search component...":
+                active_buttons_from_search.clear()
+                for button in N_BUTTONS:
+                    if search_text.lower() in button["name"].lower():
+                        active_buttons_from_search.append(button)
+                update_buttons_frame()
+
+        def update_buttons_frame():
+            for widget in buttons_frame.winfo_children():
+                widget.destroy()
+            for i in range(len(active_buttons_from_search)):
+                button = tk.Button(buttons_frame, text=active_buttons_from_search[i]["name"], font=('Arial', 12), bg='white')
+                button.pack(side=tk.TOP, fill=tk.X, pady=5)
+            
+            # Center the buttons
+            buttons_frame.update_idletasks()
+            sidebar_width = sidebar_frame.winfo_width()
+            buttons_width = buttons_frame.winfo_width()
+            padding = (sidebar_width - buttons_width) // 2
+            buttons_frame.pack_configure(padx=padding)
+
+        search_comp.bind("<KeyRelease>", search_components)
+
     def create_widgets(self):
         self.main_frame = tk.Frame(self, bd=2, relief=tk.RAISED)
-        self.main_frame.pack(side=tk.BOTTOM, padx=20, pady=20)
+        self.main_frame.pack(side=tk.BOTTOM, padx=10, pady=10)
         self.main_buttons = [[None for _ in range(self.main_columns)] for _ in range(self.main_rows)]
         
         count = 1
         for i in range(self.main_rows):
             for j in range(self.main_columns):
                 label_text = str(count)
-                self.main_buttons[i][j] = tk.Button(self.main_frame, text=label_text, width=8, height=4, relief="raised",
+                self.main_buttons[i][j] = tk.Button(self.main_frame, text=label_text, width=4, height=3, relief="raised",
                                                     command=lambda row=i, column=j: self.toggle_pin(row, column, 'main'))
                 self.main_buttons[i][j].grid(row=i, column=j, padx=4, pady=4)
                 count += 1
 
         self.small_frame = tk.Frame(self, bd=2, relief=tk.RAISED)
-        self.small_frame.pack(side=tk.TOP, padx=20, pady=20)
+        self.small_frame.pack(side=tk.TOP, padx=10, pady=10)
         self.small_buttons = [[None for _ in range(self.small_columns)] for _ in range(self.small_rows)]
         small_pin_numbers = [
             [8, 7, 6, 5],
