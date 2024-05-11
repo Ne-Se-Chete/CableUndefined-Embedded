@@ -119,7 +119,8 @@ class Breadboard(tk.Tk):
         for i in range(len(N_BUTTONS)):
             button = tk.Button(buttons_frame, text=N_BUTTONS[i]["name"], font=('Arial', 12), bg='white')
             button.pack(side=tk.TOP, fill=tk.X, pady=5)
-        
+            button.bind("<Button-1>", lambda event, button_info=N_BUTTONS[i]: self.show_component_info(button_info))
+
         # Center the buttons frame for the X axis
         buttons_frame.update_idletasks()
         canvas_width = canvas.winfo_width()
@@ -169,8 +170,22 @@ class Breadboard(tk.Tk):
             for i in range(len(active_buttons_from_search)):
                 button = tk.Button(buttons_frame, text=active_buttons_from_search[i]["name"], font=('Arial', 12), bg='white')
                 button.pack(side=tk.TOP, fill=tk.X, pady=5)
+                button.bind("<Button-1>", lambda event, button_info=active_buttons_from_search[i]: self.show_component_info(button_info))
 
         search_comp.bind("<KeyRelease>", search_components)
+
+    def show_component_info(self, button_info):
+        # Create a new panel to show the component info
+        component_panel = tk.Toplevel(self)
+        component_panel.title(button_info["name"])
+        component_panel.geometry("400x300")
+
+        # Create labels to display the component info
+        name_label = tk.Label(component_panel, text=f"Name: {button_info['name']}", font=('Arial', 16))
+        name_label.pack(pady=10)
+
+        type_label = tk.Label(component_panel, text=f"Type: {button_info['type']}", font=('Arial', 16))
+        type_label.pack(pady=10)
 
     def create_widgets(self):
         self.main_frame = tk.Frame(self, bd=2, relief=tk.RAISED)
