@@ -3,7 +3,13 @@ from calculateConnections import *
 import serial
 import time
 import openai
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+# openai setup
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Define colors
 colors = [
@@ -178,7 +184,7 @@ class Breadboard(tk.Tk):
         # Create a new panel to show the component info
         component_panel = tk.Toplevel(self)
         component_panel.title(button_info["name"])
-        component_panel.geometry("400x300")
+        component_panel.geometry("800x600")
 
         # Create labels to display the component info
         name_label = tk.Label(component_panel, text=f"Name: {button_info['name']}", font=('Arial', 16))
@@ -186,6 +192,40 @@ class Breadboard(tk.Tk):
 
         type_label = tk.Label(component_panel, text=f"Type: {button_info['type']}", font=('Arial', 16))
         type_label.pack(pady=10)
+
+
+        # Call the ChatGPT API and display the output
+        response = self.call_chatgpt_api(button_info)
+        component_frame = tk.Frame(component_panel)
+        component_frame.pack(pady=10)
+        # Create a scrollable text box to display the output
+        output_text = tk.Text(component_frame, font=('Arial', 16), wrap=tk.WORD)
+        output_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        # Create a scrollbar for the text box
+        scrollbar = tk.Scrollbar(component_frame, command=output_text.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        output_text.config(yscrollcommand=scrollbar.set)
+        # Insert the response into the text box
+        output_text.insert(tk.END, response)
+        output_text.configure(state='disabled')
+
+    def call_chatgpt_api(self, button_info):
+        # Make the API call to ChatGPT and return the response
+        # Replace this with your actual API call implementation
+        response = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": f"Generate wiring and code for {button_info['name']} with type {button_info['type']} with ATTINY85. Dont mention how to uppload the code ",
+                }
+            ],
+            model="gpt-4",
+            max_tokens=300,
+            n=1,
+            stop=None,
+            temperature=0.7
+        )
+        return response.choices[0].message.content.strip()
 
     def create_widgets(self):
         self.main_frame = tk.Frame(self, bd=2, relief=tk.RAISED)
