@@ -169,13 +169,6 @@ class Breadboard(tk.Tk):
             for i in range(len(active_buttons_from_search)):
                 button = tk.Button(buttons_frame, text=active_buttons_from_search[i]["name"], font=('Arial', 12), bg='white')
                 button.pack(side=tk.TOP, fill=tk.X, pady=5)
-            
-            # Center the buttons
-            buttons_frame.update_idletasks()
-            sidebar_width = sidebar_frame.winfo_width()
-            buttons_width = buttons_frame.winfo_width()
-            padding = (sidebar_width - buttons_width) // 2
-            buttons_frame.pack_configure(padx=padding)
 
         search_comp.bind("<KeyRelease>", search_components)
 
