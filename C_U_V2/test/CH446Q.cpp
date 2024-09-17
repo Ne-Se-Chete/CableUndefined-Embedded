@@ -4,15 +4,14 @@
 extern Adafruit_NeoPixel strip;
 
 // Constructor implementation
-MUX::MUX(int cs) : csPin(cs)
+MUX::MUX(int cs)
 {
     // Initialize chip select pin
     pinMode(csPin, OUTPUT);
     digitalWrite(csPin, LOW); // Initialize the multiplexer as deselected (LOW)
 
-    // Serial.println("MUX initialized.");
+    // Copy the provided X and Y pin names to the member variables
 }
-
 
 void MUX::clearConnections()
 {
@@ -146,19 +145,15 @@ void MUX::printPins()
 
 void MUX::setupPins(const String xPinNames[MAX_X_PINS], const String yPinNames[MAX_Y_PINS])
 {
-    // Serial.println("Setting up pins for MUX...");
     for (int i = 0; i < 8; ++i)
     {
         yPins[i] = yPinNames[i];
-        // Serial.print("Y Pin "); Serial.print(i); Serial.print(": "); Serial.println(yPins[i]);
     }
 
     for (int i = 0; i < 16; ++i)
     {
         xPins[i] = xPinNames[i];
-        // Serial.print("X Pin "); Serial.print(i); Serial.print(": "); Serial.println(xPins[i]);
     }
-    // Serial.println("MUX pin setup complete.");
 }
 
 void resetMuxes(){

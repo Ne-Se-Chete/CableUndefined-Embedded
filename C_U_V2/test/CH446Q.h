@@ -43,4 +43,6 @@ public:
 
 void resetMuxes();
 
+void setupMUXes(MUX mux1, int numMuxes);
+
 #endif
