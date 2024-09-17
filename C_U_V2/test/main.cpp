@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
-#include "CH446Q.h"
-#include "ConfigMUX.h"
+#include "CH446Q.h" 
+#include "ConfigMUX.h" 
 
 #define EN1_PIN PC2
 #define EN2_PIN PC1
@@ -26,7 +26,7 @@ void setupPMU(bool enabled)
         digitalWrite(EN2_PIN, LOW);
         digitalWrite(EN3_PIN, LOW);
     }
-    delay(1000);
+    delay(1000); 
 }
 
 void setup()
@@ -45,29 +45,26 @@ void setup()
     pinMode(EN1_PIN, OUTPUT);
     pinMode(EN2_PIN, OUTPUT);
     pinMode(EN3_PIN, OUTPUT);
-    pinMode(USR_BTN, INPUT_PULLUP);
+    pinMode(USR_BTN, INPUT_PULLUP); 
 
-    strip.begin();
-    delay(100);
-    strip.show();
-    delay(100); 
-
+    strip.begin();        
+    strip.show();         
     Serial.begin(115200);
-    delay(100); 
 
     setupPMU(true);
 
     resetMuxes();
-    MUX mux1(csPin1);
-    MUX mux2(csPin2);
+    MUX mux1(PD2);
+    // MUX mux2(PA0);
 
     Serial.println("Setting up MUXes");
-    mux1.setupPins(xPins1, yPins1); 
-    mux1.printPins();
-    mux2.setupPins(xPins2, yPins2); 
-    mux2.printPins(); 
+    mux1.setupPins(xPins1, yPins1); // Setup the pins for the multiplexer
+    mux1.printPins(); // Print the pin assignments for the multiplexer
 
     Serial.println("dun");
+
+
+
 }
 
 void loop()
