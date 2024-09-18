@@ -10,8 +10,6 @@
 
 extern Adafruit_NeoPixel strip;
 
-extern std::vector<int> usedMainTrackPins;
-
 void setupPMU(bool enabled)
 {
     if (enabled)
@@ -59,7 +57,7 @@ void setup()
 
     resetMuxes();
 
-    MUX mux1(csPin1, xPins1, yPins1);
+    MUX mux1(PD2, xPins1, yPins1);
     MUX mux2(csPin2, xPins2, yPins2);
     MUX mux3(csPin17, xPins17, yPins17);
     MUX mux4(csPin18, xPins18, yPins18);
@@ -73,8 +71,10 @@ void setup()
 
     route(muxes, 1, 1, true);
     route(muxes, 5, 8, true);
-    route(muxes, 1, 1, false);
-    route(muxes, 1, 1, true);
+    route(muxes, 5, 8, false);
+    route(muxes, 2, 3, true);
+
+    // mux1.setConnection(1, 1, true, 0, 1, strip.Color(255, 255, 0));
 
 }
 

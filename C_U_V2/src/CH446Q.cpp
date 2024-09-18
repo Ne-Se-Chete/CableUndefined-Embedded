@@ -2,11 +2,14 @@
 
 Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-std::vector<int> usedMainTrackPins;
+std::vector<TrackConnection> activeConnections;
 
 MUX::MUX(int csPin, const char** xPinArray, const char** yPinArray)
     : csPin(csPin)
 {
+    pinMode(csPin, OUTPUT);
+    digitalWrite(csPin, LOW);
+
     // Copy xPins
     for (int i = 0; i < 16; ++i) {
         xPins[i] = xPinArray[i];
@@ -184,39 +187,78 @@ bool MUX::findPin(const char* pinName, int &xIndex, int &yIndex) const {
     return false;
 }
 
-void releaseMainTrack(int trackIndex)
+void releaseMainTrack(const String& pin1Name, const String& pin2Name)
 {
-    auto it = std::find(usedMainTrackPins.begin(), usedMainTrackPins.end(), trackIndex);
-    if (it != usedMainTrackPins.end())
+    auto it = std::find_if(activeConnections.begin(), activeConnections.end(),
+                           [&](const TrackConnection& connection)
+                           {
+                               return connection.pin1Name == pin1Name && connection.pin2Name == pin2Name;
+                           });
+
+    if (it != activeConnections.end())
     {
-        usedMainTrackPins.erase(it);
+        int trackIndex = it->trackIndex;  // Get the correct track index
+        activeConnections.erase(it);      // Remove the track from activeConnections
+
+        Serial.print("Released track ");
+        Serial.print(trackIndex);
+        Serial.print(" for pins ");
+        Serial.print(pin1Name);
+        Serial.print(" and ");
+        Serial.println(pin2Name);
+    }
+    else
+    {
+        Serial.println("Error: No matching track found for the provided pins.");
     }
 }
 
-void useMainTrack(int trackIndex)
+
+void useMainTrack(int trackIndex, const String& pin1Name, const String& pin2Name)
 {
     if (trackIndex >= 0 && trackIndex < MAX_TRACK_PINS)
     {
-        // Add the trackIndex to the used list
-        usedMainTrackPins.push_back(trackIndex);
+        // Store the track and associated pins in the global vector
+        TrackConnection connection = { trackIndex, pin1Name, pin2Name };
+        activeConnections.push_back(connection);
+        Serial.print("Using track ");
+        Serial.print(trackIndex);
+        Serial.print(" for pins ");
+        Serial.print(pin1Name);
+        Serial.print(" and ");
+        Serial.println(pin2Name);
     }
 }
 
-bool getNextAvailableTrack(int &trackIndex)
+
+bool checkAvailableTrack(int &trackIndex)
 {
     for (int i = 0; i < MAX_TRACK_PINS; ++i)
     {
-        int currentIndex = (0 + i) % MAX_TRACK_PINS; // Wrap around if necessary
+        int currentIndex = i; // Direct index since we're iterating over all tracks
 
-        // Check if the currentIndex is not in use
-        if (std::find(usedMainTrackPins.begin(), usedMainTrackPins.end(), currentIndex) == usedMainTrackPins.end())
+        // Check if the currentIndex is already used in activeConnections
+        bool trackInUse = false;
+        for (const auto &connection : activeConnections)
+        {
+            if (connection.trackIndex == currentIndex)
+            {
+                trackInUse = true; // Track is already used
+                break;
+            }
+        }
+
+        // If track is not in use, assign it to trackIndex and return true
+        if (!trackInUse)
         {
             trackIndex = currentIndex;
             return true;
         }
     }
+
     return false; // No available track pins found
 }
+
 
 void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool mode)
 {
@@ -231,13 +273,14 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
     MUX *mux1 = nullptr;
     MUX *mux2 = nullptr;
 
+    // Find the pins in the MUXes
     for (size_t i = 0; i < muxes.size(); ++i)
     {
         if (muxes[i].findPin(pin1Name.c_str(), xIndex1, yIndex1))
         {
             pin1Found = true;
             mux1 = &muxes[i];
-            break; 
+            break;
         }
     }
 
@@ -247,23 +290,18 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
         {
             pin2Found = true;
             mux2 = &muxes[j];
-            break; 
+            break;
         }
     }
 
+    // If both pins are found
     if (pin1Found && pin2Found)
     {
         if (mode) // Set track
         {
-            if (getNextAvailableTrack(trackIndex))
+            if (checkAvailableTrack(trackIndex))
             {
-                useMainTrack(trackIndex);
-                Serial.print("Allocated track ");
-                Serial.print(trackIndex);
-                Serial.print(" for pins ");
-                Serial.print(pin1Name);
-                Serial.print(" and ");
-                Serial.println(pin2Name);
+                useMainTrack(trackIndex, pin1Name, pin2Name);
             }
             else
             {
@@ -272,13 +310,7 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
         }
         else // Release track
         {
-            releaseMainTrack(trackIndex);
-            Serial.print("Released track ");
-            Serial.print(trackIndex);
-            Serial.print(" for pins ");
-            Serial.print(pin1Name);
-            Serial.print(" and ");
-            Serial.println(pin2Name);
+            releaseMainTrack(pin1Name, pin2Name);
         }
     }
     else
@@ -290,8 +322,8 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
     }
 }
 
-void resetMuxes()
-{
+
+void resetMuxes(){
     digitalWrite(RST_PIN, HIGH);
     delay(100);
     digitalWrite(RST_PIN, LOW);

@@ -24,7 +24,13 @@
 #define LED_PIN PF1
 #define NUM_LEDS 120
 
-extern std::vector<int> usedMainTrackPins;
+struct TrackConnection {
+    int trackIndex;
+    String pin1Name;
+    String pin2Name;
+};
+
+extern std::vector<TrackConnection> activeConnections;
 
 // Class declaration for the multiplexer (CH446Q)
 class MUX
@@ -52,6 +58,6 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
 
 void useMainTrack(int trackIndex);
 void releaseMainTrack(int trackIndex);
-bool getNextAvailableTrack(int &trackIndex);
+bool checkAvailableTrack(int &trackIndex);
 
 #endif
