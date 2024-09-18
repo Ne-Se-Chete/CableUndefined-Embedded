@@ -347,7 +347,8 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
                 Serial.print("MUX2 y: ");
                 Serial.println(yIndex2);
 
-                // mux1->setConnection(xIndex1, yIndex1, true, trackIndex, -1, strip.Color(255, 255, 0));
+                mux1->setConnection(xIndex1, yIndex1, true, breadboardPin1-1, 60+breadboardPin2-1, strip.Color(255, 255, 0));
+                mux2->setConnection(xIndex2, yIndex2, true, -1, -1, strip.Color(255, 255, 0));
             }
             else
             {
@@ -383,6 +384,9 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
             Serial.println(xIndex2);
             Serial.print("MUX2 y: ");
             Serial.println(yIndex2);
+
+            mux1->setConnection(xIndex1, yIndex1, false, breadboardPin1-1, 60+breadboardPin2-1, strip.Color(0, 0, 0)); 
+            mux2->setConnection(xIndex2, yIndex2, false, -1, -1, strip.Color(0, 0, 0));
         }
     }
     else

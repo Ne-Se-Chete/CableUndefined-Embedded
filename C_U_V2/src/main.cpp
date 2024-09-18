@@ -58,9 +58,9 @@ void setup()
     resetMuxes();
 
     MUX mux1(PD2, xPins1, yPins1);
-    MUX mux2(csPin2, xPins2, yPins2);
-    MUX mux3(csPin17, xPins17, yPins17);
-    MUX mux4(csPin18, xPins18, yPins18);
+    MUX mux2(PA0, xPins2, yPins2);
+    MUX mux3(PA10, xPins17, yPins17);
+    MUX mux4(PB5, xPins18, yPins18);
 
     // mux1.printPins();
     // mux2.printPins();
@@ -70,9 +70,9 @@ void setup()
     int breadboard2Pin = 1;
 
     route(muxes, 1, 1, true);
-    route(muxes, 5, 8, true);
-    route(muxes, 5, 8, false);
-    route(muxes, 2, 3, true);
+    delay(10000);
+    route(muxes, 1, 1, false);
+    
 
     // mux1.setConnection(1, 1, true, 0, 1, strip.Color(255, 255, 0));
 
