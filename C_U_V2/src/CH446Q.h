@@ -56,8 +56,8 @@ void resetMuxes();
 
 void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool mode);
 
-void useMainTrack(int trackIndex);
-void releaseMainTrack(int trackIndex);
+void useMainTrack(int trackIndex, const String &pin1Name, const String &pin2Name);
+void releaseMainTrack(const String &pin1Name, const String &pin2Name, int &trackIdx);
 bool checkAvailableTrack(int &trackIndex);
 
 #endif
