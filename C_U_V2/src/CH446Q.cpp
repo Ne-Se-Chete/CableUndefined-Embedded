@@ -107,30 +107,34 @@ void MUX::setConnection(int x, int y, bool mode, int led1, int led2, uint32_t co
     digitalWrite(csPin, HIGH); // Activate the multiplexer (set CS_PIN HIGH)
 
     // Set the X address
-    digitalWrite(AX0_PIN, (x & 0x08) == 0x08 ? HIGH : LOW);
-    digitalWrite(AX1_PIN, (x & 0x04) == 0x04 ? HIGH : LOW);
-    digitalWrite(AX2_PIN, (x & 0x02) == 0x02 ? HIGH : LOW);
-    digitalWrite(AX3_PIN, (x & 0x01) == 0x01 ? HIGH : LOW);
+    digitalWrite(AX0_PIN, (x & 0x01) == 0x01 ? HIGH : LOW);
+    digitalWrite(AX1_PIN, (x & 0x02) == 0x02 ? HIGH : LOW);
+    digitalWrite(AX2_PIN, (x & 0x04) == 0x04 ? HIGH : LOW);
+    digitalWrite(AX3_PIN, (x & 0x08) == 0x08 ? HIGH : LOW);
 
     // Set the Y address
-    digitalWrite(AY0_PIN, (y & 0x04) == 0x04 ? HIGH : LOW);
+    digitalWrite(AY0_PIN, (y & 0x01) == 0x01 ? HIGH : LOW);
     digitalWrite(AY1_PIN, (y & 0x02) == 0x02 ? HIGH : LOW);
-    digitalWrite(AY2_PIN, (y & 0x01) == 0x01 ? HIGH : LOW);
+    digitalWrite(AY2_PIN, (y & 0x04) == 0x04 ? HIGH : LOW);
 
-    Serial.print("y: ");
-    Serial.print(y & 0x04 == 0x04 ? HIGH : LOW);
-    Serial.print(y & 0x02 == 0x02 ? HIGH : LOW);
-    Serial.print(y & 0x01 == 0x01 ? HIGH : LOW);
+    Serial.print("Y Address:\n");
+    Serial.print("AY2: ");
+    Serial.print((y & 0x04) == 0x04 ? HIGH : LOW);
+    Serial.print(" AY1: ");
+    Serial.print((y & 0x02) == 0x02 ? HIGH : LOW);
+    Serial.print(" AY0: ");
+    Serial.println((y & 0x01) == 0x01 ? HIGH : LOW);
 
-    Serial.print("\n");
-
-    Serial.print("x: ");
-    Serial.print(x & 0x08 == 0x08 ? HIGH : LOW);
-    Serial.print(x & 0x04 == 0x04 ? HIGH : LOW);
-    Serial.print(x & 0x02 == 0x02 ? HIGH : LOW);
-    Serial.print(x & 0x01 == 0x01 ? HIGH : LOW);
-
-    Serial.print("\n");
+    // Print X address bits
+    Serial.print("X Address:\n");
+    Serial.print("AX3: ");
+    Serial.print((x & 0x08) == 0x08 ? HIGH : LOW);
+    Serial.print(" AX2: ");
+    Serial.print((x & 0x04) == 0x04 ? HIGH : LOW);
+    Serial.print(" AX1: ");
+    Serial.print((x & 0x02) == 0x02 ? HIGH : LOW);
+    Serial.print(" AX0: ");
+    Serial.println((x & 0x01) == 0x01 ? HIGH : LOW);
 
     // Set the data line based on mode
     digitalWrite(DAT_PIN, mode ? HIGH : LOW);
@@ -210,7 +214,7 @@ void releaseMainTrack(const String &pin1Name, const String &pin2Name, int &track
 
     if (it != activeConnections.end())
     {
-        int trackIndex = it->trackIndex; // Get the correct track index        
+        int trackIndex = it->trackIndex; // Get the correct track index
         activeConnections.erase(it);     // Remove the track from activeConnections
         trackIdx = trackIndex;           // Assign trackIndex to the reference
 
@@ -227,7 +231,6 @@ void releaseMainTrack(const String &pin1Name, const String &pin2Name, int &track
         trackIdx = -1; // Optionally, set trackIdx to a default value if no track is found
     }
 }
-
 
 void useMainTrack(int trackIndex, const String &pin1Name, const String &pin2Name)
 {
@@ -347,7 +350,7 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
                 Serial.print("MUX2 y: ");
                 Serial.println(yIndex2);
 
-                mux1->setConnection(xIndex1, yIndex1, true, breadboardPin1-1, 60+breadboardPin2-1, strip.Color(255, 255, 0));
+                mux1->setConnection(xIndex1, yIndex1, true, breadboardPin1 - 1, 60 + breadboardPin2 - 1, strip.Color(255, 255, 0));
                 mux2->setConnection(xIndex2, yIndex2, true, -1, -1, strip.Color(255, 255, 0));
             }
             else
@@ -368,8 +371,6 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
             String releasedtrackName = "MT_" + String(trackIdx + 1);
             Serial.print("trackName: ");
             Serial.println(releasedtrackName);
-            
-            
 
             mux1->findPin(releasedtrackName.c_str(), xIndex1, _);
 
@@ -385,7 +386,7 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
             Serial.print("MUX2 y: ");
             Serial.println(yIndex2);
 
-            mux1->setConnection(xIndex1, yIndex1, false, breadboardPin1-1, 60+breadboardPin2-1, strip.Color(0, 0, 0)); 
+            mux1->setConnection(xIndex1, yIndex1, false, breadboardPin1 - 1, 60 + breadboardPin2 - 1, strip.Color(0, 0, 0));
             mux2->setConnection(xIndex2, yIndex2, false, -1, -1, strip.Color(0, 0, 0));
         }
     }

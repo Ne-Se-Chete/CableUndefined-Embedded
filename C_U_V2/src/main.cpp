@@ -69,9 +69,9 @@ void setup()
     int breadboard1Pin = 1; 
     int breadboard2Pin = 1;
 
-    route(muxes, 1, 1, true);
+    route(muxes, 7, 3, true);
     delay(10000);
-    route(muxes, 1, 1, false);
+    route(muxes, 7, 3, false);
     
 
     // mux1.setConnection(1, 1, true, 0, 1, strip.Color(255, 255, 0));
