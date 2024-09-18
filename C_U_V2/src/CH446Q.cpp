@@ -200,7 +200,7 @@ bool MUX::findPin(const char *pinName, int &xIndex, int &yIndex) const
     return false;
 }
 
-void releaseMainTrack(const String &pin1Name, const String &pin2Name)
+void releaseMainTrack(const String &pin1Name, const String &pin2Name, int &trackIdx) // Pass by reference
 {
     auto it = std::find_if(activeConnections.begin(), activeConnections.end(),
                            [&](const TrackConnection &connection)
@@ -210,8 +210,9 @@ void releaseMainTrack(const String &pin1Name, const String &pin2Name)
 
     if (it != activeConnections.end())
     {
-        int trackIndex = it->trackIndex; // Get the correct track index
+        int trackIndex = it->trackIndex; // Get the correct track index        
         activeConnections.erase(it);     // Remove the track from activeConnections
+        trackIdx = trackIndex;           // Assign trackIndex to the reference
 
         Serial.print("Released track ");
         Serial.print(trackIndex);
@@ -223,8 +224,10 @@ void releaseMainTrack(const String &pin1Name, const String &pin2Name)
     else
     {
         Serial.println("Error: No matching track found for the provided pins.");
+        trackIdx = -1; // Optionally, set trackIdx to a default value if no track is found
     }
 }
+
 
 void useMainTrack(int trackIndex, const String &pin1Name, const String &pin2Name)
 {
@@ -326,18 +329,18 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
 
                 int _;
 
-                String trackName = "MT_" + String(trackIndex + 1);
+                String connectedTrackName = "MT_" + String(trackIndex + 1);
                 Serial.print("trackName: ");
-                Serial.println(trackName);
+                Serial.println(connectedTrackName);
 
-                mux1->findPin(trackName.c_str(), xIndex1, _);
+                mux1->findPin(connectedTrackName.c_str(), xIndex1, _);
 
                 Serial.print("MUX1 x: ");
                 Serial.println(xIndex1);
                 Serial.print("MUX1 y: ");
                 Serial.println(yIndex1);
 
-                mux2->findPin(trackName.c_str(), xIndex2, _);
+                mux2->findPin(connectedTrackName.c_str(), xIndex2, _);
 
                 Serial.print("MUX2 x: ");
                 Serial.println(xIndex2);
@@ -353,7 +356,33 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
         }
         else // Release track
         {
-            releaseMainTrack(pin1Name, pin2Name);
+            int trackIdx;
+            releaseMainTrack(pin1Name, pin2Name, trackIdx);
+            Serial.print("Releasing: ");
+            int _;
+
+            Serial.print("trackIdx: ");
+            Serial.println(trackIdx);
+
+            String releasedtrackName = "MT_" + String(trackIdx + 1);
+            Serial.print("trackName: ");
+            Serial.println(releasedtrackName);
+            
+            
+
+            mux1->findPin(releasedtrackName.c_str(), xIndex1, _);
+
+            Serial.print("MUX1 x: ");
+            Serial.println(xIndex1);
+            Serial.print("MUX1 y: ");
+            Serial.println(yIndex1);
+
+            mux2->findPin(releasedtrackName.c_str(), xIndex2, _);
+
+            Serial.print("MUX2 x: ");
+            Serial.println(xIndex2);
+            Serial.print("MUX2 y: ");
+            Serial.println(yIndex2);
         }
     }
     else
