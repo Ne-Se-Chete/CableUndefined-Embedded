@@ -19,6 +19,12 @@
 
 #define MAX_X_PINS 16
 #define MAX_Y_PINS 8
+#define MAX_TRACK_PINS 32
+
+#define LED_PIN PF1
+#define NUM_LEDS 120
+
+extern std::vector<int> usedMainTrackPins;
 
 // Class declaration for the multiplexer (CH446Q)
 class MUX
@@ -30,17 +36,22 @@ private:
     String yPins[8];                                  // Array for the Y address pins
 
 public:
-    MUX(int cs);
+    MUX(int cs, const char* xPinNames[MAX_X_PINS], const char* yPinNames[MAX_Y_PINS]);
 
     void setConnection(int x, int y, bool mode, int led1, int led2, uint32_t color);
-
-    void setupPins(const String xPinNames[MAX_X_PINS], const String yPinNames[MAX_Y_PINS]);
-
-    void printPins();
-
     void clearConnections();
+
+    void printPins() const;
+
+    bool findPin(const char* pinName, int &xIndex, int &yIndex) const;
 };
 
 void resetMuxes();
+
+void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool mode);
+
+void useMainTrack(int trackIndex);
+void releaseMainTrack(int trackIndex);
+bool getNextAvailableTrack(int &trackIndex);
 
 #endif
