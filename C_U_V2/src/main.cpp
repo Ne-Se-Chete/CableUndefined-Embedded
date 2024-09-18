@@ -7,10 +7,10 @@
 #define EN2_PIN PC1
 #define EN3_PIN PC0
 #define USR_BTN PC13
-#define LED_PIN PF1
-#define NUM_LEDS 120
 
-Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
+extern Adafruit_NeoPixel strip;
+
+extern std::vector<int> usedMainTrackPins;
 
 void setupPMU(bool enabled)
 {
@@ -58,16 +58,24 @@ void setup()
     setupPMU(true);
 
     resetMuxes();
-    MUX mux1(csPin1);
-    MUX mux2(csPin2);
 
-    Serial.println("Setting up MUXes");
-    mux1.setupPins(xPins1, yPins1); 
-    mux1.printPins();
-    mux2.setupPins(xPins2, yPins2); 
-    mux2.printPins(); 
+    MUX mux1(csPin1, xPins1, yPins1);
+    MUX mux2(csPin2, xPins2, yPins2);
+    MUX mux3(csPin17, xPins17, yPins17);
+    MUX mux4(csPin18, xPins18, yPins18);
 
-    Serial.println("dun");
+    // mux1.printPins();
+    // mux2.printPins();
+
+    std::vector<MUX> muxes = {mux1, mux2, mux3, mux4};
+    int breadboard1Pin = 1; 
+    int breadboard2Pin = 1;
+
+    route(muxes, 1, 1, true);
+    route(muxes, 5, 8, true);
+    route(muxes, 1, 1, false);
+    route(muxes, 1, 1, true);
+
 }
 
 void loop()

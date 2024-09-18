@@ -1,18 +1,49 @@
 #include "CH446Q.h"
 
-// Global variable for LED strip (this can stay in the main .ino file if preferred)
-extern Adafruit_NeoPixel strip;
+Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-// Constructor implementation
-MUX::MUX(int cs) : csPin(cs)
+std::vector<int> usedMainTrackPins;
+
+MUX::MUX(int csPin, const char** xPinArray, const char** yPinArray)
+    : csPin(csPin)
 {
-    // Initialize chip select pin
-    pinMode(csPin, OUTPUT);
-    digitalWrite(csPin, LOW); // Initialize the multiplexer as deselected (LOW)
+    // Copy xPins
+    for (int i = 0; i < 16; ++i) {
+        xPins[i] = xPinArray[i];
+    }
 
-    // Serial.println("MUX initialized.");
+    // Copy yPins
+    for (int i = 0; i < 8; ++i) {
+        yPins[i] = yPinArray[i];
+    }
 }
 
+void MUX::printPins() const
+{
+    Serial.print("X Pins: ");
+    for (int i = 0; i < 16; ++i)
+    {
+        if (xPins[i] != nullptr) {
+            Serial.print(xPins[i]);
+        } else {
+            Serial.print("NULL");
+        }
+        Serial.print(" ");
+    }
+    Serial.println(); // Newline after printing X pins
+
+    Serial.print("Y Pins: ");
+    for (int i = 0; i < 8; ++i)
+    {
+        if (yPins[i] != nullptr) {
+            Serial.print(yPins[i]);
+        } else {
+            Serial.print("NULL");
+        }
+        Serial.print(" ");
+    }
+    Serial.println(); // Newline after printing Y pins
+}
 
 void MUX::clearConnections()
 {
@@ -125,43 +156,142 @@ void MUX::setConnection(int x, int y, bool mode, int led1, int led2, uint32_t co
     strip.show(); // Update the strip
 }
 
-void MUX::printPins()
-{
-    Serial.print("X Pins: ");
-    for (int i = 0; i < 16; ++i)
-    {
-        Serial.print(xPins[i]);
-        Serial.print(" ");
-    }
-    Serial.print("\n");
+bool MUX::findPin(const char* pinName, int &xIndex, int &yIndex) const {
+    // Serial.print("Searching for pin: ");
+    // Serial.println(pinName);
 
-    Serial.print("Y Pins: ");
-    for (int i = 0; i < 8; ++i)
-    {
-        Serial.print(yPins[i]);
-        Serial.print(" ");
+    for (int i = 0; i < MAX_X_PINS; ++i) {
+        if (strcmp(xPins[i].c_str(), pinName) == 0) {
+            xIndex = i;
+            yIndex = -1;
+            // Serial.print("Pin found in xPins at index: ");
+            // Serial.println(i);
+            return true;
+        }
     }
-    Serial.print("\n");
+
+    for (int i = 0; i < MAX_Y_PINS; ++i) {
+
+        if (strcmp(yPins[i].c_str(), pinName) == 0) {
+            yIndex = i;
+            xIndex = -1;
+            // Serial.print("Pin found in yPins at index: ");
+            // Serial.println(i);
+            return true;
+        }
+    }
+
+    return false;
 }
 
-void MUX::setupPins(const String xPinNames[MAX_X_PINS], const String yPinNames[MAX_Y_PINS])
+void releaseMainTrack(int trackIndex)
 {
-    // Serial.println("Setting up pins for MUX...");
-    for (int i = 0; i < 8; ++i)
+    auto it = std::find(usedMainTrackPins.begin(), usedMainTrackPins.end(), trackIndex);
+    if (it != usedMainTrackPins.end())
     {
-        yPins[i] = yPinNames[i];
-        // Serial.print("Y Pin "); Serial.print(i); Serial.print(": "); Serial.println(yPins[i]);
+        usedMainTrackPins.erase(it);
     }
-
-    for (int i = 0; i < 16; ++i)
-    {
-        xPins[i] = xPinNames[i];
-        // Serial.print("X Pin "); Serial.print(i); Serial.print(": "); Serial.println(xPins[i]);
-    }
-    // Serial.println("MUX pin setup complete.");
 }
 
-void resetMuxes(){
+void useMainTrack(int trackIndex)
+{
+    if (trackIndex >= 0 && trackIndex < MAX_TRACK_PINS)
+    {
+        // Add the trackIndex to the used list
+        usedMainTrackPins.push_back(trackIndex);
+    }
+}
+
+bool getNextAvailableTrack(int &trackIndex)
+{
+    for (int i = 0; i < MAX_TRACK_PINS; ++i)
+    {
+        int currentIndex = (0 + i) % MAX_TRACK_PINS; // Wrap around if necessary
+
+        // Check if the currentIndex is not in use
+        if (std::find(usedMainTrackPins.begin(), usedMainTrackPins.end(), currentIndex) == usedMainTrackPins.end())
+        {
+            trackIndex = currentIndex;
+            return true;
+        }
+    }
+    return false; // No available track pins found
+}
+
+void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool mode)
+{
+    String pin1Name = "B1_" + String(breadboardPin1);
+    String pin2Name = "B2_" + String(breadboardPin2);
+
+    int xIndex1 = -1, yIndex1 = -1;
+    int xIndex2 = -1, yIndex2 = -1;
+    int trackIndex = -1;
+
+    bool pin1Found = false, pin2Found = false;
+    MUX *mux1 = nullptr;
+    MUX *mux2 = nullptr;
+
+    for (size_t i = 0; i < muxes.size(); ++i)
+    {
+        if (muxes[i].findPin(pin1Name.c_str(), xIndex1, yIndex1))
+        {
+            pin1Found = true;
+            mux1 = &muxes[i];
+            break; 
+        }
+    }
+
+    for (size_t j = 0; j < muxes.size(); ++j)
+    {
+        if (muxes[j].findPin(pin2Name.c_str(), xIndex2, yIndex2))
+        {
+            pin2Found = true;
+            mux2 = &muxes[j];
+            break; 
+        }
+    }
+
+    if (pin1Found && pin2Found)
+    {
+        if (mode) // Set track
+        {
+            if (getNextAvailableTrack(trackIndex))
+            {
+                useMainTrack(trackIndex);
+                Serial.print("Allocated track ");
+                Serial.print(trackIndex);
+                Serial.print(" for pins ");
+                Serial.print(pin1Name);
+                Serial.print(" and ");
+                Serial.println(pin2Name);
+            }
+            else
+            {
+                Serial.println("Error: No available main track pins.");
+            }
+        }
+        else // Release track
+        {
+            releaseMainTrack(trackIndex);
+            Serial.print("Released track ");
+            Serial.print(trackIndex);
+            Serial.print(" for pins ");
+            Serial.print(pin1Name);
+            Serial.print(" and ");
+            Serial.println(pin2Name);
+        }
+    }
+    else
+    {
+        if (!pin1Found)
+            Serial.println("Error: Pin 1 not found in any MUX.");
+        if (!pin2Found)
+            Serial.println("Error: Pin 2 not found in any MUX.");
+    }
+}
+
+void resetMuxes()
+{
     digitalWrite(RST_PIN, HIGH);
     delay(100);
     digitalWrite(RST_PIN, LOW);
