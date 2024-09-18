@@ -4,19 +4,21 @@ Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 std::vector<TrackConnection> activeConnections;
 
-MUX::MUX(int csPin, const char** xPinArray, const char** yPinArray)
+MUX::MUX(int csPin, const char **xPinArray, const char **yPinArray)
     : csPin(csPin)
 {
     pinMode(csPin, OUTPUT);
     digitalWrite(csPin, LOW);
 
     // Copy xPins
-    for (int i = 0; i < 16; ++i) {
+    for (int i = 0; i < 16; ++i)
+    {
         xPins[i] = xPinArray[i];
     }
 
     // Copy yPins
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < 8; ++i)
+    {
         yPins[i] = yPinArray[i];
     }
 }
@@ -26,9 +28,12 @@ void MUX::printPins() const
     Serial.print("X Pins: ");
     for (int i = 0; i < 16; ++i)
     {
-        if (xPins[i] != nullptr) {
+        if (xPins[i] != nullptr)
+        {
             Serial.print(xPins[i]);
-        } else {
+        }
+        else
+        {
             Serial.print("NULL");
         }
         Serial.print(" ");
@@ -38,9 +43,12 @@ void MUX::printPins() const
     Serial.print("Y Pins: ");
     for (int i = 0; i < 8; ++i)
     {
-        if (yPins[i] != nullptr) {
+        if (yPins[i] != nullptr)
+        {
             Serial.print(yPins[i]);
-        } else {
+        }
+        else
+        {
             Serial.print("NULL");
         }
         Serial.print(" ");
@@ -159,12 +167,15 @@ void MUX::setConnection(int x, int y, bool mode, int led1, int led2, uint32_t co
     strip.show(); // Update the strip
 }
 
-bool MUX::findPin(const char* pinName, int &xIndex, int &yIndex) const {
+bool MUX::findPin(const char *pinName, int &xIndex, int &yIndex) const
+{
     // Serial.print("Searching for pin: ");
     // Serial.println(pinName);
 
-    for (int i = 0; i < MAX_X_PINS; ++i) {
-        if (strcmp(xPins[i].c_str(), pinName) == 0) {
+    for (int i = 0; i < MAX_X_PINS; ++i)
+    {
+        if (strcmp(xPins[i].c_str(), pinName) == 0)
+        {
             xIndex = i;
             yIndex = -1;
             // Serial.print("Pin found in xPins at index: ");
@@ -173,9 +184,11 @@ bool MUX::findPin(const char* pinName, int &xIndex, int &yIndex) const {
         }
     }
 
-    for (int i = 0; i < MAX_Y_PINS; ++i) {
+    for (int i = 0; i < MAX_Y_PINS; ++i)
+    {
 
-        if (strcmp(yPins[i].c_str(), pinName) == 0) {
+        if (strcmp(yPins[i].c_str(), pinName) == 0)
+        {
             yIndex = i;
             xIndex = -1;
             // Serial.print("Pin found in yPins at index: ");
@@ -187,18 +200,18 @@ bool MUX::findPin(const char* pinName, int &xIndex, int &yIndex) const {
     return false;
 }
 
-void releaseMainTrack(const String& pin1Name, const String& pin2Name)
+void releaseMainTrack(const String &pin1Name, const String &pin2Name)
 {
     auto it = std::find_if(activeConnections.begin(), activeConnections.end(),
-                           [&](const TrackConnection& connection)
+                           [&](const TrackConnection &connection)
                            {
                                return connection.pin1Name == pin1Name && connection.pin2Name == pin2Name;
                            });
 
     if (it != activeConnections.end())
     {
-        int trackIndex = it->trackIndex;  // Get the correct track index
-        activeConnections.erase(it);      // Remove the track from activeConnections
+        int trackIndex = it->trackIndex; // Get the correct track index
+        activeConnections.erase(it);     // Remove the track from activeConnections
 
         Serial.print("Released track ");
         Serial.print(trackIndex);
@@ -213,13 +226,12 @@ void releaseMainTrack(const String& pin1Name, const String& pin2Name)
     }
 }
 
-
-void useMainTrack(int trackIndex, const String& pin1Name, const String& pin2Name)
+void useMainTrack(int trackIndex, const String &pin1Name, const String &pin2Name)
 {
     if (trackIndex >= 0 && trackIndex < MAX_TRACK_PINS)
     {
         // Store the track and associated pins in the global vector
-        TrackConnection connection = { trackIndex, pin1Name, pin2Name };
+        TrackConnection connection = {trackIndex, pin1Name, pin2Name};
         activeConnections.push_back(connection);
         Serial.print("Using track ");
         Serial.print(trackIndex);
@@ -229,7 +241,6 @@ void useMainTrack(int trackIndex, const String& pin1Name, const String& pin2Name
         Serial.println(pin2Name);
     }
 }
-
 
 bool checkAvailableTrack(int &trackIndex)
 {
@@ -259,7 +270,6 @@ bool checkAvailableTrack(int &trackIndex)
     return false; // No available track pins found
 }
 
-
 void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool mode)
 {
     String pin1Name = "B1_" + String(breadboardPin1);
@@ -278,6 +288,11 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
     {
         if (muxes[i].findPin(pin1Name.c_str(), xIndex1, yIndex1))
         {
+            // Serial.print("xIndex1: ");
+            // Serial.println(xIndex1);
+            // Serial.print("yIndex1: ");
+            // Serial.println(yIndex1);
+
             pin1Found = true;
             mux1 = &muxes[i];
             break;
@@ -288,6 +303,11 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
     {
         if (muxes[j].findPin(pin2Name.c_str(), xIndex2, yIndex2))
         {
+            // Serial.print("xIndex2: ");
+            // Serial.println(xIndex2);
+            // Serial.print("yIndex2: ");
+            // Serial.println(yIndex2);
+
             pin2Found = true;
             mux2 = &muxes[j];
             break;
@@ -299,9 +319,32 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
     {
         if (mode) // Set track
         {
+
             if (checkAvailableTrack(trackIndex))
             {
                 useMainTrack(trackIndex, pin1Name, pin2Name);
+
+                int _;
+
+                String trackName = "MT_" + String(trackIndex + 1);
+                Serial.print("trackName: ");
+                Serial.println(trackName);
+
+                mux1->findPin(trackName.c_str(), xIndex1, _);
+
+                Serial.print("MUX1 x: ");
+                Serial.println(xIndex1);
+                Serial.print("MUX1 y: ");
+                Serial.println(yIndex1);
+
+                mux2->findPin(trackName.c_str(), xIndex2, _);
+
+                Serial.print("MUX2 x: ");
+                Serial.println(xIndex2);
+                Serial.print("MUX2 y: ");
+                Serial.println(yIndex2);
+
+                // mux1->setConnection(xIndex1, yIndex1, true, trackIndex, -1, strip.Color(255, 255, 0));
             }
             else
             {
@@ -322,8 +365,8 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
     }
 }
 
-
-void resetMuxes(){
+void resetMuxes()
+{
     digitalWrite(RST_PIN, HIGH);
     delay(100);
     digitalWrite(RST_PIN, LOW);
