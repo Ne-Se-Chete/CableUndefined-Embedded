@@ -6,22 +6,24 @@
 #include <vector>
 
 // Define the pin numbers for RST, DAT, STB, and the X and Y address lines
-#define RST_PIN PC12
-#define DAT_PIN PC10
-#define STB_PIN PC11
-#define AX0_PIN PA6
-#define AX1_PIN PA7
-#define AX2_PIN PB8
-#define AX3_PIN PB9
-#define AY0_PIN PC3
-#define AY1_PIN PC4
-#define AY2_PIN PC5
+#define RST_PIN PB0
+#define DAT_PIN PB1
+#define STB_PIN PB4
 
-#define MAX_X_PINS 16
-#define MAX_Y_PINS 8
-#define MAX_TRACK_PINS 32
+#define AY0_PIN PA0
+#define AY1_PIN PA1
+#define AY2_PIN PA2 
+ 
+#define AX0_PIN PA3 
+#define AX1_PIN PA4 
+#define AX2_PIN PB5 
+#define AX3_PIN PA6 
+ 
+#define MAX_X_PINS 16 
+#define MAX_Y_PINS 8 
+#define MAX_TRACK_PINS 32 
 
-#define LED_PIN PF1
+#define LED_PIN PB5
 #define NUM_LEDS 120
 
 struct TrackConnection {

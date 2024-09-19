@@ -3,10 +3,10 @@
 #include "CH446Q.h"
 #include "ConfigMUX.h"
 
-#define EN1_PIN PC2
-#define EN2_PIN PC1
-#define EN3_PIN PC0
-#define USR_BTN PC13
+#define EN1_PIN PB6
+#define EN2_PIN PB8
+#define EN3_PIN PB9
+#define FAULT_PIN PB10
 
 extern Adafruit_NeoPixel strip;
 
@@ -43,7 +43,6 @@ void setup()
     pinMode(EN1_PIN, OUTPUT);
     pinMode(EN2_PIN, OUTPUT);
     pinMode(EN3_PIN, OUTPUT);
-    pinMode(USR_BTN, INPUT_PULLUP);
 
     strip.begin();
     delay(100);
@@ -57,10 +56,10 @@ void setup()
 
     resetMuxes();
 
-    MUX mux1(PD2, xPins1, yPins1);
-    MUX mux2(PA0, xPins2, yPins2);
-    MUX mux3(PA10, xPins17, yPins17);
-    MUX mux4(PB5, xPins18, yPins18);
+    MUX mux1(csPin1, xPins1, yPins1);
+    MUX mux2(csPin2, xPins2, yPins2);
+    MUX mux3(csPin17, xPins17, yPins17);
+    MUX mux4(csPin18, xPins18, yPins18);
 
     // mux1.printPins();
     // mux2.printPins();
@@ -74,7 +73,7 @@ void setup()
     route(muxes, 7, 3, false);
     
 
-    // mux1.setConnection(1, 1, true, 0, 1, strip.Color(255, 255, 0));
+    // mux1.setConnection(0, 0, true, 0, 1, strip.Color(255, 255, 0));
 
 }
 
