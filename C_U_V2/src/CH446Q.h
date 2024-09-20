@@ -26,6 +26,11 @@
 #define LED_PIN PB5
 #define NUM_LEDS 120
 
+#define EN1_PIN PB6
+#define EN2_PIN PB8
+#define EN3_PIN PB9
+#define FAULT_PIN PB10
+
 struct TrackConnection {
     int trackIndex;
     String pin1Name;
@@ -61,5 +66,7 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
 void useMainTrack(int trackIndex, const String &pin1Name, const String &pin2Name);
 void releaseMainTrack(const String &pin1Name, const String &pin2Name, int &trackIdx);
 bool checkAvailableTrack(int &trackIndex);
+
+void setupPMU(bool enable);
 
 #endif

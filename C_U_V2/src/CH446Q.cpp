@@ -406,3 +406,20 @@ void resetMuxes()
     digitalWrite(RST_PIN, LOW);
     delay(100);
 }
+
+void setupPMU(bool enabled)
+{
+    if (enabled)
+    {
+        digitalWrite(EN1_PIN, HIGH);
+        digitalWrite(EN2_PIN, HIGH);
+        digitalWrite(EN3_PIN, HIGH);
+    }
+    else
+    {
+        digitalWrite(EN1_PIN, LOW);
+        digitalWrite(EN2_PIN, LOW);
+        digitalWrite(EN3_PIN, LOW);
+    }
+    delay(1000);
+}
