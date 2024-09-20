@@ -56,7 +56,7 @@ public:
 
 void resetMuxes();
 
-void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool mode);
+void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool mode, uint32_t color);
 
 void useMainTrack(int trackIndex, const String &pin1Name, const String &pin2Name);
 void releaseMainTrack(const String &pin1Name, const String &pin2Name, int &trackIdx);
