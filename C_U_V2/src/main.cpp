@@ -95,7 +95,7 @@ void setup()
     std::vector<MUX> muxes = {mux1, mux2, mux3, mux4, mux5, mux6, mux7, mux8, mux9, mux10, mux11, mux12, mux13, mux14, mux15, mux16, mux17, mux18, mux19, mux20, mux21, mux22, mux23, mux24, mux25, mux26, mux27, mux28, mux29, mux30, mux31, mux32};
 
 
-    route(muxes, 7, 3, true, strip.Color(135, 45, 78));
+    route(muxes, 30, 30, true, strip.Color(135, 45, 78));
     // delay(10000);
     // route(muxes, 7, 3, false);
     

@@ -30,7 +30,7 @@ const char* xPins6[16] = {"MT_17", "MT_18", "MT_19", "MT_20", "MT_21", "MT_22", 
 const char* yPins6[8]  = {"B1_17", "B1_18", "B1_19", "B1_20", "B1_21", "B1_22", "B1_23", "B1_24"};
 
 // B1_24 - B1_32
-const int csPin7 = PD13;
+const int csPin7 = PD1;
 const char* xPins7[16] = {"MT_1", "MT_2", "MT_3", "MT_4", "MT_5", "MT_6", "MT_7", "MT_8", "MT_9", "MT_10", "MT_11", "MT_12", "MT_13", "MT_14", "MT_15", "MT_16"};
 const char* yPins7[8]  = {"B1_25", "B1_26", "B1_27", "B1_28", "B1_29", "B1_30", "B1_31", "B1_32"};
 
