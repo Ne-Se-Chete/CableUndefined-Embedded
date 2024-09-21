@@ -4,6 +4,7 @@ Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 std::vector<TrackConnection> activeConnections;
 
+
 MUX::MUX(int csPin, const char **xPinArray, const char **yPinArray)
     : csPin(csPin)
 {
@@ -422,4 +423,15 @@ void setupPMU(bool enabled)
         digitalWrite(EN3_PIN, LOW);
     }
     delay(1000);
+}
+
+void clearAllMainTracks() {
+    activeConnections.clear();
+}
+
+void resetLEDs() {
+    for (int i = 0; i < strip.numPixels(); ++i) {
+        strip.setPixelColor(i, strip.Color(0, 0, 0));
+    }
+    strip.show();
 }

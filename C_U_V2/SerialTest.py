@@ -5,9 +5,9 @@ import time
 arduino = serial.Serial('COM7', 115200, timeout=1)
 time.sleep(2)  # Wait for the connection to initialize
 
-def send_data(muxIndex1, muxIndex2, mode, r, g, b):
+def send_data(muxIndex1, muxIndex2, mode, r, g, b, CODE):
     # Send data to the Arduino in the format: muxIndex1 muxIndex2 mode color
-    data = f"{muxIndex1} {muxIndex2} {mode} {r} {g} {b}\n"
+    data = f"{muxIndex1} {muxIndex2} {mode} {r} {g} {b} {CODE}\n"
 
     # Debugging print to ensure correct data is being sent
     print("Sending data:", data.strip())
@@ -26,8 +26,14 @@ if __name__ == "__main__":
     r = 255
     g = 0
     b = 255
+    CODE = "CLR"
 
-    send_data(muxIndex1, muxIndex2, mode, r, g, b)
+    send_data(muxIndex1, muxIndex2, mode, r, g, b, "NULL")
+
+    time.sleep(5)
+
+    send_data(muxIndex1, muxIndex2, mode, r, g, b, CODE)
+
 
 # Close the connection
 arduino.close()
