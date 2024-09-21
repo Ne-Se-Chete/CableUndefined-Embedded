@@ -72,7 +72,7 @@ void setup()
 
     resetMuxes();
 
-    route(muxes, 1, 1, true, strip.Color(135, 45, 78));
+    // route(muxes, 1, 1, true, strip.Color(135, 45, 78));
     // delay(10000);
     // route(muxes, 7, 3, false);
 
@@ -81,5 +81,28 @@ void setup()
 
 void loop()
 {
-    // Placeholder for main loop code
+    if (Serial.available() > 0)
+    {
+        String input = Serial.readStringUntil('\n');
+        int8_t muxIndex1, muxIndex2, modeInt;
+        int8_t r, g, b;
+
+        // Parse the incoming data from Python (e.g., "1 2 1 FF5733")
+        sscanf(input.c_str(), "%d %d %d %d %d %d %s", &muxIndex1, &muxIndex2, &modeInt, &r, &g, &b);
+
+        // Convert modeInt to a boolean for mode
+        bool mode = (modeInt != 0);
+
+        // Debugging output to ensure correct parsing
+        Serial.print("muxIndex1: "); Serial.print(muxIndex1); Serial.print(", ");
+        Serial.print("muxIndex2: "); Serial.print(muxIndex2); Serial.print(", ");
+        Serial.print("mode: "); Serial.print(mode); Serial.print(", ");
+
+        // Call the route function with parsed parameters
+        route(muxes, muxIndex1, muxIndex2-60, mode, strip.Color(r, g, b));
+
+        // Optional: Send a response to the Python side
+        Serial.println("Routing updated.");
+    }
 }
+

@@ -25,35 +25,35 @@ MUX::MUX(int csPin, const char **xPinArray, const char **yPinArray)
 
 void MUX::printPins() const
 {
-    Serial.print("X Pins: ");
+    // Serial.print("X Pins: ");
     for (int i = 0; i < 16; ++i)
     {
         if (xPins[i] != nullptr)
         {
-            Serial.print(xPins[i]);
+            // Serial.print(xPins[i]);
         }
         else
         {
-            Serial.print("NULL");
+            // Serial.print("NULL");
         }
-        Serial.print(" ");
+        // Serial.print(" ");
     }
-    Serial.println(); // Newline after printing X pins
+    // Serial.println(); // Newline after printing X pins
 
-    Serial.print("Y Pins: ");
+    // Serial.print("Y Pins: ");
     for (int i = 0; i < 8; ++i)
     {
         if (yPins[i] != nullptr)
         {
-            Serial.print(yPins[i]);
+            // Serial.print(yPins[i]);
         }
         else
         {
-            Serial.print("NULL");
+            // Serial.print("NULL");
         }
-        Serial.print(" ");
+        // Serial.print(" ");
     }
-    Serial.println(); // Newline after printing Y pins
+    // Serial.println(); // Newline after printing Y pins
 }
 
 void MUX::clearConnections()
@@ -66,7 +66,7 @@ void MUX::setConnection(int x, int y, bool mode, int led1, int led2, uint32_t co
     // Validate the x and y values
     if (x < 0 || x > 15 || y < 0 || y > 7)
     {
-        Serial.println("Error: Invalid (x, y) values. x must be between 0-15, and y between 0-7.");
+        // Serial.println("Error: Invalid (x, y) values. x must be between 0-15, and y between 0-7.");
         return; // Exit if invalid values
     }
 
@@ -78,14 +78,14 @@ void MUX::setConnection(int x, int y, bool mode, int led1, int led2, uint32_t co
         {
             if (connection.first == x && connection.second == y)
             {
-                Serial.println("Error: This (x, y) combination is already used.");
+                // Serial.println("Error: This (x, y) combination is already used.");
                 return; // Exit if the (x, y) is already in use
             }
         }
 
         // If the combination is valid and unused, add it to the list
         usedConnections.push_back({x, y});
-        Serial.println("Connection set successfully.");
+        // Serial.println("Connection set successfully.");
     }
     else
     {
@@ -95,7 +95,7 @@ void MUX::setConnection(int x, int y, bool mode, int led1, int led2, uint32_t co
             if (it->first == x && it->second == y)
             {
                 usedConnections.erase(it); // Remove the (x, y) combination
-                Serial.println("Connection removed successfully.");
+                // Serial.println("Connection removed successfully.");
                 break;
             }
         }
@@ -117,24 +117,24 @@ void MUX::setConnection(int x, int y, bool mode, int led1, int led2, uint32_t co
     digitalWrite(AY1_PIN, (y & 0x02) == 0x02 ? HIGH : LOW);
     digitalWrite(AY2_PIN, (y & 0x04) == 0x04 ? HIGH : LOW);
 
-    Serial.print("Y Address:\n");
-    Serial.print("AY2: ");
-    Serial.print((y & 0x04) == 0x04 ? HIGH : LOW);
-    Serial.print(" AY1: ");
-    Serial.print((y & 0x02) == 0x02 ? HIGH : LOW);
-    Serial.print(" AY0: ");
-    Serial.println((y & 0x01) == 0x01 ? HIGH : LOW);
+    // Serial.print("Y Address:\n");
+    // Serial.print("AY2: ");
+    // Serial.print((y & 0x04) == 0x04 ? HIGH : LOW);
+    // Serial.print(" AY1: ");
+    // Serial.print((y & 0x02) == 0x02 ? HIGH : LOW);
+    // Serial.print(" AY0: ");
+    // Serial.println((y & 0x01) == 0x01 ? HIGH : LOW);
 
-    // Print X address bits
-    Serial.print("X Address:\n");
-    Serial.print("AX3: ");
-    Serial.print((x & 0x08) == 0x08 ? HIGH : LOW);
-    Serial.print(" AX2: ");
-    Serial.print((x & 0x04) == 0x04 ? HIGH : LOW);
-    Serial.print(" AX1: ");
-    Serial.print((x & 0x02) == 0x02 ? HIGH : LOW);
-    Serial.print(" AX0: ");
-    Serial.println((x & 0x01) == 0x01 ? HIGH : LOW);
+    // // Print X address bits
+    // Serial.print("X Address:\n");
+    // Serial.print("AX3: ");
+    // Serial.print((x & 0x08) == 0x08 ? HIGH : LOW);
+    // Serial.print(" AX2: ");
+    // Serial.print((x & 0x04) == 0x04 ? HIGH : LOW);
+    // Serial.print(" AX1: ");
+    // Serial.print((x & 0x02) == 0x02 ? HIGH : LOW);
+    // Serial.print(" AX0: ");
+    // Serial.println((x & 0x01) == 0x01 ? HIGH : LOW);
 
     // Set the data line based on mode
     digitalWrite(DAT_PIN, mode ? HIGH : LOW);
@@ -218,16 +218,16 @@ void releaseMainTrack(const String &pin1Name, const String &pin2Name, int &track
         activeConnections.erase(it);     // Remove the track from activeConnections
         trackIdx = trackIndex;           // Assign trackIndex to the reference
 
-        Serial.print("Released track ");
-        Serial.print(trackIndex);
-        Serial.print(" for pins ");
-        Serial.print(pin1Name);
-        Serial.print(" and ");
-        Serial.println(pin2Name);
+        // Serial.print("Released track ");
+        // Serial.print(trackIndex);
+        // Serial.print(" for pins ");
+        // Serial.print(pin1Name);
+        // Serial.print(" and ");
+        // Serial.println(pin2Name);
     }
     else
     {
-        Serial.println("Error: No matching track found for the provided pins.");
+        // Serial.println("Error: No matching track found for the provided pins.");
         trackIdx = -1; // Optionally, set trackIdx to a default value if no track is found
     }
 }
@@ -239,12 +239,12 @@ void useMainTrack(int trackIndex, const String &pin1Name, const String &pin2Name
         // Store the track and associated pins in the global vector
         TrackConnection connection = {trackIndex, pin1Name, pin2Name};
         activeConnections.push_back(connection);
-        Serial.print("Using track ");
-        Serial.print(trackIndex);
-        Serial.print(" for pins ");
-        Serial.print(pin1Name);
-        Serial.print(" and ");
-        Serial.println(pin2Name);
+        // Serial.print("Using track ");
+        // Serial.print(trackIndex);
+        // Serial.print(" for pins ");
+        // Serial.print(pin1Name);
+        // Serial.print(" and ");
+        // Serial.println(pin2Name);
     }
 }
 
@@ -333,70 +333,70 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
                 int _;
 
                 String connectedTrackName = "MT_" + String(trackIndex + 1);
-                Serial.print("trackName: ");
-                Serial.println(connectedTrackName);
+                // Serial.print("trackName: ");
+                // Serial.println(connectedTrackName);
 
                 mux1->findPin(connectedTrackName.c_str(), xIndex1, _);
 
-                Serial.print("MUX1 x: ");
-                Serial.println(xIndex1);
-                Serial.print("MUX1 y: ");
-                Serial.println(yIndex1);
+                // Serial.print("MUX1 x: ");
+                // Serial.println(xIndex1);
+                // Serial.print("MUX1 y: ");
+                // Serial.println(yIndex1);
 
                 mux2->findPin(connectedTrackName.c_str(), xIndex2, _);
 
-                Serial.print("MUX2 x: ");
-                Serial.println(xIndex2);
-                Serial.print("MUX2 y: ");
-                Serial.println(yIndex2);
+                // Serial.print("MUX2 x: ");
+                // Serial.println(xIndex2);
+                // Serial.print("MUX2 y: ");
+                // Serial.println(yIndex2);
 
                 mux1->setConnection(xIndex1, yIndex1, true, breadboardPin1 - 1, 60 + breadboardPin2 - 1, color);
                 mux2->setConnection(xIndex2, yIndex2, true, -1, -1, color);
             }
             else
             {
-                Serial.println("Error: No available main track pins.");
+                // Serial.println("Error: No available main track pins.");
             }
         }
         else // Release track
         {
             int trackIdx;
             releaseMainTrack(pin1Name, pin2Name, trackIdx);
-            Serial.print("Releasing: ");
+            // Serial.print("Releasing: ");
             int _;
 
-            Serial.print("trackIdx: ");
-            Serial.println(trackIdx);
+            // Serial.print("trackIdx: ");
+            // Serial.println(trackIdx);
 
             String releasedtrackName = "MT_" + String(trackIdx + 1);
-            Serial.print("trackName: ");
-            Serial.println(releasedtrackName);
+            // Serial.print("trackName: ");
+            // Serial.println(releasedtrackName);
 
             mux1->findPin(releasedtrackName.c_str(), xIndex1, _);
 
-            Serial.print("MUX1 x: ");
-            Serial.println(xIndex1);
-            Serial.print("MUX1 y: ");
-            Serial.println(yIndex1);
+            // Serial.print("MUX1 x: ");
+            // Serial.println(xIndex1);
+            // Serial.print("MUX1 y: ");
+            // Serial.println(yIndex1);
 
             mux2->findPin(releasedtrackName.c_str(), xIndex2, _);
 
-            Serial.print("MUX2 x: ");
-            Serial.println(xIndex2);
-            Serial.print("MUX2 y: ");
-            Serial.println(yIndex2);
+            // Serial.print("MUX2 x: ");
+            // Serial.println(xIndex2);
+            // Serial.print("MUX2 y: ");
+            // Serial.println(yIndex2);
 
             mux1->setConnection(xIndex1, yIndex1, false, breadboardPin1 - 1, 60 + breadboardPin2 - 1, color);
             mux2->setConnection(xIndex2, yIndex2, false, -1, -1, color);
         }
     }
-    else
-    {
-        if (!pin1Found)
-            Serial.println("Error: Pin 1 not found in any MUX.");
-        if (!pin2Found)
-            Serial.println("Error: Pin 2 not found in any MUX.");
-    }
+    // else
+    // {
+    //     if (!pin1Found)
+    //         // Serial.println("Error: Pin 1 not found in any MUX.");
+    //     if (!pin2Found)
+    //         // Serial.println("Error: Pin 2 not found in any MUX.");
+    // }
 }
 
 void resetMuxes()

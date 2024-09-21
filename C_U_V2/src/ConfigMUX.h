@@ -158,7 +158,4 @@ const char* xPins34[16] = {"MT_1", "MT_2", "MT_3", "MT_4", "MT_5", "MT_6", "MT_7
 const char* yPins34[8]  = {"PC_0", "PC_1", "PC_2", "PC_3", "PC_4", "PC_5", "PC_6", "PC_7"};
 
 
-
-
-
 #endif // MUXCONFIG_H
