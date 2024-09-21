@@ -65,8 +65,13 @@ void route(std::vector<MUX> &muxes, int breadboardPin1, int breadboardPin2, bool
 
 void useMainTrack(int trackIndex, const String &pin1Name, const String &pin2Name);
 void releaseMainTrack(const String &pin1Name, const String &pin2Name, int &trackIdx);
+void clearAllMainTracks();
 bool checkAvailableTrack(int &trackIndex);
 
+void setupPMU(bool enabled);
+
 void setupPMU(bool enable);
+
+void resetLEDs();
 
 #endif

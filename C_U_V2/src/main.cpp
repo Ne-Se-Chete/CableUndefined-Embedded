@@ -86,23 +86,39 @@ void loop()
         String input = Serial.readStringUntil('\n');
         int8_t muxIndex1, muxIndex2, modeInt;
         int8_t r, g, b;
+        char CODE[3];
 
         // Parse the incoming data from Python (e.g., "1 2 1 FF5733")
-        sscanf(input.c_str(), "%d %d %d %d %d %d %s", &muxIndex1, &muxIndex2, &modeInt, &r, &g, &b);
+        sscanf(input.c_str(), "%d %d %d %d %d %d %s", &muxIndex1, &muxIndex2, &modeInt, &r, &g, &b, CODE);
+
+        // Serial.print("muxIndex1: "); Serial.print(muxIndex1); Serial.print(", ");
+        // Serial.print("muxIndex2: "); Serial.print(muxIndex2); Serial.print(", ");
+        // Serial.print("mode: "); Serial.print(modeInt); Serial.print(", ");
+        // Serial.print("r: "); Serial.print(r); Serial.print(", ");
+        // Serial.print("g: "); Serial.print(g); Serial.print(", ");
+        // Serial.print("b: "); Serial.print(b); Serial.print(", ");
 
         // Convert modeInt to a boolean for mode
-        bool mode = (modeInt != 0);
+        if (strcmp(CODE, "CLR") == 0)
+        {
+            resetMuxes();
+            for (size_t i = 0; i < muxes.size(); ++i)
+            {
+                muxes[i].clearConnections();
+            }
 
-        // Debugging output to ensure correct parsing
-        Serial.print("muxIndex1: "); Serial.print(muxIndex1); Serial.print(", ");
-        Serial.print("muxIndex2: "); Serial.print(muxIndex2); Serial.print(", ");
-        Serial.print("mode: "); Serial.print(mode); Serial.print(", ");
+            clearAllMainTracks();
+            resetLEDs();
+            Serial.println(200);
+        }
+        else
+        {
+            bool mode = (modeInt != 0);
 
-        // Call the route function with parsed parameters
-        route(muxes, muxIndex1, muxIndex2-60, mode, strip.Color(r, g, b));
+            // Call the route function with parsed parameters
+            route(muxes, muxIndex1, muxIndex2 - 60, mode, strip.Color(r, g, b));
 
-        // Optional: Send a response to the Python side
-        Serial.println("Routing updated.");
+            Serial.println(200);
+        }
     }
 }
-
