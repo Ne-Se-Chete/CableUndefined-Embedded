@@ -31,7 +31,7 @@ if __name__ == "__main__":
     send_data(muxIndex1, muxIndex2, mode, r, g, b, "NULL")
 
     time.sleep(5)
-
+    
     send_data(muxIndex1, muxIndex2, mode, r, g, b, CODE)
 
 
