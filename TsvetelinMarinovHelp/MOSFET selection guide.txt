@@ -1,0 +1,14 @@
+NMOS: 
+
+Drain−to−Source Voltage VDS >= 20V
+Drain−to−Source On Resistance Rdson: <50mOhm
+Gate Threshold Voltage VGS(TH): <3.3V
+Drain current Id> 300mA
+
+
+PMOS: 
+
+Drain−to−Source Voltage VDS >= -20V
+Drain−to−Source On Resistance Rdson: <150mOhm
+Gate Threshold Voltage VGS(TH): <-3.3V
+Drain current Id> -300mA
