@@ -18,12 +18,6 @@
 #define DAT_PIN GPIO_PIN_7
 #define DAT_GPIO GPIOB
 
-#define CS_PIN_1 GPIO_PIN_0
-#define CS_PIN_3 GPIO_PIN_2
-
-#define CS_GPIO GPIOC
-
-
 #define STB_PIN GPIO_PIN_8
 #define STB_GPIO GPIOB
 
@@ -36,7 +30,25 @@
 #define DEBUG_PIN_4 GPIO_PIN_15
 #define DEBUG_GPIO GPIOB
 
-// Function prototypes
-void setConnection(int x, int y,  uint16_t cs, uint8_t mode);
+typedef struct {
+    int track_id;
+    int net_id;
+    int is_used;
+} MainTrack;
+
+extern MainTrack mainTracks[32];
+
+typedef struct {
+    GPIO_TypeDef* port;
+    uint16_t pin;
+    const char* const (*xPins)[16];  // Pointer to an array of 16 strings
+    const char* const (*yPins)[8];   // Pointer to an array of 8 strings
+} MUX;
+
+extern const MUX muxes[34];
+
+void setConnection(int x, int y, MUX mux, uint8_t mode);
+
+void route(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode);
 
 #endif /* __MUX_H */
