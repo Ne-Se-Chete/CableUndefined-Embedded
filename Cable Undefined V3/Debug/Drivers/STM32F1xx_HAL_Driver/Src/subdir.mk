@@ -20,22 +20,6 @@ C_SRCS += \
 ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c \
 ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c 
 
-OBJS += \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o \
-./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o 
-
 C_DEPS += \
 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d \
 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.d \
@@ -51,6 +35,22 @@ C_DEPS += \
 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d \
 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d \
 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d 
+
+OBJS += \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o \
+./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes

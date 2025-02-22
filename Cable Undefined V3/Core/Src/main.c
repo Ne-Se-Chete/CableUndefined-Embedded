@@ -1,5 +1,7 @@
 #include "main.h"
 #include "mux.h"
+#include <string.h>
+#include <stdio.h>
 
 ADC_HandleTypeDef hadc1;
 
@@ -15,6 +17,11 @@ static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 
+int _write(int file, char *ptr, int len) {
+    HAL_UART_Transmit(&huart2, (uint8_t*)ptr, len, HAL_MAX_DELAY);
+    return len;
+}
+
 int main(void)
 {
 
@@ -29,8 +36,19 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
 
-  setConnection(0, 0, CS_PIN_1, 1);
-  setConnection(0, 0, CS_PIN_3, 1);
+  // Reset all MUXES (clear all latches to 0)
+  HAL_GPIO_WritePin(RST_GPIO, RST_PIN, GPIO_PIN_SET);
+  HAL_Delay(20);
+  HAL_GPIO_WritePin(RST_GPIO, RST_PIN, GPIO_PIN_RESET);
+  HAL_Delay(20);
+
+
+  setConnection(0, 0, muxes[0], 1);  // CS_1 (PC0)
+  setConnection(0, 1, muxes[2], 1);  // CS_3 (PC2)
+
+  route(1, 1, 10, muxes, sizeof(muxes), 1);
+  route(2, 2, 11, muxes, sizeof(muxes), 1);
+  route(3, 3, 10, muxes, sizeof(muxes), 1);
 
 
   while (1)

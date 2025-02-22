@@ -200,19 +200,5 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope"/>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.2135919333;com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.2135919333.;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.851077037;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.1091574021">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.2135919333;com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.2135919333.;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.827813184;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1892559">
-			<autodiscovery enabled="false" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.603251595;com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.603251595.;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.310283713;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.1454171597">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.603251595;com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.603251595.;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.324051819;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1229842341">
-			<autodiscovery enabled="false" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
+	<storageModule moduleId="scannerConfiguration"/>
 </cproject>
