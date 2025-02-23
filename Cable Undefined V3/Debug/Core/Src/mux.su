@@ -1,2 +1,3 @@
-../Core/Src/mux.c:47:6:setConnection	16	static
-../Core/Src/mux.c:86:6:route	112	static
+../Core/Src/mux.c:44:13:getPortName	16	static
+../Core/Src/mux.c:56:6:setConnection	16	static
+../Core/Src/mux.c:95:6:route	168	static

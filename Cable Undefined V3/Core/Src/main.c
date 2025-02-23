@@ -46,13 +46,32 @@ int main(void)
   setConnection(0, 0, muxes[0], 1);  // CS_1 (PC0)
   setConnection(0, 1, muxes[2], 1);  // CS_3 (PC2)
 
-  route(1, 1, 10, muxes, sizeof(muxes), 1);
-  route(2, 2, 11, muxes, sizeof(muxes), 1);
-  route(3, 3, 10, muxes, sizeof(muxes), 1);
+  route(1, 2, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 1);   // Ex GND
+  route(10, 17, 2, muxes, sizeof(muxes) / sizeof(muxes[0]), 1); // Ex 5V
+  route(2, 120, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 1); // Ex GND
+
+  route(1, 2, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 0);   // Ex GND
+  route(2, 120, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 0); // Ex GND
+  route(11, 18, 3, muxes, sizeof(muxes) / sizeof(muxes[0]), 1); // Ex SDA
+
+
 
 
   while (1)
   {
+//	  if (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_15) == GPIO_PIN_SET) {
+//		  printf("PE15 is HIGH\n");
+//	  } else {
+//		  printf("PE15 is LOW\n");
+//	  }
+//	  if (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_14) == GPIO_PIN_SET) {
+//	  		  printf("PE14 is HIGH\n");
+//	  } else {
+//		  printf("PE14 is LOW\n");
+//	  }
+//	  HAL_Delay(500);  // Check every 500ms
+
+
 
   }
 }

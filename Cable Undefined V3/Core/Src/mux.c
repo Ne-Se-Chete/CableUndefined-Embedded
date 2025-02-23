@@ -41,6 +41,15 @@ const MUX muxes[34] = {
     {GPIOE, GPIO_PIN_9, &xPins34, &yPins34}   // CS_34 (PE9)
 };
 
+const char* getPortName(GPIO_TypeDef* port) {
+    if (port == GPIOA) return "GPIOA";
+    if (port == GPIOB) return "GPIOB";
+    if (port == GPIOC) return "GPIOC";
+    if (port == GPIOD) return "GPIOD";
+    if (port == GPIOE) return "GPIOE";
+    return "UNKNOWN";
+}
+
 
 
 // Set connection function with dynamic CS handling
@@ -84,11 +93,10 @@ void setConnection(int x, int y, MUX mux, uint8_t mode) {
 MainTrack mainTracks[32] = {0};
 
 void route(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode) {
+
     char pin1Name[6], pin2Name[6];
     snprintf(pin1Name, sizeof(pin1Name), "B_%d", breadboardPin1);
     snprintf(pin2Name, sizeof(pin2Name), "B_%d", breadboardPin2);
-
-    // add edge case where the 2 pins are in the same mux!!!
 
 
     printf("Routing %s to %s with net ID: %d\n", pin1Name, pin2Name, net_id);
@@ -121,7 +129,22 @@ void route(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_
         return;
     }
 
+    // Update connection counter based on mode
+	if (mode == 1) {
+		selectedTrack->current_connections++; // Increment current connections
+		printf("Main Track %d incremented. Current connections: %d\n", selectedTrack->track_id, selectedTrack->current_connections);
+	} else if (mode == 0) {
+		selectedTrack->current_connections--; // Decrement current connections
+		if (selectedTrack->current_connections <= 0) { // If counter is 0, free track
+			printf("Main Track %d is now free\n", selectedTrack->track_id);
+			selectedTrack->is_used = 0;
+			selectedTrack->net_id = -1;
+			selectedTrack->current_connections = 0;
+		}else{
+			printf("Main Track %d decremented, but still occupied. Current connections: %d\n", selectedTrack->track_id, selectedTrack->current_connections);
 
+		}
+	}
 
     muxIndex = (selectedTrack->track_id < 16) ? 0 : 1;
 
@@ -142,12 +165,15 @@ void route(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_
         }
 
         if (mux1 && mux2) {
-            printf("Connecting %s at MUX %p (X:%d, Y:%d) and %s at MUX %p (X:%d, Y:%d)\n",
-                    pin1Name, (void*)mux1, xIndex1, yIndex1,
-                    pin2Name, (void*)mux2, xIndex2, yIndex2);
-            fflush(stdout);
+        	printf("%s (X:%d, Y:%d) at MUX[%d] CS: %s, Pin: %d, Main Track: %d\n"
+        			"%s (X:%d, Y:%d) at MUX[%d] CS: %s, Pin: %d, Main Track: %d\n\n",
+        	                mode ? "Connecting" : "Disconnecting",
+        	                xIndex1, yIndex1, mux1 - muxes + 1, getPortName(mux1->port), __builtin_ctz(mux1->pin), selectedTrack->track_id,
+							mode ? "Connecting" : "Disconnecting",
+        	                xIndex2, yIndex2, mux2 - muxes + 1, getPortName(mux2->port), __builtin_ctz(mux2->pin), selectedTrack->track_id);
+        	        fflush(stdout);
+			fflush(stdout);
 
-            // Seems legit ^^^
 
 //            setConnection(xIndex1, yIndex1, *mux1, mode);
 //            setConnection(xIndex2, yIndex2, *mux2, mode);
