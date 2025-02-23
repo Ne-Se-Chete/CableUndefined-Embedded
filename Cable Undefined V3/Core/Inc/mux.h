@@ -34,6 +34,7 @@ typedef struct {
     int track_id;
     int net_id;
     int is_used;
+    int current_connections;
 } MainTrack;
 
 extern MainTrack mainTracks[32];
@@ -46,6 +47,8 @@ typedef struct {
 } MUX;
 
 extern const MUX muxes[34];
+
+const char* getPortName(GPIO_TypeDef* port);
 
 void setConnection(int x, int y, MUX mux, uint8_t mode);
 
