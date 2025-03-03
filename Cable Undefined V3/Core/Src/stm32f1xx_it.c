@@ -22,6 +22,7 @@
 #include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -185,7 +186,7 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 0 */
 
   /* USER CODE END SysTick_IRQn 0 */
-
+  HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
 
   /* USER CODE END SysTick_IRQn 1 */
@@ -197,6 +198,40 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f1xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles USART1 global interrupt.
+  */
+void USART1_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART1_IRQn 0 */
+
+  /* USER CODE END USART1_IRQn 0 */
+  /* USER CODE BEGIN USART1_IRQn 1 */
+	if (LL_USART_IsActiveFlag_RXNE(USART1))
+	{
+		uint8_t receivedByte = LL_USART_ReceiveData8(USART1);
+		UART_ProcessReceivedByte(receivedByte, 1);  // Process received data for UART1
+	}
+  /* USER CODE END USART1_IRQn 1 */
+}
+
+/**
+  * @brief This function handles USART3 global interrupt.
+  */
+void USART3_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART3_IRQn 0 */
+
+  /* USER CODE END USART3_IRQn 0 */
+  /* USER CODE BEGIN USART3_IRQn 1 */
+	 if (LL_USART_IsActiveFlag_RXNE(USART3))
+	{
+		uint8_t receivedByte = LL_USART_ReceiveData8(USART3);
+		UART_ProcessReceivedByte(receivedByte, 3);  // Process received data for UART3
+	}
+  /* USER CODE END USART3_IRQn 1 */
+}
 
 /* USER CODE BEGIN 1 */
 

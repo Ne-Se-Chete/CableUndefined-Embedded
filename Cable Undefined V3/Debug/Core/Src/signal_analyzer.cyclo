@@ -1,0 +1,15 @@
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:2130:22:LL_ADC_REG_SetSequencerRanks	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:3244:22:LL_ADC_Enable	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:3326:22:LL_ADC_REG_StartConversionSWStart	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:3392:26:LL_ADC_REG_ReadConversionData12	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:3561:26:LL_ADC_IsActiveFlag_EOS	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:1851:26:LL_USART_IsActiveFlag_TC	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:1862:26:LL_USART_IsActiveFlag_TXE	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:2474:22:LL_USART_TransmitData8	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1054:22:LL_TIM_EnableCounter	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1316:26:LL_TIM_GetCounter	1
+../Core/Src/signal_analyzer.c:12:6:SignalAnalyzer_Init	1
+../Core/Src/signal_analyzer.c:24:6:readADC	3
+../Core/Src/signal_analyzer.c:38:10:getTimestamp	1
+../Core/Src/signal_analyzer.c:46:6:sendADCData	1
+../Core/Src/signal_analyzer.c:63:6:sendToUART	4
