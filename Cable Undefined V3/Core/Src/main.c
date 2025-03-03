@@ -22,8 +22,11 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "mux.h"
+#include "serial.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "stm32f1xx_ll_usart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,6 +46,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 
+TIM_HandleTypeDef htim6;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -54,6 +59,7 @@ static void MX_ADC1_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
+static void MX_TIM6_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -73,11 +79,6 @@ int _write(int file, char *ptr, int len) {
     return len;
 }
 
-#define RX_BUFFER_SIZE 100
-uint8_t rxBuffer[RX_BUFFER_SIZE];
-uint8_t rxByte;   // Buffer for single-byte reception
-uint8_t rxIndex = 0;
-
 /* USER CODE END 0 */
 
 /**
@@ -94,18 +95,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_AFIO);
-  LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_PWR);
-
-  /* System interrupt init*/
-  NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
-
-  /* SysTick_IRQn interrupt configuration */
-  NVIC_SetPriority(SysTick_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),15, 0));
-
-  /** NOJTAG: JTAG-DP Disabled and SW-DP Enabled
-  */
-  LL_GPIO_AF_Remap_SWJ_NOJTAG();
+  HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -124,6 +114,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   LL_GPIO_SetOutputPin(RST_GPIO, RST_PIN);
   LL_mDelay(20);
@@ -143,39 +134,22 @@ int main(void)
 //  route(1, 2, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 0, mock);   // Ex GND
 //  route(2, 120, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 0, mock); // Ex GND
 //  route(11, 18, 3, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock); // Ex SDA
+
+
+  LL_USART_EnableIT_RXNE(USART1);
+  LL_USART_EnableIT_RXNE(USART3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+	  while (1)
+	  {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  if (LL_USART_IsActiveFlag_RXNE(USART3))
-	  {  // Check if new byte is received
-		  rxByte = LL_USART_ReceiveData8(USART3);  // Read received byte
 
-		  // Print the received byte
-//		  printf("Received byte: '%c' (0x%02X)\n", rxByte, rxByte);
-//		  fflush(stdout);
-
-		  // Store byte in buffer (ensuring it doesn't overflow)
-		  if (rxIndex < (RX_BUFFER_SIZE - 1)) {
-			  rxBuffer[rxIndex++] = rxByte;
-		  }
-
-		  // If newline received, process the command
-		  if (rxByte == '\n' || rxByte == '\r') {
-			  rxBuffer[rxIndex] = '\0';  // Null-terminate
-			  printf("Received command: %s\n", rxBuffer);
-			  fflush(stdout);
-
-			  processCommand((char *)rxBuffer);  // Parse and execute command
-			  rxIndex = 0;  // Reset buffer for next command
-		  }
+//		  sendADCData();
 	  }
-  }
   /* USER CODE END 3 */
 }
 
@@ -214,9 +188,14 @@ void SystemClock_Config(void)
   {
 
   }
-  LL_Init1msTick(72000000);
   LL_SetSystemCoreClock(72000000);
-  LL_RCC_SetADCClockSource(LL_RCC_ADC_CLKSRC_PCLK2_DIV_8);
+
+   /* Update the time base */
+  if (HAL_InitTick (TICK_INT_PRIORITY) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  LL_RCC_SetADCClockSource(LL_RCC_ADC_CLKSRC_PCLK2_DIV_6);
 }
 
 /**
@@ -285,6 +264,44 @@ static void MX_ADC1_Init(void)
 }
 
 /**
+  * @brief TIM6 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM6_Init(void)
+{
+
+  /* USER CODE BEGIN TIM6_Init 0 */
+
+  /* USER CODE END TIM6_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM6_Init 1 */
+
+  /* USER CODE END TIM6_Init 1 */
+  htim6.Instance = TIM6;
+  htim6.Init.Prescaler = 0;
+  htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim6.Init.Period = 65535;
+  htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM6_Init 2 */
+
+  /* USER CODE END TIM6_Init 2 */
+
+}
+
+/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -317,6 +334,10 @@ static void MX_USART1_UART_Init(void)
   GPIO_InitStruct.Pin = LL_GPIO_PIN_10;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_FLOATING;
   LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /* USART1 interrupt Init */
+  NVIC_SetPriority(USART1_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
+  NVIC_EnableIRQ(USART1_IRQn);
 
   /* USER CODE BEGIN USART1_Init 1 */
 
@@ -425,6 +446,10 @@ static void MX_USART3_UART_Init(void)
   GPIO_InitStruct.Pin = LL_GPIO_PIN_11;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_FLOATING;
   LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* USART3 interrupt Init */
+  NVIC_SetPriority(USART3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
+  NVIC_EnableIRQ(USART3_IRQn);
 
   /* USER CODE BEGIN USART3_Init 1 */
 
