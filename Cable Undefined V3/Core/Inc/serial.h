@@ -6,16 +6,7 @@
 // Define buffer sizes
 #define RX_BUFFER_SIZE 100
 
-
-/* Public Variables for TESTING, delete later*/
-extern uint8_t rxBuffer[RX_BUFFER_SIZE];
-extern uint8_t rxByte;
-extern uint8_t rxIndex;
-
-
-
-// Function Prototypes
 void sendToESP(const char *message);
-void processSerialData(void);
+void UART_ProcessReceivedByte(uint8_t byte, uint8_t uartNumber);
 
 #endif // SERIAL_H

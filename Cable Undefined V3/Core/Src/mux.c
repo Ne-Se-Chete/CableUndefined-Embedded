@@ -14,22 +14,24 @@ const MUX muxes[34] = {
     {GPIOC, LL_GPIO_PIN_5, &xPins6, &yPins6},  // CS_6 (PC5)
     {GPIOC, LL_GPIO_PIN_6, &xPins7, &yPins7},  // CS_7 (PC6)
     {GPIOC, LL_GPIO_PIN_7, &xPins8, &yPins8},  // CS_8 (PC7)
-    {GPIOC, LL_GPIO_PIN_8, &xPins9, &yPins9},  // CS_9 (PC8)
-    {GPIOC, LL_GPIO_PIN_9, &xPins10, &yPins10},  // CS_10 (PC9)
-    {GPIOC, LL_GPIO_PIN_11, &xPins11, &yPins11}, // CS_11 (PC11)
-    {GPIOC, LL_GPIO_PIN_13, &xPins12, &yPins12}, // CS_12 (PC13)
-    {GPIOD, LL_GPIO_PIN_0, &xPins13, &yPins13},  // CS_13 (PD0)
-    {GPIOD, LL_GPIO_PIN_1, &xPins14, &yPins14},  // CS_14 (PD1)
-    {GPIOD, LL_GPIO_PIN_3, &xPins15, &yPins15},  // CS_15 (PD3)
-    {GPIOD, LL_GPIO_PIN_4, &xPins16, &yPins16},  // CS_16 (PD4)
-    {GPIOD, LL_GPIO_PIN_7, &xPins17, &yPins17},  // CS_17 (PD7)
-    {GPIOD, LL_GPIO_PIN_8, &xPins18, &yPins18},  // CS_18 (PD8)
-    {GPIOD, LL_GPIO_PIN_9, &xPins19, &yPins19},  // CS_19 (PD9)
-    {GPIOD, LL_GPIO_PIN_10, &xPins20, &yPins20}, // CS_20 (PD10)
-    {GPIOD, LL_GPIO_PIN_11, &xPins21, &yPins21}, // CS_21 (PD11)
-    {GPIOD, LL_GPIO_PIN_12, &xPins22, &yPins22}, // CS_22 (PD12)
-    {GPIOD, LL_GPIO_PIN_13, &xPins23, &yPins23}, // CS_23 (PD13)
+    {GPIOC, LL_GPIO_PIN_8, &xPins9, &yPins9},  // CS_9 (PC8) PROBLEM???? WITH LL_GPIO_PIN_8
+    {GPIOC, LL_GPIO_PIN_9, &xPins10, &yPins10},  // CS_10 (PC9) PROBLEM???? WITH LL_GPIO_PIN_9
+    {GPIOC, LL_GPIO_PIN_13, &xPins11, &yPins11}, // CS_11 (PC13) PROBLEM???? WITH LL_GPIO_PIN_11
+
+    {GPIOD, LL_GPIO_PIN_0, &xPins12, &yPins12}, // CS_12 (PD0) PROBLEM???? WITH LL_GPIO_PIN_3
+    {GPIOD, LL_GPIO_PIN_1, &xPins13, &yPins13},  // CS_13 (PD1)
+    {GPIOD, LL_GPIO_PIN_3, &xPins14, &yPins14},  // CS_14 (PD3)
+    {GPIOD, LL_GPIO_PIN_4, &xPins15, &yPins15},  // CS_15 (PD4)
+    {GPIOD, LL_GPIO_PIN_7, &xPins16, &yPins16},  // CS_16 (PD7)
+    {GPIOD, LL_GPIO_PIN_8, &xPins17, &yPins17},  // CS_17 (PD8)
+    {GPIOD, LL_GPIO_PIN_9, &xPins18, &yPins18},  // CS_18 (PD9)
+    {GPIOD, LL_GPIO_PIN_10, &xPins19, &yPins19},  // CS_19 (PD10)
+    {GPIOD, LL_GPIO_PIN_11, &xPins20, &yPins20}, // CS_20 (PD11)
+    {GPIOD, LL_GPIO_PIN_12, &xPins21, &yPins21}, // CS_21 (PD12)
+    {GPIOD, LL_GPIO_PIN_13, &xPins22, &yPins22}, // CS_22 (PD13)
+    {GPIOD, LL_GPIO_PIN_14, &xPins23, &yPins23}, // CS_23 (PD14)
     {GPIOD, LL_GPIO_PIN_15, &xPins24, &yPins24}, // CS_24 (PD15)
+
     {GPIOE, LL_GPIO_PIN_0, &xPins25, &yPins25},  // CS_25 (PE0)
     {GPIOE, LL_GPIO_PIN_1, &xPins26, &yPins26},  // CS_26 (PE1)
     {GPIOE, LL_GPIO_PIN_2, &xPins27, &yPins27},  // CS_27 (PE2)
@@ -51,19 +53,57 @@ const char* getPortName(GPIO_TypeDef* port) {
     return "UNKNOWN";
 }
 
-MainTrack mainTracks[32] = {0};
+const char* getPinName(uint32_t pin) {
+    switch (pin) {
+        case LL_GPIO_PIN_0:  return "Pin 0";
+        case LL_GPIO_PIN_1:  return "Pin 1";
+        case LL_GPIO_PIN_2:  return "Pin 2";
+        case LL_GPIO_PIN_3:  return "Pin 3";
+        case LL_GPIO_PIN_4:  return "Pin 4";
+        case LL_GPIO_PIN_5:  return "Pin 5";
+        case LL_GPIO_PIN_6:  return "Pin 6";
+        case LL_GPIO_PIN_7:  return "Pin 7";
+        case LL_GPIO_PIN_8:  return "Pin 8";
+        case LL_GPIO_PIN_9:  return "Pin 9";
+        case LL_GPIO_PIN_10: return "Pin 10";
+        case LL_GPIO_PIN_11: return "Pin 11";
+        case LL_GPIO_PIN_12: return "Pin 12";
+        case LL_GPIO_PIN_13: return "Pin 13";
+        case LL_GPIO_PIN_14: return "Pin 14";
+        case LL_GPIO_PIN_15: return "Pin 15";
+        default: return "Unknown Pin";
+    }
+}
 
-// Set connection function with dynamic CS handling
+void printMUXDetails(MUX *mux) {
+    if (mux == NULL) {
+        printf("Invalid MUX pointer.\n");
+        return;
+    }
+
+    printf("MUX Details:\n");
+    printf("---------------------------------------------------\n");
+    printf("Control Pin: Port %s, %s\n", getPortName(mux->port), getPinName(mux->pin));
+    printf("---------------------------------------------------\n");
+    fflush(stdout);
+}
+
+
+MainTrack mainTracks[32] = {0};
+SignalAnalyzerTrack signalAnalyzerTracks[8] = {0};
+
 void setConnection(int x, int y, MUX mux, uint8_t mode) {
     if (x < 0 || x > 15 || y < 0 || y > 7) {
         return;
     }
 
+//    printMUXDetails(&mux);
 
     // Activate multiplexer using the struct for CS
     LL_GPIO_ResetOutputPin(mux.port, mux.pin);
     LL_mDelay(20);
     LL_GPIO_SetOutputPin(mux.port, mux.pin);
+    LL_mDelay(20);
 
     // Set X address
     // Set X address
@@ -87,12 +127,15 @@ void setConnection(int x, int y, MUX mux, uint8_t mode) {
 	LL_mDelay(20);
 	LL_GPIO_ResetOutputPin(STB_GPIO, STB_PIN);
 
-	LL_mDelay(200);
+	LL_mDelay(20);
 
 	LL_GPIO_ResetOutputPin(DAT_GPIO, DAT_PIN);
+    LL_GPIO_ResetOutputPin(mux.port, mux.pin);
+
+	LL_mDelay(20);
 }
 
-void route(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode, RGB rgb) {
+void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode, RGB rgb) {
 
     char pin1Name[6], pin2Name[6];
     snprintf(pin1Name, sizeof(pin1Name), "B_%d", breadboardPin1);
@@ -165,12 +208,12 @@ void route(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_
         }
 
         if (mux1 && mux2) {
-        	printf("%s (X:%d, Y:%d) at MUX[%d] CS: %s, Pin: %d, Main Track: %d\n"
-        			"%s (X:%d, Y:%d) at MUX[%d] CS: %s, Pin: %d, Main Track: %d\n\n",
+        	printf("%s (X:%d, Y:%d) at MUX[%d] CS: %s, Pin: %s, Main Track: %d\n"
+        			"%s (X:%d, Y:%d) at MUX[%d] CS: %s, Pin: %s, Main Track: %d\n\n",
         	                mode ? "Connecting" : "Disconnecting",
-        	                xIndex1, yIndex1, mux1 - muxes + 1, getPortName(mux1->port), __builtin_ctz(mux1->pin), selectedTrack->track_id,
+        	                xIndex1, yIndex1, mux1 - muxes + 1, getPortName(mux1->port), getPinName(mux1->pin), selectedTrack->track_id,
 							mode ? "Connecting" : "Disconnecting",
-        	                xIndex2, yIndex2, mux2 - muxes + 1, getPortName(mux2->port), __builtin_ctz(mux2->pin), selectedTrack->track_id);
+        	                xIndex2, yIndex2, mux2 - muxes + 1, getPortName(mux2->port), getPinName(mux2->pin), selectedTrack->track_id);
         	        fflush(stdout);
 			fflush(stdout);
 
@@ -186,22 +229,166 @@ void route(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_
         }
     }
 
-void processCommand(char *command) {
-    int pin1, pin2, net_id, mode, r, g, b;
+void routeSignalAnalyzer(int net_id, MUX *muxes, uint8_t mode) {
+    MainTrack *selectedTrack = NULL;
+    int trackIndex = -1;
+    char trackName[10];  // Buffer for formatted string
+    int xIndex = -1, yIndex = -1;
+    MUX *mux = NULL;
 
-    if (strncmp(command, "ROUTE", 5) == 0) {  // Check if it's a "ROUTE" command
-        int parsed = sscanf(command, "ROUTE %d %d %d %d %d %d %d",
+    // Step 1: Find a main track that is used and has the matching net_id
+    for (int i = 0; i < 32; i++) {
+        if (mainTracks[i].is_used && mainTracks[i].net_id == net_id) {
+            selectedTrack = &mainTracks[i];
+            trackIndex = i;
+            snprintf(trackName, sizeof(trackName), "MT_%d", trackIndex + 1); // Convert to "MT_X"
+			printf("Found Main Track %d (Name: %s) for Net ID %d\n", selectedTrack->track_id, trackName, net_id);
+			break;
+        }
+    }
+
+    if (!selectedTrack) {
+        printf("Error: No active Main Track found for Net ID %d\n", net_id);
+        return;
+    }
+
+    // Step 2: Check MUX 33 and 34
+    MUX *mux33 = &muxes[32]; // MUX 33 (Array index 32)
+    MUX *mux34 = &muxes[33]; // MUX 34 (Array index 33)
+
+    // Step 3: Look for the track ID in X Pins of MUX 33 and 34
+
+    for (int i = 0; i < 16; i++) {
+        if (strcmp((*mux33->xPins)[i], trackName) == 0) {
+            xIndex = i;
+            mux = mux33;
+            break;
+        }
+        if (strcmp((*mux34->xPins)[i], trackName) == 0) {
+            xIndex = i;
+            mux = mux34;
+            break;
+        }
+    }
+
+    if (mode == 1) {  // Connecting
+		for (int i = 0; i < 8; i++) {
+			if (!signalAnalyzerTracks[i].is_used) {
+				yIndex = i;
+				signalAnalyzerTracks[i].is_used = 1;
+				signalAnalyzerTracks[i].net_id = net_id;
+				signalAnalyzerTracks[i].track_id = xIndex;
+				printf("Assigned Y Pin %d to Net ID %d\n", yIndex, net_id);
+				break;
+			}
+		}
+	} else {  // Disconnecting
+		for (int i = 0; i < 8; i++) {
+			if (signalAnalyzerTracks[i].is_used && signalAnalyzerTracks[i].net_id == net_id) {
+				yIndex = i;
+				signalAnalyzerTracks[i].is_used = 0;
+				signalAnalyzerTracks[i].net_id = -1;
+				signalAnalyzerTracks[i].track_id = -1;
+				printf("Freed Y Pin %d for Net ID %d\n", yIndex, net_id);
+				break;
+			}
+		}
+	}
+
+	if (yIndex == -1) {
+		printf("Error: No available Y Pin found for Signal Analyzer\n");
+		return;
+	}
+
+	printf("Connecting Signal Analyzer to MUX %d at (X: %d, Y: %d) for Net ID %d\n",
+		   (mux == mux33 ? 33 : 34), xIndex, yIndex, net_id);
+
+	printf("\n");
+
+	// Step 5: Set the connection
+	setConnection(xIndex, yIndex, *mux, mode);
+}
+
+void clear() {
+    printf("Clearing all main tracks and signal analyzer tracks...\n");
+
+    // Step 1: Clear all main tracks
+    for (int i = 0; i < 32; i++) {
+        mainTracks[i].is_used = 0;
+        mainTracks[i].net_id = -1;
+        mainTracks[i].current_connections = 0;
+        mainTracks[i].track_id = -1;
+    }
+
+    printf("All main tracks cleared.\n");
+
+    // Step 2: Clear all signal analyzer tracks
+    for (int i = 0; i < 8; i++) {
+        signalAnalyzerTracks[i].is_used = 0;
+        signalAnalyzerTracks[i].net_id = -1;
+        signalAnalyzerTracks[i].track_id = -1;
+    }
+
+    printf("All signal analyzer tracks cleared.\n");
+
+    // Step 3: Reset all multiplexer connections (if needed)
+//    for (int i = 0; i < 34; i++) {  // Assuming 34 multiplexers in `muxes`
+//        for (int x = 0; x < 16; x++) {  // 16 X-lines per MUX
+//            for (int y = 0; y < 8; y++) {  // 8 Y-lines per MUX
+//                setConnection(x, y, muxes[i], 0);  // Disconnect all
+//            }
+//        }
+//    }
+//
+//    printf("All multiplexer connections cleared.\n");
+
+    // Step 4: Perform hardware reset using RST_GPIO
+    LL_GPIO_SetOutputPin(RST_GPIO, RST_PIN);
+    LL_mDelay(20);
+    LL_GPIO_ResetOutputPin(RST_GPIO, RST_PIN);
+    LL_mDelay(20);
+
+    printf("RST complete.\n\n");
+}
+
+
+void processCommand(char *command) {
+
+    if (strncmp(command, "RB", 2) == 0) {  // Check if it's a "ROUTE" command
+    	int pin1, pin2, net_id, mode, r, g, b;
+        int parsed = sscanf(command, "RB %d %d %d %d %d %d %d",
                             &pin1, &pin2, &net_id, &mode, &r, &g, &b);
         if (parsed == 7) {  // Ensure all arguments were parsed
             RGB color = {r, g, b};
-            printf("Calling route with: Pin1=%d, Pin2=%d, NetID=%d, Mode=%d, RGB(%d,%d,%d)\n",
+            printf("Calling routeBreadboard with: Pin1=%d, Pin2=%d, NetID=%d, Mode=%d, RGB(%d,%d,%d)\n",
                    pin1, pin2, net_id, mode, r, g, b);
             fflush(stdout);
 
-            route(pin1, pin2, net_id, muxes, sizeof(muxes) / sizeof(muxes[0]), mode, color);
+            routeBreadboard(pin1, pin2, net_id, muxes, sizeof(muxes) / sizeof(muxes[0]), mode, color);
         } else {
-            printf("Error: Invalid ROUTE command format!\n");
+            printf("Error: Invalid RB command format!\n");
             fflush(stdout);
         }
     }
+
+    if (strncmp(command, "RS", 2) == 0) {  // Check if it's a "ROUTE" command
+		int net_id, mode;
+		int parsed = sscanf(command, "RS %d %d",
+							&net_id, &mode);
+		if (parsed == 2) {  // Ensure all arguments were parsed
+			printf("Calling routeSignalAnalyzer with: NetID=%d, Mode=%d\n",
+				   net_id, mode);
+			fflush(stdout);
+
+			routeSignalAnalyzer(net_id, muxes, mode);
+		} else {
+			printf("Error: Invalid RS command format!\n");
+			fflush(stdout);
+		}
+	}
+
+    if (strncmp(command, "CLR", 3) == 0) {  // Check if it's a "ROUTE" command
+		clear();
+
+	}
 }
