@@ -41,6 +41,8 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+#define PROTECTION_GPIO GPIOE
+#define PROTECTION_PIN LL_GPIO_PIN_11
 
 /* USER CODE END PM */
 
@@ -116,28 +118,47 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
+
+  // Enable Interupts
+  LL_USART_EnableIT_RXNE(USART1);
+  LL_USART_EnableIT_RXNE(USART3);
+
+  SignalAnalyzer_Init();
+
+  // Reset all Muxes
   LL_GPIO_SetOutputPin(RST_GPIO, RST_PIN);
   LL_mDelay(20);
   LL_GPIO_ResetOutputPin(RST_GPIO, RST_PIN);
   LL_mDelay(20);
 
+  // Enable Protection
+  LL_GPIO_SetOutputPin(PROTECTION_GPIO, PROTECTION_PIN);
 
-//  setConnection(0, 0, muxes[0], 1);  // CS_1 (PC0)
-//  setConnection(0, 1, muxes[2], 1);  // CS_3 (PC2)
 
-  RGB mock;
+//  RGB mock;
 
-//  route(1, 2, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock);   // Ex GND
-//  route(10, 17, 2, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock); // Ex 5V
-//  route(2, 120, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock); // Ex GND
+//    routeBreadboard(1, 2, 1000, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock);
+//    routeBreadboard(4, 10, 2000, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock);
+//    routeBreadboard(5, 11, 3000, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock);
 //
-//  route(1, 2, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 0, mock);   // Ex GND
-//  route(2, 120, 1, muxes, sizeof(muxes) / sizeof(muxes[0]), 0, mock); // Ex GND
-//  route(11, 18, 3, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock); // Ex SDA
+//    routeSignalAnalyzer(2000, muxes, 1);
+//    routeSignalAnalyzer(3000, muxes, 1);
+//    routeSignalAnalyzer(2000, muxes, 0);
+//    routeSignalAnalyzer(1000, muxes, 1);
 
+    // Tests 5V MUX 32 ->  y4 (5v) -> x15 (MAINTRACK 32)  MUX 34 -> y6 (analyzer7)
+//    setConnection(15, 4, muxes[31], 1);  // CS_32
+//    setConnection(15, 6, muxes[33], 1);  // CS_34 Analyzer 7
+//
+    // Tests 3V3 MUX 32 ->  y6 (3v3) -> x0 (MAIN TRACK 17) MUX 34 -> y2 (analyzer3)
+//    setConnection(0, 6, muxes[31], 1);  // CS_32
+//    setConnection(0, 2, muxes[33], 1);  // CS_34 Analyzer 3
 
-  LL_USART_EnableIT_RXNE(USART1);
-  LL_USART_EnableIT_RXNE(USART3);
+//  for (int i = 0; i < 34; i++){
+//	  setConnection(0, 0, muxes[i], 1);
+//	  printf("I have set connection for mux[%d] on x0, y0 \n", i);
+//  }
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -148,7 +169,9 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-//		  sendADCData();
+		  sendADCData();
+//		  LL_mDelay(500);
+
 	  }
   /* USER CODE END 3 */
 }
@@ -491,12 +514,12 @@ static void MX_GPIO_Init(void)
   /**/
   LL_GPIO_ResetOutputPin(GPIOE, LL_GPIO_PIN_2|LL_GPIO_PIN_3|LL_GPIO_PIN_4|LL_GPIO_PIN_5
                           |LL_GPIO_PIN_6|LL_GPIO_PIN_7|LL_GPIO_PIN_8|LL_GPIO_PIN_9
-                          |LL_GPIO_PIN_0);
+                          |LL_GPIO_PIN_11|LL_GPIO_PIN_0);
 
   /**/
   LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_13|LL_GPIO_PIN_0|LL_GPIO_PIN_1|LL_GPIO_PIN_2
                           |LL_GPIO_PIN_3|LL_GPIO_PIN_4|LL_GPIO_PIN_5|LL_GPIO_PIN_6
-                          |LL_GPIO_PIN_7|LL_GPIO_PIN_8|LL_GPIO_PIN_9);
+                          |LL_GPIO_PIN_7|LL_GPIO_PIN_8|LL_GPIO_PIN_9|LL_GPIO_PIN_11);
 
   /**/
   LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_0|LL_GPIO_PIN_1|LL_GPIO_PIN_2|LL_GPIO_PIN_12
@@ -513,7 +536,7 @@ static void MX_GPIO_Init(void)
   /**/
   GPIO_InitStruct.Pin = LL_GPIO_PIN_2|LL_GPIO_PIN_3|LL_GPIO_PIN_4|LL_GPIO_PIN_5
                           |LL_GPIO_PIN_6|LL_GPIO_PIN_7|LL_GPIO_PIN_8|LL_GPIO_PIN_9
-                          |LL_GPIO_PIN_0;
+                          |LL_GPIO_PIN_11|LL_GPIO_PIN_0;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
@@ -522,7 +545,7 @@ static void MX_GPIO_Init(void)
   /**/
   GPIO_InitStruct.Pin = LL_GPIO_PIN_13|LL_GPIO_PIN_0|LL_GPIO_PIN_1|LL_GPIO_PIN_2
                           |LL_GPIO_PIN_3|LL_GPIO_PIN_4|LL_GPIO_PIN_5|LL_GPIO_PIN_6
-                          |LL_GPIO_PIN_7|LL_GPIO_PIN_8|LL_GPIO_PIN_9;
+                          |LL_GPIO_PIN_7|LL_GPIO_PIN_8|LL_GPIO_PIN_9|LL_GPIO_PIN_11;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
@@ -539,8 +562,7 @@ static void MX_GPIO_Init(void)
   LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /**/
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_11|LL_GPIO_PIN_12|LL_GPIO_PIN_13|LL_GPIO_PIN_14
-                          |LL_GPIO_PIN_15;
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_12|LL_GPIO_PIN_13|LL_GPIO_PIN_14|LL_GPIO_PIN_15;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_FLOATING;
   LL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 

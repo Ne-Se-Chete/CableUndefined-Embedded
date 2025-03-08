@@ -116,10 +116,10 @@ const char* xPins32[16] = {"MT_17", "MT_18", "MT_19", "MT_20", "MT_21", "MT_22",
 const char* yPins32[8]  = {"B_117", "B_118", "B_119", "B_120", "+5V", "5V", "+3V3", "+3V3"};
 
 // Analyzer
-const char* xPins33[16] = {"MT_17", "MT_18", "MT_19", "MT_20", "MT_21", "MT_22", "MT_23", "MT_24", "MT_25", "MT_26", "MT_27", "MT_28", "MT_29", "MT_30", "MT_31", "MT_32"};
+const char* xPins33[16] = {"MT_1", "MT_2", "MT_3", "MT_4", "MT_5", "MT_6", "MT_7", "MT_8", "MT_9", "MT_10", "MT_11", "MT_12", "MT_13", "MT_14", "MT_15", "MT_16"};
 const char* yPins33[8]  = {"PA_0", "PA_1", "PA_2", "PA_3", "PA_4", "PA_5", "PA_6", "PA_7"};
 
-const char* xPins34[16] = {"MT_1", "MT_2", "MT_3", "MT_4", "MT_5", "MT_6", "MT_7", "MT_8", "MT_9", "MT_10", "MT_11", "MT_12", "MT_13", "MT_14", "MT_15", "MT_16"};
+const char* xPins34[16] = {"MT_17", "MT_18", "MT_19", "MT_20", "MT_21", "MT_22", "MT_23", "MT_24", "MT_25", "MT_26", "MT_27", "MT_28", "MT_29", "MT_30", "MT_31", "MT_32"};
 const char* yPins34[8]  = {"PA_0", "PA_1", "PA_2", "PA_3", "PA_4", "PA_5", "PA_6", "PA_7"};
 
 

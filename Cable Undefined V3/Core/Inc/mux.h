@@ -40,6 +40,12 @@ typedef struct {
 } MainTrack;
 
 typedef struct {
+    int track_id;
+    int net_id;
+    int is_used;
+} SignalAnalyzerTrack;
+
+typedef struct {
 	int r;
 	int b;
 	int g;
@@ -49,7 +55,7 @@ extern MainTrack mainTracks[32];
 
 typedef struct {
     GPIO_TypeDef* port;
-    uint16_t pin;
+    uint32_t pin;
     const char* const (*xPins)[16];  // Pointer to an array of 16 strings
     const char* const (*yPins)[8];   // Pointer to an array of 8 strings
 } MUX;
@@ -57,10 +63,17 @@ typedef struct {
 extern const MUX muxes[34];
 
 const char* getPortName(GPIO_TypeDef* port);
+const char* getPinName(uint32_t pin);
+
+void printMUXDetails(MUX *mux);
 
 void setConnection(int x, int y, MUX mux, uint8_t mode);
 
-void route(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode, RGB rgb);
+void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode, RGB rgb);
+
+void routeSignalAnalyzer(int net_id, MUX *muxes, uint8_t mode);
+
+void clear();
 
 void processCommand(char *command);
 

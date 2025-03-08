@@ -1,6 +1,10 @@
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:803:22:LL_GPIO_SetOutputPin	1
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:832:22:LL_GPIO_ResetOutputPin	1
-../Core/Src/mux.c:45:13:getPortName	6
-../Core/Src/mux.c:57:6:setConnection	13
-../Core/Src/mux.c:95:6:route	20
-../Core/Src/mux.c:189:6:processCommand	3
+../Core/Src/mux.c:47:13:getPortName	6
+../Core/Src/mux.c:56:13:getPinName	31
+../Core/Src/mux.c:78:6:printMUXDetails	2
+../Core/Src/mux.c:95:6:setConnection	13
+../Core/Src/mux.c:138:6:routeBreadboard	20
+../Core/Src/mux.c:232:6:routeSignalAnalyzer	16
+../Core/Src/mux.c:312:6:clear	3
+../Core/Src/mux.c:355:6:processCommand	6
