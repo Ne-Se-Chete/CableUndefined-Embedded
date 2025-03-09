@@ -6,7 +6,7 @@
 // Function Prototypes
 void SignalAnalyzer_Init(void);
 void sendADCData(void);
-void sendADCData(void);
+void readADC(void);
 uint32_t getTimestamp(void);
 
 #endif // SIGNAL_ANALYZER_H

@@ -1,5 +1,8 @@
 #include "signal_analyzer.h"
+#include "serial.h"
+
 #include "stm32f1xx_ll_tim.h"
+
 #include <stdio.h>
 #include <string.h>
 
@@ -48,12 +51,12 @@ void readADC(void)
 
         // Read ADC value
         adcValues[i] = LL_ADC_REG_ReadConversionData12(ADC1);
-        printf("ADCVal[%d]: %d\n", i+1, adcValues[i]);
+//        printf("ADCVal[%d]: %d\n", i+1, adcValues[i]);
 
         // Clear the End of Conversion flag
         LL_ADC_ClearFlag_EOS(ADC1);
     }
-    printf("\n\n");
+//    printf("\n\n");
 
 }
 
@@ -78,24 +81,12 @@ void sendADCData(void)
              timestamp, adcValues[0], adcValues[1], adcValues[2], adcValues[3],
              adcValues[4], adcValues[5], adcValues[6], adcValues[7]);
 
-    printf("T:%lu ADC0:%u ADC1:%u ADC2:%u ADC3:%u ADC4:%u ADC5:%u ADC6:%u ADC7:%u\n",
-                 timestamp, adcValues[0], adcValues[1], adcValues[2], adcValues[3],
-                 adcValues[4], adcValues[5], adcValues[6], adcValues[7]);
+//    printf("T:%lu ADC0:%u ADC1:%u ADC2:%u ADC3:%u ADC4:%u ADC5:%u ADC6:%u ADC7:%u\n",
+//                 timestamp, adcValues[0], adcValues[1], adcValues[2], adcValues[3],
+//                 adcValues[4], adcValues[5], adcValues[6], adcValues[7]);
 
     sendToUART(USART3, buffer); // Send to PC
     sendToUART(USART1, buffer); // Send to ESP32
 
 }
 
-/**
-  * @brief  Sends a string over UART.
-  */
-void sendToUART(USART_TypeDef *UARTx, const char *message)
-{
-    for (uint16_t i = 0; i < strlen(message); i++)
-    {
-        while (!LL_USART_IsActiveFlag_TXE(UARTx));
-        LL_USART_TransmitData8(UARTx, message[i]);
-    }
-    while (!LL_USART_IsActiveFlag_TC(UARTx));
-}

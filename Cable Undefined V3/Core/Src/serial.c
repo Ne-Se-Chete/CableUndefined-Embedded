@@ -1,17 +1,31 @@
 #include "serial.h"
+#include "fault.h"
 #include <string.h>
 #include <stdio.h>
 
 
-void sendToESP(const char *message)
+/**
+  * @brief  Sends a string over UART.
+  */
+void sendToUART(USART_TypeDef *UARTx, const char *message)
 {
-    for (uint16_t i = 0; i < strlen(message); i++)
+    uint16_t i = 0;
+
+    if (!LL_USART_IsEnabled(UARTx))
+        LL_USART_Enable(UARTx);
+
+    while (message[i] != '\0')
     {
-        while (!LL_USART_IsActiveFlag_TXE(USART3));
-        LL_USART_TransmitData8(USART1, message[i]);
+        while (!LL_USART_IsActiveFlag_TXE(UARTx));  // Wait for TX buffer empty
+        LL_USART_TransmitData8(UARTx, (uint8_t)message[i]);
+        i++;
     }
-    while (!LL_USART_IsActiveFlag_TC(USART1));
+
+    while (!LL_USART_IsActiveFlag_TC(UARTx));  // Wait for transmission complete
+
+
 }
+
 
 
 void UART_ProcessReceivedByte(uint8_t byte, uint8_t uartNumber)
@@ -35,3 +49,5 @@ void UART_ProcessReceivedByte(uint8_t byte, uint8_t uartNumber)
         rxIndex = 0;
     }
 }
+
+

@@ -1,5 +1,7 @@
 #include "mux.h"
 #include "mux_config.h"
+#include "serial.h"
+#include "fault.h"
 
 #include <string.h>
 #include <stdio.h>
@@ -351,44 +353,52 @@ void clear() {
     printf("RST complete.\n\n");
 }
 
-
 void processCommand(char *command) {
+	if (!fault_3v3_triggered || !fault_5v_triggered){ // test tmr
 
-    if (strncmp(command, "RB", 2) == 0) {  // Check if it's a "ROUTE" command
-    	int pin1, pin2, net_id, mode, r, g, b;
-        int parsed = sscanf(command, "RB %d %d %d %d %d %d %d",
-                            &pin1, &pin2, &net_id, &mode, &r, &g, &b);
-        if (parsed == 7) {  // Ensure all arguments were parsed
-            RGB color = {r, g, b};
-            printf("Calling routeBreadboard with: Pin1=%d, Pin2=%d, NetID=%d, Mode=%d, RGB(%d,%d,%d)\n",
-                   pin1, pin2, net_id, mode, r, g, b);
-            fflush(stdout);
+		if (strncmp(command, "RB", 2) == 0) {  // Check if it's a "ROUTE" command
+				int pin1, pin2, net_id, mode, r, g, b;
+				int parsed = sscanf(command, "RB %d %d %d %d %d %d %d",
+									&pin1, &pin2, &net_id, &mode, &r, &g, &b);
+				if (parsed == 7) {  // Ensure all arguments were parsed
+					RGB color = {r, g, b};
+					printf("Calling routeBreadboard with: Pin1=%d, Pin2=%d, NetID=%d, Mode=%d, RGB(%d,%d,%d)\n",
+						   pin1, pin2, net_id, mode, r, g, b);
+					fflush(stdout);
 
-            routeBreadboard(pin1, pin2, net_id, muxes, sizeof(muxes) / sizeof(muxes[0]), mode, color);
-        } else {
-            printf("Error: Invalid RB command format!\n");
-            fflush(stdout);
-        }
-    }
-
-    if (strncmp(command, "RS", 2) == 0) {  // Check if it's a "ROUTE" command
-		int net_id, mode;
-		int parsed = sscanf(command, "RS %d %d",
-							&net_id, &mode);
-		if (parsed == 2) {  // Ensure all arguments were parsed
-			printf("Calling routeSignalAnalyzer with: NetID=%d, Mode=%d\n",
-				   net_id, mode);
-			fflush(stdout);
-
-			routeSignalAnalyzer(net_id, muxes, mode);
-		} else {
-			printf("Error: Invalid RS command format!\n");
-			fflush(stdout);
+					routeBreadboard(pin1, pin2, net_id, muxes, sizeof(muxes) / sizeof(muxes[0]), mode, color);
+				} else {
+					printf("Error: Invalid RB command format!\n");
+					fflush(stdout);
+				}
+			}
 		}
+		if (strncmp(command, "RS", 2) == 0) {
+			int net_id, mode;
+			int parsed = sscanf(command, "RS %d %d",
+								&net_id, &mode);
+			if (parsed == 2) {  // Ensure all arguments were parsed
+				printf("Calling routeSignalAnalyzer with: NetID=%d, Mode=%d\n",
+					   net_id, mode);
+				fflush(stdout);
+
+				routeSignalAnalyzer(net_id, muxes, mode);
+			} else {
+				printf("Error: Invalid RS command format!\n");
+				fflush(stdout);
+		}
+
 	}
 
-    if (strncmp(command, "CLR", 3) == 0) {  // Check if it's a "ROUTE" command
+    if (strncmp(command, "CLR", 3) == 0) {
 		clear();
+	}
 
+    if (strncmp(command, "EN 5V", 5) == 0) {
+    	FAULT_5v_HandleMsg();
+	}
+
+    if (strncmp(command, "EN 3V3", 6) == 0) {
+    	FAULT_3v3_HandleMsg();
 	}
 }

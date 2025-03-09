@@ -1,3 +1,5 @@
+"./Core/Src/fault.o"
+"./Core/Src/leds.o"
 "./Core/Src/main.o"
 "./Core/Src/mux.o"
 "./Core/Src/serial.o"
@@ -26,5 +28,6 @@
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.o"
+"./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_tim.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.o"
 "./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.o"
