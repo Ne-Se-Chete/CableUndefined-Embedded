@@ -2,7 +2,7 @@
 #define __MUX_H
 
 #include "main.h"
-#include "stm32f1xx_ll_gpio.h"  // Change f4 to your STM32 series if needed
+#include "stm32f1xx_ll_gpio.h"
 #include <stddef.h>  // Defines size_t
 
 // Pin definitions for the multiplexer

@@ -23,6 +23,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "fault.h"
+#include "serial.h"
+#include "mux.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -200,6 +203,19 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles DMA1 channel2 global interrupt.
+  */
+void DMA1_Channel2_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Channel2_IRQn 0 */
+
+  /* USER CODE END DMA1_Channel2_IRQn 0 */
+  /* USER CODE BEGIN DMA1_Channel2_IRQn 1 */
+
+  /* USER CODE END DMA1_Channel2_IRQn 1 */
+}
+
+/**
   * @brief This function handles USART1 global interrupt.
   */
 void USART1_IRQHandler(void)
@@ -231,6 +247,33 @@ void USART3_IRQHandler(void)
 		UART_ProcessReceivedByte(receivedByte, 3);  // Process received data for UART3
 	}
   /* USER CODE END USART3_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line[15:10] interrupts.
+  */
+void EXTI15_10_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+
+  /* USER CODE END EXTI15_10_IRQn 0 */
+  if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_12) != RESET)
+  {
+    LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_12);
+    /* USER CODE BEGIN LL_EXTI_LINE_12 */
+    FAULT_3v3_HandleInterrupt();  // Handle FAULT 3V3
+    /* USER CODE END LL_EXTI_LINE_12 */
+  }
+  if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_13) != RESET)
+  {
+    LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_13);
+    /* USER CODE BEGIN LL_EXTI_LINE_13 */
+    FAULT_5v_HandleInterrupt();  // Handle FAULT 3V3
+    /* USER CODE END LL_EXTI_LINE_13 */
+  }
+  /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+
+  /* USER CODE END EXTI15_10_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

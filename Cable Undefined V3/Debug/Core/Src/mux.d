@@ -32,9 +32,10 @@ Core/Src/mux.o: ../Core/Src/mux.c ../Core/Inc/mux.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_utils.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h \
- ../Core/Inc/mux_config.h
+ ../Core/Inc/mux_config.h ../Core/Inc/serial.h ../Core/Inc/fault.h
 ../Core/Inc/mux.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -70,6 +71,9 @@ Core/Src/mux.o: ../Core/Src/mux.c ../Core/Inc/mux.h ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_utils.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:
 ../Core/Inc/mux_config.h:
+../Core/Inc/serial.h:
+../Core/Inc/fault.h:

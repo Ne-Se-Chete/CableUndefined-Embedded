@@ -23,6 +23,10 @@
 /* USER CODE BEGIN Includes */
 #include "mux.h"
 #include "serial.h"
+#include "leds.h"
+#include "signal_analyzer.h"
+#include "fault.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -41,8 +45,6 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-#define PROTECTION_GPIO GPIOE
-#define PROTECTION_PIN LL_GPIO_PIN_11
 
 /* USER CODE END PM */
 
@@ -57,10 +59,12 @@ TIM_HandleTypeDef htim6;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
+static void MX_TIM1_Init(void);
 static void MX_TIM6_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -112,16 +116,22 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_ADC1_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
+  MX_TIM1_Init();
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 
-  // Enable Interupts
+  // Enable UART Interupts
   LL_USART_EnableIT_RXNE(USART1);
   LL_USART_EnableIT_RXNE(USART3);
+
+  // Enable EXTI Fault GPIO Interrupts
+  LL_EXTI_EnableIT_0_31(LL_EXTI_LINE_12);
+  LL_EXTI_EnableIT_0_31(LL_EXTI_LINE_13);
 
   SignalAnalyzer_Init();
 
@@ -159,6 +169,18 @@ int main(void)
 //	  printf("I have set connection for mux[%d] on x0, y0 \n", i);
 //  }
 
+//  	RGB_t color1 = { .color = { .r = 255, .g = 0, .b = 0 } };  // Red color
+//    RGB_t color2 = { .color = { .r = 0, .g = 255, .b = 0 } };  // Green color
+//    RGB_t color3 = { .color = { .r = 0, .g = 0, .b = 255 } };  // Blue color
+//    RGB_t color4 = { .color = { .r = 255, .g = 255, .b = 0 } };  // Yellow color
+//
+//    addToPins(1, 120, color1);			//it starts from 1 and ends with 120
+//    addToPins(10, 20, color2);
+//    addToPins(30, 50, color3);
+//    addToPins(40, 60, color4);
+//    addToPins(80, 100, color4);
+//    removeFromPins(80,100);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -170,7 +192,9 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 		  sendADCData();
-//		  LL_mDelay(500);
+		  FAULT_CheckAndReport();  // Only sends UART if a fault was detected
+
+//		  sendPixelData();
 
 	  }
   /* USER CODE END 3 */
@@ -283,6 +307,91 @@ static void MX_ADC1_Init(void)
   /* USER CODE BEGIN ADC1_Init 2 */
 
   /* USER CODE END ADC1_Init 2 */
+
+}
+
+/**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  LL_TIM_InitTypeDef TIM_InitStruct = {0};
+  LL_TIM_OC_InitTypeDef TIM_OC_InitStruct = {0};
+  LL_TIM_BDTR_InitTypeDef TIM_BDTRInitStruct = {0};
+
+  LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* Peripheral clock enable */
+  LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_TIM1);
+
+  /* TIM1 DMA Init */
+
+  /* TIM1_CH1 Init */
+  LL_DMA_SetDataTransferDirection(DMA1, LL_DMA_CHANNEL_2, LL_DMA_DIRECTION_MEMORY_TO_PERIPH);
+
+  LL_DMA_SetChannelPriorityLevel(DMA1, LL_DMA_CHANNEL_2, LL_DMA_PRIORITY_VERYHIGH);
+
+  LL_DMA_SetMode(DMA1, LL_DMA_CHANNEL_2, LL_DMA_MODE_NORMAL);
+
+  LL_DMA_SetPeriphIncMode(DMA1, LL_DMA_CHANNEL_2, LL_DMA_PERIPH_NOINCREMENT);
+
+  LL_DMA_SetMemoryIncMode(DMA1, LL_DMA_CHANNEL_2, LL_DMA_MEMORY_INCREMENT);
+
+  LL_DMA_SetPeriphSize(DMA1, LL_DMA_CHANNEL_2, LL_DMA_PDATAALIGN_HALFWORD);
+
+  LL_DMA_SetMemorySize(DMA1, LL_DMA_CHANNEL_2, LL_DMA_MDATAALIGN_HALFWORD);
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  TIM_InitStruct.Prescaler = 0;
+  TIM_InitStruct.CounterMode = LL_TIM_COUNTERMODE_UP;
+  TIM_InitStruct.Autoreload = 89;
+  TIM_InitStruct.ClockDivision = LL_TIM_CLOCKDIVISION_DIV1;
+  TIM_InitStruct.RepetitionCounter = 0;
+  LL_TIM_Init(TIM1, &TIM_InitStruct);
+  LL_TIM_DisableARRPreload(TIM1);
+  LL_TIM_SetClockSource(TIM1, LL_TIM_CLOCKSOURCE_INTERNAL);
+  LL_TIM_OC_EnablePreload(TIM1, LL_TIM_CHANNEL_CH1);
+  TIM_OC_InitStruct.OCMode = LL_TIM_OCMODE_PWM1;
+  TIM_OC_InitStruct.OCState = LL_TIM_OCSTATE_DISABLE;
+  TIM_OC_InitStruct.OCNState = LL_TIM_OCSTATE_DISABLE;
+  TIM_OC_InitStruct.CompareValue = 0;
+  TIM_OC_InitStruct.OCPolarity = LL_TIM_OCPOLARITY_HIGH;
+  TIM_OC_InitStruct.OCNPolarity = LL_TIM_OCPOLARITY_HIGH;
+  TIM_OC_InitStruct.OCIdleState = LL_TIM_OCIDLESTATE_LOW;
+  TIM_OC_InitStruct.OCNIdleState = LL_TIM_OCIDLESTATE_LOW;
+  LL_TIM_OC_Init(TIM1, LL_TIM_CHANNEL_CH1, &TIM_OC_InitStruct);
+  LL_TIM_OC_DisableFast(TIM1, LL_TIM_CHANNEL_CH1);
+  LL_TIM_SetTriggerOutput(TIM1, LL_TIM_TRGO_RESET);
+  LL_TIM_DisableMasterSlaveMode(TIM1);
+  TIM_BDTRInitStruct.OSSRState = LL_TIM_OSSR_DISABLE;
+  TIM_BDTRInitStruct.OSSIState = LL_TIM_OSSI_DISABLE;
+  TIM_BDTRInitStruct.LockLevel = LL_TIM_LOCKLEVEL_OFF;
+  TIM_BDTRInitStruct.DeadTime = 0;
+  TIM_BDTRInitStruct.BreakState = LL_TIM_BREAK_DISABLE;
+  TIM_BDTRInitStruct.BreakPolarity = LL_TIM_BREAK_POLARITY_HIGH;
+  TIM_BDTRInitStruct.AutomaticOutput = LL_TIM_AUTOMATICOUTPUT_DISABLE;
+  LL_TIM_BDTR_Init(TIM1, &TIM_BDTRInitStruct);
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
+  LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOB);
+  /**TIM1 GPIO Configuration
+  PB13   ------> TIM1_CH1N
+  */
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_13;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
+  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+  LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 
@@ -494,12 +603,29 @@ static void MX_USART3_UART_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel2_IRQn interrupt configuration */
+  NVIC_SetPriority(DMA1_Channel2_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
+  NVIC_EnableIRQ(DMA1_Channel2_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
   */
 static void MX_GPIO_Init(void)
 {
+  LL_EXTI_InitTypeDef EXTI_InitStruct = {0};
   LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
 /* USER CODE BEGIN MX_GPIO_Init_1 */
 /* USER CODE END MX_GPIO_Init_1 */
@@ -523,9 +649,9 @@ static void MX_GPIO_Init(void)
 
   /**/
   LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_0|LL_GPIO_PIN_1|LL_GPIO_PIN_2|LL_GPIO_PIN_12
-                          |LL_GPIO_PIN_13|LL_GPIO_PIN_14|LL_GPIO_PIN_15|LL_GPIO_PIN_3
-                          |LL_GPIO_PIN_4|LL_GPIO_PIN_5|LL_GPIO_PIN_6|LL_GPIO_PIN_7
-                          |LL_GPIO_PIN_8|LL_GPIO_PIN_9);
+                          |LL_GPIO_PIN_14|LL_GPIO_PIN_15|LL_GPIO_PIN_3|LL_GPIO_PIN_4
+                          |LL_GPIO_PIN_5|LL_GPIO_PIN_6|LL_GPIO_PIN_7|LL_GPIO_PIN_8
+                          |LL_GPIO_PIN_9);
 
   /**/
   LL_GPIO_ResetOutputPin(GPIOD, LL_GPIO_PIN_8|LL_GPIO_PIN_9|LL_GPIO_PIN_10|LL_GPIO_PIN_11
@@ -553,16 +679,16 @@ static void MX_GPIO_Init(void)
 
   /**/
   GPIO_InitStruct.Pin = LL_GPIO_PIN_0|LL_GPIO_PIN_1|LL_GPIO_PIN_2|LL_GPIO_PIN_12
-                          |LL_GPIO_PIN_13|LL_GPIO_PIN_14|LL_GPIO_PIN_15|LL_GPIO_PIN_3
-                          |LL_GPIO_PIN_4|LL_GPIO_PIN_5|LL_GPIO_PIN_6|LL_GPIO_PIN_7
-                          |LL_GPIO_PIN_8|LL_GPIO_PIN_9;
+                          |LL_GPIO_PIN_14|LL_GPIO_PIN_15|LL_GPIO_PIN_3|LL_GPIO_PIN_4
+                          |LL_GPIO_PIN_5|LL_GPIO_PIN_6|LL_GPIO_PIN_7|LL_GPIO_PIN_8
+                          |LL_GPIO_PIN_9;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
   LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /**/
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_12|LL_GPIO_PIN_13|LL_GPIO_PIN_14|LL_GPIO_PIN_15;
+  GPIO_InitStruct.Pin = LL_GPIO_PIN_14|LL_GPIO_PIN_15;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_FLOATING;
   LL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
@@ -580,6 +706,36 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = LL_GPIO_PIN_1;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;
   LL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /**/
+  LL_GPIO_AF_SetEXTISource(LL_GPIO_AF_EXTI_PORTE, LL_GPIO_AF_EXTI_LINE12);
+
+  /**/
+  LL_GPIO_AF_SetEXTISource(LL_GPIO_AF_EXTI_PORTE, LL_GPIO_AF_EXTI_LINE13);
+
+  /**/
+  EXTI_InitStruct.Line_0_31 = LL_EXTI_LINE_12;
+  EXTI_InitStruct.LineCommand = ENABLE;
+  EXTI_InitStruct.Mode = LL_EXTI_MODE_IT;
+  EXTI_InitStruct.Trigger = LL_EXTI_TRIGGER_FALLING;
+  LL_EXTI_Init(&EXTI_InitStruct);
+
+  /**/
+  EXTI_InitStruct.Line_0_31 = LL_EXTI_LINE_13;
+  EXTI_InitStruct.LineCommand = ENABLE;
+  EXTI_InitStruct.Mode = LL_EXTI_MODE_IT;
+  EXTI_InitStruct.Trigger = LL_EXTI_TRIGGER_FALLING;
+  LL_EXTI_Init(&EXTI_InitStruct);
+
+  /**/
+  LL_GPIO_SetPinMode(GPIOE, LL_GPIO_PIN_12, LL_GPIO_MODE_FLOATING);
+
+  /**/
+  LL_GPIO_SetPinMode(GPIOE, LL_GPIO_PIN_13, LL_GPIO_MODE_FLOATING);
+
+  /* EXTI interrupt init*/
+  NVIC_SetPriority(EXTI15_10_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0, 0));
+  NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
