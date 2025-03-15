@@ -26,6 +26,7 @@
 #include "fault.h"
 #include "serial.h"
 #include "mux.h"
+#include "leds.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -189,7 +190,7 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 0 */
 
   /* USER CODE END SysTick_IRQn 0 */
-  HAL_IncTick();
+
   /* USER CODE BEGIN SysTick_IRQn 1 */
 
   /* USER CODE END SysTick_IRQn 1 */
@@ -203,16 +204,21 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles DMA1 channel2 global interrupt.
+  * @brief This function handles DMA1 channel5 global interrupt.
   */
-void DMA1_Channel2_IRQHandler(void)
+void DMA1_Channel5_IRQHandler(void)
 {
-  /* USER CODE BEGIN DMA1_Channel2_IRQn 0 */
+  /* USER CODE BEGIN DMA1_Channel5_IRQn 0 */
 
-  /* USER CODE END DMA1_Channel2_IRQn 0 */
-  /* USER CODE BEGIN DMA1_Channel2_IRQn 1 */
+  /* USER CODE END DMA1_Channel5_IRQn 0 */
+  /* USER CODE BEGIN DMA1_Channel5_IRQn 1 */
 
-  /* USER CODE END DMA1_Channel2_IRQn 1 */
+//	LL_TIM_DisableDMAReq_CC1(TIM2);
+//	LL_TIM_CC_DisableChannel(TIM2, LL_TIM_CHANNEL_CH1);
+
+	        LL_TIM_PWM_PulseFinishedCallback(TIM2);
+
+  /* USER CODE END DMA1_Channel5_IRQn 1 */
 }
 
 /**
