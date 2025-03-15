@@ -60,8 +60,8 @@ all: main-build
 main-build: test_stm32f107vctx_pwm.elf secondary-outputs
 
 # Tool invocations
-test_stm32f107vctx_pwm.elf test_stm32f107vctx_pwm.map: $(OBJS) $(USER_OBJS) C:\Users\bobi0\STM32CubeIDE\workspace_1.17.0\test_stm32f107vctx_pwm\STM32F107VCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "test_stm32f107vctx_pwm.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\bobi0\STM32CubeIDE\workspace_1.17.0\test_stm32f107vctx_pwm\STM32F107VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test_stm32f107vctx_pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+test_stm32f107vctx_pwm.elf test_stm32f107vctx_pwm.map: $(OBJS) $(USER_OBJS) C:\Users\bobi0\STM32CubeIDE\workspace_1.17.0\CableUndefined-PCB\Tests\test_stm32f107vctx_pwm\STM32F107VCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "test_stm32f107vctx_pwm.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\bobi0\STM32CubeIDE\workspace_1.17.0\CableUndefined-PCB\Tests\test_stm32f107vctx_pwm\STM32F107VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test_stm32f107vctx_pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

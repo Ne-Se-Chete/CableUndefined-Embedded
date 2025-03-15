@@ -49,7 +49,7 @@ void clearBoard(void) {
 
     dmaBuffer[DMA_BUFF_SIZE - 1] = 0;
 
-    PWM_Start_DMA(TIM1, LL_TIM_CHANNEL_CH1, dmaBuffer, DMA_BUFF_SIZE);
+    PWM_Start_DMA(TIM2, LL_TIM_CHANNEL_CH1, dmaBuffer, DMA_BUFF_SIZE);
     LL_mDelay(10);
 }
 
@@ -87,6 +87,7 @@ void sendPixelData() {
 	   }
    }
 
+
     // Transfer data to DMA buffer
     for (i = 0; i < NUM_PIXELS; i++) {
         for (j = 23; j >= 0; j--) {
@@ -98,40 +99,43 @@ void sendPixelData() {
     dmaBuffer[DMA_BUFF_SIZE - 1] = 0;
 
     PWM_Start_DMA(TIM2, LL_TIM_CHANNEL_CH1, dmaBuffer, DMA_BUFF_SIZE);
-    LL_mDelay(10);
+	LL_mDelay(10);
 }
 
 
-void LL_TIM_PWM_PulseFinishedCallback(TIM_TypeDef *TIMx)
-{
-	LL_TIM_DisableDMAReq_CC3(TIMx);
-	LL_TIM_CC_DisableChannel(TIMx, LL_TIM_CHANNEL_CH1);
-}
+
 
 
 void PWM_Start_DMA(TIM_TypeDef *TIMx, uint32_t Channel, uint32_t *buffer, uint32_t size)
 {
     // 1. Configure DMA source and destination
-    LL_DMA_ConfigAddresses(DMA1, LL_DMA_CHANNEL_2,
+    LL_DMA_ConfigAddresses(DMA1, LL_DMA_CHANNEL_5,
                            (uint32_t)buffer,                      // Memory Address (source)
-                           (uint32_t)&TIMx->CCR3,                 // Peripheral Address (destination)
+                           (uint32_t)&TIMx->CCR1,                 // Peripheral Address (destination)
                            LL_DMA_DIRECTION_MEMORY_TO_PERIPH);    // Memory-to-Peripheral
 
     // 2. Set number of data items
-    LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_2, size);
+    LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_5, size);
 
     // 3. Enable DMA Transfer Complete Interrupt (optional)
-    LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_2);
+    LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_5);
 
     // 4. Enable DMA Stream
-    LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_2);
+    LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_5);
 
-    // 5. Enable TIM2 DMA request for CC3
-    LL_TIM_EnableDMAReq_CC3(TIMx);
+    // 5. Enable TIM2 DMA request for CC1
+    LL_TIM_EnableDMAReq_CC1(TIMx);
 
-    // 6. Enable TIM2 Channel 3 (PWM mode must already be configured)
+    // 6. Enable TIM2 Channel 1 (PWM mode must already be configured)
     LL_TIM_CC_EnableChannel(TIMx, Channel);
 
     // 7. Start Timer
     LL_TIM_EnableCounter(TIMx);
+}
+
+void LL_TIM_PWM_PulseFinishedCallback(TIM_TypeDef *TIMx)
+{
+	LL_TIM_DisableDMAReq_CC1(TIMx);
+	LL_TIM_CC_DisableChannel(TIMx, LL_TIM_CHANNEL_CH1);
+	LL_TIM_DisableCounter(TIMx);
 }
