@@ -317,7 +317,7 @@ void routeSignalAnalyzer(int net_id, MUX *muxes, uint8_t mode) {
 }
 
 void clear() {
-    printf("Clearing all main tracks and signal analyzer tracks...\n");
+//    printf("Clearing all main tracks and signal analyzer tracks...\n");
 
     // Step 1: Clear all main tracks
     for (int i = 0; i < 32; i++) {
@@ -327,7 +327,7 @@ void clear() {
         mainTracks[i].track_id = -1;
     }
 
-    printf("All main tracks cleared.\n");
+//    printf("All main tracks cleared.\n");
 
     // Step 2: Clear all signal analyzer tracks
     for (int i = 0; i < 8; i++) {
@@ -336,7 +336,7 @@ void clear() {
         signalAnalyzerTracks[i].track_id = -1;
     }
 
-    printf("All signal analyzer tracks cleared.\n");
+//    printf("All signal analyzer tracks cleared.\n");
 
     // Step 3: Reset all multiplexer connections (if needed)
 //    for (int i = 0; i < 34; i++) {  // Assuming 34 multiplexers in `muxes`
@@ -397,6 +397,7 @@ void processCommand(char *command) {
 
     if (strncmp(command, "CLR", 3) == 0) {
 		clear();
+		clearLeds();
 	}
 
     if (strncmp(command, "EN 5V", 5) == 0) {

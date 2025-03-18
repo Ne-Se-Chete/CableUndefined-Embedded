@@ -31,7 +31,7 @@ typedef struct {
 void addToPin(uint8_t pin, RGB_t color);
 void removeFromPin(uint8_t pin);
 
-void clearBoard(void);
+void clearLeds(void);
 void sendPixelData();
 
 void LL_TIM_PWM_PulseFinishedCallback(TIM_TypeDef *TIMx);

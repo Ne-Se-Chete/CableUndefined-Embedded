@@ -27,20 +27,38 @@ void addToPin(uint8_t pin, RGB_t color) {
 }
 
 void removeFromPin(uint8_t pin) {
+//    printf("Attempting to remove LED on pin: %d\n", pin);
+//    printf("Current active LEDs: %d\n", numActiveLeds);
+//    printf("Current LED list:\n");
+//    for (uint8_t k = 0; k < numActiveLeds; k++) {
+//        printf("  Index %d: Pin %d -> R:%d G:%d B:%d\n", k, LedList[k].pin,
+//               LedList[k].color.color.r, LedList[k].color.color.g, LedList[k].color.color.b);
+//    }
+
     for (uint8_t i = 0; i < numActiveLeds; i++) {
         if (LedList[i].pin == pin) {
+//            printf("Found pin %d at index %d, removing...\n", pin, i);
             for (uint8_t j = i; j < numActiveLeds - 1; j++) {
+//                printf("Shifting index %d -> index %d (Pin %d)\n", j + 1, j, LedList[j + 1].pin);
                 LedList[j] = LedList[j + 1];
             }
             numActiveLeds--;
+//            printf("LED removed. Updated LED list:\n");
+            for (uint8_t k = 0; k < numActiveLeds; k++) {
+//                printf("  Index %d: Pin %d -> R:%d G:%d B:%d\n", k, LedList[k].pin,
+//                       LedList[k].color.color.r, LedList[k].color.color.g, LedList[k].color.color.b);
+            }
+//            printf("Remaining active LEDs: %d\n", numActiveLeds);
             return;
         }
     }
+//    printf("Pin %d not found in active list. No changes made.\n", pin);
 }
 
 
 
-void clearBoard(void) {
+
+void clearLeds(void) {
     uint32_t *pBuff = dmaBuffer;
     for (int i = 0; i < NUM_PIXELS * 24; i++) {
         *pBuff++ = NEOPIXEL_ZERO;
@@ -55,14 +73,14 @@ void clearBoard(void) {
 void sendPixelData() {
     LL_mDelay(10);
     if (numActiveLeds == 0) {
-        clearBoard();
+        clearLeds();
         return;
     }
 
-    // Reset pixel buffer
-//    for (int i = 0; i < NUM_PIXELS; i++) {
-//        pixel[i].data = 0;
-//    }
+//     Reset pixel buffer
+    for (int i = 0; i < NUM_PIXELS; i++) {
+        pixel[i].data = 0;
+    }
 
     // Copy assigned LED colors
     // Copy assigned LED colors
@@ -81,25 +99,27 @@ void sendPixelData() {
     // Transfer pixel data into DMA buffer
     uint32_t *pBuff = dmaBuffer;
     for (int i = 0; i < NUM_PIXELS; i++) {
-    	if (pixel[i].data != 0) {
-    	//        	        printf("Buffer[%d]: %d\n", (i * 24) + (23 - j), bit); // Prints every bit written to the buffer
-    		printf("LED %d - R: ", i + 1);
-			for (int j = 7; j >= 0; j--) {
-				uint32_t bit = (pixel[i].color.r >> j) & 0x01;
-				printf("%d", bit);
-			}
-			printf("  G: ");
-			for (int j = 7; j >= 0; j--) {
-				uint32_t bit = (pixel[i].color.g >> j) & 0x01;
-				printf("%d", bit);
-			}
-			printf("  B: ");
-			for (int j = 7; j >= 0; j--) {
-				uint32_t bit = (pixel[i].color.b >> j) & 0x01;
-				printf("%d", bit);
-			}
-			printf("\n");
-		}
+
+//    	if (pixel[i].data != 0) {
+//          printf("Buffer[%d]: %d\n", (i * 24) + (23 - j), bit); // Prints every bit written to the buffer
+//    		printf("LED %d - R: ", i + 1);
+//			for (int j = 7; j >= 0; j--) {
+//				uint32_t bit = (pixel[i].color.r >> j) & 0x01;
+//				printf("%d", bit);
+//			}
+//			printf("  G: ");
+//			for (int j = 7; j >= 0; j--) {
+//				uint32_t bit = (pixel[i].color.g >> j) & 0x01;
+//				printf("%d", bit);
+//			}
+//			printf("  B: ");
+//			for (int j = 7; j >= 0; j--) {
+//				uint32_t bit = (pixel[i].color.b >> j) & 0x01;
+//				printf("%d", bit);
+//			}
+//			printf("\n");
+//		}
+
         for (int j = 23; j >= 0; j--) {
         	uint32_t bit = (pixel[i].data >> j) & 0x01 ? NEOPIXEL_ONE : NEOPIXEL_ZERO;
 

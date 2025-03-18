@@ -9,8 +9,8 @@
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:3569:22:LL_TIM_EnableDMAReq_CC1	1
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:3580:22:LL_TIM_DisableDMAReq_CC1	1
 ../Core/Src/leds.c:10:6:addToPin	6
-../Core/Src/leds.c:29:6:removeFromPin	4
-../Core/Src/leds.c:43:6:clearBoard	2
-../Core/Src/leds.c:55:6:sendPixelData	12
-../Core/Src/leds.c:120:6:PWM_Start_DMA	1
-../Core/Src/leds.c:144:6:LL_TIM_PWM_PulseFinishedCallback	1
+../Core/Src/leds.c:29:6:removeFromPin	5
+../Core/Src/leds.c:61:6:clearLeds	2
+../Core/Src/leds.c:73:6:sendPixelData	9
+../Core/Src/leds.c:140:6:PWM_Start_DMA	1
+../Core/Src/leds.c:164:6:LL_TIM_PWM_PulseFinishedCallback	1
