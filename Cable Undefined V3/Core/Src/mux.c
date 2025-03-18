@@ -2,6 +2,7 @@
 #include "mux_config.h"
 #include "serial.h"
 #include "fault.h"
+#include "leds.h"
 
 #include <string.h>
 #include <stdio.h>
@@ -137,12 +138,14 @@ void setConnection(int x, int y, MUX mux, uint8_t mode) {
 	LL_mDelay(20);
 }
 
-void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode, RGB rgb) {
+void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode, RGB_t rgb) {
 
     char pin1Name[6], pin2Name[6];
     snprintf(pin1Name, sizeof(pin1Name), "B_%d", breadboardPin1);
     snprintf(pin2Name, sizeof(pin2Name), "B_%d", breadboardPin2);
 
+    printf("R: %d, G: %d, B: %d\n",
+    		rgb.color.r, rgb.color.g, rgb.color.b);
 
     printf("Routing %s to %s with net ID: %d\n", pin1Name, pin2Name, net_id);
     fflush(stdout);
@@ -223,8 +226,10 @@ void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *mu
             setConnection(xIndex1, yIndex1, *mux1, mode);
             setConnection(xIndex2, yIndex2, *mux2, mode);
 
-// 			  Activate leds
+            mode == 1 ? addToPin(breadboardPin1, rgb) : removeFromPin(breadboardPin1);
+            mode == 1 ? addToPin(breadboardPin2, rgb) : removeFromPin(breadboardPin2);
 
+			sendPixelData();
         } else {
             printf("Error: Unable to route pins - No available MUX found!\n");
             fflush(stdout);
@@ -361,7 +366,7 @@ void processCommand(char *command) {
 				int parsed = sscanf(command, "RB %d %d %d %d %d %d %d",
 									&pin1, &pin2, &net_id, &mode, &r, &g, &b);
 				if (parsed == 7) {  // Ensure all arguments were parsed
-					RGB color = {r, g, b};
+					RGB_t color = {b, r, g}; // This is brg, because of the Union, the union is brg, cuz the leds take brg
 					printf("Calling routeBreadboard with: Pin1=%d, Pin2=%d, NetID=%d, Mode=%d, RGB(%d,%d,%d)\n",
 						   pin1, pin2, net_id, mode, r, g, b);
 					fflush(stdout);

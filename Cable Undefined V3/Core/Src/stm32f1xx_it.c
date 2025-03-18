@@ -213,10 +213,15 @@ void DMA1_Channel5_IRQHandler(void)
   /* USER CODE END DMA1_Channel5_IRQn 0 */
   /* USER CODE BEGIN DMA1_Channel5_IRQn 1 */
 
-//	LL_TIM_DisableDMAReq_CC1(TIM2);
-//	LL_TIM_CC_DisableChannel(TIM2, LL_TIM_CHANNEL_CH1);
+	if (LL_DMA_IsActiveFlag_TC5(DMA1)) {
+//		LL_DMA_ClearFlag_GI5(DMA1);
+		LL_DMA_ClearFlag_TC5(DMA1);  // Clear transfer complete flag
+		LL_DMA_ClearFlag_HT5(DMA1);  // Clear half transfer flag
+		LL_DMA_ClearFlag_TE5(DMA1);  // Clear transfer error flag
 
-	        LL_TIM_PWM_PulseFinishedCallback(TIM2);
+		// Trigger callback when transfer is complete
+		LL_TIM_PWM_PulseFinishedCallback(TIM2);
+	}
 
   /* USER CODE END DMA1_Channel5_IRQn 1 */
 }

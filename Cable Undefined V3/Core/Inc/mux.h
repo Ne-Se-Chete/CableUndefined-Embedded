@@ -2,6 +2,7 @@
 #define __MUX_H
 
 #include "main.h"
+#include "leds.h"
 #include "stm32f1xx_ll_gpio.h"
 #include <stddef.h>  // Defines size_t
 
@@ -45,12 +46,6 @@ typedef struct {
     int is_used;
 } SignalAnalyzerTrack;
 
-typedef struct {
-	int r;
-	int b;
-	int g;
-}RGB;
-
 extern MainTrack mainTracks[32];
 
 typedef struct {
@@ -69,7 +64,7 @@ void printMUXDetails(MUX *mux);
 
 void setConnection(int x, int y, MUX mux, uint8_t mode);
 
-void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode, RGB rgb);
+void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode, RGB_t rgb);
 
 void routeSignalAnalyzer(int net_id, MUX *muxes, uint8_t mode);
 

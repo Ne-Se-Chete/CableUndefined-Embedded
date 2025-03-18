@@ -18,10 +18,9 @@ typedef union
 } RGB_t;
 
 typedef struct {
-    uint8_t pin1;
-    uint8_t pin2;
+    uint8_t pin;
     RGB_t color;
-} LedPair;
+} LedEntry;
 
 #define NEOPIXEL_ZERO 29 	//ZERO = (ARP+1)(0.32)
 #define NEOPIXEL_ONE 58		//ONE = (ARP+1)(0.64)
@@ -29,8 +28,9 @@ typedef struct {
 
 #define DMA_BUFF_SIZE (NUM_PIXELS*24)+1
 
-void addToPins(uint8_t pin1, uint8_t pin2, RGB_t color);
-void removeFromPins(uint8_t pin1, uint8_t pin2);
+void addToPin(uint8_t pin, RGB_t color);
+void removeFromPin(uint8_t pin);
+
 void clearBoard(void);
 void sendPixelData();
 
