@@ -157,15 +157,7 @@ int main(void)
   // Enable Protection
   LL_GPIO_SetOutputPin(PROTECTION_GPIO, PROTECTION_PIN);
 
-  	RGB_t color1 = { .color = { .r = 255, .g = 0, .b = 0 } };  // Red color
-    RGB_t color2 = { .color = { .r = 0, .g = 255, .b = 0 } };  // Green color
-    RGB_t color3 = { .color = { .r = 0, .g = 0, .b = 255 } };  // Blue color
-    RGB_t color4 = { .color = { .r = 255, .g = 255, .b = 0 } };  // Yellow color
 
-    addToPin(120, color4);
-    sendPixelData();
-    addToPin(20, color1);
-    sendPixelData();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -176,8 +168,8 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-//		  sendADCData();
-//		  FAULT_CheckAndReport();  // Only sends UART if a fault was detected
+		  sendADCData();
+		  FAULT_CheckAndReport();  // Only sends UART if a fault was detected
 
 
 	  }
