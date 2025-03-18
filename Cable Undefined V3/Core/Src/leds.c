@@ -59,6 +59,7 @@ void removeFromPin(uint8_t pin) {
 
 
 void clearLeds(void) {
+	numActiveLeds = 0;
     uint32_t *pBuff = dmaBuffer;
     for (int i = 0; i < NUM_PIXELS * 24; i++) {
         *pBuff++ = NEOPIXEL_ZERO;

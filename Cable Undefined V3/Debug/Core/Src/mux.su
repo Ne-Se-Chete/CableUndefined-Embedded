@@ -3,8 +3,8 @@
 ../Core/Src/mux.c:50:13:getPortName	16	static
 ../Core/Src/mux.c:59:13:getPinName	16	static
 ../Core/Src/mux.c:81:6:printMUXDetails	24	static
-../Core/Src/mux.c:98:6:setConnection	16	static
-../Core/Src/mux.c:141:6:routeBreadboard	176	static
-../Core/Src/mux.c:239:6:routeSignalAnalyzer	104	static
-../Core/Src/mux.c:319:6:clear	16	static
-../Core/Src/mux.c:361:6:processCommand	104	static
+../Core/Src/mux.c:99:6:setConnection	16	static
+../Core/Src/mux.c:142:6:routeBreadboard	176	static
+../Core/Src/mux.c:267:6:routeSignalAnalyzer	104	static
+../Core/Src/mux.c:347:6:clear	24	static
+../Core/Src/mux.c:391:6:processCommand	104	static

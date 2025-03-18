@@ -168,7 +168,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-		  sendADCData();
+//		  sendADCData();
 		  FAULT_CheckAndReport();  // Only sends UART if a fault was detected
 
 

@@ -3,8 +3,8 @@
 ../Core/Src/mux.c:50:13:getPortName	6
 ../Core/Src/mux.c:59:13:getPinName	31
 ../Core/Src/mux.c:81:6:printMUXDetails	2
-../Core/Src/mux.c:98:6:setConnection	13
-../Core/Src/mux.c:141:6:routeBreadboard	22
-../Core/Src/mux.c:239:6:routeSignalAnalyzer	16
-../Core/Src/mux.c:319:6:clear	3
-../Core/Src/mux.c:361:6:processCommand	10
+../Core/Src/mux.c:99:6:setConnection	13
+../Core/Src/mux.c:142:6:routeBreadboard	33
+../Core/Src/mux.c:267:6:routeSignalAnalyzer	16
+../Core/Src/mux.c:347:6:clear	4
+../Core/Src/mux.c:391:6:processCommand	10
