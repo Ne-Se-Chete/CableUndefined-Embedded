@@ -84,8 +84,8 @@ all: main-build
 main-build: Cable\ Undefined\ V3.elf secondary-outputs
 
 # Tool invocations
-Cable\ Undefined\ V3.elf Cable\ Undefined\ V3.map: $(OBJS) $(USER_OBJS) C:\Users\bobi0\STM32CubeIDE\workspace_1.17.0\CableUndefined-PCB\Cable\ Undefined\ V3\STM32F107VCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "Cable Undefined V3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\bobi0\STM32CubeIDE\workspace_1.17.0\CableUndefined-PCB\Cable Undefined V3\STM32F107VCTX_FLASH.ld" -Wl,-Map="Cable Undefined V3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Cable\ Undefined\ V3.elf Cable\ Undefined\ V3.map: $(OBJS) $(USER_OBJS) C:\Users\Yasen\STM32CubeIDE\workspace_1.17.0\Cable\ Undefined\ V3\STM32F107VCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "Cable Undefined V3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Yasen\STM32CubeIDE\workspace_1.17.0\Cable Undefined V3\STM32F107VCTX_FLASH.ld" -Wl,-Map="Cable Undefined V3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

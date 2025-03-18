@@ -19,7 +19,8 @@ Core/Src/stm32f1xx_it.o: ../Core/Src/stm32f1xx_it.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h \
  ../Core/Inc/stm32f1xx_it.h ../Core/Inc/fault.h ../Core/Inc/main.h \
- ../Core/Inc/serial.h ../Core/Inc/mux.h ../Core/Inc/leds.h
+ ../Core/Inc/serial.h ../Core/Inc/mux.h ../Core/Inc/leds.h \
+ ../Core/Inc/leds.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:
 ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
@@ -45,4 +46,5 @@ Core/Src/stm32f1xx_it.o: ../Core/Src/stm32f1xx_it.c ../Core/Inc/main.h \
 ../Core/Inc/main.h:
 ../Core/Inc/serial.h:
 ../Core/Inc/mux.h:
+../Core/Inc/leds.h:
 ../Core/Inc/leds.h:

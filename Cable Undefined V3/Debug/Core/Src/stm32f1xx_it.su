@@ -1,3 +1,7 @@
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:1250:26:LL_DMA_IsActiveFlag_TC5	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:1558:22:LL_DMA_ClearFlag_TC5	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:1635:22:LL_DMA_ClearFlag_HT5	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:1712:22:LL_DMA_ClearFlag_TE5	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_exti.h:774:26:LL_EXTI_IsActiveFlag_0_31	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_exti.h:842:22:LL_EXTI_ClearFlag_0_31	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:1840:26:LL_USART_IsActiveFlag_RXNE	16	static
@@ -12,6 +16,6 @@
 ../Core/Src/stm32f1xx_it.c:175:6:PendSV_Handler	4	static
 ../Core/Src/stm32f1xx_it.c:188:6:SysTick_Handler	4	static
 ../Core/Src/stm32f1xx_it.c:209:6:DMA1_Channel5_IRQHandler	8	static
-../Core/Src/stm32f1xx_it.c:227:6:USART1_IRQHandler	16	static
-../Core/Src/stm32f1xx_it.c:244:6:USART3_IRQHandler	16	static
-../Core/Src/stm32f1xx_it.c:261:6:EXTI15_10_IRQHandler	8	static
+../Core/Src/stm32f1xx_it.c:232:6:USART1_IRQHandler	16	static
+../Core/Src/stm32f1xx_it.c:249:6:USART3_IRQHandler	16	static
+../Core/Src/stm32f1xx_it.c:266:6:EXTI15_10_IRQHandler	8	static

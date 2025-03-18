@@ -142,6 +142,10 @@ int main(void)
   LL_EXTI_EnableIT_0_31(LL_EXTI_LINE_12);
   LL_EXTI_EnableIT_0_31(LL_EXTI_LINE_13);
 
+  // Enable DMA Interrupt
+  LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_5);
+
+
   SignalAnalyzer_Init();
 
   // Reset all Muxes
@@ -153,43 +157,15 @@ int main(void)
   // Enable Protection
   LL_GPIO_SetOutputPin(PROTECTION_GPIO, PROTECTION_PIN);
 
-
-//  RGB mock;
-
-//    routeBreadboard(1, 2, 1000, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock);
-//    routeBreadboard(4, 10, 2000, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock);
-//    routeBreadboard(5, 11, 3000, muxes, sizeof(muxes) / sizeof(muxes[0]), 1, mock);
-//
-//    routeSignalAnalyzer(2000, muxes, 1);
-//    routeSignalAnalyzer(3000, muxes, 1);
-//    routeSignalAnalyzer(2000, muxes, 0);
-//    routeSignalAnalyzer(1000, muxes, 1);
-
-    // Tests 5V MUX 32 ->  y4 (5v) -> x15 (MAINTRACK 32)  MUX 34 -> y6 (analyzer7)
-//    setConnection(15, 4, muxes[31], 1);  // CS_32
-//    setConnection(15, 6, muxes[33], 1);  // CS_34 Analyzer 7
-//
-    // Tests 3V3 MUX 32 ->  y6 (3v3) -> x0 (MAIN TRACK 17) MUX 34 -> y2 (analyzer3)
-//    setConnection(0, 6, muxes[31], 1);  // CS_32
-//    setConnection(0, 2, muxes[33], 1);  // CS_34 Analyzer 3
-
-//  for (int i = 0; i < 34; i++){
-//	  setConnection(0, 0, muxes[i], 1);
-//	  printf("I have set connection for mux[%d] on x0, y0 \n", i);
-//  }
-
   	RGB_t color1 = { .color = { .r = 255, .g = 0, .b = 0 } };  // Red color
-//    RGB_t color2 = { .color = { .r = 0, .g = 255, .b = 0 } };  // Green color
-//    RGB_t color3 = { .color = { .r = 0, .g = 0, .b = 255 } };  // Blue color
-//    RGB_t color4 = { .color = { .r = 255, .g = 255, .b = 0 } };  // Yellow color
-//
-    addToPins(5, 33, color1);			//it starts from 1 and ends with 120
-    addToPins(10, 20, color1);
-//    addToPins(30, 50, color3);
-//    addToPins(40, 60, color4);
-//    addToPins(80, 100, color4);
-//    removeFromPins(80,100);
-		  sendPixelData();
+    RGB_t color2 = { .color = { .r = 0, .g = 255, .b = 0 } };  // Green color
+    RGB_t color3 = { .color = { .r = 0, .g = 0, .b = 255 } };  // Blue color
+    RGB_t color4 = { .color = { .r = 255, .g = 255, .b = 0 } };  // Yellow color
+
+    addToPin(120, color4);
+    sendPixelData();
+    addToPin(20, color1);
+    sendPixelData();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -346,9 +322,9 @@ static void MX_TIM2_Init(void)
 
   LL_DMA_SetMemoryIncMode(DMA1, LL_DMA_CHANNEL_5, LL_DMA_MEMORY_INCREMENT);
 
-  LL_DMA_SetPeriphSize(DMA1, LL_DMA_CHANNEL_5, LL_DMA_PDATAALIGN_HALFWORD);
+  LL_DMA_SetPeriphSize(DMA1, LL_DMA_CHANNEL_5, LL_DMA_PDATAALIGN_WORD);
 
-  LL_DMA_SetMemorySize(DMA1, LL_DMA_CHANNEL_5, LL_DMA_MDATAALIGN_HALFWORD);
+  LL_DMA_SetMemorySize(DMA1, LL_DMA_CHANNEL_5, LL_DMA_MDATAALIGN_WORD);
 
   /* USER CODE BEGIN TIM2_Init 1 */
 
