@@ -11,6 +11,6 @@
 ../Core/Src/leds.c:10:6:addToPin	6
 ../Core/Src/leds.c:29:6:removeFromPin	5
 ../Core/Src/leds.c:61:6:clearLeds	2
-../Core/Src/leds.c:73:6:sendPixelData	9
-../Core/Src/leds.c:140:6:PWM_Start_DMA	1
-../Core/Src/leds.c:164:6:LL_TIM_PWM_PulseFinishedCallback	1
+../Core/Src/leds.c:74:6:sendPixelData	9
+../Core/Src/leds.c:141:6:PWM_Start_DMA	1
+../Core/Src/leds.c:165:6:LL_TIM_PWM_PulseFinishedCallback	1

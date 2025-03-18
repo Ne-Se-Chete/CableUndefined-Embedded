@@ -94,6 +94,7 @@ void printMUXDetails(MUX *mux) {
 
 MainTrack mainTracks[32] = {0};
 SignalAnalyzerTrack signalAnalyzerTracks[8] = {0};
+uint8_t ledsToMainTracks[120] = {0};
 
 void setConnection(int x, int y, MUX mux, uint8_t mode) {
     if (x < 0 || x > 15 || y < 0 || y > 7) {
@@ -140,12 +141,34 @@ void setConnection(int x, int y, MUX mux, uint8_t mode) {
 
 void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *muxes, size_t muxCount, uint8_t mode, RGB_t rgb) {
 
-    char pin1Name[6], pin2Name[6];
+    if (breadboardPin1 > 120 || breadboardPin1 < 1 || breadboardPin2 > 120 || breadboardPin2 < 1){
+    	return; // Maybe message to UART idk?
+    }
+
+    if (mode != 0 && mode != 1){
+		return; // Maybe message to UART idk?
+	}
+
+    if (rgb.color.r > 255 || rgb.color.r < 0 || rgb.color.g > 255 || rgb.color.g < 0 || rgb.color.b > 255 || rgb.color.b < 0){
+		return; // Maybe message to UART idk?
+    }
+
+	char pin1Name[6], pin2Name[6];
     snprintf(pin1Name, sizeof(pin1Name), "B_%d", breadboardPin1);
     snprintf(pin2Name, sizeof(pin2Name), "B_%d", breadboardPin2);
 
-    printf("R: %d, G: %d, B: %d\n",
-    		rgb.color.r, rgb.color.g, rgb.color.b);
+    // Keep track of leds:
+    mode == 1 ? ledsToMainTracks[breadboardPin1 - 1]++ : ledsToMainTracks[breadboardPin1 - 1]--;
+    mode == 1 ? ledsToMainTracks[breadboardPin2 - 1]++ : ledsToMainTracks[breadboardPin2 - 1]--;
+
+//    printf("LedsToMainTrakcs[%d] = %d\n", breadboardPin1 - 1, ledsToMainTracks[breadboardPin1 - 1]);
+//    printf("LedsToMainTrakcs[%d] = %d\n", breadboardPin2 - 1, ledsToMainTracks[breadboardPin2 - 1]);
+
+    for (int i = 0; i < 120; i++){
+    	if (ledsToMainTracks[i] < 0){
+    		ledsToMainTracks[i] = 0;
+    	}
+    }
 
     printf("Routing %s to %s with net ID: %d\n", pin1Name, pin2Name, net_id);
     fflush(stdout);
@@ -219,15 +242,20 @@ void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *mu
         	                xIndex1, yIndex1, mux1 - muxes + 1, getPortName(mux1->port), getPinName(mux1->pin), selectedTrack->track_id,
 							mode ? "Connecting" : "Disconnecting",
         	                xIndex2, yIndex2, mux2 - muxes + 1, getPortName(mux2->port), getPinName(mux2->pin), selectedTrack->track_id);
-        	        fflush(stdout);
+			fflush(stdout);
 			fflush(stdout);
 
 
             setConnection(xIndex1, yIndex1, *mux1, mode);
             setConnection(xIndex2, yIndex2, *mux2, mode);
 
-            mode == 1 ? addToPin(breadboardPin1, rgb) : removeFromPin(breadboardPin1);
-            mode == 1 ? addToPin(breadboardPin2, rgb) : removeFromPin(breadboardPin2);
+            if (mode == 1){
+            	addToPin(breadboardPin1, rgb);
+            	addToPin(breadboardPin2, rgb);
+            }else if (mode == 0){
+            	ledsToMainTracks[breadboardPin1 - 1] == 0 ? removeFromPin(breadboardPin1) : (void)0;
+            	ledsToMainTracks[breadboardPin2 - 1] == 0 ? removeFromPin(breadboardPin2) : (void)0;
+            }
 
 			sendPixelData();
         } else {
@@ -317,8 +345,6 @@ void routeSignalAnalyzer(int net_id, MUX *muxes, uint8_t mode) {
 }
 
 void clear() {
-//    printf("Clearing all main tracks and signal analyzer tracks...\n");
-
     // Step 1: Clear all main tracks
     for (int i = 0; i < 32; i++) {
         mainTracks[i].is_used = 0;
@@ -327,13 +353,17 @@ void clear() {
         mainTracks[i].track_id = -1;
     }
 
-//    printf("All main tracks cleared.\n");
-
     // Step 2: Clear all signal analyzer tracks
     for (int i = 0; i < 8; i++) {
         signalAnalyzerTracks[i].is_used = 0;
         signalAnalyzerTracks[i].net_id = -1;
         signalAnalyzerTracks[i].track_id = -1;
+    }
+
+    // Step 3: Clear all Leds assigned to main tracks
+    for (int i = 0; i < 120; i++){
+		ledsToMainTracks[i] = 0;
+//		printf("ledsToMainTracks[%d] = %d\n", i, ledsToMainTracks[i]);
     }
 
 //    printf("All signal analyzer tracks cleared.\n");
@@ -355,7 +385,7 @@ void clear() {
     LL_GPIO_ResetOutputPin(RST_GPIO, RST_PIN);
     LL_mDelay(20);
 
-    printf("RST complete.\n\n");
+    printf("CLR complete.\n\n");
 }
 
 void processCommand(char *command) {
@@ -366,6 +396,7 @@ void processCommand(char *command) {
 				int parsed = sscanf(command, "RB %d %d %d %d %d %d %d",
 									&pin1, &pin2, &net_id, &mode, &r, &g, &b);
 				if (parsed == 7) {  // Ensure all arguments were parsed
+
 					RGB_t color = {b, r, g}; // This is brg, because of the Union, the union is brg, cuz the leds take brg
 					printf("Calling routeBreadboard with: Pin1=%d, Pin2=%d, NetID=%d, Mode=%d, RGB(%d,%d,%d)\n",
 						   pin1, pin2, net_id, mode, r, g, b);
