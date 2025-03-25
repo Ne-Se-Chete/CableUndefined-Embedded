@@ -250,6 +250,8 @@ void USART1_IRQHandler(void)
   /* USER CODE BEGIN USART1_IRQn 1 */
 	if (LL_USART_IsActiveFlag_RXNE(USART1))
 	{
+        usingESP = 1;
+        usingCP2102 = 0;
 		uint8_t receivedByte = LL_USART_ReceiveData8(USART1);
 		UART_ProcessReceivedByte(receivedByte, 1);  // Process received data for UART1
 	}
@@ -265,8 +267,11 @@ void USART3_IRQHandler(void)
 
   /* USER CODE END USART3_IRQn 0 */
   /* USER CODE BEGIN USART3_IRQn 1 */
-	 if (LL_USART_IsActiveFlag_RXNE(USART3))
+    usingCP2102 = 1;
+    usingESP = 0;
+	if (LL_USART_IsActiveFlag_RXNE(USART3))
 	{
+
 		uint8_t receivedByte = LL_USART_ReceiveData8(USART3);
 		UART_ProcessReceivedByte(receivedByte, 3);  // Process received data for UART3
 	}

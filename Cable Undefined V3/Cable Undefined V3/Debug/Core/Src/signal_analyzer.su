@@ -16,6 +16,6 @@
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:930:22:LL_DMA_ConfigAddresses	24	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1054:22:LL_TIM_EnableCounter	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1316:26:LL_TIM_GetCounter	16	static
-../Core/Src/signal_analyzer.c:10:6:SignalAnalyzer_Init	16	static
-../Core/Src/signal_analyzer.c:50:10:getTimestamp	8	static
-../Core/Src/signal_analyzer.c:55:6:sendADCData	200	static
+../Core/Src/signal_analyzer.c:18:6:SignalAnalyzer_Init	16	static
+../Core/Src/signal_analyzer.c:58:10:getTimestamp	8	static
+../Core/Src/signal_analyzer.c:63:6:sendADCData	56	static

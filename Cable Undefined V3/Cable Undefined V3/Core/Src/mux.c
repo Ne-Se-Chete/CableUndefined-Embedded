@@ -1,6 +1,7 @@
 #include "mux.h"
 #include "mux_config.h"
 #include "serial.h"
+#include "signal_analyzer.h"
 #include "fault.h"
 #include "leds.h"
 
@@ -378,6 +379,14 @@ void routeSignalAnalyzer(int net_id, MUX *muxes, uint8_t mode) {
 
 	// Step 5: Set the connection
 	setConnection(xIndex, yIndex, *mux, mode);
+
+	if (mode == 1) {
+	    adcChannelConfig.channel_enabled[yIndex] = 1;  // Enable the channel
+	    printf("(ADC%d) ENABLED\n", yIndex);
+	} else {
+	    adcChannelConfig.channel_enabled[yIndex] = 0;  // Disable the channel
+	    printf("(ADC%d) DISABLED\n", yIndex);
+	}
 }
 
 void clear() {
@@ -411,7 +420,12 @@ void clear() {
 		}
 	}
 
-    // Step 5: Perform hardware reset using RST_GPIO
+    // Step 5: Disable ADC's
+	for (int i = 0; i < 8; i++){
+	    adcChannelConfig.channel_enabled[i] = 0;
+	}
+
+    // Step 6: Perform hardware reset using RST_GPIO
     LL_GPIO_SetOutputPin(RST_GPIO, RST_PIN);
     LL_mDelay(20);
     LL_GPIO_ResetOutputPin(RST_GPIO, RST_PIN);
@@ -470,4 +484,32 @@ void processCommand(char *command) {
     if (strncmp(command, "EN 3V3", 6) == 0) {
     	FAULT_3v3_HandleMsg();
 	}
+
+//    if (command[0] == 'S') {
+//    	int channel;
+//		char state[4];
+//
+//		// Match format: S<number> <ON|OFF>
+//		if (sscanf(command, "S%d %3s", &channel, state) == 2) {
+//			if (channel < 1 || channel > 8) {  // S1 to S8, so validate channel
+//				printf("Invalid channel: S%d\n", channel);
+//				return;
+//			}
+//
+//			// Map S1-S8 to 0-7 (for ADC array)
+//			int adc_index = channel - 1;
+//
+//			if (strcmp(state, "ON") == 0) {
+//				adcChannelConfig.channel_enabled[adc_index] = 1;  // Enable the corresponding ADC channel
+//				printf("Channel S%d (ADC%d) ENABLED\n", channel, adc_index);
+//			} else if (strcmp(state, "OFF") == 0) {
+//				adcChannelConfig.channel_enabled[adc_index] = 0;  // Disable the corresponding ADC channel
+//				printf("Channel S%d (ADC%d) DISABLED\n", channel, adc_index);
+//			} else {
+//				printf("Invalid state: %s. Use ON or OFF.\n", state);
+//			}
+//		} else {
+//			printf("Invalid command format. Use: Sx ON/OFF\n");
+//		}
+//	}
 }

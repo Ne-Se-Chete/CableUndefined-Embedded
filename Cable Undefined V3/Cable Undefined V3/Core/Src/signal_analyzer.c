@@ -7,6 +7,14 @@
 
 static uint16_t adcValues[ADC_CHANNELS];
 
+extern volatile uint8_t usingESP;
+extern volatile uint8_t usingCP2102;
+
+ADCChannelConfig adcChannelConfig = {
+    .channel_enabled = {0, 0, 0, 0, 0, 0, 0, 0}  // default: all channels enabled
+};
+
+
 void SignalAnalyzer_Init(void)
 {
     // Configure DMA source/destination and length
@@ -54,20 +62,34 @@ uint32_t getTimestamp(void)
 
 void sendADCData(void)
 {
-    uint32_t timestamp = getTimestamp();
-    char buffer[128];
+    uint8_t buffer[32]; // Max: 1 + 1 + (8*2) + 2 = 20 bytes
+    uint8_t index = 0;
 
-//    buffer[0] = 'A';
-//    buffer[1] = '\n';
-//    buffer[2] = '\0';
-//	  ~55us
+    buffer[index++] = 0xAA; // Start byte
+    buffer[index++] = 0x00; // Reserve space for channel bitmap
 
-// ~1700us
-    snprintf(buffer, sizeof(buffer),
-             "T:%lu ADC0:%u ADC1:%u ADC2:%u ADC3:%u ADC4:%u ADC5:%u ADC6:%u ADC7:%u\n",
-             timestamp, adcValues[0], adcValues[1], adcValues[2], adcValues[3],
-             adcValues[4], adcValues[5], adcValues[6], adcValues[7]);
+    uint8_t channel_map = 0;
 
-    sendToUART(USART3, buffer); // PC
-    sendToUART(USART1, buffer); // ESP32
+    for (int i = 0; i < 8; i++) {
+        if (adcChannelConfig.channel_enabled[i]) {
+            buffer[index++] = (adcValues[i] >> 8) & 0xFF;
+            buffer[index++] = adcValues[i] & 0xFF;
+            channel_map |= (1 << i);  // Set bit i if channel is enabled
+        }
+    }
+
+    // Timestamp (2 bytes, big endian)
+    uint16_t t = (uint16_t)getTimestamp();
+    buffer[index++] = (t >> 8) & 0xFF;
+    buffer[index++] = t & 0xFF;
+
+    // Insert channel map after start byte
+    buffer[1] = channel_map;
+
+    // Send via UART
+    if (usingESP)
+        sendRawUART(USART1, buffer, index);
+    else if (usingCP2102)
+        sendRawUART(USART3, buffer, index);
 }
+
