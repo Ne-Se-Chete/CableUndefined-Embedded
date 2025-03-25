@@ -1,12 +1,12 @@
 #ifndef SIGNAL_ANALYZER_H
 #define SIGNAL_ANALYZER_H
 
-#include "main.h"
+#include <stdint.h>
 
-// Function Prototypes
+#define ADC_CHANNELS 8
+
 void SignalAnalyzer_Init(void);
 void sendADCData(void);
-void readADC(void);
 uint32_t getTimestamp(void);
 
 #endif // SIGNAL_ANALYZER_H

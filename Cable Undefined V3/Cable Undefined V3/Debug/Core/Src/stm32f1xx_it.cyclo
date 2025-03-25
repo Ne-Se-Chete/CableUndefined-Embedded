@@ -15,7 +15,8 @@
 ../Core/Src/stm32f1xx_it.c:162:6:DebugMon_Handler	1
 ../Core/Src/stm32f1xx_it.c:175:6:PendSV_Handler	1
 ../Core/Src/stm32f1xx_it.c:188:6:SysTick_Handler	1
-../Core/Src/stm32f1xx_it.c:209:6:DMA1_Channel5_IRQHandler	2
-../Core/Src/stm32f1xx_it.c:232:6:USART1_IRQHandler	2
-../Core/Src/stm32f1xx_it.c:249:6:USART3_IRQHandler	2
-../Core/Src/stm32f1xx_it.c:266:6:EXTI15_10_IRQHandler	3
+../Core/Src/stm32f1xx_it.c:209:6:DMA1_Channel1_IRQHandler	1
+../Core/Src/stm32f1xx_it.c:222:6:DMA1_Channel5_IRQHandler	2
+../Core/Src/stm32f1xx_it.c:245:6:USART1_IRQHandler	2
+../Core/Src/stm32f1xx_it.c:262:6:USART3_IRQHandler	2
+../Core/Src/stm32f1xx_it.c:279:6:EXTI15_10_IRQHandler	3
