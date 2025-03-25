@@ -16,6 +16,6 @@
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:930:22:LL_DMA_ConfigAddresses	2
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1054:22:LL_TIM_EnableCounter	1
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1316:26:LL_TIM_GetCounter	1
-../Core/Src/signal_analyzer.c:10:6:SignalAnalyzer_Init	2
-../Core/Src/signal_analyzer.c:50:10:getTimestamp	1
-../Core/Src/signal_analyzer.c:55:6:sendADCData	1
+../Core/Src/signal_analyzer.c:18:6:SignalAnalyzer_Init	2
+../Core/Src/signal_analyzer.c:58:10:getTimestamp	1
+../Core/Src/signal_analyzer.c:63:6:sendADCData	5

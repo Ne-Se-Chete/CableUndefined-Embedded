@@ -3,6 +3,19 @@
 #include <string.h>
 #include <stdio.h>
 
+volatile uint8_t usingESP = 0;
+volatile uint8_t usingCP2102 = 1;  // default to start with CP2102
+
+void sendRawUART(USART_TypeDef *USARTx, uint8_t *data, uint16_t length)
+{
+    for (uint16_t i = 0; i < length; i++) {
+        while (!LL_USART_IsActiveFlag_TXE(USARTx)); // Wait until TX buffer is empty
+        LL_USART_TransmitData8(USARTx, data[i]);
+    }
+
+    // Optionally wait until transmission is complete
+    while (!LL_USART_IsActiveFlag_TC(USARTx));
+}
 
 /**
   * @brief  Sends a string over UART.
