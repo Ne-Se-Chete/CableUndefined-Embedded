@@ -1,0 +1,64 @@
+{
+    "Multiplexers": [
+        {
+            "Inputs": {
+                "Y0": "MCUBreadboard1",
+                "Y1": "MCUBreadboard2",
+                "Y2": "MCUBreadboard3",
+                "Y3": "MCUBreadboard4",
+                "Y4": "MCUBreadboard5",
+                "Y5": "MCUBreadboard6",
+                "Y6": "MCUBreadboard7",
+                "Y7": "MCUBreadboard8"
+            },
+            "Outputs": {
+                "X0": "MUX2_Y0",
+                "X1": "MUX2_Y1",
+                "X2": "MUX2_Y2",
+                "X3": "MUX2_Y3",
+                "X4": "MUX2_Y4",
+                "X5": "MUX2_Y5",
+                "X6": "MUX2_Y6",
+                "X7": "MUX2_Y7",
+                "X8": "MainBreadboard13",
+                "X9": "MainBreadboard14",
+                "X10": "MainBreadboard15",
+                "X11": "MainBreadboard16",
+                "X12": "MainBreadboard17",
+                "X13": "MainBreadboard18",
+                "X14": "MainBreadboard19",
+                "X15": "MainBreadboard20"
+            }
+        },
+        {
+            "Inputs": {
+                "Y0": "MUX1_X0",
+                "Y1": "MUX1_X1",
+                "Y2": "MUX1_X2",
+                "Y3": "MUX1_X3",
+                "Y4": "MUX1_X4",
+                "Y5": "MUX1_X5",
+                "Y6": "MUX1_X6",
+                "Y7": "MUX1_X7"
+            },
+            "Outputs": {
+                "X0": "MainBreadboard21",
+                "X1": "MainBreadboard22",
+                "X2": "MainBreadboard23",
+                "X3": "MainBreadboard24",
+                "X4": "MainBreadboard1",
+                "X5": "MainBreadboard2",
+                "X6": "MainBreadboard3",
+                "X7": "MainBreadboard4",
+                "X8": "MainBreadboard5",
+                "X9": "MainBreadboard6",
+                "X10": "MainBreadboard7",
+                "X11": "MainBreadboard8",
+                "X12": "MainBreadboard9",
+                "X13": "MainBreadboard10",
+                "X14": "MainBreadboard11",
+                "X15": "MainBreadboard12"
+            }
+        }
+    ]
+}
