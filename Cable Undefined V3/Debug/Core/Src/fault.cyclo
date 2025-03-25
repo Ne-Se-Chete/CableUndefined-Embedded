@@ -1,7 +1,0 @@
-../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:803:22:LL_GPIO_SetOutputPin	1
-../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:832:22:LL_GPIO_ResetOutputPin	1
-../Core/Src/fault.c:16:6:FAULT_CheckAndReport	6
-../Core/Src/fault.c:42:6:FAULT_5v_HandleInterrupt	1
-../Core/Src/fault.c:51:6:FAULT_3v3_HandleInterrupt	1
-../Core/Src/fault.c:57:6:FAULT_5v_HandleMsg	1
-../Core/Src/fault.c:69:6:FAULT_3v3_HandleMsg	1

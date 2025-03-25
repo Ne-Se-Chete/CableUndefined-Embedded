@@ -1,0 +1,7168 @@
+Y0 -> MainBreadboard21 set connection:
+1000; Y0; X0; true,
+1001; Y0; X0; true,
+Y0 -> MainBreadboard21 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X0; false,
+
+Y0 -> MainBreadboard22 set connection:
+1000; Y0; X0; true,
+1001; Y0; X1; true,
+Y0 -> MainBreadboard22 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X1; false,
+
+Y0 -> MainBreadboard23 set connection:
+1000; Y0; X0; true,
+1001; Y0; X2; true,
+Y0 -> MainBreadboard23 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X2; false,
+
+Y0 -> MainBreadboard24 set connection:
+1000; Y0; X0; true,
+1001; Y0; X3; true,
+Y0 -> MainBreadboard24 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X3; false,
+
+Y0 -> MainBreadboard1 set connection:
+1000; Y0; X0; true,
+1001; Y0; X4; true,
+Y0 -> MainBreadboard1 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X4; false,
+
+Y0 -> MainBreadboard2 set connection:
+1000; Y0; X0; true,
+1001; Y0; X5; true,
+Y0 -> MainBreadboard2 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X5; false,
+
+Y0 -> MainBreadboard3 set connection:
+1000; Y0; X0; true,
+1001; Y0; X6; true,
+Y0 -> MainBreadboard3 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X6; false,
+
+Y0 -> MainBreadboard4 set connection:
+1000; Y0; X0; true,
+1001; Y0; X7; true,
+Y0 -> MainBreadboard4 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X7; false,
+
+Y0 -> MainBreadboard5 set connection:
+1000; Y0; X0; true,
+1001; Y0; X8; true,
+Y0 -> MainBreadboard5 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X8; false,
+
+Y0 -> MainBreadboard6 set connection:
+1000; Y0; X0; true,
+1001; Y0; X9; true,
+Y0 -> MainBreadboard6 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X9; false,
+
+Y0 -> MainBreadboard7 set connection:
+1000; Y0; X0; true,
+1001; Y0; X10; true,
+Y0 -> MainBreadboard7 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X10; false,
+
+Y0 -> MainBreadboard8 set connection:
+1000; Y0; X0; true,
+1001; Y0; X11; true,
+Y0 -> MainBreadboard8 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X11; false,
+
+Y0 -> MainBreadboard9 set connection:
+1000; Y0; X0; true,
+1001; Y0; X12; true,
+Y0 -> MainBreadboard9 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X12; false,
+
+Y0 -> MainBreadboard10 set connection:
+1000; Y0; X0; true,
+1001; Y0; X13; true,
+Y0 -> MainBreadboard10 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X13; false,
+
+Y0 -> MainBreadboard11 set connection:
+1000; Y0; X0; true,
+1001; Y0; X14; true,
+Y0 -> MainBreadboard11 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X14; false,
+
+Y0 -> MainBreadboard12 set connection:
+1000; Y0; X0; true,
+1001; Y0; X15; true,
+Y0 -> MainBreadboard12 remove connection:
+1000; Y0; X0; false,
+1001; Y0; X15; false,
+
+Y0 -> MainBreadboard21 set connection:
+1000; Y0; X1; true,
+1001; Y1; X0; true,
+Y0 -> MainBreadboard21 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X0; false,
+
+Y0 -> MainBreadboard22 set connection:
+1000; Y0; X1; true,
+1001; Y1; X1; true,
+Y0 -> MainBreadboard22 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X1; false,
+
+Y0 -> MainBreadboard23 set connection:
+1000; Y0; X1; true,
+1001; Y1; X2; true,
+Y0 -> MainBreadboard23 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X2; false,
+
+Y0 -> MainBreadboard24 set connection:
+1000; Y0; X1; true,
+1001; Y1; X3; true,
+Y0 -> MainBreadboard24 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X3; false,
+
+Y0 -> MainBreadboard1 set connection:
+1000; Y0; X1; true,
+1001; Y1; X4; true,
+Y0 -> MainBreadboard1 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X4; false,
+
+Y0 -> MainBreadboard2 set connection:
+1000; Y0; X1; true,
+1001; Y1; X5; true,
+Y0 -> MainBreadboard2 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X5; false,
+
+Y0 -> MainBreadboard3 set connection:
+1000; Y0; X1; true,
+1001; Y1; X6; true,
+Y0 -> MainBreadboard3 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X6; false,
+
+Y0 -> MainBreadboard4 set connection:
+1000; Y0; X1; true,
+1001; Y1; X7; true,
+Y0 -> MainBreadboard4 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X7; false,
+
+Y0 -> MainBreadboard5 set connection:
+1000; Y0; X1; true,
+1001; Y1; X8; true,
+Y0 -> MainBreadboard5 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X8; false,
+
+Y0 -> MainBreadboard6 set connection:
+1000; Y0; X1; true,
+1001; Y1; X9; true,
+Y0 -> MainBreadboard6 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X9; false,
+
+Y0 -> MainBreadboard7 set connection:
+1000; Y0; X1; true,
+1001; Y1; X10; true,
+Y0 -> MainBreadboard7 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X10; false,
+
+Y0 -> MainBreadboard8 set connection:
+1000; Y0; X1; true,
+1001; Y1; X11; true,
+Y0 -> MainBreadboard8 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X11; false,
+
+Y0 -> MainBreadboard9 set connection:
+1000; Y0; X1; true,
+1001; Y1; X12; true,
+Y0 -> MainBreadboard9 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X12; false,
+
+Y0 -> MainBreadboard10 set connection:
+1000; Y0; X1; true,
+1001; Y1; X13; true,
+Y0 -> MainBreadboard10 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X13; false,
+
+Y0 -> MainBreadboard11 set connection:
+1000; Y0; X1; true,
+1001; Y1; X14; true,
+Y0 -> MainBreadboard11 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X14; false,
+
+Y0 -> MainBreadboard12 set connection:
+1000; Y0; X1; true,
+1001; Y1; X15; true,
+Y0 -> MainBreadboard12 remove connection:
+1000; Y0; X1; false,
+1001; Y1; X15; false,
+
+Y0 -> MainBreadboard21 set connection:
+1000; Y0; X2; true,
+1001; Y2; X0; true,
+Y0 -> MainBreadboard21 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X0; false,
+
+Y0 -> MainBreadboard22 set connection:
+1000; Y0; X2; true,
+1001; Y2; X1; true,
+Y0 -> MainBreadboard22 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X1; false,
+
+Y0 -> MainBreadboard23 set connection:
+1000; Y0; X2; true,
+1001; Y2; X2; true,
+Y0 -> MainBreadboard23 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X2; false,
+
+Y0 -> MainBreadboard24 set connection:
+1000; Y0; X2; true,
+1001; Y2; X3; true,
+Y0 -> MainBreadboard24 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X3; false,
+
+Y0 -> MainBreadboard1 set connection:
+1000; Y0; X2; true,
+1001; Y2; X4; true,
+Y0 -> MainBreadboard1 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X4; false,
+
+Y0 -> MainBreadboard2 set connection:
+1000; Y0; X2; true,
+1001; Y2; X5; true,
+Y0 -> MainBreadboard2 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X5; false,
+
+Y0 -> MainBreadboard3 set connection:
+1000; Y0; X2; true,
+1001; Y2; X6; true,
+Y0 -> MainBreadboard3 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X6; false,
+
+Y0 -> MainBreadboard4 set connection:
+1000; Y0; X2; true,
+1001; Y2; X7; true,
+Y0 -> MainBreadboard4 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X7; false,
+
+Y0 -> MainBreadboard5 set connection:
+1000; Y0; X2; true,
+1001; Y2; X8; true,
+Y0 -> MainBreadboard5 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X8; false,
+
+Y0 -> MainBreadboard6 set connection:
+1000; Y0; X2; true,
+1001; Y2; X9; true,
+Y0 -> MainBreadboard6 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X9; false,
+
+Y0 -> MainBreadboard7 set connection:
+1000; Y0; X2; true,
+1001; Y2; X10; true,
+Y0 -> MainBreadboard7 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X10; false,
+
+Y0 -> MainBreadboard8 set connection:
+1000; Y0; X2; true,
+1001; Y2; X11; true,
+Y0 -> MainBreadboard8 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X11; false,
+
+Y0 -> MainBreadboard9 set connection:
+1000; Y0; X2; true,
+1001; Y2; X12; true,
+Y0 -> MainBreadboard9 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X12; false,
+
+Y0 -> MainBreadboard10 set connection:
+1000; Y0; X2; true,
+1001; Y2; X13; true,
+Y0 -> MainBreadboard10 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X13; false,
+
+Y0 -> MainBreadboard11 set connection:
+1000; Y0; X2; true,
+1001; Y2; X14; true,
+Y0 -> MainBreadboard11 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X14; false,
+
+Y0 -> MainBreadboard12 set connection:
+1000; Y0; X2; true,
+1001; Y2; X15; true,
+Y0 -> MainBreadboard12 remove connection:
+1000; Y0; X2; false,
+1001; Y2; X15; false,
+
+Y0 -> MainBreadboard21 set connection:
+1000; Y0; X3; true,
+1001; Y3; X0; true,
+Y0 -> MainBreadboard21 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X0; false,
+
+Y0 -> MainBreadboard22 set connection:
+1000; Y0; X3; true,
+1001; Y3; X1; true,
+Y0 -> MainBreadboard22 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X1; false,
+
+Y0 -> MainBreadboard23 set connection:
+1000; Y0; X3; true,
+1001; Y3; X2; true,
+Y0 -> MainBreadboard23 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X2; false,
+
+Y0 -> MainBreadboard24 set connection:
+1000; Y0; X3; true,
+1001; Y3; X3; true,
+Y0 -> MainBreadboard24 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X3; false,
+
+Y0 -> MainBreadboard1 set connection:
+1000; Y0; X3; true,
+1001; Y3; X4; true,
+Y0 -> MainBreadboard1 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X4; false,
+
+Y0 -> MainBreadboard2 set connection:
+1000; Y0; X3; true,
+1001; Y3; X5; true,
+Y0 -> MainBreadboard2 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X5; false,
+
+Y0 -> MainBreadboard3 set connection:
+1000; Y0; X3; true,
+1001; Y3; X6; true,
+Y0 -> MainBreadboard3 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X6; false,
+
+Y0 -> MainBreadboard4 set connection:
+1000; Y0; X3; true,
+1001; Y3; X7; true,
+Y0 -> MainBreadboard4 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X7; false,
+
+Y0 -> MainBreadboard5 set connection:
+1000; Y0; X3; true,
+1001; Y3; X8; true,
+Y0 -> MainBreadboard5 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X8; false,
+
+Y0 -> MainBreadboard6 set connection:
+1000; Y0; X3; true,
+1001; Y3; X9; true,
+Y0 -> MainBreadboard6 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X9; false,
+
+Y0 -> MainBreadboard7 set connection:
+1000; Y0; X3; true,
+1001; Y3; X10; true,
+Y0 -> MainBreadboard7 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X10; false,
+
+Y0 -> MainBreadboard8 set connection:
+1000; Y0; X3; true,
+1001; Y3; X11; true,
+Y0 -> MainBreadboard8 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X11; false,
+
+Y0 -> MainBreadboard9 set connection:
+1000; Y0; X3; true,
+1001; Y3; X12; true,
+Y0 -> MainBreadboard9 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X12; false,
+
+Y0 -> MainBreadboard10 set connection:
+1000; Y0; X3; true,
+1001; Y3; X13; true,
+Y0 -> MainBreadboard10 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X13; false,
+
+Y0 -> MainBreadboard11 set connection:
+1000; Y0; X3; true,
+1001; Y3; X14; true,
+Y0 -> MainBreadboard11 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X14; false,
+
+Y0 -> MainBreadboard12 set connection:
+1000; Y0; X3; true,
+1001; Y3; X15; true,
+Y0 -> MainBreadboard12 remove connection:
+1000; Y0; X3; false,
+1001; Y3; X15; false,
+
+Y0 -> MainBreadboard21 set connection:
+1000; Y0; X4; true,
+1001; Y4; X0; true,
+Y0 -> MainBreadboard21 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X0; false,
+
+Y0 -> MainBreadboard22 set connection:
+1000; Y0; X4; true,
+1001; Y4; X1; true,
+Y0 -> MainBreadboard22 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X1; false,
+
+Y0 -> MainBreadboard23 set connection:
+1000; Y0; X4; true,
+1001; Y4; X2; true,
+Y0 -> MainBreadboard23 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X2; false,
+
+Y0 -> MainBreadboard24 set connection:
+1000; Y0; X4; true,
+1001; Y4; X3; true,
+Y0 -> MainBreadboard24 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X3; false,
+
+Y0 -> MainBreadboard1 set connection:
+1000; Y0; X4; true,
+1001; Y4; X4; true,
+Y0 -> MainBreadboard1 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X4; false,
+
+Y0 -> MainBreadboard2 set connection:
+1000; Y0; X4; true,
+1001; Y4; X5; true,
+Y0 -> MainBreadboard2 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X5; false,
+
+Y0 -> MainBreadboard3 set connection:
+1000; Y0; X4; true,
+1001; Y4; X6; true,
+Y0 -> MainBreadboard3 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X6; false,
+
+Y0 -> MainBreadboard4 set connection:
+1000; Y0; X4; true,
+1001; Y4; X7; true,
+Y0 -> MainBreadboard4 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X7; false,
+
+Y0 -> MainBreadboard5 set connection:
+1000; Y0; X4; true,
+1001; Y4; X8; true,
+Y0 -> MainBreadboard5 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X8; false,
+
+Y0 -> MainBreadboard6 set connection:
+1000; Y0; X4; true,
+1001; Y4; X9; true,
+Y0 -> MainBreadboard6 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X9; false,
+
+Y0 -> MainBreadboard7 set connection:
+1000; Y0; X4; true,
+1001; Y4; X10; true,
+Y0 -> MainBreadboard7 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X10; false,
+
+Y0 -> MainBreadboard8 set connection:
+1000; Y0; X4; true,
+1001; Y4; X11; true,
+Y0 -> MainBreadboard8 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X11; false,
+
+Y0 -> MainBreadboard9 set connection:
+1000; Y0; X4; true,
+1001; Y4; X12; true,
+Y0 -> MainBreadboard9 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X12; false,
+
+Y0 -> MainBreadboard10 set connection:
+1000; Y0; X4; true,
+1001; Y4; X13; true,
+Y0 -> MainBreadboard10 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X13; false,
+
+Y0 -> MainBreadboard11 set connection:
+1000; Y0; X4; true,
+1001; Y4; X14; true,
+Y0 -> MainBreadboard11 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X14; false,
+
+Y0 -> MainBreadboard12 set connection:
+1000; Y0; X4; true,
+1001; Y4; X15; true,
+Y0 -> MainBreadboard12 remove connection:
+1000; Y0; X4; false,
+1001; Y4; X15; false,
+
+Y0 -> MainBreadboard21 set connection:
+1000; Y0; X5; true,
+1001; Y5; X0; true,
+Y0 -> MainBreadboard21 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X0; false,
+
+Y0 -> MainBreadboard22 set connection:
+1000; Y0; X5; true,
+1001; Y5; X1; true,
+Y0 -> MainBreadboard22 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X1; false,
+
+Y0 -> MainBreadboard23 set connection:
+1000; Y0; X5; true,
+1001; Y5; X2; true,
+Y0 -> MainBreadboard23 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X2; false,
+
+Y0 -> MainBreadboard24 set connection:
+1000; Y0; X5; true,
+1001; Y5; X3; true,
+Y0 -> MainBreadboard24 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X3; false,
+
+Y0 -> MainBreadboard1 set connection:
+1000; Y0; X5; true,
+1001; Y5; X4; true,
+Y0 -> MainBreadboard1 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X4; false,
+
+Y0 -> MainBreadboard2 set connection:
+1000; Y0; X5; true,
+1001; Y5; X5; true,
+Y0 -> MainBreadboard2 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X5; false,
+
+Y0 -> MainBreadboard3 set connection:
+1000; Y0; X5; true,
+1001; Y5; X6; true,
+Y0 -> MainBreadboard3 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X6; false,
+
+Y0 -> MainBreadboard4 set connection:
+1000; Y0; X5; true,
+1001; Y5; X7; true,
+Y0 -> MainBreadboard4 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X7; false,
+
+Y0 -> MainBreadboard5 set connection:
+1000; Y0; X5; true,
+1001; Y5; X8; true,
+Y0 -> MainBreadboard5 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X8; false,
+
+Y0 -> MainBreadboard6 set connection:
+1000; Y0; X5; true,
+1001; Y5; X9; true,
+Y0 -> MainBreadboard6 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X9; false,
+
+Y0 -> MainBreadboard7 set connection:
+1000; Y0; X5; true,
+1001; Y5; X10; true,
+Y0 -> MainBreadboard7 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X10; false,
+
+Y0 -> MainBreadboard8 set connection:
+1000; Y0; X5; true,
+1001; Y5; X11; true,
+Y0 -> MainBreadboard8 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X11; false,
+
+Y0 -> MainBreadboard9 set connection:
+1000; Y0; X5; true,
+1001; Y5; X12; true,
+Y0 -> MainBreadboard9 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X12; false,
+
+Y0 -> MainBreadboard10 set connection:
+1000; Y0; X5; true,
+1001; Y5; X13; true,
+Y0 -> MainBreadboard10 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X13; false,
+
+Y0 -> MainBreadboard11 set connection:
+1000; Y0; X5; true,
+1001; Y5; X14; true,
+Y0 -> MainBreadboard11 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X14; false,
+
+Y0 -> MainBreadboard12 set connection:
+1000; Y0; X5; true,
+1001; Y5; X15; true,
+Y0 -> MainBreadboard12 remove connection:
+1000; Y0; X5; false,
+1001; Y5; X15; false,
+
+Y0 -> MainBreadboard21 set connection:
+1000; Y0; X6; true,
+1001; Y6; X0; true,
+Y0 -> MainBreadboard21 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X0; false,
+
+Y0 -> MainBreadboard22 set connection:
+1000; Y0; X6; true,
+1001; Y6; X1; true,
+Y0 -> MainBreadboard22 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X1; false,
+
+Y0 -> MainBreadboard23 set connection:
+1000; Y0; X6; true,
+1001; Y6; X2; true,
+Y0 -> MainBreadboard23 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X2; false,
+
+Y0 -> MainBreadboard24 set connection:
+1000; Y0; X6; true,
+1001; Y6; X3; true,
+Y0 -> MainBreadboard24 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X3; false,
+
+Y0 -> MainBreadboard1 set connection:
+1000; Y0; X6; true,
+1001; Y6; X4; true,
+Y0 -> MainBreadboard1 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X4; false,
+
+Y0 -> MainBreadboard2 set connection:
+1000; Y0; X6; true,
+1001; Y6; X5; true,
+Y0 -> MainBreadboard2 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X5; false,
+
+Y0 -> MainBreadboard3 set connection:
+1000; Y0; X6; true,
+1001; Y6; X6; true,
+Y0 -> MainBreadboard3 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X6; false,
+
+Y0 -> MainBreadboard4 set connection:
+1000; Y0; X6; true,
+1001; Y6; X7; true,
+Y0 -> MainBreadboard4 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X7; false,
+
+Y0 -> MainBreadboard5 set connection:
+1000; Y0; X6; true,
+1001; Y6; X8; true,
+Y0 -> MainBreadboard5 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X8; false,
+
+Y0 -> MainBreadboard6 set connection:
+1000; Y0; X6; true,
+1001; Y6; X9; true,
+Y0 -> MainBreadboard6 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X9; false,
+
+Y0 -> MainBreadboard7 set connection:
+1000; Y0; X6; true,
+1001; Y6; X10; true,
+Y0 -> MainBreadboard7 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X10; false,
+
+Y0 -> MainBreadboard8 set connection:
+1000; Y0; X6; true,
+1001; Y6; X11; true,
+Y0 -> MainBreadboard8 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X11; false,
+
+Y0 -> MainBreadboard9 set connection:
+1000; Y0; X6; true,
+1001; Y6; X12; true,
+Y0 -> MainBreadboard9 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X12; false,
+
+Y0 -> MainBreadboard10 set connection:
+1000; Y0; X6; true,
+1001; Y6; X13; true,
+Y0 -> MainBreadboard10 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X13; false,
+
+Y0 -> MainBreadboard11 set connection:
+1000; Y0; X6; true,
+1001; Y6; X14; true,
+Y0 -> MainBreadboard11 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X14; false,
+
+Y0 -> MainBreadboard12 set connection:
+1000; Y0; X6; true,
+1001; Y6; X15; true,
+Y0 -> MainBreadboard12 remove connection:
+1000; Y0; X6; false,
+1001; Y6; X15; false,
+
+Y0 -> MainBreadboard21 set connection:
+1000; Y0; X7; true,
+1001; Y7; X0; true,
+Y0 -> MainBreadboard21 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X0; false,
+
+Y0 -> MainBreadboard22 set connection:
+1000; Y0; X7; true,
+1001; Y7; X1; true,
+Y0 -> MainBreadboard22 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X1; false,
+
+Y0 -> MainBreadboard23 set connection:
+1000; Y0; X7; true,
+1001; Y7; X2; true,
+Y0 -> MainBreadboard23 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X2; false,
+
+Y0 -> MainBreadboard24 set connection:
+1000; Y0; X7; true,
+1001; Y7; X3; true,
+Y0 -> MainBreadboard24 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X3; false,
+
+Y0 -> MainBreadboard1 set connection:
+1000; Y0; X7; true,
+1001; Y7; X4; true,
+Y0 -> MainBreadboard1 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X4; false,
+
+Y0 -> MainBreadboard2 set connection:
+1000; Y0; X7; true,
+1001; Y7; X5; true,
+Y0 -> MainBreadboard2 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X5; false,
+
+Y0 -> MainBreadboard3 set connection:
+1000; Y0; X7; true,
+1001; Y7; X6; true,
+Y0 -> MainBreadboard3 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X6; false,
+
+Y0 -> MainBreadboard4 set connection:
+1000; Y0; X7; true,
+1001; Y7; X7; true,
+Y0 -> MainBreadboard4 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X7; false,
+
+Y0 -> MainBreadboard5 set connection:
+1000; Y0; X7; true,
+1001; Y7; X8; true,
+Y0 -> MainBreadboard5 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X8; false,
+
+Y0 -> MainBreadboard6 set connection:
+1000; Y0; X7; true,
+1001; Y7; X9; true,
+Y0 -> MainBreadboard6 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X9; false,
+
+Y0 -> MainBreadboard7 set connection:
+1000; Y0; X7; true,
+1001; Y7; X10; true,
+Y0 -> MainBreadboard7 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X10; false,
+
+Y0 -> MainBreadboard8 set connection:
+1000; Y0; X7; true,
+1001; Y7; X11; true,
+Y0 -> MainBreadboard8 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X11; false,
+
+Y0 -> MainBreadboard9 set connection:
+1000; Y0; X7; true,
+1001; Y7; X12; true,
+Y0 -> MainBreadboard9 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X12; false,
+
+Y0 -> MainBreadboard10 set connection:
+1000; Y0; X7; true,
+1001; Y7; X13; true,
+Y0 -> MainBreadboard10 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X13; false,
+
+Y0 -> MainBreadboard11 set connection:
+1000; Y0; X7; true,
+1001; Y7; X14; true,
+Y0 -> MainBreadboard11 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X14; false,
+
+Y0 -> MainBreadboard12 set connection:
+1000; Y0; X7; true,
+1001; Y7; X15; true,
+Y0 -> MainBreadboard12 remove connection:
+1000; Y0; X7; false,
+1001; Y7; X15; false,
+
+Y1 -> MainBreadboard21 set connection:
+1000; Y1; X0; true,
+1001; Y0; X0; true,
+Y1 -> MainBreadboard21 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X0; false,
+
+Y1 -> MainBreadboard22 set connection:
+1000; Y1; X0; true,
+1001; Y0; X1; true,
+Y1 -> MainBreadboard22 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X1; false,
+
+Y1 -> MainBreadboard23 set connection:
+1000; Y1; X0; true,
+1001; Y0; X2; true,
+Y1 -> MainBreadboard23 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X2; false,
+
+Y1 -> MainBreadboard24 set connection:
+1000; Y1; X0; true,
+1001; Y0; X3; true,
+Y1 -> MainBreadboard24 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X3; false,
+
+Y1 -> MainBreadboard1 set connection:
+1000; Y1; X0; true,
+1001; Y0; X4; true,
+Y1 -> MainBreadboard1 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X4; false,
+
+Y1 -> MainBreadboard2 set connection:
+1000; Y1; X0; true,
+1001; Y0; X5; true,
+Y1 -> MainBreadboard2 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X5; false,
+
+Y1 -> MainBreadboard3 set connection:
+1000; Y1; X0; true,
+1001; Y0; X6; true,
+Y1 -> MainBreadboard3 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X6; false,
+
+Y1 -> MainBreadboard4 set connection:
+1000; Y1; X0; true,
+1001; Y0; X7; true,
+Y1 -> MainBreadboard4 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X7; false,
+
+Y1 -> MainBreadboard5 set connection:
+1000; Y1; X0; true,
+1001; Y0; X8; true,
+Y1 -> MainBreadboard5 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X8; false,
+
+Y1 -> MainBreadboard6 set connection:
+1000; Y1; X0; true,
+1001; Y0; X9; true,
+Y1 -> MainBreadboard6 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X9; false,
+
+Y1 -> MainBreadboard7 set connection:
+1000; Y1; X0; true,
+1001; Y0; X10; true,
+Y1 -> MainBreadboard7 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X10; false,
+
+Y1 -> MainBreadboard8 set connection:
+1000; Y1; X0; true,
+1001; Y0; X11; true,
+Y1 -> MainBreadboard8 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X11; false,
+
+Y1 -> MainBreadboard9 set connection:
+1000; Y1; X0; true,
+1001; Y0; X12; true,
+Y1 -> MainBreadboard9 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X12; false,
+
+Y1 -> MainBreadboard10 set connection:
+1000; Y1; X0; true,
+1001; Y0; X13; true,
+Y1 -> MainBreadboard10 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X13; false,
+
+Y1 -> MainBreadboard11 set connection:
+1000; Y1; X0; true,
+1001; Y0; X14; true,
+Y1 -> MainBreadboard11 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X14; false,
+
+Y1 -> MainBreadboard12 set connection:
+1000; Y1; X0; true,
+1001; Y0; X15; true,
+Y1 -> MainBreadboard12 remove connection:
+1000; Y1; X0; false,
+1001; Y0; X15; false,
+
+Y1 -> MainBreadboard21 set connection:
+1000; Y1; X1; true,
+1001; Y1; X0; true,
+Y1 -> MainBreadboard21 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X0; false,
+
+Y1 -> MainBreadboard22 set connection:
+1000; Y1; X1; true,
+1001; Y1; X1; true,
+Y1 -> MainBreadboard22 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X1; false,
+
+Y1 -> MainBreadboard23 set connection:
+1000; Y1; X1; true,
+1001; Y1; X2; true,
+Y1 -> MainBreadboard23 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X2; false,
+
+Y1 -> MainBreadboard24 set connection:
+1000; Y1; X1; true,
+1001; Y1; X3; true,
+Y1 -> MainBreadboard24 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X3; false,
+
+Y1 -> MainBreadboard1 set connection:
+1000; Y1; X1; true,
+1001; Y1; X4; true,
+Y1 -> MainBreadboard1 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X4; false,
+
+Y1 -> MainBreadboard2 set connection:
+1000; Y1; X1; true,
+1001; Y1; X5; true,
+Y1 -> MainBreadboard2 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X5; false,
+
+Y1 -> MainBreadboard3 set connection:
+1000; Y1; X1; true,
+1001; Y1; X6; true,
+Y1 -> MainBreadboard3 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X6; false,
+
+Y1 -> MainBreadboard4 set connection:
+1000; Y1; X1; true,
+1001; Y1; X7; true,
+Y1 -> MainBreadboard4 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X7; false,
+
+Y1 -> MainBreadboard5 set connection:
+1000; Y1; X1; true,
+1001; Y1; X8; true,
+Y1 -> MainBreadboard5 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X8; false,
+
+Y1 -> MainBreadboard6 set connection:
+1000; Y1; X1; true,
+1001; Y1; X9; true,
+Y1 -> MainBreadboard6 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X9; false,
+
+Y1 -> MainBreadboard7 set connection:
+1000; Y1; X1; true,
+1001; Y1; X10; true,
+Y1 -> MainBreadboard7 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X10; false,
+
+Y1 -> MainBreadboard8 set connection:
+1000; Y1; X1; true,
+1001; Y1; X11; true,
+Y1 -> MainBreadboard8 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X11; false,
+
+Y1 -> MainBreadboard9 set connection:
+1000; Y1; X1; true,
+1001; Y1; X12; true,
+Y1 -> MainBreadboard9 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X12; false,
+
+Y1 -> MainBreadboard10 set connection:
+1000; Y1; X1; true,
+1001; Y1; X13; true,
+Y1 -> MainBreadboard10 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X13; false,
+
+Y1 -> MainBreadboard11 set connection:
+1000; Y1; X1; true,
+1001; Y1; X14; true,
+Y1 -> MainBreadboard11 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X14; false,
+
+Y1 -> MainBreadboard12 set connection:
+1000; Y1; X1; true,
+1001; Y1; X15; true,
+Y1 -> MainBreadboard12 remove connection:
+1000; Y1; X1; false,
+1001; Y1; X15; false,
+
+Y1 -> MainBreadboard21 set connection:
+1000; Y1; X2; true,
+1001; Y2; X0; true,
+Y1 -> MainBreadboard21 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X0; false,
+
+Y1 -> MainBreadboard22 set connection:
+1000; Y1; X2; true,
+1001; Y2; X1; true,
+Y1 -> MainBreadboard22 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X1; false,
+
+Y1 -> MainBreadboard23 set connection:
+1000; Y1; X2; true,
+1001; Y2; X2; true,
+Y1 -> MainBreadboard23 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X2; false,
+
+Y1 -> MainBreadboard24 set connection:
+1000; Y1; X2; true,
+1001; Y2; X3; true,
+Y1 -> MainBreadboard24 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X3; false,
+
+Y1 -> MainBreadboard1 set connection:
+1000; Y1; X2; true,
+1001; Y2; X4; true,
+Y1 -> MainBreadboard1 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X4; false,
+
+Y1 -> MainBreadboard2 set connection:
+1000; Y1; X2; true,
+1001; Y2; X5; true,
+Y1 -> MainBreadboard2 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X5; false,
+
+Y1 -> MainBreadboard3 set connection:
+1000; Y1; X2; true,
+1001; Y2; X6; true,
+Y1 -> MainBreadboard3 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X6; false,
+
+Y1 -> MainBreadboard4 set connection:
+1000; Y1; X2; true,
+1001; Y2; X7; true,
+Y1 -> MainBreadboard4 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X7; false,
+
+Y1 -> MainBreadboard5 set connection:
+1000; Y1; X2; true,
+1001; Y2; X8; true,
+Y1 -> MainBreadboard5 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X8; false,
+
+Y1 -> MainBreadboard6 set connection:
+1000; Y1; X2; true,
+1001; Y2; X9; true,
+Y1 -> MainBreadboard6 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X9; false,
+
+Y1 -> MainBreadboard7 set connection:
+1000; Y1; X2; true,
+1001; Y2; X10; true,
+Y1 -> MainBreadboard7 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X10; false,
+
+Y1 -> MainBreadboard8 set connection:
+1000; Y1; X2; true,
+1001; Y2; X11; true,
+Y1 -> MainBreadboard8 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X11; false,
+
+Y1 -> MainBreadboard9 set connection:
+1000; Y1; X2; true,
+1001; Y2; X12; true,
+Y1 -> MainBreadboard9 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X12; false,
+
+Y1 -> MainBreadboard10 set connection:
+1000; Y1; X2; true,
+1001; Y2; X13; true,
+Y1 -> MainBreadboard10 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X13; false,
+
+Y1 -> MainBreadboard11 set connection:
+1000; Y1; X2; true,
+1001; Y2; X14; true,
+Y1 -> MainBreadboard11 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X14; false,
+
+Y1 -> MainBreadboard12 set connection:
+1000; Y1; X2; true,
+1001; Y2; X15; true,
+Y1 -> MainBreadboard12 remove connection:
+1000; Y1; X2; false,
+1001; Y2; X15; false,
+
+Y1 -> MainBreadboard21 set connection:
+1000; Y1; X3; true,
+1001; Y3; X0; true,
+Y1 -> MainBreadboard21 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X0; false,
+
+Y1 -> MainBreadboard22 set connection:
+1000; Y1; X3; true,
+1001; Y3; X1; true,
+Y1 -> MainBreadboard22 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X1; false,
+
+Y1 -> MainBreadboard23 set connection:
+1000; Y1; X3; true,
+1001; Y3; X2; true,
+Y1 -> MainBreadboard23 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X2; false,
+
+Y1 -> MainBreadboard24 set connection:
+1000; Y1; X3; true,
+1001; Y3; X3; true,
+Y1 -> MainBreadboard24 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X3; false,
+
+Y1 -> MainBreadboard1 set connection:
+1000; Y1; X3; true,
+1001; Y3; X4; true,
+Y1 -> MainBreadboard1 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X4; false,
+
+Y1 -> MainBreadboard2 set connection:
+1000; Y1; X3; true,
+1001; Y3; X5; true,
+Y1 -> MainBreadboard2 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X5; false,
+
+Y1 -> MainBreadboard3 set connection:
+1000; Y1; X3; true,
+1001; Y3; X6; true,
+Y1 -> MainBreadboard3 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X6; false,
+
+Y1 -> MainBreadboard4 set connection:
+1000; Y1; X3; true,
+1001; Y3; X7; true,
+Y1 -> MainBreadboard4 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X7; false,
+
+Y1 -> MainBreadboard5 set connection:
+1000; Y1; X3; true,
+1001; Y3; X8; true,
+Y1 -> MainBreadboard5 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X8; false,
+
+Y1 -> MainBreadboard6 set connection:
+1000; Y1; X3; true,
+1001; Y3; X9; true,
+Y1 -> MainBreadboard6 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X9; false,
+
+Y1 -> MainBreadboard7 set connection:
+1000; Y1; X3; true,
+1001; Y3; X10; true,
+Y1 -> MainBreadboard7 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X10; false,
+
+Y1 -> MainBreadboard8 set connection:
+1000; Y1; X3; true,
+1001; Y3; X11; true,
+Y1 -> MainBreadboard8 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X11; false,
+
+Y1 -> MainBreadboard9 set connection:
+1000; Y1; X3; true,
+1001; Y3; X12; true,
+Y1 -> MainBreadboard9 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X12; false,
+
+Y1 -> MainBreadboard10 set connection:
+1000; Y1; X3; true,
+1001; Y3; X13; true,
+Y1 -> MainBreadboard10 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X13; false,
+
+Y1 -> MainBreadboard11 set connection:
+1000; Y1; X3; true,
+1001; Y3; X14; true,
+Y1 -> MainBreadboard11 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X14; false,
+
+Y1 -> MainBreadboard12 set connection:
+1000; Y1; X3; true,
+1001; Y3; X15; true,
+Y1 -> MainBreadboard12 remove connection:
+1000; Y1; X3; false,
+1001; Y3; X15; false,
+
+Y1 -> MainBreadboard21 set connection:
+1000; Y1; X4; true,
+1001; Y4; X0; true,
+Y1 -> MainBreadboard21 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X0; false,
+
+Y1 -> MainBreadboard22 set connection:
+1000; Y1; X4; true,
+1001; Y4; X1; true,
+Y1 -> MainBreadboard22 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X1; false,
+
+Y1 -> MainBreadboard23 set connection:
+1000; Y1; X4; true,
+1001; Y4; X2; true,
+Y1 -> MainBreadboard23 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X2; false,
+
+Y1 -> MainBreadboard24 set connection:
+1000; Y1; X4; true,
+1001; Y4; X3; true,
+Y1 -> MainBreadboard24 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X3; false,
+
+Y1 -> MainBreadboard1 set connection:
+1000; Y1; X4; true,
+1001; Y4; X4; true,
+Y1 -> MainBreadboard1 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X4; false,
+
+Y1 -> MainBreadboard2 set connection:
+1000; Y1; X4; true,
+1001; Y4; X5; true,
+Y1 -> MainBreadboard2 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X5; false,
+
+Y1 -> MainBreadboard3 set connection:
+1000; Y1; X4; true,
+1001; Y4; X6; true,
+Y1 -> MainBreadboard3 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X6; false,
+
+Y1 -> MainBreadboard4 set connection:
+1000; Y1; X4; true,
+1001; Y4; X7; true,
+Y1 -> MainBreadboard4 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X7; false,
+
+Y1 -> MainBreadboard5 set connection:
+1000; Y1; X4; true,
+1001; Y4; X8; true,
+Y1 -> MainBreadboard5 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X8; false,
+
+Y1 -> MainBreadboard6 set connection:
+1000; Y1; X4; true,
+1001; Y4; X9; true,
+Y1 -> MainBreadboard6 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X9; false,
+
+Y1 -> MainBreadboard7 set connection:
+1000; Y1; X4; true,
+1001; Y4; X10; true,
+Y1 -> MainBreadboard7 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X10; false,
+
+Y1 -> MainBreadboard8 set connection:
+1000; Y1; X4; true,
+1001; Y4; X11; true,
+Y1 -> MainBreadboard8 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X11; false,
+
+Y1 -> MainBreadboard9 set connection:
+1000; Y1; X4; true,
+1001; Y4; X12; true,
+Y1 -> MainBreadboard9 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X12; false,
+
+Y1 -> MainBreadboard10 set connection:
+1000; Y1; X4; true,
+1001; Y4; X13; true,
+Y1 -> MainBreadboard10 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X13; false,
+
+Y1 -> MainBreadboard11 set connection:
+1000; Y1; X4; true,
+1001; Y4; X14; true,
+Y1 -> MainBreadboard11 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X14; false,
+
+Y1 -> MainBreadboard12 set connection:
+1000; Y1; X4; true,
+1001; Y4; X15; true,
+Y1 -> MainBreadboard12 remove connection:
+1000; Y1; X4; false,
+1001; Y4; X15; false,
+
+Y1 -> MainBreadboard21 set connection:
+1000; Y1; X5; true,
+1001; Y5; X0; true,
+Y1 -> MainBreadboard21 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X0; false,
+
+Y1 -> MainBreadboard22 set connection:
+1000; Y1; X5; true,
+1001; Y5; X1; true,
+Y1 -> MainBreadboard22 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X1; false,
+
+Y1 -> MainBreadboard23 set connection:
+1000; Y1; X5; true,
+1001; Y5; X2; true,
+Y1 -> MainBreadboard23 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X2; false,
+
+Y1 -> MainBreadboard24 set connection:
+1000; Y1; X5; true,
+1001; Y5; X3; true,
+Y1 -> MainBreadboard24 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X3; false,
+
+Y1 -> MainBreadboard1 set connection:
+1000; Y1; X5; true,
+1001; Y5; X4; true,
+Y1 -> MainBreadboard1 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X4; false,
+
+Y1 -> MainBreadboard2 set connection:
+1000; Y1; X5; true,
+1001; Y5; X5; true,
+Y1 -> MainBreadboard2 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X5; false,
+
+Y1 -> MainBreadboard3 set connection:
+1000; Y1; X5; true,
+1001; Y5; X6; true,
+Y1 -> MainBreadboard3 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X6; false,
+
+Y1 -> MainBreadboard4 set connection:
+1000; Y1; X5; true,
+1001; Y5; X7; true,
+Y1 -> MainBreadboard4 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X7; false,
+
+Y1 -> MainBreadboard5 set connection:
+1000; Y1; X5; true,
+1001; Y5; X8; true,
+Y1 -> MainBreadboard5 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X8; false,
+
+Y1 -> MainBreadboard6 set connection:
+1000; Y1; X5; true,
+1001; Y5; X9; true,
+Y1 -> MainBreadboard6 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X9; false,
+
+Y1 -> MainBreadboard7 set connection:
+1000; Y1; X5; true,
+1001; Y5; X10; true,
+Y1 -> MainBreadboard7 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X10; false,
+
+Y1 -> MainBreadboard8 set connection:
+1000; Y1; X5; true,
+1001; Y5; X11; true,
+Y1 -> MainBreadboard8 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X11; false,
+
+Y1 -> MainBreadboard9 set connection:
+1000; Y1; X5; true,
+1001; Y5; X12; true,
+Y1 -> MainBreadboard9 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X12; false,
+
+Y1 -> MainBreadboard10 set connection:
+1000; Y1; X5; true,
+1001; Y5; X13; true,
+Y1 -> MainBreadboard10 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X13; false,
+
+Y1 -> MainBreadboard11 set connection:
+1000; Y1; X5; true,
+1001; Y5; X14; true,
+Y1 -> MainBreadboard11 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X14; false,
+
+Y1 -> MainBreadboard12 set connection:
+1000; Y1; X5; true,
+1001; Y5; X15; true,
+Y1 -> MainBreadboard12 remove connection:
+1000; Y1; X5; false,
+1001; Y5; X15; false,
+
+Y1 -> MainBreadboard21 set connection:
+1000; Y1; X6; true,
+1001; Y6; X0; true,
+Y1 -> MainBreadboard21 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X0; false,
+
+Y1 -> MainBreadboard22 set connection:
+1000; Y1; X6; true,
+1001; Y6; X1; true,
+Y1 -> MainBreadboard22 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X1; false,
+
+Y1 -> MainBreadboard23 set connection:
+1000; Y1; X6; true,
+1001; Y6; X2; true,
+Y1 -> MainBreadboard23 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X2; false,
+
+Y1 -> MainBreadboard24 set connection:
+1000; Y1; X6; true,
+1001; Y6; X3; true,
+Y1 -> MainBreadboard24 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X3; false,
+
+Y1 -> MainBreadboard1 set connection:
+1000; Y1; X6; true,
+1001; Y6; X4; true,
+Y1 -> MainBreadboard1 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X4; false,
+
+Y1 -> MainBreadboard2 set connection:
+1000; Y1; X6; true,
+1001; Y6; X5; true,
+Y1 -> MainBreadboard2 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X5; false,
+
+Y1 -> MainBreadboard3 set connection:
+1000; Y1; X6; true,
+1001; Y6; X6; true,
+Y1 -> MainBreadboard3 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X6; false,
+
+Y1 -> MainBreadboard4 set connection:
+1000; Y1; X6; true,
+1001; Y6; X7; true,
+Y1 -> MainBreadboard4 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X7; false,
+
+Y1 -> MainBreadboard5 set connection:
+1000; Y1; X6; true,
+1001; Y6; X8; true,
+Y1 -> MainBreadboard5 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X8; false,
+
+Y1 -> MainBreadboard6 set connection:
+1000; Y1; X6; true,
+1001; Y6; X9; true,
+Y1 -> MainBreadboard6 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X9; false,
+
+Y1 -> MainBreadboard7 set connection:
+1000; Y1; X6; true,
+1001; Y6; X10; true,
+Y1 -> MainBreadboard7 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X10; false,
+
+Y1 -> MainBreadboard8 set connection:
+1000; Y1; X6; true,
+1001; Y6; X11; true,
+Y1 -> MainBreadboard8 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X11; false,
+
+Y1 -> MainBreadboard9 set connection:
+1000; Y1; X6; true,
+1001; Y6; X12; true,
+Y1 -> MainBreadboard9 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X12; false,
+
+Y1 -> MainBreadboard10 set connection:
+1000; Y1; X6; true,
+1001; Y6; X13; true,
+Y1 -> MainBreadboard10 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X13; false,
+
+Y1 -> MainBreadboard11 set connection:
+1000; Y1; X6; true,
+1001; Y6; X14; true,
+Y1 -> MainBreadboard11 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X14; false,
+
+Y1 -> MainBreadboard12 set connection:
+1000; Y1; X6; true,
+1001; Y6; X15; true,
+Y1 -> MainBreadboard12 remove connection:
+1000; Y1; X6; false,
+1001; Y6; X15; false,
+
+Y1 -> MainBreadboard21 set connection:
+1000; Y1; X7; true,
+1001; Y7; X0; true,
+Y1 -> MainBreadboard21 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X0; false,
+
+Y1 -> MainBreadboard22 set connection:
+1000; Y1; X7; true,
+1001; Y7; X1; true,
+Y1 -> MainBreadboard22 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X1; false,
+
+Y1 -> MainBreadboard23 set connection:
+1000; Y1; X7; true,
+1001; Y7; X2; true,
+Y1 -> MainBreadboard23 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X2; false,
+
+Y1 -> MainBreadboard24 set connection:
+1000; Y1; X7; true,
+1001; Y7; X3; true,
+Y1 -> MainBreadboard24 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X3; false,
+
+Y1 -> MainBreadboard1 set connection:
+1000; Y1; X7; true,
+1001; Y7; X4; true,
+Y1 -> MainBreadboard1 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X4; false,
+
+Y1 -> MainBreadboard2 set connection:
+1000; Y1; X7; true,
+1001; Y7; X5; true,
+Y1 -> MainBreadboard2 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X5; false,
+
+Y1 -> MainBreadboard3 set connection:
+1000; Y1; X7; true,
+1001; Y7; X6; true,
+Y1 -> MainBreadboard3 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X6; false,
+
+Y1 -> MainBreadboard4 set connection:
+1000; Y1; X7; true,
+1001; Y7; X7; true,
+Y1 -> MainBreadboard4 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X7; false,
+
+Y1 -> MainBreadboard5 set connection:
+1000; Y1; X7; true,
+1001; Y7; X8; true,
+Y1 -> MainBreadboard5 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X8; false,
+
+Y1 -> MainBreadboard6 set connection:
+1000; Y1; X7; true,
+1001; Y7; X9; true,
+Y1 -> MainBreadboard6 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X9; false,
+
+Y1 -> MainBreadboard7 set connection:
+1000; Y1; X7; true,
+1001; Y7; X10; true,
+Y1 -> MainBreadboard7 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X10; false,
+
+Y1 -> MainBreadboard8 set connection:
+1000; Y1; X7; true,
+1001; Y7; X11; true,
+Y1 -> MainBreadboard8 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X11; false,
+
+Y1 -> MainBreadboard9 set connection:
+1000; Y1; X7; true,
+1001; Y7; X12; true,
+Y1 -> MainBreadboard9 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X12; false,
+
+Y1 -> MainBreadboard10 set connection:
+1000; Y1; X7; true,
+1001; Y7; X13; true,
+Y1 -> MainBreadboard10 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X13; false,
+
+Y1 -> MainBreadboard11 set connection:
+1000; Y1; X7; true,
+1001; Y7; X14; true,
+Y1 -> MainBreadboard11 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X14; false,
+
+Y1 -> MainBreadboard12 set connection:
+1000; Y1; X7; true,
+1001; Y7; X15; true,
+Y1 -> MainBreadboard12 remove connection:
+1000; Y1; X7; false,
+1001; Y7; X15; false,
+
+Y2 -> MainBreadboard21 set connection:
+1000; Y2; X0; true,
+1001; Y0; X0; true,
+Y2 -> MainBreadboard21 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X0; false,
+
+Y2 -> MainBreadboard22 set connection:
+1000; Y2; X0; true,
+1001; Y0; X1; true,
+Y2 -> MainBreadboard22 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X1; false,
+
+Y2 -> MainBreadboard23 set connection:
+1000; Y2; X0; true,
+1001; Y0; X2; true,
+Y2 -> MainBreadboard23 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X2; false,
+
+Y2 -> MainBreadboard24 set connection:
+1000; Y2; X0; true,
+1001; Y0; X3; true,
+Y2 -> MainBreadboard24 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X3; false,
+
+Y2 -> MainBreadboard1 set connection:
+1000; Y2; X0; true,
+1001; Y0; X4; true,
+Y2 -> MainBreadboard1 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X4; false,
+
+Y2 -> MainBreadboard2 set connection:
+1000; Y2; X0; true,
+1001; Y0; X5; true,
+Y2 -> MainBreadboard2 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X5; false,
+
+Y2 -> MainBreadboard3 set connection:
+1000; Y2; X0; true,
+1001; Y0; X6; true,
+Y2 -> MainBreadboard3 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X6; false,
+
+Y2 -> MainBreadboard4 set connection:
+1000; Y2; X0; true,
+1001; Y0; X7; true,
+Y2 -> MainBreadboard4 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X7; false,
+
+Y2 -> MainBreadboard5 set connection:
+1000; Y2; X0; true,
+1001; Y0; X8; true,
+Y2 -> MainBreadboard5 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X8; false,
+
+Y2 -> MainBreadboard6 set connection:
+1000; Y2; X0; true,
+1001; Y0; X9; true,
+Y2 -> MainBreadboard6 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X9; false,
+
+Y2 -> MainBreadboard7 set connection:
+1000; Y2; X0; true,
+1001; Y0; X10; true,
+Y2 -> MainBreadboard7 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X10; false,
+
+Y2 -> MainBreadboard8 set connection:
+1000; Y2; X0; true,
+1001; Y0; X11; true,
+Y2 -> MainBreadboard8 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X11; false,
+
+Y2 -> MainBreadboard9 set connection:
+1000; Y2; X0; true,
+1001; Y0; X12; true,
+Y2 -> MainBreadboard9 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X12; false,
+
+Y2 -> MainBreadboard10 set connection:
+1000; Y2; X0; true,
+1001; Y0; X13; true,
+Y2 -> MainBreadboard10 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X13; false,
+
+Y2 -> MainBreadboard11 set connection:
+1000; Y2; X0; true,
+1001; Y0; X14; true,
+Y2 -> MainBreadboard11 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X14; false,
+
+Y2 -> MainBreadboard12 set connection:
+1000; Y2; X0; true,
+1001; Y0; X15; true,
+Y2 -> MainBreadboard12 remove connection:
+1000; Y2; X0; false,
+1001; Y0; X15; false,
+
+Y2 -> MainBreadboard21 set connection:
+1000; Y2; X1; true,
+1001; Y1; X0; true,
+Y2 -> MainBreadboard21 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X0; false,
+
+Y2 -> MainBreadboard22 set connection:
+1000; Y2; X1; true,
+1001; Y1; X1; true,
+Y2 -> MainBreadboard22 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X1; false,
+
+Y2 -> MainBreadboard23 set connection:
+1000; Y2; X1; true,
+1001; Y1; X2; true,
+Y2 -> MainBreadboard23 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X2; false,
+
+Y2 -> MainBreadboard24 set connection:
+1000; Y2; X1; true,
+1001; Y1; X3; true,
+Y2 -> MainBreadboard24 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X3; false,
+
+Y2 -> MainBreadboard1 set connection:
+1000; Y2; X1; true,
+1001; Y1; X4; true,
+Y2 -> MainBreadboard1 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X4; false,
+
+Y2 -> MainBreadboard2 set connection:
+1000; Y2; X1; true,
+1001; Y1; X5; true,
+Y2 -> MainBreadboard2 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X5; false,
+
+Y2 -> MainBreadboard3 set connection:
+1000; Y2; X1; true,
+1001; Y1; X6; true,
+Y2 -> MainBreadboard3 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X6; false,
+
+Y2 -> MainBreadboard4 set connection:
+1000; Y2; X1; true,
+1001; Y1; X7; true,
+Y2 -> MainBreadboard4 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X7; false,
+
+Y2 -> MainBreadboard5 set connection:
+1000; Y2; X1; true,
+1001; Y1; X8; true,
+Y2 -> MainBreadboard5 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X8; false,
+
+Y2 -> MainBreadboard6 set connection:
+1000; Y2; X1; true,
+1001; Y1; X9; true,
+Y2 -> MainBreadboard6 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X9; false,
+
+Y2 -> MainBreadboard7 set connection:
+1000; Y2; X1; true,
+1001; Y1; X10; true,
+Y2 -> MainBreadboard7 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X10; false,
+
+Y2 -> MainBreadboard8 set connection:
+1000; Y2; X1; true,
+1001; Y1; X11; true,
+Y2 -> MainBreadboard8 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X11; false,
+
+Y2 -> MainBreadboard9 set connection:
+1000; Y2; X1; true,
+1001; Y1; X12; true,
+Y2 -> MainBreadboard9 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X12; false,
+
+Y2 -> MainBreadboard10 set connection:
+1000; Y2; X1; true,
+1001; Y1; X13; true,
+Y2 -> MainBreadboard10 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X13; false,
+
+Y2 -> MainBreadboard11 set connection:
+1000; Y2; X1; true,
+1001; Y1; X14; true,
+Y2 -> MainBreadboard11 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X14; false,
+
+Y2 -> MainBreadboard12 set connection:
+1000; Y2; X1; true,
+1001; Y1; X15; true,
+Y2 -> MainBreadboard12 remove connection:
+1000; Y2; X1; false,
+1001; Y1; X15; false,
+
+Y2 -> MainBreadboard21 set connection:
+1000; Y2; X2; true,
+1001; Y2; X0; true,
+Y2 -> MainBreadboard21 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X0; false,
+
+Y2 -> MainBreadboard22 set connection:
+1000; Y2; X2; true,
+1001; Y2; X1; true,
+Y2 -> MainBreadboard22 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X1; false,
+
+Y2 -> MainBreadboard23 set connection:
+1000; Y2; X2; true,
+1001; Y2; X2; true,
+Y2 -> MainBreadboard23 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X2; false,
+
+Y2 -> MainBreadboard24 set connection:
+1000; Y2; X2; true,
+1001; Y2; X3; true,
+Y2 -> MainBreadboard24 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X3; false,
+
+Y2 -> MainBreadboard1 set connection:
+1000; Y2; X2; true,
+1001; Y2; X4; true,
+Y2 -> MainBreadboard1 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X4; false,
+
+Y2 -> MainBreadboard2 set connection:
+1000; Y2; X2; true,
+1001; Y2; X5; true,
+Y2 -> MainBreadboard2 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X5; false,
+
+Y2 -> MainBreadboard3 set connection:
+1000; Y2; X2; true,
+1001; Y2; X6; true,
+Y2 -> MainBreadboard3 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X6; false,
+
+Y2 -> MainBreadboard4 set connection:
+1000; Y2; X2; true,
+1001; Y2; X7; true,
+Y2 -> MainBreadboard4 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X7; false,
+
+Y2 -> MainBreadboard5 set connection:
+1000; Y2; X2; true,
+1001; Y2; X8; true,
+Y2 -> MainBreadboard5 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X8; false,
+
+Y2 -> MainBreadboard6 set connection:
+1000; Y2; X2; true,
+1001; Y2; X9; true,
+Y2 -> MainBreadboard6 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X9; false,
+
+Y2 -> MainBreadboard7 set connection:
+1000; Y2; X2; true,
+1001; Y2; X10; true,
+Y2 -> MainBreadboard7 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X10; false,
+
+Y2 -> MainBreadboard8 set connection:
+1000; Y2; X2; true,
+1001; Y2; X11; true,
+Y2 -> MainBreadboard8 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X11; false,
+
+Y2 -> MainBreadboard9 set connection:
+1000; Y2; X2; true,
+1001; Y2; X12; true,
+Y2 -> MainBreadboard9 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X12; false,
+
+Y2 -> MainBreadboard10 set connection:
+1000; Y2; X2; true,
+1001; Y2; X13; true,
+Y2 -> MainBreadboard10 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X13; false,
+
+Y2 -> MainBreadboard11 set connection:
+1000; Y2; X2; true,
+1001; Y2; X14; true,
+Y2 -> MainBreadboard11 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X14; false,
+
+Y2 -> MainBreadboard12 set connection:
+1000; Y2; X2; true,
+1001; Y2; X15; true,
+Y2 -> MainBreadboard12 remove connection:
+1000; Y2; X2; false,
+1001; Y2; X15; false,
+
+Y2 -> MainBreadboard21 set connection:
+1000; Y2; X3; true,
+1001; Y3; X0; true,
+Y2 -> MainBreadboard21 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X0; false,
+
+Y2 -> MainBreadboard22 set connection:
+1000; Y2; X3; true,
+1001; Y3; X1; true,
+Y2 -> MainBreadboard22 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X1; false,
+
+Y2 -> MainBreadboard23 set connection:
+1000; Y2; X3; true,
+1001; Y3; X2; true,
+Y2 -> MainBreadboard23 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X2; false,
+
+Y2 -> MainBreadboard24 set connection:
+1000; Y2; X3; true,
+1001; Y3; X3; true,
+Y2 -> MainBreadboard24 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X3; false,
+
+Y2 -> MainBreadboard1 set connection:
+1000; Y2; X3; true,
+1001; Y3; X4; true,
+Y2 -> MainBreadboard1 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X4; false,
+
+Y2 -> MainBreadboard2 set connection:
+1000; Y2; X3; true,
+1001; Y3; X5; true,
+Y2 -> MainBreadboard2 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X5; false,
+
+Y2 -> MainBreadboard3 set connection:
+1000; Y2; X3; true,
+1001; Y3; X6; true,
+Y2 -> MainBreadboard3 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X6; false,
+
+Y2 -> MainBreadboard4 set connection:
+1000; Y2; X3; true,
+1001; Y3; X7; true,
+Y2 -> MainBreadboard4 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X7; false,
+
+Y2 -> MainBreadboard5 set connection:
+1000; Y2; X3; true,
+1001; Y3; X8; true,
+Y2 -> MainBreadboard5 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X8; false,
+
+Y2 -> MainBreadboard6 set connection:
+1000; Y2; X3; true,
+1001; Y3; X9; true,
+Y2 -> MainBreadboard6 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X9; false,
+
+Y2 -> MainBreadboard7 set connection:
+1000; Y2; X3; true,
+1001; Y3; X10; true,
+Y2 -> MainBreadboard7 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X10; false,
+
+Y2 -> MainBreadboard8 set connection:
+1000; Y2; X3; true,
+1001; Y3; X11; true,
+Y2 -> MainBreadboard8 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X11; false,
+
+Y2 -> MainBreadboard9 set connection:
+1000; Y2; X3; true,
+1001; Y3; X12; true,
+Y2 -> MainBreadboard9 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X12; false,
+
+Y2 -> MainBreadboard10 set connection:
+1000; Y2; X3; true,
+1001; Y3; X13; true,
+Y2 -> MainBreadboard10 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X13; false,
+
+Y2 -> MainBreadboard11 set connection:
+1000; Y2; X3; true,
+1001; Y3; X14; true,
+Y2 -> MainBreadboard11 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X14; false,
+
+Y2 -> MainBreadboard12 set connection:
+1000; Y2; X3; true,
+1001; Y3; X15; true,
+Y2 -> MainBreadboard12 remove connection:
+1000; Y2; X3; false,
+1001; Y3; X15; false,
+
+Y2 -> MainBreadboard21 set connection:
+1000; Y2; X4; true,
+1001; Y4; X0; true,
+Y2 -> MainBreadboard21 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X0; false,
+
+Y2 -> MainBreadboard22 set connection:
+1000; Y2; X4; true,
+1001; Y4; X1; true,
+Y2 -> MainBreadboard22 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X1; false,
+
+Y2 -> MainBreadboard23 set connection:
+1000; Y2; X4; true,
+1001; Y4; X2; true,
+Y2 -> MainBreadboard23 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X2; false,
+
+Y2 -> MainBreadboard24 set connection:
+1000; Y2; X4; true,
+1001; Y4; X3; true,
+Y2 -> MainBreadboard24 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X3; false,
+
+Y2 -> MainBreadboard1 set connection:
+1000; Y2; X4; true,
+1001; Y4; X4; true,
+Y2 -> MainBreadboard1 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X4; false,
+
+Y2 -> MainBreadboard2 set connection:
+1000; Y2; X4; true,
+1001; Y4; X5; true,
+Y2 -> MainBreadboard2 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X5; false,
+
+Y2 -> MainBreadboard3 set connection:
+1000; Y2; X4; true,
+1001; Y4; X6; true,
+Y2 -> MainBreadboard3 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X6; false,
+
+Y2 -> MainBreadboard4 set connection:
+1000; Y2; X4; true,
+1001; Y4; X7; true,
+Y2 -> MainBreadboard4 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X7; false,
+
+Y2 -> MainBreadboard5 set connection:
+1000; Y2; X4; true,
+1001; Y4; X8; true,
+Y2 -> MainBreadboard5 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X8; false,
+
+Y2 -> MainBreadboard6 set connection:
+1000; Y2; X4; true,
+1001; Y4; X9; true,
+Y2 -> MainBreadboard6 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X9; false,
+
+Y2 -> MainBreadboard7 set connection:
+1000; Y2; X4; true,
+1001; Y4; X10; true,
+Y2 -> MainBreadboard7 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X10; false,
+
+Y2 -> MainBreadboard8 set connection:
+1000; Y2; X4; true,
+1001; Y4; X11; true,
+Y2 -> MainBreadboard8 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X11; false,
+
+Y2 -> MainBreadboard9 set connection:
+1000; Y2; X4; true,
+1001; Y4; X12; true,
+Y2 -> MainBreadboard9 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X12; false,
+
+Y2 -> MainBreadboard10 set connection:
+1000; Y2; X4; true,
+1001; Y4; X13; true,
+Y2 -> MainBreadboard10 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X13; false,
+
+Y2 -> MainBreadboard11 set connection:
+1000; Y2; X4; true,
+1001; Y4; X14; true,
+Y2 -> MainBreadboard11 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X14; false,
+
+Y2 -> MainBreadboard12 set connection:
+1000; Y2; X4; true,
+1001; Y4; X15; true,
+Y2 -> MainBreadboard12 remove connection:
+1000; Y2; X4; false,
+1001; Y4; X15; false,
+
+Y2 -> MainBreadboard21 set connection:
+1000; Y2; X5; true,
+1001; Y5; X0; true,
+Y2 -> MainBreadboard21 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X0; false,
+
+Y2 -> MainBreadboard22 set connection:
+1000; Y2; X5; true,
+1001; Y5; X1; true,
+Y2 -> MainBreadboard22 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X1; false,
+
+Y2 -> MainBreadboard23 set connection:
+1000; Y2; X5; true,
+1001; Y5; X2; true,
+Y2 -> MainBreadboard23 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X2; false,
+
+Y2 -> MainBreadboard24 set connection:
+1000; Y2; X5; true,
+1001; Y5; X3; true,
+Y2 -> MainBreadboard24 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X3; false,
+
+Y2 -> MainBreadboard1 set connection:
+1000; Y2; X5; true,
+1001; Y5; X4; true,
+Y2 -> MainBreadboard1 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X4; false,
+
+Y2 -> MainBreadboard2 set connection:
+1000; Y2; X5; true,
+1001; Y5; X5; true,
+Y2 -> MainBreadboard2 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X5; false,
+
+Y2 -> MainBreadboard3 set connection:
+1000; Y2; X5; true,
+1001; Y5; X6; true,
+Y2 -> MainBreadboard3 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X6; false,
+
+Y2 -> MainBreadboard4 set connection:
+1000; Y2; X5; true,
+1001; Y5; X7; true,
+Y2 -> MainBreadboard4 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X7; false,
+
+Y2 -> MainBreadboard5 set connection:
+1000; Y2; X5; true,
+1001; Y5; X8; true,
+Y2 -> MainBreadboard5 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X8; false,
+
+Y2 -> MainBreadboard6 set connection:
+1000; Y2; X5; true,
+1001; Y5; X9; true,
+Y2 -> MainBreadboard6 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X9; false,
+
+Y2 -> MainBreadboard7 set connection:
+1000; Y2; X5; true,
+1001; Y5; X10; true,
+Y2 -> MainBreadboard7 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X10; false,
+
+Y2 -> MainBreadboard8 set connection:
+1000; Y2; X5; true,
+1001; Y5; X11; true,
+Y2 -> MainBreadboard8 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X11; false,
+
+Y2 -> MainBreadboard9 set connection:
+1000; Y2; X5; true,
+1001; Y5; X12; true,
+Y2 -> MainBreadboard9 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X12; false,
+
+Y2 -> MainBreadboard10 set connection:
+1000; Y2; X5; true,
+1001; Y5; X13; true,
+Y2 -> MainBreadboard10 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X13; false,
+
+Y2 -> MainBreadboard11 set connection:
+1000; Y2; X5; true,
+1001; Y5; X14; true,
+Y2 -> MainBreadboard11 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X14; false,
+
+Y2 -> MainBreadboard12 set connection:
+1000; Y2; X5; true,
+1001; Y5; X15; true,
+Y2 -> MainBreadboard12 remove connection:
+1000; Y2; X5; false,
+1001; Y5; X15; false,
+
+Y2 -> MainBreadboard21 set connection:
+1000; Y2; X6; true,
+1001; Y6; X0; true,
+Y2 -> MainBreadboard21 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X0; false,
+
+Y2 -> MainBreadboard22 set connection:
+1000; Y2; X6; true,
+1001; Y6; X1; true,
+Y2 -> MainBreadboard22 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X1; false,
+
+Y2 -> MainBreadboard23 set connection:
+1000; Y2; X6; true,
+1001; Y6; X2; true,
+Y2 -> MainBreadboard23 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X2; false,
+
+Y2 -> MainBreadboard24 set connection:
+1000; Y2; X6; true,
+1001; Y6; X3; true,
+Y2 -> MainBreadboard24 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X3; false,
+
+Y2 -> MainBreadboard1 set connection:
+1000; Y2; X6; true,
+1001; Y6; X4; true,
+Y2 -> MainBreadboard1 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X4; false,
+
+Y2 -> MainBreadboard2 set connection:
+1000; Y2; X6; true,
+1001; Y6; X5; true,
+Y2 -> MainBreadboard2 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X5; false,
+
+Y2 -> MainBreadboard3 set connection:
+1000; Y2; X6; true,
+1001; Y6; X6; true,
+Y2 -> MainBreadboard3 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X6; false,
+
+Y2 -> MainBreadboard4 set connection:
+1000; Y2; X6; true,
+1001; Y6; X7; true,
+Y2 -> MainBreadboard4 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X7; false,
+
+Y2 -> MainBreadboard5 set connection:
+1000; Y2; X6; true,
+1001; Y6; X8; true,
+Y2 -> MainBreadboard5 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X8; false,
+
+Y2 -> MainBreadboard6 set connection:
+1000; Y2; X6; true,
+1001; Y6; X9; true,
+Y2 -> MainBreadboard6 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X9; false,
+
+Y2 -> MainBreadboard7 set connection:
+1000; Y2; X6; true,
+1001; Y6; X10; true,
+Y2 -> MainBreadboard7 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X10; false,
+
+Y2 -> MainBreadboard8 set connection:
+1000; Y2; X6; true,
+1001; Y6; X11; true,
+Y2 -> MainBreadboard8 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X11; false,
+
+Y2 -> MainBreadboard9 set connection:
+1000; Y2; X6; true,
+1001; Y6; X12; true,
+Y2 -> MainBreadboard9 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X12; false,
+
+Y2 -> MainBreadboard10 set connection:
+1000; Y2; X6; true,
+1001; Y6; X13; true,
+Y2 -> MainBreadboard10 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X13; false,
+
+Y2 -> MainBreadboard11 set connection:
+1000; Y2; X6; true,
+1001; Y6; X14; true,
+Y2 -> MainBreadboard11 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X14; false,
+
+Y2 -> MainBreadboard12 set connection:
+1000; Y2; X6; true,
+1001; Y6; X15; true,
+Y2 -> MainBreadboard12 remove connection:
+1000; Y2; X6; false,
+1001; Y6; X15; false,
+
+Y2 -> MainBreadboard21 set connection:
+1000; Y2; X7; true,
+1001; Y7; X0; true,
+Y2 -> MainBreadboard21 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X0; false,
+
+Y2 -> MainBreadboard22 set connection:
+1000; Y2; X7; true,
+1001; Y7; X1; true,
+Y2 -> MainBreadboard22 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X1; false,
+
+Y2 -> MainBreadboard23 set connection:
+1000; Y2; X7; true,
+1001; Y7; X2; true,
+Y2 -> MainBreadboard23 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X2; false,
+
+Y2 -> MainBreadboard24 set connection:
+1000; Y2; X7; true,
+1001; Y7; X3; true,
+Y2 -> MainBreadboard24 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X3; false,
+
+Y2 -> MainBreadboard1 set connection:
+1000; Y2; X7; true,
+1001; Y7; X4; true,
+Y2 -> MainBreadboard1 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X4; false,
+
+Y2 -> MainBreadboard2 set connection:
+1000; Y2; X7; true,
+1001; Y7; X5; true,
+Y2 -> MainBreadboard2 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X5; false,
+
+Y2 -> MainBreadboard3 set connection:
+1000; Y2; X7; true,
+1001; Y7; X6; true,
+Y2 -> MainBreadboard3 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X6; false,
+
+Y2 -> MainBreadboard4 set connection:
+1000; Y2; X7; true,
+1001; Y7; X7; true,
+Y2 -> MainBreadboard4 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X7; false,
+
+Y2 -> MainBreadboard5 set connection:
+1000; Y2; X7; true,
+1001; Y7; X8; true,
+Y2 -> MainBreadboard5 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X8; false,
+
+Y2 -> MainBreadboard6 set connection:
+1000; Y2; X7; true,
+1001; Y7; X9; true,
+Y2 -> MainBreadboard6 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X9; false,
+
+Y2 -> MainBreadboard7 set connection:
+1000; Y2; X7; true,
+1001; Y7; X10; true,
+Y2 -> MainBreadboard7 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X10; false,
+
+Y2 -> MainBreadboard8 set connection:
+1000; Y2; X7; true,
+1001; Y7; X11; true,
+Y2 -> MainBreadboard8 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X11; false,
+
+Y2 -> MainBreadboard9 set connection:
+1000; Y2; X7; true,
+1001; Y7; X12; true,
+Y2 -> MainBreadboard9 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X12; false,
+
+Y2 -> MainBreadboard10 set connection:
+1000; Y2; X7; true,
+1001; Y7; X13; true,
+Y2 -> MainBreadboard10 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X13; false,
+
+Y2 -> MainBreadboard11 set connection:
+1000; Y2; X7; true,
+1001; Y7; X14; true,
+Y2 -> MainBreadboard11 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X14; false,
+
+Y2 -> MainBreadboard12 set connection:
+1000; Y2; X7; true,
+1001; Y7; X15; true,
+Y2 -> MainBreadboard12 remove connection:
+1000; Y2; X7; false,
+1001; Y7; X15; false,
+
+Y3 -> MainBreadboard21 set connection:
+1000; Y3; X0; true,
+1001; Y0; X0; true,
+Y3 -> MainBreadboard21 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X0; false,
+
+Y3 -> MainBreadboard22 set connection:
+1000; Y3; X0; true,
+1001; Y0; X1; true,
+Y3 -> MainBreadboard22 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X1; false,
+
+Y3 -> MainBreadboard23 set connection:
+1000; Y3; X0; true,
+1001; Y0; X2; true,
+Y3 -> MainBreadboard23 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X2; false,
+
+Y3 -> MainBreadboard24 set connection:
+1000; Y3; X0; true,
+1001; Y0; X3; true,
+Y3 -> MainBreadboard24 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X3; false,
+
+Y3 -> MainBreadboard1 set connection:
+1000; Y3; X0; true,
+1001; Y0; X4; true,
+Y3 -> MainBreadboard1 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X4; false,
+
+Y3 -> MainBreadboard2 set connection:
+1000; Y3; X0; true,
+1001; Y0; X5; true,
+Y3 -> MainBreadboard2 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X5; false,
+
+Y3 -> MainBreadboard3 set connection:
+1000; Y3; X0; true,
+1001; Y0; X6; true,
+Y3 -> MainBreadboard3 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X6; false,
+
+Y3 -> MainBreadboard4 set connection:
+1000; Y3; X0; true,
+1001; Y0; X7; true,
+Y3 -> MainBreadboard4 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X7; false,
+
+Y3 -> MainBreadboard5 set connection:
+1000; Y3; X0; true,
+1001; Y0; X8; true,
+Y3 -> MainBreadboard5 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X8; false,
+
+Y3 -> MainBreadboard6 set connection:
+1000; Y3; X0; true,
+1001; Y0; X9; true,
+Y3 -> MainBreadboard6 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X9; false,
+
+Y3 -> MainBreadboard7 set connection:
+1000; Y3; X0; true,
+1001; Y0; X10; true,
+Y3 -> MainBreadboard7 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X10; false,
+
+Y3 -> MainBreadboard8 set connection:
+1000; Y3; X0; true,
+1001; Y0; X11; true,
+Y3 -> MainBreadboard8 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X11; false,
+
+Y3 -> MainBreadboard9 set connection:
+1000; Y3; X0; true,
+1001; Y0; X12; true,
+Y3 -> MainBreadboard9 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X12; false,
+
+Y3 -> MainBreadboard10 set connection:
+1000; Y3; X0; true,
+1001; Y0; X13; true,
+Y3 -> MainBreadboard10 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X13; false,
+
+Y3 -> MainBreadboard11 set connection:
+1000; Y3; X0; true,
+1001; Y0; X14; true,
+Y3 -> MainBreadboard11 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X14; false,
+
+Y3 -> MainBreadboard12 set connection:
+1000; Y3; X0; true,
+1001; Y0; X15; true,
+Y3 -> MainBreadboard12 remove connection:
+1000; Y3; X0; false,
+1001; Y0; X15; false,
+
+Y3 -> MainBreadboard21 set connection:
+1000; Y3; X1; true,
+1001; Y1; X0; true,
+Y3 -> MainBreadboard21 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X0; false,
+
+Y3 -> MainBreadboard22 set connection:
+1000; Y3; X1; true,
+1001; Y1; X1; true,
+Y3 -> MainBreadboard22 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X1; false,
+
+Y3 -> MainBreadboard23 set connection:
+1000; Y3; X1; true,
+1001; Y1; X2; true,
+Y3 -> MainBreadboard23 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X2; false,
+
+Y3 -> MainBreadboard24 set connection:
+1000; Y3; X1; true,
+1001; Y1; X3; true,
+Y3 -> MainBreadboard24 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X3; false,
+
+Y3 -> MainBreadboard1 set connection:
+1000; Y3; X1; true,
+1001; Y1; X4; true,
+Y3 -> MainBreadboard1 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X4; false,
+
+Y3 -> MainBreadboard2 set connection:
+1000; Y3; X1; true,
+1001; Y1; X5; true,
+Y3 -> MainBreadboard2 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X5; false,
+
+Y3 -> MainBreadboard3 set connection:
+1000; Y3; X1; true,
+1001; Y1; X6; true,
+Y3 -> MainBreadboard3 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X6; false,
+
+Y3 -> MainBreadboard4 set connection:
+1000; Y3; X1; true,
+1001; Y1; X7; true,
+Y3 -> MainBreadboard4 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X7; false,
+
+Y3 -> MainBreadboard5 set connection:
+1000; Y3; X1; true,
+1001; Y1; X8; true,
+Y3 -> MainBreadboard5 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X8; false,
+
+Y3 -> MainBreadboard6 set connection:
+1000; Y3; X1; true,
+1001; Y1; X9; true,
+Y3 -> MainBreadboard6 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X9; false,
+
+Y3 -> MainBreadboard7 set connection:
+1000; Y3; X1; true,
+1001; Y1; X10; true,
+Y3 -> MainBreadboard7 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X10; false,
+
+Y3 -> MainBreadboard8 set connection:
+1000; Y3; X1; true,
+1001; Y1; X11; true,
+Y3 -> MainBreadboard8 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X11; false,
+
+Y3 -> MainBreadboard9 set connection:
+1000; Y3; X1; true,
+1001; Y1; X12; true,
+Y3 -> MainBreadboard9 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X12; false,
+
+Y3 -> MainBreadboard10 set connection:
+1000; Y3; X1; true,
+1001; Y1; X13; true,
+Y3 -> MainBreadboard10 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X13; false,
+
+Y3 -> MainBreadboard11 set connection:
+1000; Y3; X1; true,
+1001; Y1; X14; true,
+Y3 -> MainBreadboard11 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X14; false,
+
+Y3 -> MainBreadboard12 set connection:
+1000; Y3; X1; true,
+1001; Y1; X15; true,
+Y3 -> MainBreadboard12 remove connection:
+1000; Y3; X1; false,
+1001; Y1; X15; false,
+
+Y3 -> MainBreadboard21 set connection:
+1000; Y3; X2; true,
+1001; Y2; X0; true,
+Y3 -> MainBreadboard21 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X0; false,
+
+Y3 -> MainBreadboard22 set connection:
+1000; Y3; X2; true,
+1001; Y2; X1; true,
+Y3 -> MainBreadboard22 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X1; false,
+
+Y3 -> MainBreadboard23 set connection:
+1000; Y3; X2; true,
+1001; Y2; X2; true,
+Y3 -> MainBreadboard23 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X2; false,
+
+Y3 -> MainBreadboard24 set connection:
+1000; Y3; X2; true,
+1001; Y2; X3; true,
+Y3 -> MainBreadboard24 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X3; false,
+
+Y3 -> MainBreadboard1 set connection:
+1000; Y3; X2; true,
+1001; Y2; X4; true,
+Y3 -> MainBreadboard1 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X4; false,
+
+Y3 -> MainBreadboard2 set connection:
+1000; Y3; X2; true,
+1001; Y2; X5; true,
+Y3 -> MainBreadboard2 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X5; false,
+
+Y3 -> MainBreadboard3 set connection:
+1000; Y3; X2; true,
+1001; Y2; X6; true,
+Y3 -> MainBreadboard3 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X6; false,
+
+Y3 -> MainBreadboard4 set connection:
+1000; Y3; X2; true,
+1001; Y2; X7; true,
+Y3 -> MainBreadboard4 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X7; false,
+
+Y3 -> MainBreadboard5 set connection:
+1000; Y3; X2; true,
+1001; Y2; X8; true,
+Y3 -> MainBreadboard5 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X8; false,
+
+Y3 -> MainBreadboard6 set connection:
+1000; Y3; X2; true,
+1001; Y2; X9; true,
+Y3 -> MainBreadboard6 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X9; false,
+
+Y3 -> MainBreadboard7 set connection:
+1000; Y3; X2; true,
+1001; Y2; X10; true,
+Y3 -> MainBreadboard7 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X10; false,
+
+Y3 -> MainBreadboard8 set connection:
+1000; Y3; X2; true,
+1001; Y2; X11; true,
+Y3 -> MainBreadboard8 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X11; false,
+
+Y3 -> MainBreadboard9 set connection:
+1000; Y3; X2; true,
+1001; Y2; X12; true,
+Y3 -> MainBreadboard9 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X12; false,
+
+Y3 -> MainBreadboard10 set connection:
+1000; Y3; X2; true,
+1001; Y2; X13; true,
+Y3 -> MainBreadboard10 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X13; false,
+
+Y3 -> MainBreadboard11 set connection:
+1000; Y3; X2; true,
+1001; Y2; X14; true,
+Y3 -> MainBreadboard11 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X14; false,
+
+Y3 -> MainBreadboard12 set connection:
+1000; Y3; X2; true,
+1001; Y2; X15; true,
+Y3 -> MainBreadboard12 remove connection:
+1000; Y3; X2; false,
+1001; Y2; X15; false,
+
+Y3 -> MainBreadboard21 set connection:
+1000; Y3; X3; true,
+1001; Y3; X0; true,
+Y3 -> MainBreadboard21 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X0; false,
+
+Y3 -> MainBreadboard22 set connection:
+1000; Y3; X3; true,
+1001; Y3; X1; true,
+Y3 -> MainBreadboard22 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X1; false,
+
+Y3 -> MainBreadboard23 set connection:
+1000; Y3; X3; true,
+1001; Y3; X2; true,
+Y3 -> MainBreadboard23 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X2; false,
+
+Y3 -> MainBreadboard24 set connection:
+1000; Y3; X3; true,
+1001; Y3; X3; true,
+Y3 -> MainBreadboard24 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X3; false,
+
+Y3 -> MainBreadboard1 set connection:
+1000; Y3; X3; true,
+1001; Y3; X4; true,
+Y3 -> MainBreadboard1 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X4; false,
+
+Y3 -> MainBreadboard2 set connection:
+1000; Y3; X3; true,
+1001; Y3; X5; true,
+Y3 -> MainBreadboard2 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X5; false,
+
+Y3 -> MainBreadboard3 set connection:
+1000; Y3; X3; true,
+1001; Y3; X6; true,
+Y3 -> MainBreadboard3 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X6; false,
+
+Y3 -> MainBreadboard4 set connection:
+1000; Y3; X3; true,
+1001; Y3; X7; true,
+Y3 -> MainBreadboard4 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X7; false,
+
+Y3 -> MainBreadboard5 set connection:
+1000; Y3; X3; true,
+1001; Y3; X8; true,
+Y3 -> MainBreadboard5 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X8; false,
+
+Y3 -> MainBreadboard6 set connection:
+1000; Y3; X3; true,
+1001; Y3; X9; true,
+Y3 -> MainBreadboard6 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X9; false,
+
+Y3 -> MainBreadboard7 set connection:
+1000; Y3; X3; true,
+1001; Y3; X10; true,
+Y3 -> MainBreadboard7 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X10; false,
+
+Y3 -> MainBreadboard8 set connection:
+1000; Y3; X3; true,
+1001; Y3; X11; true,
+Y3 -> MainBreadboard8 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X11; false,
+
+Y3 -> MainBreadboard9 set connection:
+1000; Y3; X3; true,
+1001; Y3; X12; true,
+Y3 -> MainBreadboard9 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X12; false,
+
+Y3 -> MainBreadboard10 set connection:
+1000; Y3; X3; true,
+1001; Y3; X13; true,
+Y3 -> MainBreadboard10 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X13; false,
+
+Y3 -> MainBreadboard11 set connection:
+1000; Y3; X3; true,
+1001; Y3; X14; true,
+Y3 -> MainBreadboard11 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X14; false,
+
+Y3 -> MainBreadboard12 set connection:
+1000; Y3; X3; true,
+1001; Y3; X15; true,
+Y3 -> MainBreadboard12 remove connection:
+1000; Y3; X3; false,
+1001; Y3; X15; false,
+
+Y3 -> MainBreadboard21 set connection:
+1000; Y3; X4; true,
+1001; Y4; X0; true,
+Y3 -> MainBreadboard21 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X0; false,
+
+Y3 -> MainBreadboard22 set connection:
+1000; Y3; X4; true,
+1001; Y4; X1; true,
+Y3 -> MainBreadboard22 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X1; false,
+
+Y3 -> MainBreadboard23 set connection:
+1000; Y3; X4; true,
+1001; Y4; X2; true,
+Y3 -> MainBreadboard23 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X2; false,
+
+Y3 -> MainBreadboard24 set connection:
+1000; Y3; X4; true,
+1001; Y4; X3; true,
+Y3 -> MainBreadboard24 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X3; false,
+
+Y3 -> MainBreadboard1 set connection:
+1000; Y3; X4; true,
+1001; Y4; X4; true,
+Y3 -> MainBreadboard1 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X4; false,
+
+Y3 -> MainBreadboard2 set connection:
+1000; Y3; X4; true,
+1001; Y4; X5; true,
+Y3 -> MainBreadboard2 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X5; false,
+
+Y3 -> MainBreadboard3 set connection:
+1000; Y3; X4; true,
+1001; Y4; X6; true,
+Y3 -> MainBreadboard3 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X6; false,
+
+Y3 -> MainBreadboard4 set connection:
+1000; Y3; X4; true,
+1001; Y4; X7; true,
+Y3 -> MainBreadboard4 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X7; false,
+
+Y3 -> MainBreadboard5 set connection:
+1000; Y3; X4; true,
+1001; Y4; X8; true,
+Y3 -> MainBreadboard5 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X8; false,
+
+Y3 -> MainBreadboard6 set connection:
+1000; Y3; X4; true,
+1001; Y4; X9; true,
+Y3 -> MainBreadboard6 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X9; false,
+
+Y3 -> MainBreadboard7 set connection:
+1000; Y3; X4; true,
+1001; Y4; X10; true,
+Y3 -> MainBreadboard7 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X10; false,
+
+Y3 -> MainBreadboard8 set connection:
+1000; Y3; X4; true,
+1001; Y4; X11; true,
+Y3 -> MainBreadboard8 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X11; false,
+
+Y3 -> MainBreadboard9 set connection:
+1000; Y3; X4; true,
+1001; Y4; X12; true,
+Y3 -> MainBreadboard9 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X12; false,
+
+Y3 -> MainBreadboard10 set connection:
+1000; Y3; X4; true,
+1001; Y4; X13; true,
+Y3 -> MainBreadboard10 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X13; false,
+
+Y3 -> MainBreadboard11 set connection:
+1000; Y3; X4; true,
+1001; Y4; X14; true,
+Y3 -> MainBreadboard11 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X14; false,
+
+Y3 -> MainBreadboard12 set connection:
+1000; Y3; X4; true,
+1001; Y4; X15; true,
+Y3 -> MainBreadboard12 remove connection:
+1000; Y3; X4; false,
+1001; Y4; X15; false,
+
+Y3 -> MainBreadboard21 set connection:
+1000; Y3; X5; true,
+1001; Y5; X0; true,
+Y3 -> MainBreadboard21 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X0; false,
+
+Y3 -> MainBreadboard22 set connection:
+1000; Y3; X5; true,
+1001; Y5; X1; true,
+Y3 -> MainBreadboard22 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X1; false,
+
+Y3 -> MainBreadboard23 set connection:
+1000; Y3; X5; true,
+1001; Y5; X2; true,
+Y3 -> MainBreadboard23 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X2; false,
+
+Y3 -> MainBreadboard24 set connection:
+1000; Y3; X5; true,
+1001; Y5; X3; true,
+Y3 -> MainBreadboard24 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X3; false,
+
+Y3 -> MainBreadboard1 set connection:
+1000; Y3; X5; true,
+1001; Y5; X4; true,
+Y3 -> MainBreadboard1 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X4; false,
+
+Y3 -> MainBreadboard2 set connection:
+1000; Y3; X5; true,
+1001; Y5; X5; true,
+Y3 -> MainBreadboard2 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X5; false,
+
+Y3 -> MainBreadboard3 set connection:
+1000; Y3; X5; true,
+1001; Y5; X6; true,
+Y3 -> MainBreadboard3 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X6; false,
+
+Y3 -> MainBreadboard4 set connection:
+1000; Y3; X5; true,
+1001; Y5; X7; true,
+Y3 -> MainBreadboard4 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X7; false,
+
+Y3 -> MainBreadboard5 set connection:
+1000; Y3; X5; true,
+1001; Y5; X8; true,
+Y3 -> MainBreadboard5 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X8; false,
+
+Y3 -> MainBreadboard6 set connection:
+1000; Y3; X5; true,
+1001; Y5; X9; true,
+Y3 -> MainBreadboard6 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X9; false,
+
+Y3 -> MainBreadboard7 set connection:
+1000; Y3; X5; true,
+1001; Y5; X10; true,
+Y3 -> MainBreadboard7 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X10; false,
+
+Y3 -> MainBreadboard8 set connection:
+1000; Y3; X5; true,
+1001; Y5; X11; true,
+Y3 -> MainBreadboard8 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X11; false,
+
+Y3 -> MainBreadboard9 set connection:
+1000; Y3; X5; true,
+1001; Y5; X12; true,
+Y3 -> MainBreadboard9 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X12; false,
+
+Y3 -> MainBreadboard10 set connection:
+1000; Y3; X5; true,
+1001; Y5; X13; true,
+Y3 -> MainBreadboard10 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X13; false,
+
+Y3 -> MainBreadboard11 set connection:
+1000; Y3; X5; true,
+1001; Y5; X14; true,
+Y3 -> MainBreadboard11 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X14; false,
+
+Y3 -> MainBreadboard12 set connection:
+1000; Y3; X5; true,
+1001; Y5; X15; true,
+Y3 -> MainBreadboard12 remove connection:
+1000; Y3; X5; false,
+1001; Y5; X15; false,
+
+Y3 -> MainBreadboard21 set connection:
+1000; Y3; X6; true,
+1001; Y6; X0; true,
+Y3 -> MainBreadboard21 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X0; false,
+
+Y3 -> MainBreadboard22 set connection:
+1000; Y3; X6; true,
+1001; Y6; X1; true,
+Y3 -> MainBreadboard22 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X1; false,
+
+Y3 -> MainBreadboard23 set connection:
+1000; Y3; X6; true,
+1001; Y6; X2; true,
+Y3 -> MainBreadboard23 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X2; false,
+
+Y3 -> MainBreadboard24 set connection:
+1000; Y3; X6; true,
+1001; Y6; X3; true,
+Y3 -> MainBreadboard24 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X3; false,
+
+Y3 -> MainBreadboard1 set connection:
+1000; Y3; X6; true,
+1001; Y6; X4; true,
+Y3 -> MainBreadboard1 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X4; false,
+
+Y3 -> MainBreadboard2 set connection:
+1000; Y3; X6; true,
+1001; Y6; X5; true,
+Y3 -> MainBreadboard2 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X5; false,
+
+Y3 -> MainBreadboard3 set connection:
+1000; Y3; X6; true,
+1001; Y6; X6; true,
+Y3 -> MainBreadboard3 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X6; false,
+
+Y3 -> MainBreadboard4 set connection:
+1000; Y3; X6; true,
+1001; Y6; X7; true,
+Y3 -> MainBreadboard4 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X7; false,
+
+Y3 -> MainBreadboard5 set connection:
+1000; Y3; X6; true,
+1001; Y6; X8; true,
+Y3 -> MainBreadboard5 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X8; false,
+
+Y3 -> MainBreadboard6 set connection:
+1000; Y3; X6; true,
+1001; Y6; X9; true,
+Y3 -> MainBreadboard6 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X9; false,
+
+Y3 -> MainBreadboard7 set connection:
+1000; Y3; X6; true,
+1001; Y6; X10; true,
+Y3 -> MainBreadboard7 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X10; false,
+
+Y3 -> MainBreadboard8 set connection:
+1000; Y3; X6; true,
+1001; Y6; X11; true,
+Y3 -> MainBreadboard8 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X11; false,
+
+Y3 -> MainBreadboard9 set connection:
+1000; Y3; X6; true,
+1001; Y6; X12; true,
+Y3 -> MainBreadboard9 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X12; false,
+
+Y3 -> MainBreadboard10 set connection:
+1000; Y3; X6; true,
+1001; Y6; X13; true,
+Y3 -> MainBreadboard10 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X13; false,
+
+Y3 -> MainBreadboard11 set connection:
+1000; Y3; X6; true,
+1001; Y6; X14; true,
+Y3 -> MainBreadboard11 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X14; false,
+
+Y3 -> MainBreadboard12 set connection:
+1000; Y3; X6; true,
+1001; Y6; X15; true,
+Y3 -> MainBreadboard12 remove connection:
+1000; Y3; X6; false,
+1001; Y6; X15; false,
+
+Y3 -> MainBreadboard21 set connection:
+1000; Y3; X7; true,
+1001; Y7; X0; true,
+Y3 -> MainBreadboard21 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X0; false,
+
+Y3 -> MainBreadboard22 set connection:
+1000; Y3; X7; true,
+1001; Y7; X1; true,
+Y3 -> MainBreadboard22 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X1; false,
+
+Y3 -> MainBreadboard23 set connection:
+1000; Y3; X7; true,
+1001; Y7; X2; true,
+Y3 -> MainBreadboard23 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X2; false,
+
+Y3 -> MainBreadboard24 set connection:
+1000; Y3; X7; true,
+1001; Y7; X3; true,
+Y3 -> MainBreadboard24 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X3; false,
+
+Y3 -> MainBreadboard1 set connection:
+1000; Y3; X7; true,
+1001; Y7; X4; true,
+Y3 -> MainBreadboard1 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X4; false,
+
+Y3 -> MainBreadboard2 set connection:
+1000; Y3; X7; true,
+1001; Y7; X5; true,
+Y3 -> MainBreadboard2 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X5; false,
+
+Y3 -> MainBreadboard3 set connection:
+1000; Y3; X7; true,
+1001; Y7; X6; true,
+Y3 -> MainBreadboard3 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X6; false,
+
+Y3 -> MainBreadboard4 set connection:
+1000; Y3; X7; true,
+1001; Y7; X7; true,
+Y3 -> MainBreadboard4 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X7; false,
+
+Y3 -> MainBreadboard5 set connection:
+1000; Y3; X7; true,
+1001; Y7; X8; true,
+Y3 -> MainBreadboard5 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X8; false,
+
+Y3 -> MainBreadboard6 set connection:
+1000; Y3; X7; true,
+1001; Y7; X9; true,
+Y3 -> MainBreadboard6 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X9; false,
+
+Y3 -> MainBreadboard7 set connection:
+1000; Y3; X7; true,
+1001; Y7; X10; true,
+Y3 -> MainBreadboard7 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X10; false,
+
+Y3 -> MainBreadboard8 set connection:
+1000; Y3; X7; true,
+1001; Y7; X11; true,
+Y3 -> MainBreadboard8 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X11; false,
+
+Y3 -> MainBreadboard9 set connection:
+1000; Y3; X7; true,
+1001; Y7; X12; true,
+Y3 -> MainBreadboard9 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X12; false,
+
+Y3 -> MainBreadboard10 set connection:
+1000; Y3; X7; true,
+1001; Y7; X13; true,
+Y3 -> MainBreadboard10 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X13; false,
+
+Y3 -> MainBreadboard11 set connection:
+1000; Y3; X7; true,
+1001; Y7; X14; true,
+Y3 -> MainBreadboard11 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X14; false,
+
+Y3 -> MainBreadboard12 set connection:
+1000; Y3; X7; true,
+1001; Y7; X15; true,
+Y3 -> MainBreadboard12 remove connection:
+1000; Y3; X7; false,
+1001; Y7; X15; false,
+
+Y4 -> MainBreadboard21 set connection:
+1000; Y4; X0; true,
+1001; Y0; X0; true,
+Y4 -> MainBreadboard21 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X0; false,
+
+Y4 -> MainBreadboard22 set connection:
+1000; Y4; X0; true,
+1001; Y0; X1; true,
+Y4 -> MainBreadboard22 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X1; false,
+
+Y4 -> MainBreadboard23 set connection:
+1000; Y4; X0; true,
+1001; Y0; X2; true,
+Y4 -> MainBreadboard23 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X2; false,
+
+Y4 -> MainBreadboard24 set connection:
+1000; Y4; X0; true,
+1001; Y0; X3; true,
+Y4 -> MainBreadboard24 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X3; false,
+
+Y4 -> MainBreadboard1 set connection:
+1000; Y4; X0; true,
+1001; Y0; X4; true,
+Y4 -> MainBreadboard1 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X4; false,
+
+Y4 -> MainBreadboard2 set connection:
+1000; Y4; X0; true,
+1001; Y0; X5; true,
+Y4 -> MainBreadboard2 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X5; false,
+
+Y4 -> MainBreadboard3 set connection:
+1000; Y4; X0; true,
+1001; Y0; X6; true,
+Y4 -> MainBreadboard3 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X6; false,
+
+Y4 -> MainBreadboard4 set connection:
+1000; Y4; X0; true,
+1001; Y0; X7; true,
+Y4 -> MainBreadboard4 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X7; false,
+
+Y4 -> MainBreadboard5 set connection:
+1000; Y4; X0; true,
+1001; Y0; X8; true,
+Y4 -> MainBreadboard5 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X8; false,
+
+Y4 -> MainBreadboard6 set connection:
+1000; Y4; X0; true,
+1001; Y0; X9; true,
+Y4 -> MainBreadboard6 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X9; false,
+
+Y4 -> MainBreadboard7 set connection:
+1000; Y4; X0; true,
+1001; Y0; X10; true,
+Y4 -> MainBreadboard7 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X10; false,
+
+Y4 -> MainBreadboard8 set connection:
+1000; Y4; X0; true,
+1001; Y0; X11; true,
+Y4 -> MainBreadboard8 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X11; false,
+
+Y4 -> MainBreadboard9 set connection:
+1000; Y4; X0; true,
+1001; Y0; X12; true,
+Y4 -> MainBreadboard9 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X12; false,
+
+Y4 -> MainBreadboard10 set connection:
+1000; Y4; X0; true,
+1001; Y0; X13; true,
+Y4 -> MainBreadboard10 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X13; false,
+
+Y4 -> MainBreadboard11 set connection:
+1000; Y4; X0; true,
+1001; Y0; X14; true,
+Y4 -> MainBreadboard11 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X14; false,
+
+Y4 -> MainBreadboard12 set connection:
+1000; Y4; X0; true,
+1001; Y0; X15; true,
+Y4 -> MainBreadboard12 remove connection:
+1000; Y4; X0; false,
+1001; Y0; X15; false,
+
+Y4 -> MainBreadboard21 set connection:
+1000; Y4; X1; true,
+1001; Y1; X0; true,
+Y4 -> MainBreadboard21 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X0; false,
+
+Y4 -> MainBreadboard22 set connection:
+1000; Y4; X1; true,
+1001; Y1; X1; true,
+Y4 -> MainBreadboard22 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X1; false,
+
+Y4 -> MainBreadboard23 set connection:
+1000; Y4; X1; true,
+1001; Y1; X2; true,
+Y4 -> MainBreadboard23 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X2; false,
+
+Y4 -> MainBreadboard24 set connection:
+1000; Y4; X1; true,
+1001; Y1; X3; true,
+Y4 -> MainBreadboard24 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X3; false,
+
+Y4 -> MainBreadboard1 set connection:
+1000; Y4; X1; true,
+1001; Y1; X4; true,
+Y4 -> MainBreadboard1 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X4; false,
+
+Y4 -> MainBreadboard2 set connection:
+1000; Y4; X1; true,
+1001; Y1; X5; true,
+Y4 -> MainBreadboard2 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X5; false,
+
+Y4 -> MainBreadboard3 set connection:
+1000; Y4; X1; true,
+1001; Y1; X6; true,
+Y4 -> MainBreadboard3 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X6; false,
+
+Y4 -> MainBreadboard4 set connection:
+1000; Y4; X1; true,
+1001; Y1; X7; true,
+Y4 -> MainBreadboard4 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X7; false,
+
+Y4 -> MainBreadboard5 set connection:
+1000; Y4; X1; true,
+1001; Y1; X8; true,
+Y4 -> MainBreadboard5 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X8; false,
+
+Y4 -> MainBreadboard6 set connection:
+1000; Y4; X1; true,
+1001; Y1; X9; true,
+Y4 -> MainBreadboard6 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X9; false,
+
+Y4 -> MainBreadboard7 set connection:
+1000; Y4; X1; true,
+1001; Y1; X10; true,
+Y4 -> MainBreadboard7 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X10; false,
+
+Y4 -> MainBreadboard8 set connection:
+1000; Y4; X1; true,
+1001; Y1; X11; true,
+Y4 -> MainBreadboard8 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X11; false,
+
+Y4 -> MainBreadboard9 set connection:
+1000; Y4; X1; true,
+1001; Y1; X12; true,
+Y4 -> MainBreadboard9 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X12; false,
+
+Y4 -> MainBreadboard10 set connection:
+1000; Y4; X1; true,
+1001; Y1; X13; true,
+Y4 -> MainBreadboard10 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X13; false,
+
+Y4 -> MainBreadboard11 set connection:
+1000; Y4; X1; true,
+1001; Y1; X14; true,
+Y4 -> MainBreadboard11 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X14; false,
+
+Y4 -> MainBreadboard12 set connection:
+1000; Y4; X1; true,
+1001; Y1; X15; true,
+Y4 -> MainBreadboard12 remove connection:
+1000; Y4; X1; false,
+1001; Y1; X15; false,
+
+Y4 -> MainBreadboard21 set connection:
+1000; Y4; X2; true,
+1001; Y2; X0; true,
+Y4 -> MainBreadboard21 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X0; false,
+
+Y4 -> MainBreadboard22 set connection:
+1000; Y4; X2; true,
+1001; Y2; X1; true,
+Y4 -> MainBreadboard22 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X1; false,
+
+Y4 -> MainBreadboard23 set connection:
+1000; Y4; X2; true,
+1001; Y2; X2; true,
+Y4 -> MainBreadboard23 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X2; false,
+
+Y4 -> MainBreadboard24 set connection:
+1000; Y4; X2; true,
+1001; Y2; X3; true,
+Y4 -> MainBreadboard24 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X3; false,
+
+Y4 -> MainBreadboard1 set connection:
+1000; Y4; X2; true,
+1001; Y2; X4; true,
+Y4 -> MainBreadboard1 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X4; false,
+
+Y4 -> MainBreadboard2 set connection:
+1000; Y4; X2; true,
+1001; Y2; X5; true,
+Y4 -> MainBreadboard2 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X5; false,
+
+Y4 -> MainBreadboard3 set connection:
+1000; Y4; X2; true,
+1001; Y2; X6; true,
+Y4 -> MainBreadboard3 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X6; false,
+
+Y4 -> MainBreadboard4 set connection:
+1000; Y4; X2; true,
+1001; Y2; X7; true,
+Y4 -> MainBreadboard4 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X7; false,
+
+Y4 -> MainBreadboard5 set connection:
+1000; Y4; X2; true,
+1001; Y2; X8; true,
+Y4 -> MainBreadboard5 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X8; false,
+
+Y4 -> MainBreadboard6 set connection:
+1000; Y4; X2; true,
+1001; Y2; X9; true,
+Y4 -> MainBreadboard6 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X9; false,
+
+Y4 -> MainBreadboard7 set connection:
+1000; Y4; X2; true,
+1001; Y2; X10; true,
+Y4 -> MainBreadboard7 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X10; false,
+
+Y4 -> MainBreadboard8 set connection:
+1000; Y4; X2; true,
+1001; Y2; X11; true,
+Y4 -> MainBreadboard8 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X11; false,
+
+Y4 -> MainBreadboard9 set connection:
+1000; Y4; X2; true,
+1001; Y2; X12; true,
+Y4 -> MainBreadboard9 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X12; false,
+
+Y4 -> MainBreadboard10 set connection:
+1000; Y4; X2; true,
+1001; Y2; X13; true,
+Y4 -> MainBreadboard10 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X13; false,
+
+Y4 -> MainBreadboard11 set connection:
+1000; Y4; X2; true,
+1001; Y2; X14; true,
+Y4 -> MainBreadboard11 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X14; false,
+
+Y4 -> MainBreadboard12 set connection:
+1000; Y4; X2; true,
+1001; Y2; X15; true,
+Y4 -> MainBreadboard12 remove connection:
+1000; Y4; X2; false,
+1001; Y2; X15; false,
+
+Y4 -> MainBreadboard21 set connection:
+1000; Y4; X3; true,
+1001; Y3; X0; true,
+Y4 -> MainBreadboard21 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X0; false,
+
+Y4 -> MainBreadboard22 set connection:
+1000; Y4; X3; true,
+1001; Y3; X1; true,
+Y4 -> MainBreadboard22 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X1; false,
+
+Y4 -> MainBreadboard23 set connection:
+1000; Y4; X3; true,
+1001; Y3; X2; true,
+Y4 -> MainBreadboard23 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X2; false,
+
+Y4 -> MainBreadboard24 set connection:
+1000; Y4; X3; true,
+1001; Y3; X3; true,
+Y4 -> MainBreadboard24 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X3; false,
+
+Y4 -> MainBreadboard1 set connection:
+1000; Y4; X3; true,
+1001; Y3; X4; true,
+Y4 -> MainBreadboard1 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X4; false,
+
+Y4 -> MainBreadboard2 set connection:
+1000; Y4; X3; true,
+1001; Y3; X5; true,
+Y4 -> MainBreadboard2 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X5; false,
+
+Y4 -> MainBreadboard3 set connection:
+1000; Y4; X3; true,
+1001; Y3; X6; true,
+Y4 -> MainBreadboard3 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X6; false,
+
+Y4 -> MainBreadboard4 set connection:
+1000; Y4; X3; true,
+1001; Y3; X7; true,
+Y4 -> MainBreadboard4 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X7; false,
+
+Y4 -> MainBreadboard5 set connection:
+1000; Y4; X3; true,
+1001; Y3; X8; true,
+Y4 -> MainBreadboard5 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X8; false,
+
+Y4 -> MainBreadboard6 set connection:
+1000; Y4; X3; true,
+1001; Y3; X9; true,
+Y4 -> MainBreadboard6 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X9; false,
+
+Y4 -> MainBreadboard7 set connection:
+1000; Y4; X3; true,
+1001; Y3; X10; true,
+Y4 -> MainBreadboard7 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X10; false,
+
+Y4 -> MainBreadboard8 set connection:
+1000; Y4; X3; true,
+1001; Y3; X11; true,
+Y4 -> MainBreadboard8 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X11; false,
+
+Y4 -> MainBreadboard9 set connection:
+1000; Y4; X3; true,
+1001; Y3; X12; true,
+Y4 -> MainBreadboard9 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X12; false,
+
+Y4 -> MainBreadboard10 set connection:
+1000; Y4; X3; true,
+1001; Y3; X13; true,
+Y4 -> MainBreadboard10 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X13; false,
+
+Y4 -> MainBreadboard11 set connection:
+1000; Y4; X3; true,
+1001; Y3; X14; true,
+Y4 -> MainBreadboard11 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X14; false,
+
+Y4 -> MainBreadboard12 set connection:
+1000; Y4; X3; true,
+1001; Y3; X15; true,
+Y4 -> MainBreadboard12 remove connection:
+1000; Y4; X3; false,
+1001; Y3; X15; false,
+
+Y4 -> MainBreadboard21 set connection:
+1000; Y4; X4; true,
+1001; Y4; X0; true,
+Y4 -> MainBreadboard21 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X0; false,
+
+Y4 -> MainBreadboard22 set connection:
+1000; Y4; X4; true,
+1001; Y4; X1; true,
+Y4 -> MainBreadboard22 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X1; false,
+
+Y4 -> MainBreadboard23 set connection:
+1000; Y4; X4; true,
+1001; Y4; X2; true,
+Y4 -> MainBreadboard23 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X2; false,
+
+Y4 -> MainBreadboard24 set connection:
+1000; Y4; X4; true,
+1001; Y4; X3; true,
+Y4 -> MainBreadboard24 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X3; false,
+
+Y4 -> MainBreadboard1 set connection:
+1000; Y4; X4; true,
+1001; Y4; X4; true,
+Y4 -> MainBreadboard1 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X4; false,
+
+Y4 -> MainBreadboard2 set connection:
+1000; Y4; X4; true,
+1001; Y4; X5; true,
+Y4 -> MainBreadboard2 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X5; false,
+
+Y4 -> MainBreadboard3 set connection:
+1000; Y4; X4; true,
+1001; Y4; X6; true,
+Y4 -> MainBreadboard3 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X6; false,
+
+Y4 -> MainBreadboard4 set connection:
+1000; Y4; X4; true,
+1001; Y4; X7; true,
+Y4 -> MainBreadboard4 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X7; false,
+
+Y4 -> MainBreadboard5 set connection:
+1000; Y4; X4; true,
+1001; Y4; X8; true,
+Y4 -> MainBreadboard5 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X8; false,
+
+Y4 -> MainBreadboard6 set connection:
+1000; Y4; X4; true,
+1001; Y4; X9; true,
+Y4 -> MainBreadboard6 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X9; false,
+
+Y4 -> MainBreadboard7 set connection:
+1000; Y4; X4; true,
+1001; Y4; X10; true,
+Y4 -> MainBreadboard7 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X10; false,
+
+Y4 -> MainBreadboard8 set connection:
+1000; Y4; X4; true,
+1001; Y4; X11; true,
+Y4 -> MainBreadboard8 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X11; false,
+
+Y4 -> MainBreadboard9 set connection:
+1000; Y4; X4; true,
+1001; Y4; X12; true,
+Y4 -> MainBreadboard9 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X12; false,
+
+Y4 -> MainBreadboard10 set connection:
+1000; Y4; X4; true,
+1001; Y4; X13; true,
+Y4 -> MainBreadboard10 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X13; false,
+
+Y4 -> MainBreadboard11 set connection:
+1000; Y4; X4; true,
+1001; Y4; X14; true,
+Y4 -> MainBreadboard11 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X14; false,
+
+Y4 -> MainBreadboard12 set connection:
+1000; Y4; X4; true,
+1001; Y4; X15; true,
+Y4 -> MainBreadboard12 remove connection:
+1000; Y4; X4; false,
+1001; Y4; X15; false,
+
+Y4 -> MainBreadboard21 set connection:
+1000; Y4; X5; true,
+1001; Y5; X0; true,
+Y4 -> MainBreadboard21 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X0; false,
+
+Y4 -> MainBreadboard22 set connection:
+1000; Y4; X5; true,
+1001; Y5; X1; true,
+Y4 -> MainBreadboard22 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X1; false,
+
+Y4 -> MainBreadboard23 set connection:
+1000; Y4; X5; true,
+1001; Y5; X2; true,
+Y4 -> MainBreadboard23 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X2; false,
+
+Y4 -> MainBreadboard24 set connection:
+1000; Y4; X5; true,
+1001; Y5; X3; true,
+Y4 -> MainBreadboard24 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X3; false,
+
+Y4 -> MainBreadboard1 set connection:
+1000; Y4; X5; true,
+1001; Y5; X4; true,
+Y4 -> MainBreadboard1 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X4; false,
+
+Y4 -> MainBreadboard2 set connection:
+1000; Y4; X5; true,
+1001; Y5; X5; true,
+Y4 -> MainBreadboard2 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X5; false,
+
+Y4 -> MainBreadboard3 set connection:
+1000; Y4; X5; true,
+1001; Y5; X6; true,
+Y4 -> MainBreadboard3 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X6; false,
+
+Y4 -> MainBreadboard4 set connection:
+1000; Y4; X5; true,
+1001; Y5; X7; true,
+Y4 -> MainBreadboard4 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X7; false,
+
+Y4 -> MainBreadboard5 set connection:
+1000; Y4; X5; true,
+1001; Y5; X8; true,
+Y4 -> MainBreadboard5 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X8; false,
+
+Y4 -> MainBreadboard6 set connection:
+1000; Y4; X5; true,
+1001; Y5; X9; true,
+Y4 -> MainBreadboard6 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X9; false,
+
+Y4 -> MainBreadboard7 set connection:
+1000; Y4; X5; true,
+1001; Y5; X10; true,
+Y4 -> MainBreadboard7 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X10; false,
+
+Y4 -> MainBreadboard8 set connection:
+1000; Y4; X5; true,
+1001; Y5; X11; true,
+Y4 -> MainBreadboard8 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X11; false,
+
+Y4 -> MainBreadboard9 set connection:
+1000; Y4; X5; true,
+1001; Y5; X12; true,
+Y4 -> MainBreadboard9 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X12; false,
+
+Y4 -> MainBreadboard10 set connection:
+1000; Y4; X5; true,
+1001; Y5; X13; true,
+Y4 -> MainBreadboard10 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X13; false,
+
+Y4 -> MainBreadboard11 set connection:
+1000; Y4; X5; true,
+1001; Y5; X14; true,
+Y4 -> MainBreadboard11 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X14; false,
+
+Y4 -> MainBreadboard12 set connection:
+1000; Y4; X5; true,
+1001; Y5; X15; true,
+Y4 -> MainBreadboard12 remove connection:
+1000; Y4; X5; false,
+1001; Y5; X15; false,
+
+Y4 -> MainBreadboard21 set connection:
+1000; Y4; X6; true,
+1001; Y6; X0; true,
+Y4 -> MainBreadboard21 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X0; false,
+
+Y4 -> MainBreadboard22 set connection:
+1000; Y4; X6; true,
+1001; Y6; X1; true,
+Y4 -> MainBreadboard22 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X1; false,
+
+Y4 -> MainBreadboard23 set connection:
+1000; Y4; X6; true,
+1001; Y6; X2; true,
+Y4 -> MainBreadboard23 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X2; false,
+
+Y4 -> MainBreadboard24 set connection:
+1000; Y4; X6; true,
+1001; Y6; X3; true,
+Y4 -> MainBreadboard24 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X3; false,
+
+Y4 -> MainBreadboard1 set connection:
+1000; Y4; X6; true,
+1001; Y6; X4; true,
+Y4 -> MainBreadboard1 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X4; false,
+
+Y4 -> MainBreadboard2 set connection:
+1000; Y4; X6; true,
+1001; Y6; X5; true,
+Y4 -> MainBreadboard2 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X5; false,
+
+Y4 -> MainBreadboard3 set connection:
+1000; Y4; X6; true,
+1001; Y6; X6; true,
+Y4 -> MainBreadboard3 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X6; false,
+
+Y4 -> MainBreadboard4 set connection:
+1000; Y4; X6; true,
+1001; Y6; X7; true,
+Y4 -> MainBreadboard4 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X7; false,
+
+Y4 -> MainBreadboard5 set connection:
+1000; Y4; X6; true,
+1001; Y6; X8; true,
+Y4 -> MainBreadboard5 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X8; false,
+
+Y4 -> MainBreadboard6 set connection:
+1000; Y4; X6; true,
+1001; Y6; X9; true,
+Y4 -> MainBreadboard6 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X9; false,
+
+Y4 -> MainBreadboard7 set connection:
+1000; Y4; X6; true,
+1001; Y6; X10; true,
+Y4 -> MainBreadboard7 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X10; false,
+
+Y4 -> MainBreadboard8 set connection:
+1000; Y4; X6; true,
+1001; Y6; X11; true,
+Y4 -> MainBreadboard8 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X11; false,
+
+Y4 -> MainBreadboard9 set connection:
+1000; Y4; X6; true,
+1001; Y6; X12; true,
+Y4 -> MainBreadboard9 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X12; false,
+
+Y4 -> MainBreadboard10 set connection:
+1000; Y4; X6; true,
+1001; Y6; X13; true,
+Y4 -> MainBreadboard10 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X13; false,
+
+Y4 -> MainBreadboard11 set connection:
+1000; Y4; X6; true,
+1001; Y6; X14; true,
+Y4 -> MainBreadboard11 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X14; false,
+
+Y4 -> MainBreadboard12 set connection:
+1000; Y4; X6; true,
+1001; Y6; X15; true,
+Y4 -> MainBreadboard12 remove connection:
+1000; Y4; X6; false,
+1001; Y6; X15; false,
+
+Y4 -> MainBreadboard21 set connection:
+1000; Y4; X7; true,
+1001; Y7; X0; true,
+Y4 -> MainBreadboard21 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X0; false,
+
+Y4 -> MainBreadboard22 set connection:
+1000; Y4; X7; true,
+1001; Y7; X1; true,
+Y4 -> MainBreadboard22 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X1; false,
+
+Y4 -> MainBreadboard23 set connection:
+1000; Y4; X7; true,
+1001; Y7; X2; true,
+Y4 -> MainBreadboard23 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X2; false,
+
+Y4 -> MainBreadboard24 set connection:
+1000; Y4; X7; true,
+1001; Y7; X3; true,
+Y4 -> MainBreadboard24 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X3; false,
+
+Y4 -> MainBreadboard1 set connection:
+1000; Y4; X7; true,
+1001; Y7; X4; true,
+Y4 -> MainBreadboard1 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X4; false,
+
+Y4 -> MainBreadboard2 set connection:
+1000; Y4; X7; true,
+1001; Y7; X5; true,
+Y4 -> MainBreadboard2 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X5; false,
+
+Y4 -> MainBreadboard3 set connection:
+1000; Y4; X7; true,
+1001; Y7; X6; true,
+Y4 -> MainBreadboard3 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X6; false,
+
+Y4 -> MainBreadboard4 set connection:
+1000; Y4; X7; true,
+1001; Y7; X7; true,
+Y4 -> MainBreadboard4 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X7; false,
+
+Y4 -> MainBreadboard5 set connection:
+1000; Y4; X7; true,
+1001; Y7; X8; true,
+Y4 -> MainBreadboard5 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X8; false,
+
+Y4 -> MainBreadboard6 set connection:
+1000; Y4; X7; true,
+1001; Y7; X9; true,
+Y4 -> MainBreadboard6 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X9; false,
+
+Y4 -> MainBreadboard7 set connection:
+1000; Y4; X7; true,
+1001; Y7; X10; true,
+Y4 -> MainBreadboard7 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X10; false,
+
+Y4 -> MainBreadboard8 set connection:
+1000; Y4; X7; true,
+1001; Y7; X11; true,
+Y4 -> MainBreadboard8 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X11; false,
+
+Y4 -> MainBreadboard9 set connection:
+1000; Y4; X7; true,
+1001; Y7; X12; true,
+Y4 -> MainBreadboard9 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X12; false,
+
+Y4 -> MainBreadboard10 set connection:
+1000; Y4; X7; true,
+1001; Y7; X13; true,
+Y4 -> MainBreadboard10 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X13; false,
+
+Y4 -> MainBreadboard11 set connection:
+1000; Y4; X7; true,
+1001; Y7; X14; true,
+Y4 -> MainBreadboard11 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X14; false,
+
+Y4 -> MainBreadboard12 set connection:
+1000; Y4; X7; true,
+1001; Y7; X15; true,
+Y4 -> MainBreadboard12 remove connection:
+1000; Y4; X7; false,
+1001; Y7; X15; false,
+
+Y5 -> MainBreadboard21 set connection:
+1000; Y5; X0; true,
+1001; Y0; X0; true,
+Y5 -> MainBreadboard21 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X0; false,
+
+Y5 -> MainBreadboard22 set connection:
+1000; Y5; X0; true,
+1001; Y0; X1; true,
+Y5 -> MainBreadboard22 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X1; false,
+
+Y5 -> MainBreadboard23 set connection:
+1000; Y5; X0; true,
+1001; Y0; X2; true,
+Y5 -> MainBreadboard23 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X2; false,
+
+Y5 -> MainBreadboard24 set connection:
+1000; Y5; X0; true,
+1001; Y0; X3; true,
+Y5 -> MainBreadboard24 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X3; false,
+
+Y5 -> MainBreadboard1 set connection:
+1000; Y5; X0; true,
+1001; Y0; X4; true,
+Y5 -> MainBreadboard1 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X4; false,
+
+Y5 -> MainBreadboard2 set connection:
+1000; Y5; X0; true,
+1001; Y0; X5; true,
+Y5 -> MainBreadboard2 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X5; false,
+
+Y5 -> MainBreadboard3 set connection:
+1000; Y5; X0; true,
+1001; Y0; X6; true,
+Y5 -> MainBreadboard3 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X6; false,
+
+Y5 -> MainBreadboard4 set connection:
+1000; Y5; X0; true,
+1001; Y0; X7; true,
+Y5 -> MainBreadboard4 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X7; false,
+
+Y5 -> MainBreadboard5 set connection:
+1000; Y5; X0; true,
+1001; Y0; X8; true,
+Y5 -> MainBreadboard5 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X8; false,
+
+Y5 -> MainBreadboard6 set connection:
+1000; Y5; X0; true,
+1001; Y0; X9; true,
+Y5 -> MainBreadboard6 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X9; false,
+
+Y5 -> MainBreadboard7 set connection:
+1000; Y5; X0; true,
+1001; Y0; X10; true,
+Y5 -> MainBreadboard7 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X10; false,
+
+Y5 -> MainBreadboard8 set connection:
+1000; Y5; X0; true,
+1001; Y0; X11; true,
+Y5 -> MainBreadboard8 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X11; false,
+
+Y5 -> MainBreadboard9 set connection:
+1000; Y5; X0; true,
+1001; Y0; X12; true,
+Y5 -> MainBreadboard9 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X12; false,
+
+Y5 -> MainBreadboard10 set connection:
+1000; Y5; X0; true,
+1001; Y0; X13; true,
+Y5 -> MainBreadboard10 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X13; false,
+
+Y5 -> MainBreadboard11 set connection:
+1000; Y5; X0; true,
+1001; Y0; X14; true,
+Y5 -> MainBreadboard11 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X14; false,
+
+Y5 -> MainBreadboard12 set connection:
+1000; Y5; X0; true,
+1001; Y0; X15; true,
+Y5 -> MainBreadboard12 remove connection:
+1000; Y5; X0; false,
+1001; Y0; X15; false,
+
+Y5 -> MainBreadboard21 set connection:
+1000; Y5; X1; true,
+1001; Y1; X0; true,
+Y5 -> MainBreadboard21 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X0; false,
+
+Y5 -> MainBreadboard22 set connection:
+1000; Y5; X1; true,
+1001; Y1; X1; true,
+Y5 -> MainBreadboard22 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X1; false,
+
+Y5 -> MainBreadboard23 set connection:
+1000; Y5; X1; true,
+1001; Y1; X2; true,
+Y5 -> MainBreadboard23 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X2; false,
+
+Y5 -> MainBreadboard24 set connection:
+1000; Y5; X1; true,
+1001; Y1; X3; true,
+Y5 -> MainBreadboard24 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X3; false,
+
+Y5 -> MainBreadboard1 set connection:
+1000; Y5; X1; true,
+1001; Y1; X4; true,
+Y5 -> MainBreadboard1 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X4; false,
+
+Y5 -> MainBreadboard2 set connection:
+1000; Y5; X1; true,
+1001; Y1; X5; true,
+Y5 -> MainBreadboard2 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X5; false,
+
+Y5 -> MainBreadboard3 set connection:
+1000; Y5; X1; true,
+1001; Y1; X6; true,
+Y5 -> MainBreadboard3 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X6; false,
+
+Y5 -> MainBreadboard4 set connection:
+1000; Y5; X1; true,
+1001; Y1; X7; true,
+Y5 -> MainBreadboard4 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X7; false,
+
+Y5 -> MainBreadboard5 set connection:
+1000; Y5; X1; true,
+1001; Y1; X8; true,
+Y5 -> MainBreadboard5 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X8; false,
+
+Y5 -> MainBreadboard6 set connection:
+1000; Y5; X1; true,
+1001; Y1; X9; true,
+Y5 -> MainBreadboard6 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X9; false,
+
+Y5 -> MainBreadboard7 set connection:
+1000; Y5; X1; true,
+1001; Y1; X10; true,
+Y5 -> MainBreadboard7 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X10; false,
+
+Y5 -> MainBreadboard8 set connection:
+1000; Y5; X1; true,
+1001; Y1; X11; true,
+Y5 -> MainBreadboard8 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X11; false,
+
+Y5 -> MainBreadboard9 set connection:
+1000; Y5; X1; true,
+1001; Y1; X12; true,
+Y5 -> MainBreadboard9 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X12; false,
+
+Y5 -> MainBreadboard10 set connection:
+1000; Y5; X1; true,
+1001; Y1; X13; true,
+Y5 -> MainBreadboard10 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X13; false,
+
+Y5 -> MainBreadboard11 set connection:
+1000; Y5; X1; true,
+1001; Y1; X14; true,
+Y5 -> MainBreadboard11 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X14; false,
+
+Y5 -> MainBreadboard12 set connection:
+1000; Y5; X1; true,
+1001; Y1; X15; true,
+Y5 -> MainBreadboard12 remove connection:
+1000; Y5; X1; false,
+1001; Y1; X15; false,
+
+Y5 -> MainBreadboard21 set connection:
+1000; Y5; X2; true,
+1001; Y2; X0; true,
+Y5 -> MainBreadboard21 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X0; false,
+
+Y5 -> MainBreadboard22 set connection:
+1000; Y5; X2; true,
+1001; Y2; X1; true,
+Y5 -> MainBreadboard22 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X1; false,
+
+Y5 -> MainBreadboard23 set connection:
+1000; Y5; X2; true,
+1001; Y2; X2; true,
+Y5 -> MainBreadboard23 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X2; false,
+
+Y5 -> MainBreadboard24 set connection:
+1000; Y5; X2; true,
+1001; Y2; X3; true,
+Y5 -> MainBreadboard24 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X3; false,
+
+Y5 -> MainBreadboard1 set connection:
+1000; Y5; X2; true,
+1001; Y2; X4; true,
+Y5 -> MainBreadboard1 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X4; false,
+
+Y5 -> MainBreadboard2 set connection:
+1000; Y5; X2; true,
+1001; Y2; X5; true,
+Y5 -> MainBreadboard2 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X5; false,
+
+Y5 -> MainBreadboard3 set connection:
+1000; Y5; X2; true,
+1001; Y2; X6; true,
+Y5 -> MainBreadboard3 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X6; false,
+
+Y5 -> MainBreadboard4 set connection:
+1000; Y5; X2; true,
+1001; Y2; X7; true,
+Y5 -> MainBreadboard4 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X7; false,
+
+Y5 -> MainBreadboard5 set connection:
+1000; Y5; X2; true,
+1001; Y2; X8; true,
+Y5 -> MainBreadboard5 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X8; false,
+
+Y5 -> MainBreadboard6 set connection:
+1000; Y5; X2; true,
+1001; Y2; X9; true,
+Y5 -> MainBreadboard6 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X9; false,
+
+Y5 -> MainBreadboard7 set connection:
+1000; Y5; X2; true,
+1001; Y2; X10; true,
+Y5 -> MainBreadboard7 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X10; false,
+
+Y5 -> MainBreadboard8 set connection:
+1000; Y5; X2; true,
+1001; Y2; X11; true,
+Y5 -> MainBreadboard8 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X11; false,
+
+Y5 -> MainBreadboard9 set connection:
+1000; Y5; X2; true,
+1001; Y2; X12; true,
+Y5 -> MainBreadboard9 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X12; false,
+
+Y5 -> MainBreadboard10 set connection:
+1000; Y5; X2; true,
+1001; Y2; X13; true,
+Y5 -> MainBreadboard10 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X13; false,
+
+Y5 -> MainBreadboard11 set connection:
+1000; Y5; X2; true,
+1001; Y2; X14; true,
+Y5 -> MainBreadboard11 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X14; false,
+
+Y5 -> MainBreadboard12 set connection:
+1000; Y5; X2; true,
+1001; Y2; X15; true,
+Y5 -> MainBreadboard12 remove connection:
+1000; Y5; X2; false,
+1001; Y2; X15; false,
+
+Y5 -> MainBreadboard21 set connection:
+1000; Y5; X3; true,
+1001; Y3; X0; true,
+Y5 -> MainBreadboard21 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X0; false,
+
+Y5 -> MainBreadboard22 set connection:
+1000; Y5; X3; true,
+1001; Y3; X1; true,
+Y5 -> MainBreadboard22 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X1; false,
+
+Y5 -> MainBreadboard23 set connection:
+1000; Y5; X3; true,
+1001; Y3; X2; true,
+Y5 -> MainBreadboard23 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X2; false,
+
+Y5 -> MainBreadboard24 set connection:
+1000; Y5; X3; true,
+1001; Y3; X3; true,
+Y5 -> MainBreadboard24 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X3; false,
+
+Y5 -> MainBreadboard1 set connection:
+1000; Y5; X3; true,
+1001; Y3; X4; true,
+Y5 -> MainBreadboard1 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X4; false,
+
+Y5 -> MainBreadboard2 set connection:
+1000; Y5; X3; true,
+1001; Y3; X5; true,
+Y5 -> MainBreadboard2 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X5; false,
+
+Y5 -> MainBreadboard3 set connection:
+1000; Y5; X3; true,
+1001; Y3; X6; true,
+Y5 -> MainBreadboard3 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X6; false,
+
+Y5 -> MainBreadboard4 set connection:
+1000; Y5; X3; true,
+1001; Y3; X7; true,
+Y5 -> MainBreadboard4 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X7; false,
+
+Y5 -> MainBreadboard5 set connection:
+1000; Y5; X3; true,
+1001; Y3; X8; true,
+Y5 -> MainBreadboard5 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X8; false,
+
+Y5 -> MainBreadboard6 set connection:
+1000; Y5; X3; true,
+1001; Y3; X9; true,
+Y5 -> MainBreadboard6 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X9; false,
+
+Y5 -> MainBreadboard7 set connection:
+1000; Y5; X3; true,
+1001; Y3; X10; true,
+Y5 -> MainBreadboard7 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X10; false,
+
+Y5 -> MainBreadboard8 set connection:
+1000; Y5; X3; true,
+1001; Y3; X11; true,
+Y5 -> MainBreadboard8 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X11; false,
+
+Y5 -> MainBreadboard9 set connection:
+1000; Y5; X3; true,
+1001; Y3; X12; true,
+Y5 -> MainBreadboard9 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X12; false,
+
+Y5 -> MainBreadboard10 set connection:
+1000; Y5; X3; true,
+1001; Y3; X13; true,
+Y5 -> MainBreadboard10 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X13; false,
+
+Y5 -> MainBreadboard11 set connection:
+1000; Y5; X3; true,
+1001; Y3; X14; true,
+Y5 -> MainBreadboard11 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X14; false,
+
+Y5 -> MainBreadboard12 set connection:
+1000; Y5; X3; true,
+1001; Y3; X15; true,
+Y5 -> MainBreadboard12 remove connection:
+1000; Y5; X3; false,
+1001; Y3; X15; false,
+
+Y5 -> MainBreadboard21 set connection:
+1000; Y5; X4; true,
+1001; Y4; X0; true,
+Y5 -> MainBreadboard21 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X0; false,
+
+Y5 -> MainBreadboard22 set connection:
+1000; Y5; X4; true,
+1001; Y4; X1; true,
+Y5 -> MainBreadboard22 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X1; false,
+
+Y5 -> MainBreadboard23 set connection:
+1000; Y5; X4; true,
+1001; Y4; X2; true,
+Y5 -> MainBreadboard23 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X2; false,
+
+Y5 -> MainBreadboard24 set connection:
+1000; Y5; X4; true,
+1001; Y4; X3; true,
+Y5 -> MainBreadboard24 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X3; false,
+
+Y5 -> MainBreadboard1 set connection:
+1000; Y5; X4; true,
+1001; Y4; X4; true,
+Y5 -> MainBreadboard1 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X4; false,
+
+Y5 -> MainBreadboard2 set connection:
+1000; Y5; X4; true,
+1001; Y4; X5; true,
+Y5 -> MainBreadboard2 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X5; false,
+
+Y5 -> MainBreadboard3 set connection:
+1000; Y5; X4; true,
+1001; Y4; X6; true,
+Y5 -> MainBreadboard3 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X6; false,
+
+Y5 -> MainBreadboard4 set connection:
+1000; Y5; X4; true,
+1001; Y4; X7; true,
+Y5 -> MainBreadboard4 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X7; false,
+
+Y5 -> MainBreadboard5 set connection:
+1000; Y5; X4; true,
+1001; Y4; X8; true,
+Y5 -> MainBreadboard5 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X8; false,
+
+Y5 -> MainBreadboard6 set connection:
+1000; Y5; X4; true,
+1001; Y4; X9; true,
+Y5 -> MainBreadboard6 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X9; false,
+
+Y5 -> MainBreadboard7 set connection:
+1000; Y5; X4; true,
+1001; Y4; X10; true,
+Y5 -> MainBreadboard7 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X10; false,
+
+Y5 -> MainBreadboard8 set connection:
+1000; Y5; X4; true,
+1001; Y4; X11; true,
+Y5 -> MainBreadboard8 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X11; false,
+
+Y5 -> MainBreadboard9 set connection:
+1000; Y5; X4; true,
+1001; Y4; X12; true,
+Y5 -> MainBreadboard9 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X12; false,
+
+Y5 -> MainBreadboard10 set connection:
+1000; Y5; X4; true,
+1001; Y4; X13; true,
+Y5 -> MainBreadboard10 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X13; false,
+
+Y5 -> MainBreadboard11 set connection:
+1000; Y5; X4; true,
+1001; Y4; X14; true,
+Y5 -> MainBreadboard11 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X14; false,
+
+Y5 -> MainBreadboard12 set connection:
+1000; Y5; X4; true,
+1001; Y4; X15; true,
+Y5 -> MainBreadboard12 remove connection:
+1000; Y5; X4; false,
+1001; Y4; X15; false,
+
+Y5 -> MainBreadboard21 set connection:
+1000; Y5; X5; true,
+1001; Y5; X0; true,
+Y5 -> MainBreadboard21 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X0; false,
+
+Y5 -> MainBreadboard22 set connection:
+1000; Y5; X5; true,
+1001; Y5; X1; true,
+Y5 -> MainBreadboard22 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X1; false,
+
+Y5 -> MainBreadboard23 set connection:
+1000; Y5; X5; true,
+1001; Y5; X2; true,
+Y5 -> MainBreadboard23 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X2; false,
+
+Y5 -> MainBreadboard24 set connection:
+1000; Y5; X5; true,
+1001; Y5; X3; true,
+Y5 -> MainBreadboard24 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X3; false,
+
+Y5 -> MainBreadboard1 set connection:
+1000; Y5; X5; true,
+1001; Y5; X4; true,
+Y5 -> MainBreadboard1 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X4; false,
+
+Y5 -> MainBreadboard2 set connection:
+1000; Y5; X5; true,
+1001; Y5; X5; true,
+Y5 -> MainBreadboard2 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X5; false,
+
+Y5 -> MainBreadboard3 set connection:
+1000; Y5; X5; true,
+1001; Y5; X6; true,
+Y5 -> MainBreadboard3 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X6; false,
+
+Y5 -> MainBreadboard4 set connection:
+1000; Y5; X5; true,
+1001; Y5; X7; true,
+Y5 -> MainBreadboard4 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X7; false,
+
+Y5 -> MainBreadboard5 set connection:
+1000; Y5; X5; true,
+1001; Y5; X8; true,
+Y5 -> MainBreadboard5 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X8; false,
+
+Y5 -> MainBreadboard6 set connection:
+1000; Y5; X5; true,
+1001; Y5; X9; true,
+Y5 -> MainBreadboard6 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X9; false,
+
+Y5 -> MainBreadboard7 set connection:
+1000; Y5; X5; true,
+1001; Y5; X10; true,
+Y5 -> MainBreadboard7 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X10; false,
+
+Y5 -> MainBreadboard8 set connection:
+1000; Y5; X5; true,
+1001; Y5; X11; true,
+Y5 -> MainBreadboard8 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X11; false,
+
+Y5 -> MainBreadboard9 set connection:
+1000; Y5; X5; true,
+1001; Y5; X12; true,
+Y5 -> MainBreadboard9 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X12; false,
+
+Y5 -> MainBreadboard10 set connection:
+1000; Y5; X5; true,
+1001; Y5; X13; true,
+Y5 -> MainBreadboard10 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X13; false,
+
+Y5 -> MainBreadboard11 set connection:
+1000; Y5; X5; true,
+1001; Y5; X14; true,
+Y5 -> MainBreadboard11 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X14; false,
+
+Y5 -> MainBreadboard12 set connection:
+1000; Y5; X5; true,
+1001; Y5; X15; true,
+Y5 -> MainBreadboard12 remove connection:
+1000; Y5; X5; false,
+1001; Y5; X15; false,
+
+Y5 -> MainBreadboard21 set connection:
+1000; Y5; X6; true,
+1001; Y6; X0; true,
+Y5 -> MainBreadboard21 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X0; false,
+
+Y5 -> MainBreadboard22 set connection:
+1000; Y5; X6; true,
+1001; Y6; X1; true,
+Y5 -> MainBreadboard22 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X1; false,
+
+Y5 -> MainBreadboard23 set connection:
+1000; Y5; X6; true,
+1001; Y6; X2; true,
+Y5 -> MainBreadboard23 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X2; false,
+
+Y5 -> MainBreadboard24 set connection:
+1000; Y5; X6; true,
+1001; Y6; X3; true,
+Y5 -> MainBreadboard24 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X3; false,
+
+Y5 -> MainBreadboard1 set connection:
+1000; Y5; X6; true,
+1001; Y6; X4; true,
+Y5 -> MainBreadboard1 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X4; false,
+
+Y5 -> MainBreadboard2 set connection:
+1000; Y5; X6; true,
+1001; Y6; X5; true,
+Y5 -> MainBreadboard2 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X5; false,
+
+Y5 -> MainBreadboard3 set connection:
+1000; Y5; X6; true,
+1001; Y6; X6; true,
+Y5 -> MainBreadboard3 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X6; false,
+
+Y5 -> MainBreadboard4 set connection:
+1000; Y5; X6; true,
+1001; Y6; X7; true,
+Y5 -> MainBreadboard4 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X7; false,
+
+Y5 -> MainBreadboard5 set connection:
+1000; Y5; X6; true,
+1001; Y6; X8; true,
+Y5 -> MainBreadboard5 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X8; false,
+
+Y5 -> MainBreadboard6 set connection:
+1000; Y5; X6; true,
+1001; Y6; X9; true,
+Y5 -> MainBreadboard6 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X9; false,
+
+Y5 -> MainBreadboard7 set connection:
+1000; Y5; X6; true,
+1001; Y6; X10; true,
+Y5 -> MainBreadboard7 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X10; false,
+
+Y5 -> MainBreadboard8 set connection:
+1000; Y5; X6; true,
+1001; Y6; X11; true,
+Y5 -> MainBreadboard8 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X11; false,
+
+Y5 -> MainBreadboard9 set connection:
+1000; Y5; X6; true,
+1001; Y6; X12; true,
+Y5 -> MainBreadboard9 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X12; false,
+
+Y5 -> MainBreadboard10 set connection:
+1000; Y5; X6; true,
+1001; Y6; X13; true,
+Y5 -> MainBreadboard10 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X13; false,
+
+Y5 -> MainBreadboard11 set connection:
+1000; Y5; X6; true,
+1001; Y6; X14; true,
+Y5 -> MainBreadboard11 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X14; false,
+
+Y5 -> MainBreadboard12 set connection:
+1000; Y5; X6; true,
+1001; Y6; X15; true,
+Y5 -> MainBreadboard12 remove connection:
+1000; Y5; X6; false,
+1001; Y6; X15; false,
+
+Y5 -> MainBreadboard21 set connection:
+1000; Y5; X7; true,
+1001; Y7; X0; true,
+Y5 -> MainBreadboard21 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X0; false,
+
+Y5 -> MainBreadboard22 set connection:
+1000; Y5; X7; true,
+1001; Y7; X1; true,
+Y5 -> MainBreadboard22 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X1; false,
+
+Y5 -> MainBreadboard23 set connection:
+1000; Y5; X7; true,
+1001; Y7; X2; true,
+Y5 -> MainBreadboard23 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X2; false,
+
+Y5 -> MainBreadboard24 set connection:
+1000; Y5; X7; true,
+1001; Y7; X3; true,
+Y5 -> MainBreadboard24 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X3; false,
+
+Y5 -> MainBreadboard1 set connection:
+1000; Y5; X7; true,
+1001; Y7; X4; true,
+Y5 -> MainBreadboard1 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X4; false,
+
+Y5 -> MainBreadboard2 set connection:
+1000; Y5; X7; true,
+1001; Y7; X5; true,
+Y5 -> MainBreadboard2 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X5; false,
+
+Y5 -> MainBreadboard3 set connection:
+1000; Y5; X7; true,
+1001; Y7; X6; true,
+Y5 -> MainBreadboard3 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X6; false,
+
+Y5 -> MainBreadboard4 set connection:
+1000; Y5; X7; true,
+1001; Y7; X7; true,
+Y5 -> MainBreadboard4 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X7; false,
+
+Y5 -> MainBreadboard5 set connection:
+1000; Y5; X7; true,
+1001; Y7; X8; true,
+Y5 -> MainBreadboard5 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X8; false,
+
+Y5 -> MainBreadboard6 set connection:
+1000; Y5; X7; true,
+1001; Y7; X9; true,
+Y5 -> MainBreadboard6 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X9; false,
+
+Y5 -> MainBreadboard7 set connection:
+1000; Y5; X7; true,
+1001; Y7; X10; true,
+Y5 -> MainBreadboard7 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X10; false,
+
+Y5 -> MainBreadboard8 set connection:
+1000; Y5; X7; true,
+1001; Y7; X11; true,
+Y5 -> MainBreadboard8 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X11; false,
+
+Y5 -> MainBreadboard9 set connection:
+1000; Y5; X7; true,
+1001; Y7; X12; true,
+Y5 -> MainBreadboard9 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X12; false,
+
+Y5 -> MainBreadboard10 set connection:
+1000; Y5; X7; true,
+1001; Y7; X13; true,
+Y5 -> MainBreadboard10 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X13; false,
+
+Y5 -> MainBreadboard11 set connection:
+1000; Y5; X7; true,
+1001; Y7; X14; true,
+Y5 -> MainBreadboard11 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X14; false,
+
+Y5 -> MainBreadboard12 set connection:
+1000; Y5; X7; true,
+1001; Y7; X15; true,
+Y5 -> MainBreadboard12 remove connection:
+1000; Y5; X7; false,
+1001; Y7; X15; false,
+
+Y6 -> MainBreadboard21 set connection:
+1000; Y6; X0; true,
+1001; Y0; X0; true,
+Y6 -> MainBreadboard21 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X0; false,
+
+Y6 -> MainBreadboard22 set connection:
+1000; Y6; X0; true,
+1001; Y0; X1; true,
+Y6 -> MainBreadboard22 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X1; false,
+
+Y6 -> MainBreadboard23 set connection:
+1000; Y6; X0; true,
+1001; Y0; X2; true,
+Y6 -> MainBreadboard23 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X2; false,
+
+Y6 -> MainBreadboard24 set connection:
+1000; Y6; X0; true,
+1001; Y0; X3; true,
+Y6 -> MainBreadboard24 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X3; false,
+
+Y6 -> MainBreadboard1 set connection:
+1000; Y6; X0; true,
+1001; Y0; X4; true,
+Y6 -> MainBreadboard1 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X4; false,
+
+Y6 -> MainBreadboard2 set connection:
+1000; Y6; X0; true,
+1001; Y0; X5; true,
+Y6 -> MainBreadboard2 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X5; false,
+
+Y6 -> MainBreadboard3 set connection:
+1000; Y6; X0; true,
+1001; Y0; X6; true,
+Y6 -> MainBreadboard3 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X6; false,
+
+Y6 -> MainBreadboard4 set connection:
+1000; Y6; X0; true,
+1001; Y0; X7; true,
+Y6 -> MainBreadboard4 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X7; false,
+
+Y6 -> MainBreadboard5 set connection:
+1000; Y6; X0; true,
+1001; Y0; X8; true,
+Y6 -> MainBreadboard5 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X8; false,
+
+Y6 -> MainBreadboard6 set connection:
+1000; Y6; X0; true,
+1001; Y0; X9; true,
+Y6 -> MainBreadboard6 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X9; false,
+
+Y6 -> MainBreadboard7 set connection:
+1000; Y6; X0; true,
+1001; Y0; X10; true,
+Y6 -> MainBreadboard7 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X10; false,
+
+Y6 -> MainBreadboard8 set connection:
+1000; Y6; X0; true,
+1001; Y0; X11; true,
+Y6 -> MainBreadboard8 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X11; false,
+
+Y6 -> MainBreadboard9 set connection:
+1000; Y6; X0; true,
+1001; Y0; X12; true,
+Y6 -> MainBreadboard9 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X12; false,
+
+Y6 -> MainBreadboard10 set connection:
+1000; Y6; X0; true,
+1001; Y0; X13; true,
+Y6 -> MainBreadboard10 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X13; false,
+
+Y6 -> MainBreadboard11 set connection:
+1000; Y6; X0; true,
+1001; Y0; X14; true,
+Y6 -> MainBreadboard11 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X14; false,
+
+Y6 -> MainBreadboard12 set connection:
+1000; Y6; X0; true,
+1001; Y0; X15; true,
+Y6 -> MainBreadboard12 remove connection:
+1000; Y6; X0; false,
+1001; Y0; X15; false,
+
+Y6 -> MainBreadboard21 set connection:
+1000; Y6; X1; true,
+1001; Y1; X0; true,
+Y6 -> MainBreadboard21 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X0; false,
+
+Y6 -> MainBreadboard22 set connection:
+1000; Y6; X1; true,
+1001; Y1; X1; true,
+Y6 -> MainBreadboard22 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X1; false,
+
+Y6 -> MainBreadboard23 set connection:
+1000; Y6; X1; true,
+1001; Y1; X2; true,
+Y6 -> MainBreadboard23 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X2; false,
+
+Y6 -> MainBreadboard24 set connection:
+1000; Y6; X1; true,
+1001; Y1; X3; true,
+Y6 -> MainBreadboard24 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X3; false,
+
+Y6 -> MainBreadboard1 set connection:
+1000; Y6; X1; true,
+1001; Y1; X4; true,
+Y6 -> MainBreadboard1 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X4; false,
+
+Y6 -> MainBreadboard2 set connection:
+1000; Y6; X1; true,
+1001; Y1; X5; true,
+Y6 -> MainBreadboard2 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X5; false,
+
+Y6 -> MainBreadboard3 set connection:
+1000; Y6; X1; true,
+1001; Y1; X6; true,
+Y6 -> MainBreadboard3 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X6; false,
+
+Y6 -> MainBreadboard4 set connection:
+1000; Y6; X1; true,
+1001; Y1; X7; true,
+Y6 -> MainBreadboard4 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X7; false,
+
+Y6 -> MainBreadboard5 set connection:
+1000; Y6; X1; true,
+1001; Y1; X8; true,
+Y6 -> MainBreadboard5 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X8; false,
+
+Y6 -> MainBreadboard6 set connection:
+1000; Y6; X1; true,
+1001; Y1; X9; true,
+Y6 -> MainBreadboard6 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X9; false,
+
+Y6 -> MainBreadboard7 set connection:
+1000; Y6; X1; true,
+1001; Y1; X10; true,
+Y6 -> MainBreadboard7 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X10; false,
+
+Y6 -> MainBreadboard8 set connection:
+1000; Y6; X1; true,
+1001; Y1; X11; true,
+Y6 -> MainBreadboard8 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X11; false,
+
+Y6 -> MainBreadboard9 set connection:
+1000; Y6; X1; true,
+1001; Y1; X12; true,
+Y6 -> MainBreadboard9 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X12; false,
+
+Y6 -> MainBreadboard10 set connection:
+1000; Y6; X1; true,
+1001; Y1; X13; true,
+Y6 -> MainBreadboard10 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X13; false,
+
+Y6 -> MainBreadboard11 set connection:
+1000; Y6; X1; true,
+1001; Y1; X14; true,
+Y6 -> MainBreadboard11 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X14; false,
+
+Y6 -> MainBreadboard12 set connection:
+1000; Y6; X1; true,
+1001; Y1; X15; true,
+Y6 -> MainBreadboard12 remove connection:
+1000; Y6; X1; false,
+1001; Y1; X15; false,
+
+Y6 -> MainBreadboard21 set connection:
+1000; Y6; X2; true,
+1001; Y2; X0; true,
+Y6 -> MainBreadboard21 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X0; false,
+
+Y6 -> MainBreadboard22 set connection:
+1000; Y6; X2; true,
+1001; Y2; X1; true,
+Y6 -> MainBreadboard22 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X1; false,
+
+Y6 -> MainBreadboard23 set connection:
+1000; Y6; X2; true,
+1001; Y2; X2; true,
+Y6 -> MainBreadboard23 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X2; false,
+
+Y6 -> MainBreadboard24 set connection:
+1000; Y6; X2; true,
+1001; Y2; X3; true,
+Y6 -> MainBreadboard24 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X3; false,
+
+Y6 -> MainBreadboard1 set connection:
+1000; Y6; X2; true,
+1001; Y2; X4; true,
+Y6 -> MainBreadboard1 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X4; false,
+
+Y6 -> MainBreadboard2 set connection:
+1000; Y6; X2; true,
+1001; Y2; X5; true,
+Y6 -> MainBreadboard2 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X5; false,
+
+Y6 -> MainBreadboard3 set connection:
+1000; Y6; X2; true,
+1001; Y2; X6; true,
+Y6 -> MainBreadboard3 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X6; false,
+
+Y6 -> MainBreadboard4 set connection:
+1000; Y6; X2; true,
+1001; Y2; X7; true,
+Y6 -> MainBreadboard4 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X7; false,
+
+Y6 -> MainBreadboard5 set connection:
+1000; Y6; X2; true,
+1001; Y2; X8; true,
+Y6 -> MainBreadboard5 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X8; false,
+
+Y6 -> MainBreadboard6 set connection:
+1000; Y6; X2; true,
+1001; Y2; X9; true,
+Y6 -> MainBreadboard6 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X9; false,
+
+Y6 -> MainBreadboard7 set connection:
+1000; Y6; X2; true,
+1001; Y2; X10; true,
+Y6 -> MainBreadboard7 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X10; false,
+
+Y6 -> MainBreadboard8 set connection:
+1000; Y6; X2; true,
+1001; Y2; X11; true,
+Y6 -> MainBreadboard8 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X11; false,
+
+Y6 -> MainBreadboard9 set connection:
+1000; Y6; X2; true,
+1001; Y2; X12; true,
+Y6 -> MainBreadboard9 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X12; false,
+
+Y6 -> MainBreadboard10 set connection:
+1000; Y6; X2; true,
+1001; Y2; X13; true,
+Y6 -> MainBreadboard10 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X13; false,
+
+Y6 -> MainBreadboard11 set connection:
+1000; Y6; X2; true,
+1001; Y2; X14; true,
+Y6 -> MainBreadboard11 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X14; false,
+
+Y6 -> MainBreadboard12 set connection:
+1000; Y6; X2; true,
+1001; Y2; X15; true,
+Y6 -> MainBreadboard12 remove connection:
+1000; Y6; X2; false,
+1001; Y2; X15; false,
+
+Y6 -> MainBreadboard21 set connection:
+1000; Y6; X3; true,
+1001; Y3; X0; true,
+Y6 -> MainBreadboard21 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X0; false,
+
+Y6 -> MainBreadboard22 set connection:
+1000; Y6; X3; true,
+1001; Y3; X1; true,
+Y6 -> MainBreadboard22 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X1; false,
+
+Y6 -> MainBreadboard23 set connection:
+1000; Y6; X3; true,
+1001; Y3; X2; true,
+Y6 -> MainBreadboard23 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X2; false,
+
+Y6 -> MainBreadboard24 set connection:
+1000; Y6; X3; true,
+1001; Y3; X3; true,
+Y6 -> MainBreadboard24 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X3; false,
+
+Y6 -> MainBreadboard1 set connection:
+1000; Y6; X3; true,
+1001; Y3; X4; true,
+Y6 -> MainBreadboard1 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X4; false,
+
+Y6 -> MainBreadboard2 set connection:
+1000; Y6; X3; true,
+1001; Y3; X5; true,
+Y6 -> MainBreadboard2 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X5; false,
+
+Y6 -> MainBreadboard3 set connection:
+1000; Y6; X3; true,
+1001; Y3; X6; true,
+Y6 -> MainBreadboard3 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X6; false,
+
+Y6 -> MainBreadboard4 set connection:
+1000; Y6; X3; true,
+1001; Y3; X7; true,
+Y6 -> MainBreadboard4 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X7; false,
+
+Y6 -> MainBreadboard5 set connection:
+1000; Y6; X3; true,
+1001; Y3; X8; true,
+Y6 -> MainBreadboard5 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X8; false,
+
+Y6 -> MainBreadboard6 set connection:
+1000; Y6; X3; true,
+1001; Y3; X9; true,
+Y6 -> MainBreadboard6 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X9; false,
+
+Y6 -> MainBreadboard7 set connection:
+1000; Y6; X3; true,
+1001; Y3; X10; true,
+Y6 -> MainBreadboard7 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X10; false,
+
+Y6 -> MainBreadboard8 set connection:
+1000; Y6; X3; true,
+1001; Y3; X11; true,
+Y6 -> MainBreadboard8 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X11; false,
+
+Y6 -> MainBreadboard9 set connection:
+1000; Y6; X3; true,
+1001; Y3; X12; true,
+Y6 -> MainBreadboard9 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X12; false,
+
+Y6 -> MainBreadboard10 set connection:
+1000; Y6; X3; true,
+1001; Y3; X13; true,
+Y6 -> MainBreadboard10 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X13; false,
+
+Y6 -> MainBreadboard11 set connection:
+1000; Y6; X3; true,
+1001; Y3; X14; true,
+Y6 -> MainBreadboard11 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X14; false,
+
+Y6 -> MainBreadboard12 set connection:
+1000; Y6; X3; true,
+1001; Y3; X15; true,
+Y6 -> MainBreadboard12 remove connection:
+1000; Y6; X3; false,
+1001; Y3; X15; false,
+
+Y6 -> MainBreadboard21 set connection:
+1000; Y6; X4; true,
+1001; Y4; X0; true,
+Y6 -> MainBreadboard21 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X0; false,
+
+Y6 -> MainBreadboard22 set connection:
+1000; Y6; X4; true,
+1001; Y4; X1; true,
+Y6 -> MainBreadboard22 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X1; false,
+
+Y6 -> MainBreadboard23 set connection:
+1000; Y6; X4; true,
+1001; Y4; X2; true,
+Y6 -> MainBreadboard23 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X2; false,
+
+Y6 -> MainBreadboard24 set connection:
+1000; Y6; X4; true,
+1001; Y4; X3; true,
+Y6 -> MainBreadboard24 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X3; false,
+
+Y6 -> MainBreadboard1 set connection:
+1000; Y6; X4; true,
+1001; Y4; X4; true,
+Y6 -> MainBreadboard1 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X4; false,
+
+Y6 -> MainBreadboard2 set connection:
+1000; Y6; X4; true,
+1001; Y4; X5; true,
+Y6 -> MainBreadboard2 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X5; false,
+
+Y6 -> MainBreadboard3 set connection:
+1000; Y6; X4; true,
+1001; Y4; X6; true,
+Y6 -> MainBreadboard3 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X6; false,
+
+Y6 -> MainBreadboard4 set connection:
+1000; Y6; X4; true,
+1001; Y4; X7; true,
+Y6 -> MainBreadboard4 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X7; false,
+
+Y6 -> MainBreadboard5 set connection:
+1000; Y6; X4; true,
+1001; Y4; X8; true,
+Y6 -> MainBreadboard5 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X8; false,
+
+Y6 -> MainBreadboard6 set connection:
+1000; Y6; X4; true,
+1001; Y4; X9; true,
+Y6 -> MainBreadboard6 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X9; false,
+
+Y6 -> MainBreadboard7 set connection:
+1000; Y6; X4; true,
+1001; Y4; X10; true,
+Y6 -> MainBreadboard7 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X10; false,
+
+Y6 -> MainBreadboard8 set connection:
+1000; Y6; X4; true,
+1001; Y4; X11; true,
+Y6 -> MainBreadboard8 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X11; false,
+
+Y6 -> MainBreadboard9 set connection:
+1000; Y6; X4; true,
+1001; Y4; X12; true,
+Y6 -> MainBreadboard9 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X12; false,
+
+Y6 -> MainBreadboard10 set connection:
+1000; Y6; X4; true,
+1001; Y4; X13; true,
+Y6 -> MainBreadboard10 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X13; false,
+
+Y6 -> MainBreadboard11 set connection:
+1000; Y6; X4; true,
+1001; Y4; X14; true,
+Y6 -> MainBreadboard11 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X14; false,
+
+Y6 -> MainBreadboard12 set connection:
+1000; Y6; X4; true,
+1001; Y4; X15; true,
+Y6 -> MainBreadboard12 remove connection:
+1000; Y6; X4; false,
+1001; Y4; X15; false,
+
+Y6 -> MainBreadboard21 set connection:
+1000; Y6; X5; true,
+1001; Y5; X0; true,
+Y6 -> MainBreadboard21 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X0; false,
+
+Y6 -> MainBreadboard22 set connection:
+1000; Y6; X5; true,
+1001; Y5; X1; true,
+Y6 -> MainBreadboard22 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X1; false,
+
+Y6 -> MainBreadboard23 set connection:
+1000; Y6; X5; true,
+1001; Y5; X2; true,
+Y6 -> MainBreadboard23 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X2; false,
+
+Y6 -> MainBreadboard24 set connection:
+1000; Y6; X5; true,
+1001; Y5; X3; true,
+Y6 -> MainBreadboard24 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X3; false,
+
+Y6 -> MainBreadboard1 set connection:
+1000; Y6; X5; true,
+1001; Y5; X4; true,
+Y6 -> MainBreadboard1 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X4; false,
+
+Y6 -> MainBreadboard2 set connection:
+1000; Y6; X5; true,
+1001; Y5; X5; true,
+Y6 -> MainBreadboard2 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X5; false,
+
+Y6 -> MainBreadboard3 set connection:
+1000; Y6; X5; true,
+1001; Y5; X6; true,
+Y6 -> MainBreadboard3 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X6; false,
+
+Y6 -> MainBreadboard4 set connection:
+1000; Y6; X5; true,
+1001; Y5; X7; true,
+Y6 -> MainBreadboard4 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X7; false,
+
+Y6 -> MainBreadboard5 set connection:
+1000; Y6; X5; true,
+1001; Y5; X8; true,
+Y6 -> MainBreadboard5 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X8; false,
+
+Y6 -> MainBreadboard6 set connection:
+1000; Y6; X5; true,
+1001; Y5; X9; true,
+Y6 -> MainBreadboard6 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X9; false,
+
+Y6 -> MainBreadboard7 set connection:
+1000; Y6; X5; true,
+1001; Y5; X10; true,
+Y6 -> MainBreadboard7 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X10; false,
+
+Y6 -> MainBreadboard8 set connection:
+1000; Y6; X5; true,
+1001; Y5; X11; true,
+Y6 -> MainBreadboard8 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X11; false,
+
+Y6 -> MainBreadboard9 set connection:
+1000; Y6; X5; true,
+1001; Y5; X12; true,
+Y6 -> MainBreadboard9 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X12; false,
+
+Y6 -> MainBreadboard10 set connection:
+1000; Y6; X5; true,
+1001; Y5; X13; true,
+Y6 -> MainBreadboard10 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X13; false,
+
+Y6 -> MainBreadboard11 set connection:
+1000; Y6; X5; true,
+1001; Y5; X14; true,
+Y6 -> MainBreadboard11 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X14; false,
+
+Y6 -> MainBreadboard12 set connection:
+1000; Y6; X5; true,
+1001; Y5; X15; true,
+Y6 -> MainBreadboard12 remove connection:
+1000; Y6; X5; false,
+1001; Y5; X15; false,
+
+Y6 -> MainBreadboard21 set connection:
+1000; Y6; X6; true,
+1001; Y6; X0; true,
+Y6 -> MainBreadboard21 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X0; false,
+
+Y6 -> MainBreadboard22 set connection:
+1000; Y6; X6; true,
+1001; Y6; X1; true,
+Y6 -> MainBreadboard22 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X1; false,
+
+Y6 -> MainBreadboard23 set connection:
+1000; Y6; X6; true,
+1001; Y6; X2; true,
+Y6 -> MainBreadboard23 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X2; false,
+
+Y6 -> MainBreadboard24 set connection:
+1000; Y6; X6; true,
+1001; Y6; X3; true,
+Y6 -> MainBreadboard24 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X3; false,
+
+Y6 -> MainBreadboard1 set connection:
+1000; Y6; X6; true,
+1001; Y6; X4; true,
+Y6 -> MainBreadboard1 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X4; false,
+
+Y6 -> MainBreadboard2 set connection:
+1000; Y6; X6; true,
+1001; Y6; X5; true,
+Y6 -> MainBreadboard2 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X5; false,
+
+Y6 -> MainBreadboard3 set connection:
+1000; Y6; X6; true,
+1001; Y6; X6; true,
+Y6 -> MainBreadboard3 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X6; false,
+
+Y6 -> MainBreadboard4 set connection:
+1000; Y6; X6; true,
+1001; Y6; X7; true,
+Y6 -> MainBreadboard4 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X7; false,
+
+Y6 -> MainBreadboard5 set connection:
+1000; Y6; X6; true,
+1001; Y6; X8; true,
+Y6 -> MainBreadboard5 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X8; false,
+
+Y6 -> MainBreadboard6 set connection:
+1000; Y6; X6; true,
+1001; Y6; X9; true,
+Y6 -> MainBreadboard6 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X9; false,
+
+Y6 -> MainBreadboard7 set connection:
+1000; Y6; X6; true,
+1001; Y6; X10; true,
+Y6 -> MainBreadboard7 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X10; false,
+
+Y6 -> MainBreadboard8 set connection:
+1000; Y6; X6; true,
+1001; Y6; X11; true,
+Y6 -> MainBreadboard8 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X11; false,
+
+Y6 -> MainBreadboard9 set connection:
+1000; Y6; X6; true,
+1001; Y6; X12; true,
+Y6 -> MainBreadboard9 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X12; false,
+
+Y6 -> MainBreadboard10 set connection:
+1000; Y6; X6; true,
+1001; Y6; X13; true,
+Y6 -> MainBreadboard10 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X13; false,
+
+Y6 -> MainBreadboard11 set connection:
+1000; Y6; X6; true,
+1001; Y6; X14; true,
+Y6 -> MainBreadboard11 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X14; false,
+
+Y6 -> MainBreadboard12 set connection:
+1000; Y6; X6; true,
+1001; Y6; X15; true,
+Y6 -> MainBreadboard12 remove connection:
+1000; Y6; X6; false,
+1001; Y6; X15; false,
+
+Y6 -> MainBreadboard21 set connection:
+1000; Y6; X7; true,
+1001; Y7; X0; true,
+Y6 -> MainBreadboard21 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X0; false,
+
+Y6 -> MainBreadboard22 set connection:
+1000; Y6; X7; true,
+1001; Y7; X1; true,
+Y6 -> MainBreadboard22 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X1; false,
+
+Y6 -> MainBreadboard23 set connection:
+1000; Y6; X7; true,
+1001; Y7; X2; true,
+Y6 -> MainBreadboard23 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X2; false,
+
+Y6 -> MainBreadboard24 set connection:
+1000; Y6; X7; true,
+1001; Y7; X3; true,
+Y6 -> MainBreadboard24 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X3; false,
+
+Y6 -> MainBreadboard1 set connection:
+1000; Y6; X7; true,
+1001; Y7; X4; true,
+Y6 -> MainBreadboard1 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X4; false,
+
+Y6 -> MainBreadboard2 set connection:
+1000; Y6; X7; true,
+1001; Y7; X5; true,
+Y6 -> MainBreadboard2 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X5; false,
+
+Y6 -> MainBreadboard3 set connection:
+1000; Y6; X7; true,
+1001; Y7; X6; true,
+Y6 -> MainBreadboard3 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X6; false,
+
+Y6 -> MainBreadboard4 set connection:
+1000; Y6; X7; true,
+1001; Y7; X7; true,
+Y6 -> MainBreadboard4 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X7; false,
+
+Y6 -> MainBreadboard5 set connection:
+1000; Y6; X7; true,
+1001; Y7; X8; true,
+Y6 -> MainBreadboard5 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X8; false,
+
+Y6 -> MainBreadboard6 set connection:
+1000; Y6; X7; true,
+1001; Y7; X9; true,
+Y6 -> MainBreadboard6 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X9; false,
+
+Y6 -> MainBreadboard7 set connection:
+1000; Y6; X7; true,
+1001; Y7; X10; true,
+Y6 -> MainBreadboard7 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X10; false,
+
+Y6 -> MainBreadboard8 set connection:
+1000; Y6; X7; true,
+1001; Y7; X11; true,
+Y6 -> MainBreadboard8 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X11; false,
+
+Y6 -> MainBreadboard9 set connection:
+1000; Y6; X7; true,
+1001; Y7; X12; true,
+Y6 -> MainBreadboard9 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X12; false,
+
+Y6 -> MainBreadboard10 set connection:
+1000; Y6; X7; true,
+1001; Y7; X13; true,
+Y6 -> MainBreadboard10 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X13; false,
+
+Y6 -> MainBreadboard11 set connection:
+1000; Y6; X7; true,
+1001; Y7; X14; true,
+Y6 -> MainBreadboard11 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X14; false,
+
+Y6 -> MainBreadboard12 set connection:
+1000; Y6; X7; true,
+1001; Y7; X15; true,
+Y6 -> MainBreadboard12 remove connection:
+1000; Y6; X7; false,
+1001; Y7; X15; false,
+
+Y7 -> MainBreadboard21 set connection:
+1000; Y7; X0; true,
+1001; Y0; X0; true,
+Y7 -> MainBreadboard21 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X0; false,
+
+Y7 -> MainBreadboard22 set connection:
+1000; Y7; X0; true,
+1001; Y0; X1; true,
+Y7 -> MainBreadboard22 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X1; false,
+
+Y7 -> MainBreadboard23 set connection:
+1000; Y7; X0; true,
+1001; Y0; X2; true,
+Y7 -> MainBreadboard23 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X2; false,
+
+Y7 -> MainBreadboard24 set connection:
+1000; Y7; X0; true,
+1001; Y0; X3; true,
+Y7 -> MainBreadboard24 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X3; false,
+
+Y7 -> MainBreadboard1 set connection:
+1000; Y7; X0; true,
+1001; Y0; X4; true,
+Y7 -> MainBreadboard1 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X4; false,
+
+Y7 -> MainBreadboard2 set connection:
+1000; Y7; X0; true,
+1001; Y0; X5; true,
+Y7 -> MainBreadboard2 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X5; false,
+
+Y7 -> MainBreadboard3 set connection:
+1000; Y7; X0; true,
+1001; Y0; X6; true,
+Y7 -> MainBreadboard3 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X6; false,
+
+Y7 -> MainBreadboard4 set connection:
+1000; Y7; X0; true,
+1001; Y0; X7; true,
+Y7 -> MainBreadboard4 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X7; false,
+
+Y7 -> MainBreadboard5 set connection:
+1000; Y7; X0; true,
+1001; Y0; X8; true,
+Y7 -> MainBreadboard5 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X8; false,
+
+Y7 -> MainBreadboard6 set connection:
+1000; Y7; X0; true,
+1001; Y0; X9; true,
+Y7 -> MainBreadboard6 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X9; false,
+
+Y7 -> MainBreadboard7 set connection:
+1000; Y7; X0; true,
+1001; Y0; X10; true,
+Y7 -> MainBreadboard7 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X10; false,
+
+Y7 -> MainBreadboard8 set connection:
+1000; Y7; X0; true,
+1001; Y0; X11; true,
+Y7 -> MainBreadboard8 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X11; false,
+
+Y7 -> MainBreadboard9 set connection:
+1000; Y7; X0; true,
+1001; Y0; X12; true,
+Y7 -> MainBreadboard9 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X12; false,
+
+Y7 -> MainBreadboard10 set connection:
+1000; Y7; X0; true,
+1001; Y0; X13; true,
+Y7 -> MainBreadboard10 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X13; false,
+
+Y7 -> MainBreadboard11 set connection:
+1000; Y7; X0; true,
+1001; Y0; X14; true,
+Y7 -> MainBreadboard11 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X14; false,
+
+Y7 -> MainBreadboard12 set connection:
+1000; Y7; X0; true,
+1001; Y0; X15; true,
+Y7 -> MainBreadboard12 remove connection:
+1000; Y7; X0; false,
+1001; Y0; X15; false,
+
+Y7 -> MainBreadboard21 set connection:
+1000; Y7; X1; true,
+1001; Y1; X0; true,
+Y7 -> MainBreadboard21 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X0; false,
+
+Y7 -> MainBreadboard22 set connection:
+1000; Y7; X1; true,
+1001; Y1; X1; true,
+Y7 -> MainBreadboard22 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X1; false,
+
+Y7 -> MainBreadboard23 set connection:
+1000; Y7; X1; true,
+1001; Y1; X2; true,
+Y7 -> MainBreadboard23 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X2; false,
+
+Y7 -> MainBreadboard24 set connection:
+1000; Y7; X1; true,
+1001; Y1; X3; true,
+Y7 -> MainBreadboard24 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X3; false,
+
+Y7 -> MainBreadboard1 set connection:
+1000; Y7; X1; true,
+1001; Y1; X4; true,
+Y7 -> MainBreadboard1 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X4; false,
+
+Y7 -> MainBreadboard2 set connection:
+1000; Y7; X1; true,
+1001; Y1; X5; true,
+Y7 -> MainBreadboard2 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X5; false,
+
+Y7 -> MainBreadboard3 set connection:
+1000; Y7; X1; true,
+1001; Y1; X6; true,
+Y7 -> MainBreadboard3 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X6; false,
+
+Y7 -> MainBreadboard4 set connection:
+1000; Y7; X1; true,
+1001; Y1; X7; true,
+Y7 -> MainBreadboard4 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X7; false,
+
+Y7 -> MainBreadboard5 set connection:
+1000; Y7; X1; true,
+1001; Y1; X8; true,
+Y7 -> MainBreadboard5 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X8; false,
+
+Y7 -> MainBreadboard6 set connection:
+1000; Y7; X1; true,
+1001; Y1; X9; true,
+Y7 -> MainBreadboard6 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X9; false,
+
+Y7 -> MainBreadboard7 set connection:
+1000; Y7; X1; true,
+1001; Y1; X10; true,
+Y7 -> MainBreadboard7 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X10; false,
+
+Y7 -> MainBreadboard8 set connection:
+1000; Y7; X1; true,
+1001; Y1; X11; true,
+Y7 -> MainBreadboard8 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X11; false,
+
+Y7 -> MainBreadboard9 set connection:
+1000; Y7; X1; true,
+1001; Y1; X12; true,
+Y7 -> MainBreadboard9 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X12; false,
+
+Y7 -> MainBreadboard10 set connection:
+1000; Y7; X1; true,
+1001; Y1; X13; true,
+Y7 -> MainBreadboard10 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X13; false,
+
+Y7 -> MainBreadboard11 set connection:
+1000; Y7; X1; true,
+1001; Y1; X14; true,
+Y7 -> MainBreadboard11 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X14; false,
+
+Y7 -> MainBreadboard12 set connection:
+1000; Y7; X1; true,
+1001; Y1; X15; true,
+Y7 -> MainBreadboard12 remove connection:
+1000; Y7; X1; false,
+1001; Y1; X15; false,
+
+Y7 -> MainBreadboard21 set connection:
+1000; Y7; X2; true,
+1001; Y2; X0; true,
+Y7 -> MainBreadboard21 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X0; false,
+
+Y7 -> MainBreadboard22 set connection:
+1000; Y7; X2; true,
+1001; Y2; X1; true,
+Y7 -> MainBreadboard22 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X1; false,
+
+Y7 -> MainBreadboard23 set connection:
+1000; Y7; X2; true,
+1001; Y2; X2; true,
+Y7 -> MainBreadboard23 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X2; false,
+
+Y7 -> MainBreadboard24 set connection:
+1000; Y7; X2; true,
+1001; Y2; X3; true,
+Y7 -> MainBreadboard24 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X3; false,
+
+Y7 -> MainBreadboard1 set connection:
+1000; Y7; X2; true,
+1001; Y2; X4; true,
+Y7 -> MainBreadboard1 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X4; false,
+
+Y7 -> MainBreadboard2 set connection:
+1000; Y7; X2; true,
+1001; Y2; X5; true,
+Y7 -> MainBreadboard2 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X5; false,
+
+Y7 -> MainBreadboard3 set connection:
+1000; Y7; X2; true,
+1001; Y2; X6; true,
+Y7 -> MainBreadboard3 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X6; false,
+
+Y7 -> MainBreadboard4 set connection:
+1000; Y7; X2; true,
+1001; Y2; X7; true,
+Y7 -> MainBreadboard4 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X7; false,
+
+Y7 -> MainBreadboard5 set connection:
+1000; Y7; X2; true,
+1001; Y2; X8; true,
+Y7 -> MainBreadboard5 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X8; false,
+
+Y7 -> MainBreadboard6 set connection:
+1000; Y7; X2; true,
+1001; Y2; X9; true,
+Y7 -> MainBreadboard6 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X9; false,
+
+Y7 -> MainBreadboard7 set connection:
+1000; Y7; X2; true,
+1001; Y2; X10; true,
+Y7 -> MainBreadboard7 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X10; false,
+
+Y7 -> MainBreadboard8 set connection:
+1000; Y7; X2; true,
+1001; Y2; X11; true,
+Y7 -> MainBreadboard8 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X11; false,
+
+Y7 -> MainBreadboard9 set connection:
+1000; Y7; X2; true,
+1001; Y2; X12; true,
+Y7 -> MainBreadboard9 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X12; false,
+
+Y7 -> MainBreadboard10 set connection:
+1000; Y7; X2; true,
+1001; Y2; X13; true,
+Y7 -> MainBreadboard10 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X13; false,
+
+Y7 -> MainBreadboard11 set connection:
+1000; Y7; X2; true,
+1001; Y2; X14; true,
+Y7 -> MainBreadboard11 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X14; false,
+
+Y7 -> MainBreadboard12 set connection:
+1000; Y7; X2; true,
+1001; Y2; X15; true,
+Y7 -> MainBreadboard12 remove connection:
+1000; Y7; X2; false,
+1001; Y2; X15; false,
+
+Y7 -> MainBreadboard21 set connection:
+1000; Y7; X3; true,
+1001; Y3; X0; true,
+Y7 -> MainBreadboard21 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X0; false,
+
+Y7 -> MainBreadboard22 set connection:
+1000; Y7; X3; true,
+1001; Y3; X1; true,
+Y7 -> MainBreadboard22 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X1; false,
+
+Y7 -> MainBreadboard23 set connection:
+1000; Y7; X3; true,
+1001; Y3; X2; true,
+Y7 -> MainBreadboard23 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X2; false,
+
+Y7 -> MainBreadboard24 set connection:
+1000; Y7; X3; true,
+1001; Y3; X3; true,
+Y7 -> MainBreadboard24 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X3; false,
+
+Y7 -> MainBreadboard1 set connection:
+1000; Y7; X3; true,
+1001; Y3; X4; true,
+Y7 -> MainBreadboard1 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X4; false,
+
+Y7 -> MainBreadboard2 set connection:
+1000; Y7; X3; true,
+1001; Y3; X5; true,
+Y7 -> MainBreadboard2 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X5; false,
+
+Y7 -> MainBreadboard3 set connection:
+1000; Y7; X3; true,
+1001; Y3; X6; true,
+Y7 -> MainBreadboard3 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X6; false,
+
+Y7 -> MainBreadboard4 set connection:
+1000; Y7; X3; true,
+1001; Y3; X7; true,
+Y7 -> MainBreadboard4 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X7; false,
+
+Y7 -> MainBreadboard5 set connection:
+1000; Y7; X3; true,
+1001; Y3; X8; true,
+Y7 -> MainBreadboard5 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X8; false,
+
+Y7 -> MainBreadboard6 set connection:
+1000; Y7; X3; true,
+1001; Y3; X9; true,
+Y7 -> MainBreadboard6 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X9; false,
+
+Y7 -> MainBreadboard7 set connection:
+1000; Y7; X3; true,
+1001; Y3; X10; true,
+Y7 -> MainBreadboard7 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X10; false,
+
+Y7 -> MainBreadboard8 set connection:
+1000; Y7; X3; true,
+1001; Y3; X11; true,
+Y7 -> MainBreadboard8 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X11; false,
+
+Y7 -> MainBreadboard9 set connection:
+1000; Y7; X3; true,
+1001; Y3; X12; true,
+Y7 -> MainBreadboard9 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X12; false,
+
+Y7 -> MainBreadboard10 set connection:
+1000; Y7; X3; true,
+1001; Y3; X13; true,
+Y7 -> MainBreadboard10 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X13; false,
+
+Y7 -> MainBreadboard11 set connection:
+1000; Y7; X3; true,
+1001; Y3; X14; true,
+Y7 -> MainBreadboard11 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X14; false,
+
+Y7 -> MainBreadboard12 set connection:
+1000; Y7; X3; true,
+1001; Y3; X15; true,
+Y7 -> MainBreadboard12 remove connection:
+1000; Y7; X3; false,
+1001; Y3; X15; false,
+
+Y7 -> MainBreadboard21 set connection:
+1000; Y7; X4; true,
+1001; Y4; X0; true,
+Y7 -> MainBreadboard21 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X0; false,
+
+Y7 -> MainBreadboard22 set connection:
+1000; Y7; X4; true,
+1001; Y4; X1; true,
+Y7 -> MainBreadboard22 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X1; false,
+
+Y7 -> MainBreadboard23 set connection:
+1000; Y7; X4; true,
+1001; Y4; X2; true,
+Y7 -> MainBreadboard23 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X2; false,
+
+Y7 -> MainBreadboard24 set connection:
+1000; Y7; X4; true,
+1001; Y4; X3; true,
+Y7 -> MainBreadboard24 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X3; false,
+
+Y7 -> MainBreadboard1 set connection:
+1000; Y7; X4; true,
+1001; Y4; X4; true,
+Y7 -> MainBreadboard1 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X4; false,
+
+Y7 -> MainBreadboard2 set connection:
+1000; Y7; X4; true,
+1001; Y4; X5; true,
+Y7 -> MainBreadboard2 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X5; false,
+
+Y7 -> MainBreadboard3 set connection:
+1000; Y7; X4; true,
+1001; Y4; X6; true,
+Y7 -> MainBreadboard3 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X6; false,
+
+Y7 -> MainBreadboard4 set connection:
+1000; Y7; X4; true,
+1001; Y4; X7; true,
+Y7 -> MainBreadboard4 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X7; false,
+
+Y7 -> MainBreadboard5 set connection:
+1000; Y7; X4; true,
+1001; Y4; X8; true,
+Y7 -> MainBreadboard5 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X8; false,
+
+Y7 -> MainBreadboard6 set connection:
+1000; Y7; X4; true,
+1001; Y4; X9; true,
+Y7 -> MainBreadboard6 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X9; false,
+
+Y7 -> MainBreadboard7 set connection:
+1000; Y7; X4; true,
+1001; Y4; X10; true,
+Y7 -> MainBreadboard7 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X10; false,
+
+Y7 -> MainBreadboard8 set connection:
+1000; Y7; X4; true,
+1001; Y4; X11; true,
+Y7 -> MainBreadboard8 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X11; false,
+
+Y7 -> MainBreadboard9 set connection:
+1000; Y7; X4; true,
+1001; Y4; X12; true,
+Y7 -> MainBreadboard9 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X12; false,
+
+Y7 -> MainBreadboard10 set connection:
+1000; Y7; X4; true,
+1001; Y4; X13; true,
+Y7 -> MainBreadboard10 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X13; false,
+
+Y7 -> MainBreadboard11 set connection:
+1000; Y7; X4; true,
+1001; Y4; X14; true,
+Y7 -> MainBreadboard11 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X14; false,
+
+Y7 -> MainBreadboard12 set connection:
+1000; Y7; X4; true,
+1001; Y4; X15; true,
+Y7 -> MainBreadboard12 remove connection:
+1000; Y7; X4; false,
+1001; Y4; X15; false,
+
+Y7 -> MainBreadboard21 set connection:
+1000; Y7; X5; true,
+1001; Y5; X0; true,
+Y7 -> MainBreadboard21 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X0; false,
+
+Y7 -> MainBreadboard22 set connection:
+1000; Y7; X5; true,
+1001; Y5; X1; true,
+Y7 -> MainBreadboard22 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X1; false,
+
+Y7 -> MainBreadboard23 set connection:
+1000; Y7; X5; true,
+1001; Y5; X2; true,
+Y7 -> MainBreadboard23 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X2; false,
+
+Y7 -> MainBreadboard24 set connection:
+1000; Y7; X5; true,
+1001; Y5; X3; true,
+Y7 -> MainBreadboard24 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X3; false,
+
+Y7 -> MainBreadboard1 set connection:
+1000; Y7; X5; true,
+1001; Y5; X4; true,
+Y7 -> MainBreadboard1 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X4; false,
+
+Y7 -> MainBreadboard2 set connection:
+1000; Y7; X5; true,
+1001; Y5; X5; true,
+Y7 -> MainBreadboard2 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X5; false,
+
+Y7 -> MainBreadboard3 set connection:
+1000; Y7; X5; true,
+1001; Y5; X6; true,
+Y7 -> MainBreadboard3 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X6; false,
+
+Y7 -> MainBreadboard4 set connection:
+1000; Y7; X5; true,
+1001; Y5; X7; true,
+Y7 -> MainBreadboard4 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X7; false,
+
+Y7 -> MainBreadboard5 set connection:
+1000; Y7; X5; true,
+1001; Y5; X8; true,
+Y7 -> MainBreadboard5 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X8; false,
+
+Y7 -> MainBreadboard6 set connection:
+1000; Y7; X5; true,
+1001; Y5; X9; true,
+Y7 -> MainBreadboard6 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X9; false,
+
+Y7 -> MainBreadboard7 set connection:
+1000; Y7; X5; true,
+1001; Y5; X10; true,
+Y7 -> MainBreadboard7 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X10; false,
+
+Y7 -> MainBreadboard8 set connection:
+1000; Y7; X5; true,
+1001; Y5; X11; true,
+Y7 -> MainBreadboard8 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X11; false,
+
+Y7 -> MainBreadboard9 set connection:
+1000; Y7; X5; true,
+1001; Y5; X12; true,
+Y7 -> MainBreadboard9 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X12; false,
+
+Y7 -> MainBreadboard10 set connection:
+1000; Y7; X5; true,
+1001; Y5; X13; true,
+Y7 -> MainBreadboard10 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X13; false,
+
+Y7 -> MainBreadboard11 set connection:
+1000; Y7; X5; true,
+1001; Y5; X14; true,
+Y7 -> MainBreadboard11 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X14; false,
+
+Y7 -> MainBreadboard12 set connection:
+1000; Y7; X5; true,
+1001; Y5; X15; true,
+Y7 -> MainBreadboard12 remove connection:
+1000; Y7; X5; false,
+1001; Y5; X15; false,
+
+Y7 -> MainBreadboard21 set connection:
+1000; Y7; X6; true,
+1001; Y6; X0; true,
+Y7 -> MainBreadboard21 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X0; false,
+
+Y7 -> MainBreadboard22 set connection:
+1000; Y7; X6; true,
+1001; Y6; X1; true,
+Y7 -> MainBreadboard22 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X1; false,
+
+Y7 -> MainBreadboard23 set connection:
+1000; Y7; X6; true,
+1001; Y6; X2; true,
+Y7 -> MainBreadboard23 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X2; false,
+
+Y7 -> MainBreadboard24 set connection:
+1000; Y7; X6; true,
+1001; Y6; X3; true,
+Y7 -> MainBreadboard24 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X3; false,
+
+Y7 -> MainBreadboard1 set connection:
+1000; Y7; X6; true,
+1001; Y6; X4; true,
+Y7 -> MainBreadboard1 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X4; false,
+
+Y7 -> MainBreadboard2 set connection:
+1000; Y7; X6; true,
+1001; Y6; X5; true,
+Y7 -> MainBreadboard2 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X5; false,
+
+Y7 -> MainBreadboard3 set connection:
+1000; Y7; X6; true,
+1001; Y6; X6; true,
+Y7 -> MainBreadboard3 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X6; false,
+
+Y7 -> MainBreadboard4 set connection:
+1000; Y7; X6; true,
+1001; Y6; X7; true,
+Y7 -> MainBreadboard4 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X7; false,
+
+Y7 -> MainBreadboard5 set connection:
+1000; Y7; X6; true,
+1001; Y6; X8; true,
+Y7 -> MainBreadboard5 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X8; false,
+
+Y7 -> MainBreadboard6 set connection:
+1000; Y7; X6; true,
+1001; Y6; X9; true,
+Y7 -> MainBreadboard6 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X9; false,
+
+Y7 -> MainBreadboard7 set connection:
+1000; Y7; X6; true,
+1001; Y6; X10; true,
+Y7 -> MainBreadboard7 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X10; false,
+
+Y7 -> MainBreadboard8 set connection:
+1000; Y7; X6; true,
+1001; Y6; X11; true,
+Y7 -> MainBreadboard8 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X11; false,
+
+Y7 -> MainBreadboard9 set connection:
+1000; Y7; X6; true,
+1001; Y6; X12; true,
+Y7 -> MainBreadboard9 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X12; false,
+
+Y7 -> MainBreadboard10 set connection:
+1000; Y7; X6; true,
+1001; Y6; X13; true,
+Y7 -> MainBreadboard10 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X13; false,
+
+Y7 -> MainBreadboard11 set connection:
+1000; Y7; X6; true,
+1001; Y6; X14; true,
+Y7 -> MainBreadboard11 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X14; false,
+
+Y7 -> MainBreadboard12 set connection:
+1000; Y7; X6; true,
+1001; Y6; X15; true,
+Y7 -> MainBreadboard12 remove connection:
+1000; Y7; X6; false,
+1001; Y6; X15; false,
+
+Y7 -> MainBreadboard21 set connection:
+1000; Y7; X7; true,
+1001; Y7; X0; true,
+Y7 -> MainBreadboard21 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X0; false,
+
+Y7 -> MainBreadboard22 set connection:
+1000; Y7; X7; true,
+1001; Y7; X1; true,
+Y7 -> MainBreadboard22 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X1; false,
+
+Y7 -> MainBreadboard23 set connection:
+1000; Y7; X7; true,
+1001; Y7; X2; true,
+Y7 -> MainBreadboard23 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X2; false,
+
+Y7 -> MainBreadboard24 set connection:
+1000; Y7; X7; true,
+1001; Y7; X3; true,
+Y7 -> MainBreadboard24 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X3; false,
+
+Y7 -> MainBreadboard1 set connection:
+1000; Y7; X7; true,
+1001; Y7; X4; true,
+Y7 -> MainBreadboard1 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X4; false,
+
+Y7 -> MainBreadboard2 set connection:
+1000; Y7; X7; true,
+1001; Y7; X5; true,
+Y7 -> MainBreadboard2 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X5; false,
+
+Y7 -> MainBreadboard3 set connection:
+1000; Y7; X7; true,
+1001; Y7; X6; true,
+Y7 -> MainBreadboard3 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X6; false,
+
+Y7 -> MainBreadboard4 set connection:
+1000; Y7; X7; true,
+1001; Y7; X7; true,
+Y7 -> MainBreadboard4 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X7; false,
+
+Y7 -> MainBreadboard5 set connection:
+1000; Y7; X7; true,
+1001; Y7; X8; true,
+Y7 -> MainBreadboard5 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X8; false,
+
+Y7 -> MainBreadboard6 set connection:
+1000; Y7; X7; true,
+1001; Y7; X9; true,
+Y7 -> MainBreadboard6 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X9; false,
+
+Y7 -> MainBreadboard7 set connection:
+1000; Y7; X7; true,
+1001; Y7; X10; true,
+Y7 -> MainBreadboard7 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X10; false,
+
+Y7 -> MainBreadboard8 set connection:
+1000; Y7; X7; true,
+1001; Y7; X11; true,
+Y7 -> MainBreadboard8 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X11; false,
+
+Y7 -> MainBreadboard9 set connection:
+1000; Y7; X7; true,
+1001; Y7; X12; true,
+Y7 -> MainBreadboard9 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X12; false,
+
+Y7 -> MainBreadboard10 set connection:
+1000; Y7; X7; true,
+1001; Y7; X13; true,
+Y7 -> MainBreadboard10 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X13; false,
+
+Y7 -> MainBreadboard11 set connection:
+1000; Y7; X7; true,
+1001; Y7; X14; true,
+Y7 -> MainBreadboard11 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X14; false,
+
+Y7 -> MainBreadboard12 set connection:
+1000; Y7; X7; true,
+1001; Y7; X15; true,
+Y7 -> MainBreadboard12 remove connection:
+1000; Y7; X7; false,
+1001; Y7; X15; false,
+

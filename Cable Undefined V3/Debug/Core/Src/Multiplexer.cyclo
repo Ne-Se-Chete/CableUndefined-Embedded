@@ -1,2 +1,0 @@
-../Core/Src/Multiplexer.cpp:33:6:static void Multiplexer::init()	1
-../Core/Src/Multiplexer.cpp:63:6:static void Multiplexer::setConnection(int, int, bool)	6

@@ -1,0 +1,16 @@
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:453:22:LL_DMA_EnableChannel	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:472:22:LL_DMA_DisableChannel	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:879:22:LL_DMA_SetDataLength	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:930:22:LL_DMA_ConfigAddresses	2
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1054:22:LL_TIM_EnableCounter	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1065:22:LL_TIM_DisableCounter	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1542:22:LL_TIM_CC_EnableChannel	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:1567:22:LL_TIM_CC_DisableChannel	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:3569:22:LL_TIM_EnableDMAReq_CC1	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h:3580:22:LL_TIM_DisableDMAReq_CC1	1
+../Core/Src/leds.c:10:6:addToPin	6
+../Core/Src/leds.c:29:6:removeFromPin	5
+../Core/Src/leds.c:61:6:clearLeds	2
+../Core/Src/leds.c:74:6:sendPixelData	9
+../Core/Src/leds.c:141:6:PWM_Start_DMA	1
+../Core/Src/leds.c:165:6:LL_TIM_PWM_PulseFinishedCallback	1

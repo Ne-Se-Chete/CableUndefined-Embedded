@@ -1,0 +1,125 @@
+Path from  -> MainBreadboard 14 to  -> MCUBreadboard 5 is: 
+ -> MainBreadboard 14 -> MUX2 x5 -> MUX2 y0 -> MUX1 x0 -> MUX1 y4 -> MCUBreadboard 5
+
+Path from  -> MainBreadboard 1 to  -> MCUBreadboard 1 is: 
+ -> MainBreadboard 1 -> MUX1 x8 -> MUX1 y0 -> MCUBreadboard 1
+
+ -> MainBreadboard 1 -> MUX1 x8 -> MUX1 y0 -> MCUBreadboard 1
+
+Path from  -> MainBreadboard 1 to  -> MCUBreadboard 1 is: 
+ -> MainBreadboard 1 -> MUX1 x8 -> MUX1 y0 -> MCUBreadboard 1
+
+Path from  -> MainBreadboard 13 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 13 -> MUX2 x15 -> MUX2 y0 -> MUX1 x0 -> MUX1 y3 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 13 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 13 -> MUX1 x8 -> MUX1 y4 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 13 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 13 -> MUX1 x8 -> MUX1 y4 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 0 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 0 -> MUX2 x4 -> MUX2 y0 -> MUX1 x0 -> MUX1 y4 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 13 to  -> MCUBreadboard 7 is: 
+ -> MainBreadboard 13 -> MUX1 x9 -> MUX1 y7 -> MCUBreadboard 7
+
+Path from  -> MainBreadboard 23 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 23 -> MUX2 x3 -> MUX2 y0 -> MUX1 x0 -> MUX1 y4 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 19 to  -> MCUBreadboard 7 is: 
+ -> MainBreadboard 19 -> MUX1 x15 -> MUX1 y7 -> MCUBreadboard 7
+
+Path from  -> MainBreadboard 2 to  -> MCUBreadboard 2 is: 
+ -> MainBreadboard 2 -> MUX2 x6 -> MUX2 y0 -> MUX1 x0 -> MUX1 y2 -> MCUBreadboard 2
+
+Path from  -> MainBreadboard 23 to  -> MainBreadboard 13 is: 
+ -> MainBreadboard 23 -> MUX2 x3 -> MUX2 y0 -> MUX1 x0 -> MUX1 y0 -> MUX1 x9 -> MainBreadboard 13
+
+Path from  -> MainBreadboard 12 to  -> MCUBreadboard 5 is: 
+ -> MainBreadboard 12 -> MUX1 x8 -> MUX1 y5 -> MCUBreadboard 5
+
+Path from  -> MainBreadboard 4 to  -> MCUBreadboard 3 is: 
+ -> MainBreadboard 4 -> MUX2 x8 -> MUX2 y0 -> MUX1 x0 -> MUX1 y3 -> MCUBreadboard 3
+
+Path from  -> MainBreadboard 16 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 16 -> MUX1 x12 -> MUX1 y4 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 14 to  -> MCUBreadboard 3 is: 
+ -> MainBreadboard 14 -> MUX1 x10 -> MUX1 y3 -> MCUBreadboard 3
+
+Path from  -> MainBreadboard 12 to  -> MCUBreadboard 6 is: 
+ -> MainBreadboard 12 -> MUX1 x8 -> MUX1 y6 -> MCUBreadboard 6
+
+Path from  -> MainBreadboard 17 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 17 -> MUX1 x13 -> MUX1 y4 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 19 to  -> MCUBreadboard 4 is: 
+ -> MainBreadboard 19 -> MUX1 x15 -> MUX1 y4 -> MCUBreadboard 4
+
+Path from  -> MainBreadboard 22  to  -> MCUBreadboard 7  is: 
+ -> MainBreadboard 22  -> MUX2 x2  -> MUX2 y0  -> MUX1 x0  -> MUX1 y7  -> MCUBreadboard 7 
+
+Path from  -> MainBreadboard 21  to  -> MCUBreadboard 6  is: 
+ -> MainBreadboard 21  -> MUX2 x1  -> MUX2 y0  -> MUX1 x0  -> MUX1 y6  -> MCUBreadboard 6 
+
+Path from  -> MainBreadboard 22  to  -> MCUBreadboard 5  is: 
+ -> MainBreadboard 22  -> MUX2 x2  -> MUX2 y0  -> MUX1 x0  -> MUX1 y5  -> MCUBreadboard 5 
+
+Path from  -> MainBreadboard 13  to  -> MCUBreadboard 2  is: 
+ -> MainBreadboard 13  -> MUX1 x9  -> MUX1 y2  -> MCUBreadboard 2 
+
+Path from  -> MainBreadboard 0  to  -> MCUBreadboard 0  is: 
+ -> MainBreadboard 0  -> MUX2 x4  -> MUX2 y0  -> MUX1 x0  -> MUX1 y0  -> MCUBreadboard 0 
+
+Path from  -> MainBreadboard 1  to  -> MCUBreadboard 1  is: 
+ -> MainBreadboard 1  -> MUX2 x5  -> MUX2 y1  -> MUX1 x1  -> MUX1 y1  -> MCUBreadboard 1 
+
+Path from  -> MainBreadboard 2  to  -> MCUBreadboard 2  is: 
+ -> MainBreadboard 2  -> MUX2 x6  -> MUX2 y2  -> MUX1 x2  -> MUX1 y2  -> MCUBreadboard 2 
+
+Path from  -> MainBreadboard 3  to  -> MCUBreadboard 3  is: 
+ -> MainBreadboard 3  -> MUX2 x7  -> MUX2 y3  -> MUX1 x3  -> MUX1 y3  -> MCUBreadboard 3 
+
+Path from  -> MainBreadboard 4  to  -> MCUBreadboard 4  is: 
+ -> MainBreadboard 4  -> MUX2 x8  -> MUX2 y4  -> MUX1 x4  -> MUX1 y4  -> MCUBreadboard 4 
+
+Path from  -> MainBreadboard 5  to  -> MCUBreadboard 5  is: 
+ -> MainBreadboard 5  -> MUX2 x9  -> MUX2 y5  -> MUX1 x5  -> MUX1 y5  -> MCUBreadboard 5 
+
+Path from  -> MainBreadboard 6  to  -> MCUBreadboard 6  is: 
+ -> MainBreadboard 6  -> MUX2 x10  -> MUX2 y6  -> MUX1 x6  -> MUX1 y6  -> MCUBreadboard 6 
+
+Path from  -> MainBreadboard 7  to  -> MCUBreadboard 7  is: 
+ -> MainBreadboard 7  -> MUX2 x11  -> MUX2 y7  -> MUX1 x7  -> MUX1 y7  -> MCUBreadboard 7 
+
+Path from  -> MainBreadboard 22  to  -> MCUBreadboard 5  is: 
+ -> MainBreadboard 22  -> MUX2 x2  -> MUX2 y0  -> MUX1 x0  -> MUX1 y5  -> MCUBreadboard 5 
+
+Path from  -> MainBreadboard 6  to  -> MCUBreadboard 2  is: 
+ -> MainBreadboard 6  -> MUX2 x10  -> MUX2 y0  -> MUX1 x0  -> MUX1 y2  -> MCUBreadboard 2 
+
+Path from  -> MainBreadboard 0  to  -> MCUBreadboard 0  is: 
+ -> MainBreadboard 0  -> MUX2 x4  -> MUX2 y0  -> MUX1 x0  -> MUX1 y0  -> MCUBreadboard 0 
+
+Path from  -> MainBreadboard 1  to  -> MCUBreadboard 1  is: 
+ -> MainBreadboard 1  -> MUX2 x5  -> MUX2 y1  -> MUX1 x1  -> MUX1 y1  -> MCUBreadboard 1 
+
+Path from  -> MainBreadboard 2  to  -> MCUBreadboard 2  is: 
+ -> MainBreadboard 2  -> MUX2 x6  -> MUX2 y2  -> MUX1 x2  -> MUX1 y2  -> MCUBreadboard 2 
+
+Path from  -> MainBreadboard 3  to  -> MCUBreadboard 3  is: 
+ -> MainBreadboard 3  -> MUX2 x7  -> MUX2 y3  -> MUX1 x3  -> MUX1 y3  -> MCUBreadboard 3 
+
+Path from  -> MainBreadboard 4  to  -> MCUBreadboard 4  is: 
+ -> MainBreadboard 4  -> MUX2 x8  -> MUX2 y4  -> MUX1 x4  -> MUX1 y4  -> MCUBreadboard 4 
+
+Path from  -> MainBreadboard 5  to  -> MCUBreadboard 5  is: 
+ -> MainBreadboard 5  -> MUX2 x9  -> MUX2 y5  -> MUX1 x5  -> MUX1 y5  -> MCUBreadboard 5 
+
+Path from  -> MainBreadboard 6  to  -> MCUBreadboard 6  is: 
+ -> MainBreadboard 6  -> MUX2 x10  -> MUX2 y6  -> MUX1 x6  -> MUX1 y6  -> MCUBreadboard 6 
+
+Path from  -> MainBreadboard 7  to  -> MCUBreadboard 7  is: 
+ -> MainBreadboard 7  -> MUX2 x11  -> MUX2 y7  -> MUX1 x7  -> MUX1 y7  -> MCUBreadboard 7 
+
