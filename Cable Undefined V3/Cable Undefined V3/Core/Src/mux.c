@@ -156,9 +156,7 @@ void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *mu
     snprintf(pin1Name, sizeof(pin1Name), "B_%d", breadboardPin1);
     snprintf(pin2Name, sizeof(pin2Name), "B_%d", breadboardPin2);
 
-    // Keep track of leds:
-    mode == 1 ? ledsToMainTracks[breadboardPin1 - 1]++ : ledsToMainTracks[breadboardPin1 - 1]--;
-    mode == 1 ? ledsToMainTracks[breadboardPin2 - 1]++ : ledsToMainTracks[breadboardPin2 - 1]--;
+
 
 //    printf("LedsToMainTrakcs[%d] = %d\n", breadboardPin1 - 1, ledsToMainTracks[breadboardPin1 - 1]);
 //    printf("LedsToMainTrakcs[%d] = %d\n", breadboardPin2 - 1, ledsToMainTracks[breadboardPin2 - 1]);
@@ -221,11 +219,20 @@ void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *mu
     // Update connection counter based on mode
 	if (mode == 1) {
 		if (mux1->usage[xIndex1][yIndex1] > 0 && mux2->usage[xIndex2][yIndex2] > 0) {
-			printf("Already connected, skip. NOT incrementing usage or maintrack counters\n\n");
+			printf("Already connected, RETURN. NOT incrementing usage, maintrack, led counters\n\n");
 			return;
 		}
+
 		selectedTrack->current_connections++; // Increment current connections
 		printf("Main Track %d incremented. Current connections: %d\n", selectedTrack->track_id, selectedTrack->current_connections);
+
+
+	    // Keep track of leds:
+	    ledsToMainTracks[breadboardPin1 - 1]++;
+	    ledsToMainTracks[breadboardPin2 - 1]++;
+
+		addToPin(breadboardPin1, rgb);
+		addToPin(breadboardPin2, rgb);
 	} else if (mode == 0) {
 		selectedTrack->current_connections--; // Decrement current connections
 		if (selectedTrack->current_connections <= 0) { // If counter is 0, free track
@@ -237,6 +244,13 @@ void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *mu
 			printf("Main Track %d decremented, but still occupied. Current connections: %d\n", selectedTrack->track_id, selectedTrack->current_connections);
 
 		}
+
+	    // Keep track of leds:
+		ledsToMainTracks[breadboardPin1 - 1]--;
+		ledsToMainTracks[breadboardPin2 - 1]--;
+
+		ledsToMainTracks[breadboardPin1 - 1] == 0 ? removeFromPin(breadboardPin1) : (void)0;
+		ledsToMainTracks[breadboardPin2 - 1] == 0 ? removeFromPin(breadboardPin2) : (void)0;
 	}
 
 
@@ -278,14 +292,6 @@ void routeBreadboard(int breadboardPin1, int breadboardPin2, int net_id, MUX *mu
 		);
 
 		fflush(stdout);
-
-		if (mode == 1){
-			addToPin(breadboardPin1, rgb);
-			addToPin(breadboardPin2, rgb);
-		}else if (mode == 0){
-			ledsToMainTracks[breadboardPin1 - 1] == 0 ? removeFromPin(breadboardPin1) : (void)0;
-			ledsToMainTracks[breadboardPin2 - 1] == 0 ? removeFromPin(breadboardPin2) : (void)0;
-		}
 
 		sendPixelData();
 	} else {

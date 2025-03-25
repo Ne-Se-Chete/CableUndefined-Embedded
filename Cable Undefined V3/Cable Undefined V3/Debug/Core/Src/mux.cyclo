@@ -4,7 +4,7 @@
 ../Core/Src/mux.c:59:13:getPinName	31
 ../Core/Src/mux.c:81:6:printMUXDetails	2
 ../Core/Src/mux.c:99:6:setConnection	13
-../Core/Src/mux.c:141:6:routeBreadboard	44
-../Core/Src/mux.c:297:6:routeSignalAnalyzer	16
-../Core/Src/mux.c:377:6:clear	7
-../Core/Src/mux.c:417:6:processCommand	10
+../Core/Src/mux.c:141:6:routeBreadboard	40
+../Core/Src/mux.c:303:6:routeSignalAnalyzer	16
+../Core/Src/mux.c:383:6:clear	7
+../Core/Src/mux.c:423:6:processCommand	10

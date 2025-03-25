@@ -5,6 +5,6 @@
 ../Core/Src/mux.c:81:6:printMUXDetails	24	static
 ../Core/Src/mux.c:99:6:setConnection	16	static
 ../Core/Src/mux.c:141:6:routeBreadboard	288	static
-../Core/Src/mux.c:297:6:routeSignalAnalyzer	232	static
-../Core/Src/mux.c:377:6:clear	32	static
-../Core/Src/mux.c:417:6:processCommand	104	static
+../Core/Src/mux.c:303:6:routeSignalAnalyzer	232	static
+../Core/Src/mux.c:383:6:clear	32	static
+../Core/Src/mux.c:423:6:processCommand	104	static
