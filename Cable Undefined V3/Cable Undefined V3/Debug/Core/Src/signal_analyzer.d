@@ -19,7 +19,7 @@ Core/Src/signal_analyzer.o: ../Core/Src/signal_analyzer.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h \
- ../Core/Inc/serial.h
+ ../Core/Inc/serial.h ../Core/Inc/main.h
 ../Core/Inc/signal_analyzer.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:
@@ -42,3 +42,4 @@ Core/Src/signal_analyzer.o: ../Core/Src/signal_analyzer.c \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:
 ../Core/Inc/serial.h:
+../Core/Inc/main.h:
