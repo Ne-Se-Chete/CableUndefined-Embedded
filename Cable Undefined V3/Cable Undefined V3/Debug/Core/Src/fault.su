@@ -1,7 +1,7 @@
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:803:22:LL_GPIO_SetOutputPin	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h:832:22:LL_GPIO_ResetOutputPin	16	static
-../Core/Src/fault.c:16:6:FAULT_CheckAndReport	8	static
-../Core/Src/fault.c:42:6:FAULT_5v_HandleInterrupt	4	static
-../Core/Src/fault.c:51:6:FAULT_3v3_HandleInterrupt	4	static
-../Core/Src/fault.c:57:6:FAULT_5v_HandleMsg	8	static
-../Core/Src/fault.c:69:6:FAULT_3v3_HandleMsg	8	static
+../Core/Src/fault.c:16:6:FAULT_CheckAndReport	16	static
+../Core/Src/fault.c:52:6:FAULT_5v_HandleInterrupt	4	static
+../Core/Src/fault.c:61:6:FAULT_3v3_HandleInterrupt	4	static
+../Core/Src/fault.c:67:6:FAULT_5v_HandleMsg	8	static
+../Core/Src/fault.c:79:6:FAULT_3v3_HandleMsg	8	static

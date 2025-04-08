@@ -13,28 +13,38 @@ static char msg[20];
 /**
  * @brief Check which FAULT occurred and send the appropriate message
  */
-void FAULT_CheckAndReport(void) {
+void FAULT_CheckAndReport(void)
+{
     // Only process if an interrupt was triggered and message has not been sent
-	if (!fault_sent){
-		if (fault_3v3_triggered && fault_5v_triggered) {
-			snprintf(msg, sizeof(msg), "FAULT 3v3 + 5V\n");
-		} else if (fault_3v3_triggered) {
-			snprintf(msg, sizeof(msg), "FAULT 3v3\n");
-		} else if (fault_5v_triggered) {
-			snprintf(msg, sizeof(msg), "FAULT 5V\n");
-		} else {
-			return; // No fault detected
-		}
+    if (!fault_sent) {
+        uint8_t fault_msg[2] = {0xFF, 0x00};  // 0xFF = start byte, 0x00 = code
 
+		/*
+		[0xFF] [0x01] for 3v3
+		[0xFF] [0x02] for 5V
+		[0xFF] [0x03] for both
+		 */
 
-	// Send message via UART1 and UART3
-	sendToUART(USART3, msg);
-	sendToUART(USART1, msg);
-	}
+        if (fault_3v3_triggered && fault_5v_triggered) {
+            fault_msg[1] = 0x03; // Both
+        } else if (fault_3v3_triggered) {
+            fault_msg[1] = 0x01; // 3v3 only
+        } else if (fault_5v_triggered) {
+            fault_msg[1] = 0x02; // 5V only
+        } else {
+            return; // No fault
+        }
 
-	// Mark message as sent
-	fault_sent = 1;
+        // Send hex-formatted message via UART1 and UART3
+        if (usingESP)
+        	sendRawUART(USART1, fault_msg, 2);
+        else if (usingCP2102)
+        	sendRawUART(USART3, fault_msg, 2);
+    }
+
+    fault_sent = 1;
 }
+
 
 /**
  * @brief Handles the 5V FAULT interrupt, only sets flags

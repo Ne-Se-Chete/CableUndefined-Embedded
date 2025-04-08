@@ -26,10 +26,9 @@ void loop() {
         Serial.println("Data sent to STM");
     }
 
-    // **Check if UART2 (STM32) sends data**
-    if (UART2.available()) {
-        String uartData = UART2.readStringUntil('\n');  // Read UART data
-        // Serial.println("UART2 Received: " + uartData);
-        SerialBT.println(uartData); // Forward to Bluetooth
+    while (UART2.available()) {
+        uint8_t c = UART2.read();  // Read raw byte
+        Serial.printf("[UART->BT] 0x%02X\n", c);  // Optional debug: show hex
+        SerialBT.write(c);  // Forward raw byte to Bluetooth
     }
 }

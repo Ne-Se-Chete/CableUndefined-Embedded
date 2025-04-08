@@ -145,8 +145,9 @@ int main(void)
   // Enable DMA Interrupt
   LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_5);
 
+  LL_TIM_EnableCounter(TIM6);
 
-  SignalAnalyzer_Init();
+  OscilloscopeInit();
 
   // Reset all Muxes
   LL_GPIO_SetOutputPin(RST_GPIO, RST_PIN);
