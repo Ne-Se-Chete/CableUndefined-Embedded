@@ -5,6 +5,6 @@
 ../Core/Src/mux.c:82:6:printMUXDetails	2
 ../Core/Src/mux.c:100:6:setConnection	13
 ../Core/Src/mux.c:142:6:routeBreadboard	40
-../Core/Src/mux.c:304:6:routeSignalAnalyzer	17
+../Core/Src/mux.c:304:6:routeSignalAnalyzer	19
 ../Core/Src/mux.c:392:6:clear	8
 ../Core/Src/mux.c:437:6:processCommand	12

@@ -169,7 +169,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-		  sendADCData();
+		  sendSignalData();
 		  FAULT_CheckAndReport();  // Only sends UART if a fault was detected
 
 
