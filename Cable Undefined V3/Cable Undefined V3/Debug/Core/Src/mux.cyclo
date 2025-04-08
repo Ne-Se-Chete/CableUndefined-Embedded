@@ -7,4 +7,4 @@
 ../Core/Src/mux.c:142:6:routeBreadboard	40
 ../Core/Src/mux.c:304:6:routeSignalAnalyzer	17
 ../Core/Src/mux.c:392:6:clear	8
-../Core/Src/mux.c:437:6:processCommand	10
+../Core/Src/mux.c:437:6:processCommand	12

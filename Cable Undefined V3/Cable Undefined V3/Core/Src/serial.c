@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 volatile uint8_t usingESP = 0;
-volatile uint8_t usingCP2102 = 1;  // default to start with CP2102
+volatile uint8_t usingCP2102 = 0;  // default to start with CP2102
 
 void sendRawUART(USART_TypeDef *USARTx, uint8_t *data, uint16_t length)
 {
@@ -54,13 +54,22 @@ void UART_ProcessReceivedByte(uint8_t byte, uint8_t uartNumber)
     if (byte == '\n' || byte == '\r')
     {
         rxBuffer[rxIndex] = '\0';  // Null-terminate
-        printf("Received from UART%d: %s\n", uartNumber, rxBuffer);
-		fflush(stdout);
-        processCommand((char *)rxBuffer);  // Pass to processing function
+
+        // Trim leading/trailing whitespace
+        char* start = (char*)rxBuffer;
+        while (*start == ' ' || *start == '\t' || *start == '\r' || *start == '\n') start++;
+
+        if (*start != '\0')  // Only print if not empty after trimming
+        {
+            printf("Received from UART%d: %s\n", uartNumber, start);
+            fflush(stdout);
+            processCommand(start);
+        }
 
         memset(rxBuffer, 0, RX_BUFFER_SIZE);
         rxIndex = 0;
     }
 }
+
 
 

@@ -14,8 +14,9 @@ ADCChannelConfig adcChannelConfig = {
     .channel_enabled = {0, 0, 0, 0, 0, 0, 0, 0}  // default: all channels enabled
 };
 
+volatile SignalMode_t signalMode = SIGNAL_MODE_ADC;  // Default
 
-void SignalAnalyzer_Init(void)
+void OscilloscopeInit(void)
 {
     // Configure DMA source/destination and length
     LL_DMA_ConfigAddresses(DMA1, LL_DMA_CHANNEL_1,
@@ -25,13 +26,13 @@ void SignalAnalyzer_Init(void)
 
     LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_1, ADC_CHANNELS);
 
-    LL_DMA_SetMode(DMA1, LL_DMA_CHANNEL_1, LL_DMA_MODE_CIRCULAR);
-    LL_DMA_SetMemoryIncMode(DMA1, LL_DMA_CHANNEL_1, LL_DMA_MEMORY_INCREMENT);
-    LL_DMA_SetPeriphIncMode(DMA1, LL_DMA_CHANNEL_1, LL_DMA_PERIPH_NOINCREMENT);
-    LL_DMA_SetDataTransferDirection(DMA1, LL_DMA_CHANNEL_1, LL_DMA_DIRECTION_PERIPH_TO_MEMORY);
-    LL_DMA_SetMemorySize(DMA1, LL_DMA_CHANNEL_1, LL_DMA_MDATAALIGN_HALFWORD);
-    LL_DMA_SetPeriphSize(DMA1, LL_DMA_CHANNEL_1, LL_DMA_PDATAALIGN_HALFWORD);
-    LL_DMA_SetChannelPriorityLevel(DMA1, LL_DMA_CHANNEL_1, LL_DMA_PRIORITY_HIGH);
+//    LL_DMA_SetMode(DMA1, LL_DMA_CHANNEL_1, LL_DMA_MODE_CIRCULAR);
+//    LL_DMA_SetMemoryIncMode(DMA1, LL_DMA_CHANNEL_1, LL_DMA_MEMORY_INCREMENT);
+//    LL_DMA_SetPeriphIncMode(DMA1, LL_DMA_CHANNEL_1, LL_DMA_PERIPH_NOINCREMENT);
+//    LL_DMA_SetDataTransferDirection(DMA1, LL_DMA_CHANNEL_1, LL_DMA_DIRECTION_PERIPH_TO_MEMORY);
+//    LL_DMA_SetMemorySize(DMA1, LL_DMA_CHANNEL_1, LL_DMA_MDATAALIGN_HALFWORD);
+//    LL_DMA_SetPeriphSize(DMA1, LL_DMA_CHANNEL_1, LL_DMA_PDATAALIGN_HALFWORD);
+//    LL_DMA_SetChannelPriorityLevel(DMA1, LL_DMA_CHANNEL_1, LL_DMA_PRIORITY_HIGH);
 
     // Enable DMA
     LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_1);
@@ -49,11 +50,14 @@ void SignalAnalyzer_Init(void)
 
     // Start ADC conversion
     LL_ADC_REG_StartConversionSWStart(ADC1);
-
-    // Start TIM6
-    LL_TIM_EnableCounter(TIM6);
 }
 
+void OscilloscopeDeinit(void)
+{
+    LL_ADC_REG_StopConversion(ADC1);
+    LL_ADC_Disable(ADC1);
+    LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_1);
+}
 
 uint32_t getTimestamp(void)
 {
@@ -86,10 +90,55 @@ void sendADCData(void)
     // Insert channel map after start byte
     buffer[1] = channel_map;
 
-    // Send via UART
+//  Send via UART
+    if (usingESP){
+        sendRawUART(USART1, buffer, index);
+//    	printf("Sending to ESP");
+    }else if (usingCP2102){
+        sendRawUART(USART3, buffer, index);
+//		printf("Sending to CP2102");
+    }
+
+}
+
+void sendDigitalData(void)
+{
+    uint8_t buffer[16];
+    uint8_t index = 0;
+
+    buffer[index++] = 0xAB;  // Different start byte for digital mode
+    buffer[index++] = 0x00;  // Reserved for bitmap of active channels
+
+    uint8_t pin_bitmap = 0;
+
+    for (int i = 0; i < 8; i++) {
+        if (adcChannelConfig.channel_enabled[i]) {
+            uint8_t pin_state = LL_GPIO_IsInputPinSet(GPIOA, i); // Or correct GPIO port
+            buffer[index++] = pin_state ? 1 : 0;
+            pin_bitmap |= (1 << i);
+        }
+    }
+
+    // Timestamp
+    uint16_t t = (uint16_t)getTimestamp();
+    buffer[index++] = (t >> 8) & 0xFF;
+    buffer[index++] = t & 0xFF;
+
+    buffer[1] = pin_bitmap;
+
     if (usingESP)
         sendRawUART(USART1, buffer, index);
     else if (usingCP2102)
         sendRawUART(USART3, buffer, index);
 }
+
+void sendSignalData(void)
+{
+    if (signalMode == SIGNAL_MODE_ADC)
+        sendADCData();
+    else if (signalMode == SIGNAL_MODE_DIGITAL)
+        sendDigitalData();
+}
+
+
 

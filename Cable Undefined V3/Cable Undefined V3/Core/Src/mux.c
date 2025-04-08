@@ -485,6 +485,17 @@ void processCommand(char *command) {
     	FAULT_3v3_HandleMsg();
 	}
 
+    if (strncmp(command, "MO", 8) == 0) {
+        signalMode = SIGNAL_MODE_ADC;
+        printf("Switched to ADC mode (Oscilloscope)\n");
+    }
+
+    if (strncmp(command, "MS", 8) == 0) {
+        signalMode = SIGNAL_MODE_DIGITAL;
+        printf("Switched to Digital mode (Logic Analyzer)\n");
+    }
+
+
 //    if (command[0] == 'S') {
 //    	int channel;
 //		char state[4];
