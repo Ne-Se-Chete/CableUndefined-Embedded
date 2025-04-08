@@ -54,7 +54,7 @@ void OscilloscopeInit(void)
 
 void OscilloscopeDeinit(void)
 {
-    LL_ADC_REG_StopConversion(ADC1);
+	LL_ADC_REG_StopConversionExtTrig(ADC1);
     LL_ADC_Disable(ADC1);
     LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_1);
 }

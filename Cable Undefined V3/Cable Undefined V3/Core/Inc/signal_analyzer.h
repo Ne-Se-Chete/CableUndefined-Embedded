@@ -23,7 +23,9 @@ void OscilloscopeDeinit(void);
 
 void sendADCData(void);
 void sendDigitalData(void);
-void sendSignalData(void);
+
+
+void sendSignalData(void); // Choses from ADC or DIgital
 
 uint32_t getTimestamp(void);
 

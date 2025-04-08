@@ -380,11 +380,11 @@ void routeSignalAnalyzer(int net_id, MUX *muxes, uint8_t mode) {
 	// Step 5: Set the connection
 	setConnection(xIndex, yIndex, *mux, mode);
 
-	if (mode == 1) {
-	    adcChannelConfig.channel_enabled[yIndex] = 1;  // Enable the channel
+	if (mode == 1 && signalMode == SIGNAL_MODE_ADC) {
+	    adcChannelConfig.channel_enabled[yIndex] = 1;
 	    printf("(ADC%d) ENABLED\n", yIndex);
-	} else {
-	    adcChannelConfig.channel_enabled[yIndex] = 0;  // Disable the channel
+	} else if (mode == 0) {
+	    adcChannelConfig.channel_enabled[yIndex] = 0;
 	    printf("(ADC%d) DISABLED\n", yIndex);
 	}
 }
@@ -485,13 +485,15 @@ void processCommand(char *command) {
     	FAULT_3v3_HandleMsg();
 	}
 
-    if (strncmp(command, "MO", 8) == 0) {
+    if (strncmp(command, "MO", 2) == 0) {
         signalMode = SIGNAL_MODE_ADC;
+        OscilloscopeInit();
         printf("Switched to ADC mode (Oscilloscope)\n");
     }
 
-    if (strncmp(command, "MS", 8) == 0) {
+    if (strncmp(command, "MS", 2) == 0) {
         signalMode = SIGNAL_MODE_DIGITAL;
+        OscilloscopeDeinit();
         printf("Switched to Digital mode (Logic Analyzer)\n");
     }
 

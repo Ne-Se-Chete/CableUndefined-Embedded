@@ -5,6 +5,7 @@
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:3286:22:LL_ADC_StartCalibration	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:3297:26:LL_ADC_IsCalibrationOnGoing	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:3326:22:LL_ADC_REG_StartConversionSWStart	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h:3363:22:LL_ADC_REG_StopConversionExtTrig	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:453:22:LL_DMA_EnableChannel	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:472:22:LL_DMA_DisableChannel	16	static
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h:879:22:LL_DMA_SetDataLength	24	static

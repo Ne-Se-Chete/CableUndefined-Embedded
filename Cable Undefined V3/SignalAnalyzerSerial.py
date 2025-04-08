@@ -1,7 +1,4 @@
 import serial
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-from collections import deque
 
 PORT = "COM9"
 BAUD = 921600
@@ -9,13 +6,10 @@ BAUD = 921600
 def count_bits(n):
     return bin(n).count('1')
 
-def decode_frame(data):
-    if data[0] != 0xAA:
-        return None
-
+def decode_adc_frame(data):
     channel_map = data[1]
     num_channels = count_bits(channel_map)
-    expected_size = 1 + 1 + (num_channels * 2) + 2  # header + map + ADC + timestamp
+    expected_size = 1 + 1 + (num_channels * 2) + 2
 
     if len(data) < expected_size:
         return None
@@ -32,66 +26,84 @@ def decode_frame(data):
     timestamp = int.from_bytes(data[index:index+2], 'big')
     return adc_vals, timestamp, expected_size
 
-# Set up plotting
-history_len = 200
-data_history = {ch: deque([0]*history_len, maxlen=history_len) for ch in range(8)}
-x_data = deque(range(history_len), maxlen=history_len)
+def decode_digital_frame(data):
+    pin_map = data[1]
+    num_channels = count_bits(pin_map)
+    expected_size = 1 + 1 + num_channels + 2
 
-fig, ax = plt.subplots()
-lines = {ch: ax.plot([], [])[0] for ch in range(8)}
+    if len(data) < expected_size:
+        return None
 
-ax.set_ylim(0, 4096)  # assuming 12-bit ADC
-ax.set_xlim(0, history_len)
-ax.set_xlabel("Samples")
-ax.set_ylabel("ADC Value")
+    digital_vals = []
+    index = 2
 
-def init():
-    for line in lines.values():
-        line.set_data([], [])
-    return lines.values()
+    for i in range(8):
+        if (pin_map >> i) & 0x01:
+            state = data[index]
+            digital_vals.append((i, state))
+            index += 1
 
-def update_plot(frame):
-    global ser, buffer
+    timestamp = int.from_bytes(data[index:index+2], 'big')
+    return digital_vals, timestamp, expected_size
 
-    chunk = ser.read(64)
-    buffer.extend(chunk)
+def main():
+    buffer = bytearray()
+    ser = serial.Serial(PORT, BAUD, timeout=0.05)
+    print(f"Listening on {PORT} at {BAUD} baud...\n")
 
-    while len(buffer) >= 4:
-        if buffer[0] != 0xAA:
-            buffer.pop(0)
-            continue
+    try:
+        while True:
+            chunk = ser.read(64)
+            buffer.extend(chunk)
 
-        channel_map = buffer[1]
-        num_channels = count_bits(channel_map)
-        frame_size = 1 + 1 + num_channels * 2 + 2
+            while len(buffer) >= 4:
+                header = buffer[0]
 
-        if len(buffer) < frame_size:
-            break
+                if header == 0xAA:
+                    # ADC Frame
+                    channel_map = buffer[1]
+                    num_channels = count_bits(channel_map)
+                    frame_size = 1 + 1 + (num_channels * 2) + 2
 
-        frame = buffer[:frame_size]
-        buffer = buffer[frame_size:]
+                    if len(buffer) < frame_size:
+                        break
 
-        result = decode_frame(frame)
-        if result:
-            adc_vals, ts, _ = result
-            for ch, val in adc_vals:
-                data_history[ch].append(val)
-            for ch in range(8):
-                if ch not in [c for c, _ in adc_vals]:
-                    data_history[ch].append(data_history[ch][-1])  # repeat last value
+                    frame = buffer[:frame_size]
+                    buffer = buffer[frame_size:]
 
-            # Update lines
-            for ch, line in lines.items():
-                line.set_data(x_data, data_history[ch])
+                    result = decode_adc_frame(frame)
+                    if result:
+                        adc_vals, ts, _ = result
+                        print(f"[{ts:05d}] ADC Values:", end=" ")
+                        for ch, val in adc_vals:
+                            print(f"A{ch}:{val:>4}", end="  ")
+                        print()
 
-    return lines.values()
+                elif header == 0xAB:
+                    # Digital Frame
+                    pin_map = buffer[1]
+                    num_channels = count_bits(pin_map)
+                    frame_size = 1 + 1 + num_channels + 2
 
-# Open serial port
-ser = serial.Serial(PORT, BAUD, timeout=0.05)
-buffer = bytearray()
+                    if len(buffer) < frame_size:
+                        break
 
-ani = animation.FuncAnimation(fig, update_plot, init_func=init, interval=0, blit=True)
-plt.tight_layout()
-plt.show()
+                    frame = buffer[:frame_size]
+                    buffer = buffer[frame_size:]
 
-ser.close()
+                    result = decode_digital_frame(frame)
+                    if result:
+                        digital_vals, ts, _ = result
+                        states = ["1" if any(p == i and s for p, s in digital_vals) else "0" for i in range(8)]
+                        print(f"[{ts:05d}] Digital Pins: {' '.join(states)}")
+
+                else:
+                    buffer.pop(0)  # Skip unknown byte
+
+    except KeyboardInterrupt:
+        print("\nStopped.")
+    finally:
+        ser.close()
+
+if __name__ == "__main__":
+    main()
