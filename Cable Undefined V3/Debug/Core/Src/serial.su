@@ -1,0 +1,8 @@
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:412:22:LL_USART_Enable	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:437:26:LL_USART_IsEnabled	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:1851:26:LL_USART_IsActiveFlag_TC	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:1862:26:LL_USART_IsActiveFlag_TXE	16	static
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:2474:22:LL_USART_TransmitData8	16	static
+../Core/Src/serial.c:9:6:sendRawUART	32	static
+../Core/Src/serial.c:23:6:sendToUART	24	static
+../Core/Src/serial.c:44:6:UART_ProcessReceivedByte	24	static
