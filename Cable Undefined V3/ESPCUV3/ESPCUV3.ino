@@ -12,7 +12,7 @@ HardwareSerial UART2(1);
 void setup() {
     Serial.begin(115200);    // Debugging on Serial Monitor
     SerialBT.begin("Cable Undefined V3"); // Bluetooth name
-    UART2.begin(115200, SERIAL_8N1, RX_PIN, TX_PIN);  // UART for STM32
+    UART2.begin(921600, SERIAL_8N1, RX_PIN, TX_PIN);  // UART for STM32
 
     Serial.println("ESP32 is ready. Waiting for commands...");
 }
@@ -29,7 +29,7 @@ void loop() {
     // **Check if UART2 (STM32) sends data**
     if (UART2.available()) {
         String uartData = UART2.readStringUntil('\n');  // Read UART data
-        Serial.println("UART2 Received: " + uartData);
+        // Serial.println("UART2 Received: " + uartData);
         SerialBT.println(uartData); // Forward to Bluetooth
     }
 }
