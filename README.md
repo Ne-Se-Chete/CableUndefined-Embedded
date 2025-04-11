@@ -1,5 +1,7 @@
-Credits for Cable Undefined V1:
+## Credits
 
-Aleksander Shestakov https://github.com/orgs/Pupe6/people/ProGamer2711
-Kaloyan Anastasov https://github.com/orgs/Pupe6/people/Flychuban
-Borislav Borisov https://github.com/bobikenobi12
+**Cable Undefined V1** with the help of:
+
+- [Aleksander Shestakov](https://github.com/ProGamer2711)  
+- [Kaloyan Anastasov](https://github.com/Flychuban)  
+- [Borislav Borisov](https://github.com/bobikenobi12)
