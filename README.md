@@ -1,5 +1,7 @@
 # Cable Undefined
 
+![Cable Undefined Poster](assets/cable-undefined-poster-1.png)
+
 > **An AI-powered intelligent breadboard that eliminates physical jumper wires through a dynamically configurable multiplexer matrix.**
 
 Cable Undefined is an embedded hardware and software platform designed to modernize electronics education and rapid prototyping. Instead of manually wiring components on a traditional breadboard, users create circuits digitally while the hardware automatically establishes the required electrical connections.
@@ -143,6 +145,15 @@ The platform includes:
 
 ---
 
+# Timeline
+
+![Timeline 1](assets/Timeline1.png)
+![Timeline 2](assets/Timeline2.png)
+![Timeline 3](assets/Timeline3.png)
+![Timeline 4](assets/Timeline4.png)
+
+---
+
 # Project Status
 
 > ⚠️ **Project Discontinued**
@@ -162,5 +173,7 @@ Tomislav Ivanov
 Emil Momchev
 Simeon Simeonov
 Valentin Asenov
+
+![NeSeChete](assets/NeSeChete.png)
 
 remain proud of the technical achievements accomplished throughout the project's development.
