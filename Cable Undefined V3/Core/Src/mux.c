@@ -502,14 +502,14 @@ void processCommand(char *command) {
         printf("Switched to ADC mode (Oscilloscope)\n");
     }
 
-    if (strncmp(command, "MS", 2) == 0) {
-        signalMode = SIGNAL_MODE_DIGITAL;
-
-        OscilloscopeDeinit();
-        SignalAnalyzerInit();
-
-        printf("Switched to Digital mode (Logic Analyzer)\n");
-    }
+//    if (strncmp(command, "MS", 2) == 0) {
+//        signalMode = SIGNAL_MODE_DIGITAL;
+//
+//        OscilloscopeDeinit();
+//        SignalAnalyzerInit();
+//
+//        printf("Switched to Digital mode (Logic Analyzer)\n");
+//    }
 
     if (strncmp(command, "SAMP", 4) == 0) {
         int ch, cycles;

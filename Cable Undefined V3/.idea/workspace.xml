@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="928c23b5-ac9e-4e15-b994-bff4b883c539" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/.cproject" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/.mxproject" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/.settings/com.st.stm32cube.ide.mcu.sfrview.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/.settings/language.settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/.settings/stm32cubeide.project.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Cable Undefined V3 Debug.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Cable Undefined V3 Debug.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Cable Undefined V3.ioc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Inc/fault.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Inc/leds.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Inc/main.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Inc/mux.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Inc/mux_config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Inc/serial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Inc/signal_analyzer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Inc/stm32_assert.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Inc/stm32f1xx_it.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/fault.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/leds.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/mux.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/serial.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/signal_analyzer.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/stm32f1xx_it.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/syscalls.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/sysmem.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Src/system_stm32f1xx.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Core/Startup/startup_stm32f107vctx.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Cable Undefined V3.elf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Cable Undefined V3.list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Cable Undefined V3.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Inc/subdir.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/Multiplexer.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/Multiplexer.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/Multiplexer.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/Multiplexer.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/fault.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/fault.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/fault.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/fault.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/leds.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/leds.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/leds.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/leds.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/main.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/main.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/main.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/mux.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/mux.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/mux.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/mux.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/serial.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/serial.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/serial.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/serial.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/signal_analyzer.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/signal_analyzer.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/signal_analyzer.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/signal_analyzer.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/stm32f1xx_it.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/stm32f1xx_it.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/stm32f1xx_it.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/stm32f1xx_it.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/subdir.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/syscalls.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/syscalls.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/syscalls.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/syscalls.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/sysmem.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/sysmem.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/sysmem.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/sysmem.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/system_stm32f1xx.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/system_stm32f1xx.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/system_stm32f1xx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Src/system_stm32f1xx.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Startup/startup_stm32f107vctx.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Startup/startup_stm32f107vctx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Core/Startup/subdir.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_dma.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_dma.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_dma.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_dma.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_pwr.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_pwr.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_pwr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_pwr.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_tim.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_tim.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_tim.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_tim.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.cyclo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.su" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/objects.list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/objects.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Debug/sources.mk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f107xc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Device/ST/STM32F1xx/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/cmsis_armcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/cmsis_armclang.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/cmsis_compiler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/cmsis_gcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/cmsis_iccarm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/cmsis_version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_armv8mbl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_armv8mml.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_cm0.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_cm0plus.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_cm1.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_cm23.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_cm3.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_cm33.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_cm4.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_cm7.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_sc000.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/core_sc300.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/mpu_armv7.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/mpu_armv8.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/Include/tz_context.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/CMSIS/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_adc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_cortex.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_exti.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_pwr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_rcc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_system.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_utils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_dma.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_pwr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_tim.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cable Undefined V3/STM32F107VCTX_FLASH.ld" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2vztnDzSFenPBYZ6CIXGHUoqpNg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="928c23b5-ac9e-4e15-b994-bff4b883c539" name="Changes" comment="" />
+      <created>1745159895511</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745159895511</updated>
+      <workItem from="1745159896898" duration="54000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -52,10 +52,10 @@ const char* yPins14[8]  = {"B_49", "B_50", "B_51", "B_52", "B_53", "B_54", "B_55
 
 // B_56 - B_60
 const char* xPins15[16] = {"MT_1", "MT_2", "MT_3", "MT_4", "MT_5", "MT_6", "MT_7", "MT_8", "MT_9", "MT_10", "MT_11", "MT_12", "MT_13", "MT_14", "MT_15", "MT_16"};
-const char* yPins15[8]  = {"B1_57", "B1_58", "B1_59", "B1_60", "GND", "GND", "GND", "GND"};
+const char* yPins15[8]  = {"B_57", "B_58", "B_59", "B_60", "GND", "GND", "GND", "GND"};
 
 const char* xPins16[16] = {"MT_17", "MT_18", "MT_19", "MT_20", "MT_21", "MT_22", "MT_23", "MT_24", "MT_25", "MT_26", "MT_27", "MT_28", "MT_29", "MT_30", "MT_31", "MT_32"};
-const char* yPins16[8]  = {"B1_57", "B1_58", "B1_59", "B1_60", "GND", "GND", "GND", "GND"};
+const char* yPins16[8]  = {"B_57", "B_58", "B_59", "B_60", "GND", "GND", "GND", "GND"};
 
 
 
