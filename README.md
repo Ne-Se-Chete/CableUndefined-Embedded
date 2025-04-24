@@ -172,7 +172,7 @@ Valeri Todorov,
 Tomislav Ivanov,
 Emil Momchev,
 Simeon Simeonov,
-Valentin Asenov,
+Valentin Asenov
 
 ![NeSeChete](assets/NeSeChete.png)
 
