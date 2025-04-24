@@ -166,13 +166,13 @@ Despite its discontinuation, Cable Undefined remains an important proof of conce
 
 The authors:
 
-Yasen Tsvetkov
-Borislav Milanov
-Valeri Todorov
-Tomislav Ivanov
-Emil Momchev
-Simeon Simeonov
-Valentin Asenov
+Yasen Tsvetkov,
+Borislav Milanov,
+Valeri Todorov,
+Tomislav Ivanov,
+Emil Momchev,
+Simeon Simeonov,
+Valentin Asenov,
 
 ![NeSeChete](assets/NeSeChete.png)
 
